@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fantasy League Stats since 2010</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { border-collapse: collapse; margin-bottom: 30px; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; }
+    th { background: #eee; }
+    button { margin-right: 10px; margin-bottom: 10px; }
+    select { margin-right: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>Fantasy League Stats since 2010</h1>
+
+<!-- MENU -->
+<button onclick="showPage('lifetime')">All Teams Lifetime Rankings</button>
+<button onclick="showPage('seasonRankings')">All Team Individual Season Rankings</button><br/>
+<button onclick="showPage('individualLifetime')">Individual Lifetime Team Stats</button>
+<button onclick="showPage('individualSeason')">Individual Season Team Stats</button>
+
+<hr>
+
+<div id="content"></div>
+
+<script>
+let rawData = [];
+let managers = {};
+
+const numericFields = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
+const avgFields = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","WHIP","K/9","QS"];
+const eraFields = ["ERA","WHIP"];
+
+fetch("all_seasons_stats.json")
+  .then(res => res.json())
+  .then(data => {
+    rawData = Object.values(data).flat();
+    processData();
+    showPage("lifetime");
+  });
+
+function isValid(val) {
+  return val !== "NAAN" && val !== "" && val !== null && val !== undefined && !isNaN(parseFloat(val));
+}
+
+function processData() {
+  rawData.forEach(row => {
+    const m = row.manager_nickname;
+
+    if (!managers[m]) {
+      managers[m] = {
+        seasons: [],
+        totals: {},
+        averages: {},
+        counts: {}
+      };
+    }
+
+    managers[m].seasons.push(row);
+
+    numericFields.concat(avgFields).forEach(stat => {
+      let rawVal = row[stat];
+
+      if (!isValid(rawVal)) return;
+
+      let val = parseFloat(rawVal);
+
+      managers[m].totals[stat] = (managers[m].totals[stat] || 0) + val;
+      managers[m].counts[stat] = (managers[m].counts[stat] || 0) + 1;
+    });
+  });
+
+  // Calculate averages using valid counts
+  Object.keys(managers).forEach(m => {
+    avgFields.forEach(stat => {
+      let total = managers[m].totals[stat] || 0;
+      let count = managers[m].counts[stat] || 0;
+
+      managers[m].averages[stat] = count > 0 ? total / count : null;
+    });
+  });
+}
+
+function showPage(page) {
+  const c = document.getElementById("content");
+  c.innerHTML = "";
+
+  if (page === "lifetime") showLifetime(c);
+  if (page === "individualLifetime") showIndividualLifetime(c);
+  if (page === "seasonRankings") showSeasonRankings(c);
+  if (page === "individualSeason") showIndividualSeason(c);
+}
+
+function createTable(title, data) {
+  let html = `<h2>${title}</h2>
+  <table>
+    <tr><th>Rank</th><th>Name</th><th>Value</th></tr>`;
+
+  data.forEach((d,i)=>{
+    html += `<tr>
+      <td>${i+1}</td>
+      <td>${d.name}</td>
+      <td>${d.value.toFixed(2)}</td>
+    </tr>`;
+  });
+
+  html += "</table>";
+  return html;
+}
+
+function sortStat(obj, stat, isAvg=false) {
+  let arr = Object.keys(obj).map(name => ({
+    name,
+    value: isAvg ? obj[name].averages[stat] : obj[name].totals[stat]
+  }))
+  .filter(d => d.value !== null && !isNaN(d.value));
+
+  arr.sort((a,b)=>{
+    if (eraFields.includes(stat)) return a.value - b.value;
+    return b.value - a.value;
+  });
+
+  return arr.slice(0,10);
+}
+
+// ==========================
+// PAGE 1: Lifetime Rankings
+// ==========================
+function showLifetime(container) {
+  numericFields.forEach(stat=>{
+    container.innerHTML += createTable(`Total ${stat}`, sortStat(managers, stat));
+  });
+
+  avgFields.forEach(stat=>{
+    container.innerHTML += createTable(`Average ${stat}`, sortStat(managers, stat, true));
+  });
+}
+
+// ===================================
+// PAGE 2: Individual Lifetime Stats
+// ===================================
+function showIndividualLifetime(container) {
+  let select = `<select id="mgr">`;
+
+  Object.keys(managers).forEach(m=>{
+    select += `<option value="${m}">${m}</option>`;
+  });
+
+  select += `</select>
+    <button onclick="renderIndividualLifetime()">Show</button>
+    <div id="indLife"></div>`;
+
+  container.innerHTML = select;
+}
+
+function renderIndividualLifetime() {
+  let m = document.getElementById("mgr").value;
+  let div = document.getElementById("indLife");
+
+  let html = `<h2>${m}</h2>
+  <table>
+    <tr><th>Stat</th><th>Total</th><th>Average</th></tr>`;
+
+  avgFields.forEach(stat=>{
+    let total = managers[m].totals[stat];
+    let avg = managers[m].averages[stat];
+
+    if (avg === null) return;
+
+    html += `<tr>
+      <td>${stat}</td>
+      <td>${total.toFixed(2)}</td>
+      <td>${avg.toFixed(2)}</td>
+    </tr>`;
+  });
+
+  html += "</table>";
+  div.innerHTML = html;
+}
+
+// ===================================
+// PAGE 3: Individual Season Rankings
+// ===================================
+function showSeasonRankings(container) {
+  avgFields.forEach(stat=>{
+    let arr = rawData.map(r=>{
+      if (!isValid(r[stat])) return null;
+
+      return {
+        name: `${r.manager_nickname} (${r.season})`,
+        value: parseFloat(r[stat])
+      };
+    }).filter(x => x !== null);
+
+    arr.sort((a,b)=>{
+      if (eraFields.includes(stat)) return a.value - b.value;
+      return b.value - a.value;
+    });
+
+    container.innerHTML += createTable(`Season ${stat}`, arr.slice(0,10));
+  });
+}
+
+// ===================================
+// PAGE 4: Individual Season Team Stats
+// ===================================
+function showIndividualSeason(container) {
+  let select = `<select id="mgr2">`;
+
+  Object.keys(managers).forEach(m=>{
+    select += `<option value="${m}">${m}</option>`;
+  });
+
+  select += `</select>
+    <button onclick="renderIndividualSeason()">Show</button>
+    <div id="indSeason"></div>`;
+
+  container.innerHTML = select;
+}
+
+function renderIndividualSeason() {
+  let m = document.getElementById("mgr2").value;
+  let div = document.getElementById("indSeason");
+
+  let seasons = managers[m].seasons;
+  let html = `<h2>${m} - Season Rankings</h2>`;
+
+  avgFields.forEach(stat=>{
+    let arr = seasons.map(s=>{
+      if (!isValid(s[stat])) return null;
+
+      return {
+        name: s.season,
+        value: parseFloat(s[stat])
+      };
+    }).filter(x => x !== null);
+
+    arr.sort((a,b)=>{
+      if (eraFields.includes(stat)) return a.value - b.value;
+      return b.value - a.value;
+    });
+
+    html += createTable(stat, arr);
+  });
+
+  div.innerHTML = html;
+}
+</script>
+
+</body>
+</html>

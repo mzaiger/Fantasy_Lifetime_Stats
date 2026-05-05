@@ -2,7 +2,8 @@
   "2026": [
     {
       "season": "2026",
-      "team_name": "Skenes Didn’t Matter",
+      "team_key": "469.l.23321.t.1",
+      "team_name": "I Found Jesus",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
       "R": "191",
@@ -19,10 +20,17 @@
       "ERA": "3.58",
       "WHIP": "1.19",
       "K/9": "8.99",
-      "QS": "28"
+      "QS": "28",
+      "wins": "39",
+      "losses": "31",
+      "ties": "14",
+      "win_pct": "0.464",
+      "playoff_seed": "3",
+      "final_rank": "3"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.2",
       "team_name": "Sexual Chocolate",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -40,10 +48,17 @@
       "ERA": "3.96",
       "WHIP": "1.28",
       "K/9": "7.65",
-      "QS": "28"
+      "QS": "28",
+      "wins": "36",
+      "losses": "32",
+      "ties": "16",
+      "win_pct": "0.429",
+      "playoff_seed": "5",
+      "final_rank": "5"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.3",
       "team_name": "Errors in the Outfield",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -61,10 +76,17 @@
       "ERA": "4.54",
       "WHIP": "1.37",
       "K/9": "9.28",
-      "QS": "19"
+      "QS": "19",
+      "wins": "30",
+      "losses": "42",
+      "ties": "12",
+      "win_pct": "0.357",
+      "playoff_seed": "10",
+      "final_rank": "10"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.4",
       "team_name": "dungeon crawler carl",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -82,10 +104,17 @@
       "ERA": "3.75",
       "WHIP": "1.15",
       "K/9": "8.40",
-      "QS": "18"
+      "QS": "18",
+      "wins": "39",
+      "losses": "37",
+      "ties": "8",
+      "win_pct": "0.464",
+      "playoff_seed": "7",
+      "final_rank": "7"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.5",
       "team_name": "Gooserules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -103,10 +132,17 @@
       "ERA": "3.90",
       "WHIP": "1.24",
       "K/9": "9.94",
-      "QS": "25"
+      "QS": "25",
+      "wins": "39",
+      "losses": "34",
+      "ties": "11",
+      "win_pct": "0.464",
+      "playoff_seed": "4",
+      "final_rank": "4"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.6",
       "team_name": "Just A Bit Outside",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -124,11 +160,18 @@
       "ERA": "4.20",
       "WHIP": "1.27",
       "K/9": "10.13",
-      "QS": "24"
+      "QS": "24",
+      "wins": "29",
+      "losses": "41",
+      "ties": "14",
+      "win_pct": "0.345",
+      "playoff_seed": "11",
+      "final_rank": "11"
     },
     {
       "season": "2026",
-      "team_name": "Should’ve Started Skenes",
+      "team_key": "469.l.23321.t.7",
+      "team_name": "Paulie…U Down There?",
       "manager_nickname": "Dan",
       "manager_email": "Private",
       "R": "204",
@@ -145,10 +188,17 @@
       "ERA": "3.52",
       "WHIP": "1.16",
       "K/9": "8.81",
-      "QS": "29"
+      "QS": "29",
+      "wins": "42",
+      "losses": "27",
+      "ties": "15",
+      "win_pct": "0.500",
+      "playoff_seed": "1",
+      "final_rank": "1"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.8",
       "team_name": "Cuban Missile Crisis",
       "manager_nickname": "Theodore",
       "manager_email": "Private",
@@ -166,10 +216,17 @@
       "ERA": "4.08",
       "WHIP": "1.30",
       "K/9": "9.78",
-      "QS": "18"
+      "QS": "18",
+      "wins": "37",
+      "losses": "33",
+      "ties": "14",
+      "win_pct": "0.440",
+      "playoff_seed": "6",
+      "final_rank": "6"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.9",
       "team_name": "Going down with the Ship",
       "manager_nickname": "Douglas",
       "manager_email": "Private",
@@ -187,10 +244,17 @@
       "ERA": "3.81",
       "WHIP": "1.33",
       "K/9": "8.38",
-      "QS": "28"
+      "QS": "28",
+      "wins": "26",
+      "losses": "43",
+      "ties": "15",
+      "win_pct": "0.310",
+      "playoff_seed": "12",
+      "final_rank": "12"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.10",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -208,10 +272,17 @@
       "ERA": "4.04",
       "WHIP": "1.29",
       "K/9": "8.97",
-      "QS": "17"
+      "QS": "17",
+      "wins": "39",
+      "losses": "31",
+      "ties": "14",
+      "win_pct": "0.464",
+      "playoff_seed": "2",
+      "final_rank": "2"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.11",
       "team_name": "Sidd Finch Version 24",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -229,10 +300,17 @@
       "ERA": "4.42",
       "WHIP": "1.32",
       "K/9": "8.87",
-      "QS": "14"
+      "QS": "14",
+      "wins": "35",
+      "losses": "36",
+      "ties": "13",
+      "win_pct": "0.417",
+      "playoff_seed": "8",
+      "final_rank": "8"
     },
     {
       "season": "2026",
+      "team_key": "469.l.23321.t.12",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -250,12 +328,19 @@
       "ERA": "4.36",
       "WHIP": "1.34",
       "K/9": "9.38",
-      "QS": "6"
+      "QS": "6",
+      "wins": "35",
+      "losses": "39",
+      "ties": "10",
+      "win_pct": "0.417",
+      "playoff_seed": "9",
+      "final_rank": "9"
     }
   ],
   "2025": [
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.1",
       "team_name": "There’s No Joy In Mudville",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -273,10 +358,17 @@
       "ERA": "3.71",
       "WHIP": "1.21",
       "K/9": "9.33",
-      "QS": "110"
+      "QS": "110",
+      "wins": "155",
+      "losses": "101",
+      "ties": "38",
+      "win_pct": "0.527",
+      "playoff_seed": "1",
+      "final_rank": "4"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.2",
       "team_name": "Gooserules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -294,10 +386,17 @@
       "ERA": "3.34",
       "WHIP": "1.17",
       "K/9": "9.64",
-      "QS": "130"
+      "QS": "130",
+      "wins": "158",
+      "losses": "105",
+      "ties": "31",
+      "win_pct": "0.537",
+      "playoff_seed": "2",
+      "final_rank": "2"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.3",
       "team_name": "Cucumber Calm",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -315,10 +414,17 @@
       "ERA": "3.93",
       "WHIP": "1.23",
       "K/9": "9.11",
-      "QS": "101"
+      "QS": "101",
+      "wins": "148",
+      "losses": "113",
+      "ties": "33",
+      "win_pct": "0.503",
+      "playoff_seed": "3",
+      "final_rank": "3"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.4",
       "team_name": "Knate Cheats!",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -336,10 +442,17 @@
       "ERA": "3.72",
       "WHIP": "1.17",
       "K/9": "8.68",
-      "QS": "104"
+      "QS": "104",
+      "wins": "140",
+      "losses": "112",
+      "ties": "42",
+      "win_pct": "0.476",
+      "playoff_seed": "4",
+      "final_rank": "6"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.5",
       "team_name": "Let Down",
       "manager_nickname": "Theodore",
       "manager_email": "Private",
@@ -357,10 +470,17 @@
       "ERA": "3.43",
       "WHIP": "1.17",
       "K/9": "9.11",
-      "QS": "76"
+      "QS": "76",
+      "wins": "128",
+      "losses": "130",
+      "ties": "36",
+      "win_pct": "0.435",
+      "playoff_seed": "7",
+      "final_rank": "8"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.6",
       "team_name": "Just A Bit Outside",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -378,10 +498,17 @@
       "ERA": "4.08",
       "WHIP": "1.22",
       "K/9": "9.09",
-      "QS": "76"
+      "QS": "76",
+      "wins": "128",
+      "losses": "128",
+      "ties": "38",
+      "win_pct": "0.435",
+      "playoff_seed": "6",
+      "final_rank": "5"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.7",
       "team_name": "Princess Donut the Queen Chonk",
       "manager_nickname": "Douglas",
       "manager_email": "Private",
@@ -399,10 +526,17 @@
       "ERA": "3.59",
       "WHIP": "1.18",
       "K/9": "8.63",
-      "QS": "114"
+      "QS": "114",
+      "wins": "137",
+      "losses": "119",
+      "ties": "38",
+      "win_pct": "0.466",
+      "playoff_seed": "5",
+      "final_rank": "1"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.8",
       "team_name": "Change your guy Quagmire",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -420,10 +554,17 @@
       "ERA": "4.40",
       "WHIP": "1.29",
       "K/9": "8.13",
-      "QS": "116"
+      "QS": "116",
+      "wins": "91",
+      "losses": "173",
+      "ties": "30",
+      "win_pct": "0.310",
+      "playoff_seed": "12",
+      "final_rank": "12"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.9",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -441,10 +582,17 @@
       "ERA": "4.04",
       "WHIP": "1.27",
       "K/9": "8.63",
-      "QS": "86"
+      "QS": "86",
+      "wins": "108",
+      "losses": "152",
+      "ties": "34",
+      "win_pct": "0.367",
+      "playoff_seed": "11",
+      "final_rank": "9"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.10",
       "team_name": "Winter is coming….",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -462,10 +610,17 @@
       "ERA": "3.91",
       "WHIP": "1.28",
       "K/9": "8.84",
-      "QS": "105"
+      "QS": "105",
+      "wins": "116",
+      "losses": "142",
+      "ties": "36",
+      "win_pct": "0.395",
+      "playoff_seed": "10",
+      "final_rank": "11"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.11",
       "team_name": "dungeon crawler carl",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -483,10 +638,17 @@
       "ERA": "4.03",
       "WHIP": "1.21",
       "K/9": "8.60",
-      "QS": "141"
+      "QS": "141",
+      "wins": "123",
+      "losses": "140",
+      "ties": "31",
+      "win_pct": "0.418",
+      "playoff_seed": "8",
+      "final_rank": "7"
     },
     {
       "season": "2025",
+      "team_key": "458.l.66409.t.12",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -504,12 +666,19 @@
       "ERA": "4.01",
       "WHIP": "1.23",
       "K/9": "8.65",
-      "QS": "85"
+      "QS": "85",
+      "wins": "121",
+      "losses": "138",
+      "ties": "35",
+      "win_pct": "0.412",
+      "playoff_seed": "9",
+      "final_rank": "10"
     }
   ],
   "2024": [
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.1",
       "team_name": "I’m A Driver I’m A Winner",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -527,10 +696,17 @@
       "ERA": "3.62",
       "WHIP": "1.19",
       "K/9": "9.32",
-      "QS": "100"
+      "QS": "100",
+      "wins": "136",
+      "losses": "126",
+      "ties": "32",
+      "win_pct": "0.463",
+      "playoff_seed": "4",
+      "final_rank": "1"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.2",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -548,10 +724,17 @@
       "ERA": "3.47",
       "WHIP": "1.17",
       "K/9": "9.07",
-      "QS": "128"
+      "QS": "128",
+      "wins": "149",
+      "losses": "110",
+      "ties": "35",
+      "win_pct": "0.507",
+      "playoff_seed": "2",
+      "final_rank": "3"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.3",
       "team_name": "Worst. Season. Ever.",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -569,10 +752,17 @@
       "ERA": "3.41",
       "WHIP": "1.13",
       "K/9": "9.44",
-      "QS": "109"
+      "QS": "109",
+      "wins": "119",
+      "losses": "138",
+      "ties": "37",
+      "win_pct": "0.405",
+      "playoff_seed": "10",
+      "final_rank": "7"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.4",
       "team_name": "Mystik Dan",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -590,10 +780,17 @@
       "ERA": "3.73",
       "WHIP": "1.24",
       "K/9": "8.59",
-      "QS": "91"
+      "QS": "91",
+      "wins": "104",
+      "losses": "151",
+      "ties": "39",
+      "win_pct": "0.354",
+      "playoff_seed": "12",
+      "final_rank": "10"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.5",
       "team_name": "Too High",
       "manager_nickname": "Theodore",
       "manager_email": "Private",
@@ -611,10 +808,17 @@
       "ERA": "3.81",
       "WHIP": "1.16",
       "K/9": "9.32",
-      "QS": "107"
+      "QS": "107",
+      "wins": "153",
+      "losses": "108",
+      "ties": "33",
+      "win_pct": "0.520",
+      "playoff_seed": "1",
+      "final_rank": "4"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.6",
       "team_name": "Just A Bit Outside",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -632,10 +836,17 @@
       "ERA": "4.10",
       "WHIP": "1.29",
       "K/9": "9.42",
-      "QS": "61"
+      "QS": "61",
+      "wins": "125",
+      "losses": "130",
+      "ties": "39",
+      "win_pct": "0.425",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.7",
       "team_name": "Cool kids play D&D",
       "manager_nickname": "Douglas",
       "manager_email": "Private",
@@ -653,10 +864,17 @@
       "ERA": "3.65",
       "WHIP": "1.19",
       "K/9": "8.63",
-      "QS": "152"
+      "QS": "152",
+      "wins": "148",
+      "losses": "117",
+      "ties": "29",
+      "win_pct": "0.503",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.8",
       "team_name": "Sexual Chocolate",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -674,10 +892,17 @@
       "ERA": "4.07",
       "WHIP": "1.25",
       "K/9": "8.84",
-      "QS": "114"
+      "QS": "114",
+      "wins": "125",
+      "losses": "134",
+      "ties": "35",
+      "win_pct": "0.425",
+      "playoff_seed": "8",
+      "final_rank": "8"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.9",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -695,10 +920,17 @@
       "ERA": "4.14",
       "WHIP": "1.22",
       "K/9": "9.00",
-      "QS": "83"
+      "QS": "83",
+      "wins": "103",
+      "losses": "149",
+      "ties": "42",
+      "win_pct": "0.350",
+      "playoff_seed": "11",
+      "final_rank": "12"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.10",
       "team_name": "Sidd Finch",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -716,10 +948,17 @@
       "ERA": "4.08",
       "WHIP": "1.27",
       "K/9": "8.66",
-      "QS": "96"
+      "QS": "96",
+      "wins": "123",
+      "losses": "137",
+      "ties": "34",
+      "win_pct": "0.418",
+      "playoff_seed": "9",
+      "final_rank": "11"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.11",
       "team_name": "Stranger Things",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -737,10 +976,17 @@
       "ERA": "4.05",
       "WHIP": "1.17",
       "K/9": "8.52",
-      "QS": "109"
+      "QS": "109",
+      "wins": "133",
+      "losses": "124",
+      "ties": "37",
+      "win_pct": "0.452",
+      "playoff_seed": "5",
+      "final_rank": "6"
     },
     {
       "season": "2024",
+      "team_key": "431.l.47097.t.12",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -758,12 +1004,19 @@
       "ERA": "4.21",
       "WHIP": "1.31",
       "K/9": "8.97",
-      "QS": "132"
+      "QS": "132",
+      "wins": "133",
+      "losses": "127",
+      "ties": "34",
+      "win_pct": "0.452",
+      "playoff_seed": "6",
+      "final_rank": "2"
     }
   ],
   "2023": [
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.1",
       "team_name": "No Joy In Mudville",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -781,10 +1034,17 @@
       "ERA": "4.01",
       "WHIP": "1.26",
       "K/9": "8.69",
-      "QS": "167"
+      "QS": "167",
+      "wins": "148",
+      "losses": "118",
+      "ties": "42",
+      "win_pct": "0.481",
+      "playoff_seed": "4",
+      "final_rank": "3"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.2",
       "team_name": "Jobu needs a refill",
       "manager_nickname": "Theodore",
       "manager_email": "Private",
@@ -802,10 +1062,17 @@
       "ERA": "4.50",
       "WHIP": "1.29",
       "K/9": "9.15",
-      "QS": "85"
+      "QS": "85",
+      "wins": "89",
+      "losses": "176",
+      "ties": "43",
+      "win_pct": "0.289",
+      "playoff_seed": "12",
+      "final_rank": "12"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.3",
       "team_name": "Insult me w/trade offers",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -823,10 +1090,17 @@
       "ERA": "4.56",
       "WHIP": "1.33",
       "K/9": "8.58",
-      "QS": "81"
+      "QS": "81",
+      "wins": "107",
+      "losses": "166",
+      "ties": "35",
+      "win_pct": "0.347",
+      "playoff_seed": "11",
+      "final_rank": "9"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.4",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -844,10 +1118,17 @@
       "ERA": "3.77",
       "WHIP": "1.17",
       "K/9": "9.44",
-      "QS": "136"
+      "QS": "136",
+      "wins": "176",
+      "losses": "94",
+      "ties": "38",
+      "win_pct": "0.571",
+      "playoff_seed": "1",
+      "final_rank": "1"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.5",
       "team_name": "I Like Turtles",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -865,10 +1146,17 @@
       "ERA": "3.90",
       "WHIP": "1.24",
       "K/9": "9.24",
-      "QS": "79"
+      "QS": "79",
+      "wins": "145",
+      "losses": "130",
+      "ties": "33",
+      "win_pct": "0.471",
+      "playoff_seed": "5",
+      "final_rank": "6"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.6",
       "team_name": "Just A Bit Outside",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -886,10 +1174,17 @@
       "ERA": "3.96",
       "WHIP": "1.19",
       "K/9": "9.77",
-      "QS": "77"
+      "QS": "77",
+      "wins": "144",
+      "losses": "132",
+      "ties": "32",
+      "win_pct": "0.468",
+      "playoff_seed": "6",
+      "final_rank": "4"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.7",
       "team_name": "This is good it’s all good",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -907,10 +1202,17 @@
       "ERA": "4.14",
       "WHIP": "1.32",
       "K/9": "9.28",
-      "QS": "93"
+      "QS": "93",
+      "wins": "109",
+      "losses": "164",
+      "ties": "35",
+      "win_pct": "0.354",
+      "playoff_seed": "10",
+      "final_rank": "11"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.8",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -928,10 +1230,17 @@
       "ERA": "4.01",
       "WHIP": "1.26",
       "K/9": "8.66",
-      "QS": "131"
+      "QS": "131",
+      "wins": "122",
+      "losses": "147",
+      "ties": "39",
+      "win_pct": "0.396",
+      "playoff_seed": "9",
+      "final_rank": "10"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.9",
       "team_name": "Mercy for Knate",
       "manager_nickname": "Douglas",
       "manager_email": "Private",
@@ -949,10 +1258,17 @@
       "ERA": "3.86",
       "WHIP": "1.24",
       "K/9": "9.71",
-      "QS": "114"
+      "QS": "114",
+      "wins": "160",
+      "losses": "114",
+      "ties": "34",
+      "win_pct": "0.519",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.10",
       "team_name": "Sexual Chocolate",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -970,10 +1286,17 @@
       "ERA": "3.87",
       "WHIP": "1.23",
       "K/9": "8.70",
-      "QS": "166"
+      "QS": "166",
+      "wins": "167",
+      "losses": "105",
+      "ties": "36",
+      "win_pct": "0.542",
+      "playoff_seed": "2",
+      "final_rank": "2"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.11",
       "team_name": "The Rejuvenation of Sidd",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -991,10 +1314,17 @@
       "ERA": "4.13",
       "WHIP": "1.30",
       "K/9": "9.05",
-      "QS": "109"
+      "QS": "109",
+      "wins": "126",
+      "losses": "141",
+      "ties": "41",
+      "win_pct": "0.409",
+      "playoff_seed": "8",
+      "final_rank": "8"
     },
     {
       "season": "2023",
+      "team_key": "422.l.55401.t.12",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -1012,12 +1342,19 @@
       "ERA": "4.11",
       "WHIP": "1.24",
       "K/9": "9.11",
-      "QS": "69"
+      "QS": "69",
+      "wins": "133",
+      "losses": "139",
+      "ties": "36",
+      "win_pct": "0.432",
+      "playoff_seed": "7",
+      "final_rank": "7"
     }
   ],
   "2022": [
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.1",
       "team_name": "No Mud Belong To Villejoy",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -1035,10 +1372,17 @@
       "ERA": "3.68",
       "WHIP": "1.21",
       "K/9": "8.77",
-      "QS": "132"
+      "QS": "132",
+      "wins": "137",
+      "losses": "126",
+      "ties": "31",
+      "win_pct": "0.466",
+      "playoff_seed": "5",
+      "final_rank": "3"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.2",
       "team_name": "Here we go…. 🙄🙄",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -1056,10 +1400,17 @@
       "ERA": "3.63",
       "WHIP": "1.16",
       "K/9": "8.55",
-      "QS": "133"
+      "QS": "133",
+      "wins": "119",
+      "losses": "142",
+      "ties": "33",
+      "win_pct": "0.405",
+      "playoff_seed": "9",
+      "final_rank": "12"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.3",
       "team_name": "I Liked Turtles",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -1077,10 +1428,17 @@
       "ERA": "3.50",
       "WHIP": "1.17",
       "K/9": "8.68",
-      "QS": "129"
+      "QS": "129",
+      "wins": "140",
+      "losses": "110",
+      "ties": "44",
+      "win_pct": "0.476",
+      "playoff_seed": "2",
+      "final_rank": "4"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.4",
       "team_name": "I can’t draft heart",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -1098,10 +1456,17 @@
       "ERA": "3.59",
       "WHIP": "1.17",
       "K/9": "9.18",
-      "QS": "117"
+      "QS": "117",
+      "wins": "144",
+      "losses": "114",
+      "ties": "36",
+      "win_pct": "0.490",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.5",
       "team_name": "Lovable losers",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -1119,10 +1484,17 @@
       "ERA": "3.48",
       "WHIP": "1.16",
       "K/9": "9.14",
-      "QS": "84"
+      "QS": "84",
+      "wins": "118",
+      "losses": "143",
+      "ties": "33",
+      "win_pct": "0.401",
+      "playoff_seed": "10",
+      "final_rank": "8"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.6",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -1140,10 +1512,17 @@
       "ERA": "3.16",
       "WHIP": "1.10",
       "K/9": "9.71",
-      "QS": "85"
+      "QS": "85",
+      "wins": "128",
+      "losses": "126",
+      "ties": "40",
+      "win_pct": "0.435",
+      "playoff_seed": "6",
+      "final_rank": "1"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.7",
       "team_name": "The Desolation of Sidd",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -1161,10 +1540,17 @@
       "ERA": "4.37",
       "WHIP": "1.24",
       "K/9": "8.08",
-      "QS": "106"
+      "QS": "106",
+      "wins": "122",
+      "losses": "137",
+      "ties": "35",
+      "win_pct": "0.415",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.8",
       "team_name": "Sexual Chocolate",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -1182,10 +1568,17 @@
       "ERA": "3.44",
       "WHIP": "1.18",
       "K/9": "9.17",
-      "QS": "135"
+      "QS": "135",
+      "wins": "160",
+      "losses": "104",
+      "ties": "30",
+      "win_pct": "0.544",
+      "playoff_seed": "1",
+      "final_rank": "2"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.9",
       "team_name": "No Way Jose's",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -1203,10 +1596,17 @@
       "ERA": "3.65",
       "WHIP": "1.18",
       "K/9": "8.39",
-      "QS": "153"
+      "QS": "153",
+      "wins": "138",
+      "losses": "120",
+      "ties": "36",
+      "win_pct": "0.469",
+      "playoff_seed": "4",
+      "final_rank": "6"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.10",
       "team_name": "Dumpster Devers",
       "manager_nickname": "Theodore",
       "manager_email": "Private",
@@ -1224,10 +1624,17 @@
       "ERA": "3.88",
       "WHIP": "1.23",
       "K/9": "9.44",
-      "QS": "89"
+      "QS": "89",
+      "wins": "122",
+      "losses": "137",
+      "ties": "35",
+      "win_pct": "0.415",
+      "playoff_seed": "8",
+      "final_rank": "7"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.11",
       "team_name": "I Want Jazz Back",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -1245,10 +1652,17 @@
       "ERA": "3.64",
       "WHIP": "1.21",
       "K/9": "9.53",
-      "QS": "90"
+      "QS": "90",
+      "wins": "110",
+      "losses": "152",
+      "ties": "32",
+      "win_pct": "0.374",
+      "playoff_seed": "12",
+      "final_rank": "10"
     },
     {
       "season": "2022",
+      "team_key": "412.l.72928.t.12",
       "team_name": "Pujols for president",
       "manager_nickname": "Douglas",
       "manager_email": "Private",
@@ -1266,12 +1680,19 @@
       "ERA": "3.82",
       "WHIP": "1.22",
       "K/9": "8.89",
-      "QS": "90"
+      "QS": "90",
+      "wins": "113",
+      "losses": "140",
+      "ties": "41",
+      "win_pct": "0.384",
+      "playoff_seed": "11",
+      "final_rank": "11"
     }
   ],
   "2021": [
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.1",
       "team_name": "THE GOAT",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -1289,10 +1710,17 @@
       "ERA": "4.15",
       "WHIP": "1.24",
       "K/9": "9.67",
-      "QS": "119"
+      "QS": "119",
+      "wins": "131",
+      "losses": "139",
+      "ties": "38",
+      "win_pct": "0.425",
+      "playoff_seed": "6",
+      "final_rank": "1"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.2",
       "team_name": "Dan's Tan Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -1310,10 +1738,17 @@
       "ERA": "3.31",
       "WHIP": "1.10",
       "K/9": "9.92",
-      "QS": "57"
+      "QS": "57",
+      "wins": "121",
+      "losses": "154",
+      "ties": "33",
+      "win_pct": "0.393",
+      "playoff_seed": "9",
+      "final_rank": "10"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.3",
       "team_name": "Concussion Protocol",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -1331,10 +1766,17 @@
       "ERA": "3.00",
       "WHIP": "1.06",
       "K/9": "10.60",
-      "QS": "141"
+      "QS": "141",
+      "wins": "177",
+      "losses": "107",
+      "ties": "24",
+      "win_pct": "0.575",
+      "playoff_seed": "1",
+      "final_rank": "2"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.4",
       "team_name": "Gooserules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -1352,10 +1794,17 @@
       "ERA": "3.86",
       "WHIP": "1.21",
       "K/9": "9.21",
-      "QS": "133"
+      "QS": "133",
+      "wins": "144",
+      "losses": "127",
+      "ties": "37",
+      "win_pct": "0.468",
+      "playoff_seed": "3",
+      "final_rank": "6"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.5",
       "team_name": "Lovable losers",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -1373,10 +1822,17 @@
       "ERA": "4.15",
       "WHIP": "1.27",
       "K/9": "8.35",
-      "QS": "119"
+      "QS": "119",
+      "wins": "122",
+      "losses": "149",
+      "ties": "37",
+      "win_pct": "0.396",
+      "playoff_seed": "8",
+      "final_rank": "8"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.6",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -1394,10 +1850,17 @@
       "ERA": "3.99",
       "WHIP": "1.23",
       "K/9": "9.07",
-      "QS": "43"
+      "QS": "43",
+      "wins": "139",
+      "losses": "139",
+      "ties": "30",
+      "win_pct": "0.451",
+      "playoff_seed": "5",
+      "final_rank": "5"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.7",
       "team_name": "The Rebuild of Sidd",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -1415,10 +1878,17 @@
       "ERA": "3.86",
       "WHIP": "1.21",
       "K/9": "8.70",
-      "QS": "144"
+      "QS": "144",
+      "wins": "130",
+      "losses": "151",
+      "ties": "27",
+      "win_pct": "0.422",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.8",
       "team_name": "Let Pitchers Cheat Again",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -1436,10 +1906,17 @@
       "ERA": "3.68",
       "WHIP": "1.19",
       "K/9": "9.44",
-      "QS": "148"
+      "QS": "148",
+      "wins": "161",
+      "losses": "112",
+      "ties": "35",
+      "win_pct": "0.523",
+      "playoff_seed": "2",
+      "final_rank": "4"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.9",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -1457,10 +1934,17 @@
       "ERA": "4.26",
       "WHIP": "1.26",
       "K/9": "9.67",
-      "QS": "128"
+      "QS": "128",
+      "wins": "104",
+      "losses": "168",
+      "ties": "36",
+      "win_pct": "0.338",
+      "playoff_seed": "10",
+      "final_rank": "7"
     },
     {
       "season": "2021",
+      "team_key": "404.l.120405.t.10",
       "team_name": "Dumpster Devers",
       "manager_nickname": "Theodore",
       "manager_email": "Private",
@@ -1478,12 +1962,19 @@
       "ERA": "3.51",
       "WHIP": "1.14",
       "K/9": "10.05",
-      "QS": "92"
+      "QS": "92",
+      "wins": "145",
+      "losses": "128",
+      "ties": "35",
+      "win_pct": "0.471",
+      "playoff_seed": "4",
+      "final_rank": "3"
     }
   ],
   "2019": [
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -1501,10 +1992,17 @@
       "ERA": "3.66",
       "WHIP": "1.14",
       "K/9": "10.13",
-      "QS": "161"
+      "QS": "161",
+      "wins": "172",
+      "losses": "106",
+      "ties": "30",
+      "win_pct": "0.558",
+      "playoff_seed": "1",
+      "final_rank": "2"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.2",
       "team_name": "Didnt Even Use My AJ",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -1522,10 +2020,17 @@
       "ERA": "4.16",
       "WHIP": "1.27",
       "K/9": "10.72",
-      "QS": "99"
+      "QS": "99",
+      "wins": "124",
+      "losses": "154",
+      "ties": "30",
+      "win_pct": "0.403",
+      "playoff_seed": "8",
+      "final_rank": "7"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.3",
       "team_name": "Dan's Tan Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -1543,10 +2048,17 @@
       "ERA": "4.11",
       "WHIP": "1.28",
       "K/9": "8.92",
-      "QS": "110"
+      "QS": "110",
+      "wins": "141",
+      "losses": "132",
+      "ties": "35",
+      "win_pct": "0.458",
+      "playoff_seed": "4",
+      "final_rank": "4"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.4",
       "team_name": "Too Many Kids",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -1564,10 +2076,17 @@
       "ERA": "4.00",
       "WHIP": "1.17",
       "K/9": "10.68",
-      "QS": "135"
+      "QS": "135",
+      "wins": "168",
+      "losses": "110",
+      "ties": "30",
+      "win_pct": "0.545",
+      "playoff_seed": "2",
+      "final_rank": "3"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.5",
       "team_name": "micah schnabel",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -1585,10 +2104,17 @@
       "ERA": "4.08",
       "WHIP": "1.28",
       "K/9": "9.05",
-      "QS": "126"
+      "QS": "126",
+      "wins": "141",
+      "losses": "133",
+      "ties": "34",
+      "win_pct": "0.458",
+      "playoff_seed": "5",
+      "final_rank": "5"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.6",
       "team_name": "Solerpowered",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -1606,10 +2132,17 @@
       "ERA": "4.30",
       "WHIP": "1.25",
       "K/9": "8.82",
-      "QS": "147"
+      "QS": "147",
+      "wins": "155",
+      "losses": "116",
+      "ties": "37",
+      "win_pct": "0.503",
+      "playoff_seed": "3",
+      "final_rank": "1"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.7",
       "team_name": "Pew Pew Pew",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -1627,10 +2160,17 @@
       "ERA": "4.47",
       "WHIP": "1.27",
       "K/9": "8.46",
-      "QS": "159"
+      "QS": "159",
+      "wins": "111",
+      "losses": "161",
+      "ties": "36",
+      "win_pct": "0.360",
+      "playoff_seed": "9",
+      "final_rank": "10"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.8",
       "team_name": "The Rebuild of Sidd",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -1648,10 +2188,17 @@
       "ERA": "4.54",
       "WHIP": "1.31",
       "K/9": "9.24",
-      "QS": "98"
+      "QS": "98",
+      "wins": "104",
+      "losses": "173",
+      "ties": "31",
+      "win_pct": "0.338",
+      "playoff_seed": "10",
+      "final_rank": "8"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.9",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -1669,10 +2216,17 @@
       "ERA": "4.01",
       "WHIP": "1.27",
       "K/9": "9.09",
-      "QS": "92"
+      "QS": "92",
+      "wins": "121",
+      "losses": "147",
+      "ties": "40",
+      "win_pct": "0.393",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2019",
+      "team_key": "388.l.22108.t.10",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -1690,12 +2244,19 @@
       "ERA": "3.90",
       "WHIP": "1.26",
       "K/9": "8.51",
-      "QS": "162"
+      "QS": "162",
+      "wins": "135",
+      "losses": "140",
+      "ties": "33",
+      "win_pct": "0.438",
+      "playoff_seed": "6",
+      "final_rank": "6"
     }
   ],
   "2018": [
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -1713,10 +2274,17 @@
       "ERA": "3.79",
       "WHIP": "1.21",
       "K/9": "9.13",
-      "QS": "150"
+      "QS": "150",
+      "wins": "161",
+      "losses": "116",
+      "ties": "31",
+      "win_pct": "0.523",
+      "playoff_seed": "1",
+      "final_rank": "3"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.2",
       "team_name": "Dan's Ron Santo Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -1734,10 +2302,17 @@
       "ERA": "3.86",
       "WHIP": "1.25",
       "K/9": "8.87",
-      "QS": "130"
+      "QS": "130",
+      "wins": "138",
+      "losses": "143",
+      "ties": "27",
+      "win_pct": "0.448",
+      "playoff_seed": "6",
+      "final_rank": "4"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.3",
       "team_name": "#SUX2BU",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -1755,10 +2330,17 @@
       "ERA": "3.94",
       "WHIP": "1.27",
       "K/9": "9.38",
-      "QS": "106"
+      "QS": "106",
+      "wins": "152",
+      "losses": "125",
+      "ties": "31",
+      "win_pct": "0.494",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.4",
       "team_name": "No Joy In Mudville",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -1776,10 +2358,17 @@
       "ERA": "4.08",
       "WHIP": "1.25",
       "K/9": "9.16",
-      "QS": "129"
+      "QS": "129",
+      "wins": "121",
+      "losses": "154",
+      "ties": "33",
+      "win_pct": "0.393",
+      "playoff_seed": "9",
+      "final_rank": "10"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.5",
       "team_name": "Pew Pew Pew",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -1797,10 +2386,17 @@
       "ERA": "3.52",
       "WHIP": "1.18",
       "K/9": "8.49",
-      "QS": "182"
+      "QS": "182",
+      "wins": "148",
+      "losses": "127",
+      "ties": "33",
+      "win_pct": "0.481",
+      "playoff_seed": "4",
+      "final_rank": "2"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.6",
       "team_name": "Resurrection of Sidd",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -1818,10 +2414,17 @@
       "ERA": "3.90",
       "WHIP": "1.25",
       "K/9": "8.80",
-      "QS": "133"
+      "QS": "133",
+      "wins": "112",
+      "losses": "173",
+      "ties": "23",
+      "win_pct": "0.364",
+      "playoff_seed": "10",
+      "final_rank": "9"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.7",
       "team_name": "micah schnabel",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -1839,10 +2442,17 @@
       "ERA": "3.46",
       "WHIP": "1.20",
       "K/9": "9.86",
-      "QS": "139"
+      "QS": "139",
+      "wins": "158",
+      "losses": "113",
+      "ties": "37",
+      "win_pct": "0.513",
+      "playoff_seed": "2",
+      "final_rank": "1"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.8",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -1860,10 +2470,17 @@
       "ERA": "3.62",
       "WHIP": "1.18",
       "K/9": "9.71",
-      "QS": "68"
+      "QS": "68",
+      "wins": "132",
+      "losses": "145",
+      "ties": "31",
+      "win_pct": "0.429",
+      "playoff_seed": "7",
+      "final_rank": "7"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.9",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -1881,10 +2498,17 @@
       "ERA": "4.19",
       "WHIP": "1.27",
       "K/9": "8.71",
-      "QS": "159"
+      "QS": "159",
+      "wins": "138",
+      "losses": "135",
+      "ties": "35",
+      "win_pct": "0.448",
+      "playoff_seed": "5",
+      "final_rank": "6"
     },
     {
       "season": "2018",
+      "team_key": "378.l.31584.t.10",
       "team_name": "Joshua's Team",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -1902,12 +2526,19 @@
       "ERA": "3.83",
       "WHIP": "1.22",
       "K/9": "8.95",
-      "QS": "145"
+      "QS": "145",
+      "wins": "121",
+      "losses": "150",
+      "ties": "37",
+      "win_pct": "0.393",
+      "playoff_seed": "8",
+      "final_rank": "8"
     }
   ],
   "2017": [
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -1925,10 +2556,17 @@
       "ERA": "4.01",
       "WHIP": "1.28",
       "K/9": "8.69",
-      "QS": "154"
+      "QS": "154",
+      "wins": "172",
+      "losses": "108",
+      "ties": "28",
+      "win_pct": "0.558",
+      "playoff_seed": "1",
+      "final_rank": "4"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.2",
       "team_name": "Grady Sighs More",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -1946,10 +2584,17 @@
       "ERA": "4.11",
       "WHIP": "1.28",
       "K/9": "8.86",
-      "QS": "133"
+      "QS": "133",
+      "wins": "134",
+      "losses": "148",
+      "ties": "26",
+      "win_pct": "0.435",
+      "playoff_seed": "7",
+      "final_rank": "7"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.3",
       "team_name": "Dan's Thrusting Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -1967,10 +2612,17 @@
       "ERA": "4.01",
       "WHIP": "1.26",
       "K/9": "8.88",
-      "QS": "69"
+      "QS": "69",
+      "wins": "128",
+      "losses": "154",
+      "ties": "26",
+      "win_pct": "0.416",
+      "playoff_seed": "8",
+      "final_rank": "10"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.4",
       "team_name": "John Ewoldt 2.0",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -1988,10 +2640,17 @@
       "ERA": "3.74",
       "WHIP": "1.27",
       "K/9": "8.56",
-      "QS": "169"
+      "QS": "169",
+      "wins": "137",
+      "losses": "133",
+      "ties": "38",
+      "win_pct": "0.445",
+      "playoff_seed": "5",
+      "final_rank": "1"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.5",
       "team_name": "Better Than Paul",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -2009,10 +2668,17 @@
       "ERA": "4.00",
       "WHIP": "1.31",
       "K/9": "9.11",
-      "QS": "70"
+      "QS": "70",
+      "wins": "120",
+      "losses": "164",
+      "ties": "24",
+      "win_pct": "0.390",
+      "playoff_seed": "9",
+      "final_rank": "8"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.6",
       "team_name": "Team Seager",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -2030,10 +2696,17 @@
       "ERA": "4.06",
       "WHIP": "1.27",
       "K/9": "9.08",
-      "QS": "129"
+      "QS": "129",
+      "wins": "136",
+      "losses": "137",
+      "ties": "35",
+      "win_pct": "0.442",
+      "playoff_seed": "6",
+      "final_rank": "2"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.7",
       "team_name": "Poker Mike",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -2051,10 +2724,17 @@
       "ERA": "4.55",
       "WHIP": "1.36",
       "K/9": "8.27",
-      "QS": "148"
+      "QS": "148",
+      "wins": "98",
+      "losses": "179",
+      "ties": "31",
+      "win_pct": "0.318",
+      "playoff_seed": "10",
+      "final_rank": "9"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.8",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -2072,10 +2752,17 @@
       "ERA": "3.32",
       "WHIP": "1.18",
       "K/9": "10.14",
-      "QS": "64"
+      "QS": "64",
+      "wins": "155",
+      "losses": "118",
+      "ties": "35",
+      "win_pct": "0.503",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.9",
       "team_name": "Pew Pew Pew",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -2093,10 +2780,17 @@
       "ERA": "3.89",
       "WHIP": "1.22",
       "K/9": "8.98",
-      "QS": "145"
+      "QS": "145",
+      "wins": "149",
+      "losses": "128",
+      "ties": "31",
+      "win_pct": "0.484",
+      "playoff_seed": "4",
+      "final_rank": "6"
     },
     {
       "season": "2017",
+      "team_key": "370.l.35688.t.10",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -2114,12 +2808,19 @@
       "ERA": "4.11",
       "WHIP": "1.26",
       "K/9": "9.26",
-      "QS": "148"
+      "QS": "148",
+      "wins": "158",
+      "losses": "118",
+      "ties": "32",
+      "win_pct": "0.513",
+      "playoff_seed": "2",
+      "final_rank": "3"
     }
   ],
   "2016": [
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.1",
       "team_name": "2016 Cubs",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -2137,10 +2838,17 @@
       "ERA": "3.93",
       "WHIP": "1.24",
       "K/9": "8.72",
-      "QS": "195"
+      "QS": "195",
+      "wins": "146",
+      "losses": "132",
+      "ties": "30",
+      "win_pct": "0.474",
+      "playoff_seed": "4",
+      "final_rank": "3"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.2",
       "team_name": "Dan's Promising Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -2158,10 +2866,17 @@
       "ERA": "3.94",
       "WHIP": "1.29",
       "K/9": "8.52",
-      "QS": "155"
+      "QS": "155",
+      "wins": "118",
+      "losses": "157",
+      "ties": "33",
+      "win_pct": "0.383",
+      "playoff_seed": "9",
+      "final_rank": "10"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.3",
       "team_name": "Weazzills Wack Socks",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -2179,10 +2894,17 @@
       "ERA": "3.68",
       "WHIP": "1.22",
       "K/9": "8.04",
-      "QS": "179"
+      "QS": "179",
+      "wins": "116",
+      "losses": "161",
+      "ties": "31",
+      "win_pct": "0.377",
+      "playoff_seed": "10",
+      "final_rank": "7"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.4",
       "team_name": "Medulla Oblongata",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -2200,10 +2922,17 @@
       "ERA": "3.99",
       "WHIP": "1.28",
       "K/9": "8.72",
-      "QS": "125"
+      "QS": "125",
+      "wins": "120",
+      "losses": "152",
+      "ties": "36",
+      "win_pct": "0.390",
+      "playoff_seed": "8",
+      "final_rank": "8"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.5",
       "team_name": "Sidd Finch Eleven",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -2221,10 +2950,17 @@
       "ERA": "4.14",
       "WHIP": "1.30",
       "K/9": "8.70",
-      "QS": "176"
+      "QS": "176",
+      "wins": "144",
+      "losses": "135",
+      "ties": "29",
+      "win_pct": "0.468",
+      "playoff_seed": "5",
+      "final_rank": "6"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.6",
       "team_name": "Cinderella Story",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -2242,10 +2978,17 @@
       "ERA": "3.90",
       "WHIP": "1.24",
       "K/9": "8.72",
-      "QS": "150"
+      "QS": "150",
+      "wins": "150",
+      "losses": "124",
+      "ties": "34",
+      "win_pct": "0.487",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.7",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -2263,10 +3006,17 @@
       "ERA": "4.36",
       "WHIP": "1.34",
       "K/9": "8.02",
-      "QS": "160"
+      "QS": "160",
+      "wins": "125",
+      "losses": "149",
+      "ties": "34",
+      "win_pct": "0.406",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.9",
       "team_name": "Drunker than",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -2284,10 +3034,17 @@
       "ERA": "3.74",
       "WHIP": "1.25",
       "K/9": "8.13",
-      "QS": "213"
+      "QS": "213",
+      "wins": "170",
+      "losses": "117",
+      "ties": "21",
+      "win_pct": "0.552",
+      "playoff_seed": "1",
+      "final_rank": "2"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.10",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -2305,10 +3062,17 @@
       "ERA": "3.70",
       "WHIP": "1.25",
       "K/9": "9.17",
-      "QS": "26"
+      "QS": "26",
+      "wins": "131",
+      "losses": "146",
+      "ties": "31",
+      "win_pct": "0.425",
+      "playoff_seed": "6",
+      "final_rank": "1"
     },
     {
       "season": "2016",
+      "team_key": "357.l.3402.t.11",
       "team_name": "I Pitch You Catch",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -2326,12 +3090,19 @@
       "ERA": "3.44",
       "WHIP": "1.17",
       "K/9": "8.77",
-      "QS": "125"
+      "QS": "125",
+      "wins": "163",
+      "losses": "110",
+      "ties": "35",
+      "win_pct": "0.529",
+      "playoff_seed": "2",
+      "final_rank": "4"
     }
   ],
   "2015": [
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -2349,10 +3120,17 @@
       "ERA": "3.85",
       "WHIP": "1.21",
       "K/9": "8.37",
-      "QS": "165"
+      "QS": "165",
+      "wins": "160",
+      "losses": "120",
+      "ties": "28",
+      "win_pct": "0.519",
+      "playoff_seed": "2",
+      "final_rank": "3"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.2",
       "team_name": "Sidd Finch X",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -2370,10 +3148,17 @@
       "ERA": "3.82",
       "WHIP": "1.25",
       "K/9": "7.45",
-      "QS": "188"
+      "QS": "188",
+      "wins": "138",
+      "losses": "138",
+      "ties": "32",
+      "win_pct": "0.448",
+      "playoff_seed": "6",
+      "final_rank": "2"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.3",
       "team_name": "Weazzills Wack Socks",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -2391,10 +3176,17 @@
       "ERA": "4.05",
       "WHIP": "1.29",
       "K/9": "7.46",
-      "QS": "175"
+      "QS": "175",
+      "wins": "125",
+      "losses": "152",
+      "ties": "31",
+      "win_pct": "0.406",
+      "playoff_seed": "10",
+      "final_rank": "12"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.4",
       "team_name": "AllUrBaseRBelong2Us",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -2412,10 +3204,17 @@
       "ERA": "3.46",
       "WHIP": "1.24",
       "K/9": "8.11",
-      "QS": "168"
+      "QS": "168",
+      "wins": "177",
+      "losses": "102",
+      "ties": "29",
+      "win_pct": "0.575",
+      "playoff_seed": "1",
+      "final_rank": "4"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.5",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -2433,10 +3232,17 @@
       "ERA": "3.66",
       "WHIP": "1.22",
       "K/9": "7.60",
-      "QS": "97"
+      "QS": "97",
+      "wins": "133",
+      "losses": "143",
+      "ties": "32",
+      "win_pct": "0.432",
+      "playoff_seed": "8",
+      "final_rank": "7"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.6",
       "team_name": "Cyberneck",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -2454,10 +3260,17 @@
       "ERA": "3.81",
       "WHIP": "1.23",
       "K/9": "8.08",
-      "QS": "122"
+      "QS": "122",
+      "wins": "128",
+      "losses": "143",
+      "ties": "37",
+      "win_pct": "0.416",
+      "playoff_seed": "9",
+      "final_rank": "9"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.7",
       "team_name": "Medulla Oblongata",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -2475,10 +3288,17 @@
       "ERA": "3.73",
       "WHIP": "1.25",
       "K/9": "7.60",
-      "QS": "83"
+      "QS": "83",
+      "wins": "106",
+      "losses": "170",
+      "ties": "32",
+      "win_pct": "0.344",
+      "playoff_seed": "12",
+      "final_rank": "11"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.8",
       "team_name": "Troutstanding #1",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -2496,10 +3316,17 @@
       "ERA": "3.77",
       "WHIP": "1.28",
       "K/9": "8.45",
-      "QS": "162"
+      "QS": "162",
+      "wins": "146",
+      "losses": "130",
+      "ties": "32",
+      "win_pct": "0.474",
+      "playoff_seed": "4",
+      "final_rank": "1"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.9",
       "team_name": "Lt Dans Better Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -2517,10 +3344,17 @@
       "ERA": "4.20",
       "WHIP": "1.26",
       "K/9": "7.84",
-      "QS": "114"
+      "QS": "114",
+      "wins": "121",
+      "losses": "163",
+      "ties": "24",
+      "win_pct": "0.393",
+      "playoff_seed": "11",
+      "final_rank": "8"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.10",
       "team_name": "I Pitch You Catch",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -2538,10 +3372,17 @@
       "ERA": "2.92",
       "WHIP": "1.14",
       "K/9": "8.66",
-      "QS": "84"
+      "QS": "84",
+      "wins": "141",
+      "losses": "137",
+      "ties": "30",
+      "win_pct": "0.458",
+      "playoff_seed": "5",
+      "final_rank": "5"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.11",
       "team_name": "Jeff's Okay Team",
       "manager_nickname": "Jeff",
       "manager_email": "Private",
@@ -2559,10 +3400,17 @@
       "ERA": "3.58",
       "WHIP": "1.23",
       "K/9": "8.61",
-      "QS": "113"
+      "QS": "113",
+      "wins": "131",
+      "losses": "135",
+      "ties": "42",
+      "win_pct": "0.425",
+      "playoff_seed": "7",
+      "final_rank": "10"
     },
     {
       "season": "2015",
+      "team_key": "346.l.18224.t.12",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -2580,12 +3428,19 @@
       "ERA": "3.74",
       "WHIP": "1.17",
       "K/9": "8.88",
-      "QS": "70"
+      "QS": "70",
+      "wins": "153",
+      "losses": "126",
+      "ties": "29",
+      "win_pct": "0.497",
+      "playoff_seed": "3",
+      "final_rank": "6"
     }
   ],
   "2014": [
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -2601,10 +3456,17 @@
       "CG": "9",
       "SV": "136",
       "ERA": "3.55",
-      "WHIP": "1.19"
+      "WHIP": "1.19",
+      "wins": "165",
+      "losses": "110",
+      "ties": "33",
+      "win_pct": "0.536",
+      "playoff_seed": "2",
+      "final_rank": "3"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.2",
       "team_name": "Queen Bee",
       "manager_nickname": "MELISSA",
       "manager_email": "Private",
@@ -2620,10 +3482,17 @@
       "CG": "2",
       "SV": "66",
       "ERA": "3.64",
-      "WHIP": "1.22"
+      "WHIP": "1.22",
+      "wins": "116",
+      "losses": "155",
+      "ties": "37",
+      "win_pct": "0.377",
+      "playoff_seed": "10",
+      "final_rank": "11"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.3",
       "team_name": "Troutstanding",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -2639,10 +3508,17 @@
       "CG": "7",
       "SV": "123",
       "ERA": "3.50",
-      "WHIP": "1.20"
+      "WHIP": "1.20",
+      "wins": "163",
+      "losses": "112",
+      "ties": "33",
+      "win_pct": "0.529",
+      "playoff_seed": "3",
+      "final_rank": "2"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.4",
       "team_name": "FUCK BASEBALL",
       "manager_nickname": "Joshua",
       "manager_email": "Private",
@@ -2658,10 +3534,17 @@
       "CG": "15",
       "SV": "21",
       "ERA": "3.43",
-      "WHIP": "1.19"
+      "WHIP": "1.19",
+      "wins": "130",
+      "losses": "150",
+      "ties": "28",
+      "win_pct": "0.422",
+      "playoff_seed": "8",
+      "final_rank": "10"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.5",
       "team_name": "Jeff's Okay Team",
       "manager_nickname": "Jeff",
       "manager_email": "Private",
@@ -2677,10 +3560,17 @@
       "CG": "10",
       "SV": "117",
       "ERA": "3.30",
-      "WHIP": "1.12"
+      "WHIP": "1.12",
+      "wins": "157",
+      "losses": "119",
+      "ties": "32",
+      "win_pct": "0.510",
+      "playoff_seed": "4",
+      "final_rank": "5"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.6",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -2696,10 +3586,17 @@
       "CG": "2",
       "SV": "116",
       "ERA": "3.66",
-      "WHIP": "1.28"
+      "WHIP": "1.28",
+      "wins": "118",
+      "losses": "145",
+      "ties": "45",
+      "win_pct": "0.383",
+      "playoff_seed": "9",
+      "final_rank": "7"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.7",
       "team_name": "Sidd Finch X",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -2715,10 +3612,17 @@
       "CG": "8",
       "SV": "2",
       "ERA": "3.59",
-      "WHIP": "1.24"
+      "WHIP": "1.24",
+      "wins": "113",
+      "losses": "158",
+      "ties": "37",
+      "win_pct": "0.367",
+      "playoff_seed": "11",
+      "final_rank": "9"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.8",
       "team_name": "AllUrBaseRBelongToUs",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -2734,10 +3638,17 @@
       "CG": "10",
       "SV": "165",
       "ERA": "3.33",
-      "WHIP": "1.21"
+      "WHIP": "1.21",
+      "wins": "164",
+      "losses": "109",
+      "ties": "35",
+      "win_pct": "0.532",
+      "playoff_seed": "1",
+      "final_rank": "1"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.9",
       "team_name": "Lt Dans Better Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -2753,10 +3664,17 @@
       "CG": "5",
       "SV": "50",
       "ERA": "3.91",
-      "WHIP": "1.28"
+      "WHIP": "1.28",
+      "wins": "145",
+      "losses": "130",
+      "ties": "33",
+      "win_pct": "0.471",
+      "playoff_seed": "5",
+      "final_rank": "4"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.10",
       "team_name": "Weazzills Wack Socks",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -2772,10 +3690,17 @@
       "CG": "6",
       "SV": "45",
       "ERA": "3.40",
-      "WHIP": "1.21"
+      "WHIP": "1.21",
+      "wins": "143",
+      "losses": "142",
+      "ties": "23",
+      "win_pct": "0.464",
+      "playoff_seed": "6",
+      "final_rank": "6"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.11",
       "team_name": "Medulla Oblongata",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -2791,10 +3716,17 @@
       "CG": "4",
       "SV": "91",
       "ERA": "3.18",
-      "WHIP": "1.20"
+      "WHIP": "1.20",
+      "wins": "127",
+      "losses": "146",
+      "ties": "35",
+      "win_pct": "0.412",
+      "playoff_seed": "7",
+      "final_rank": "8"
     },
     {
       "season": "2014",
+      "team_key": "328.l.34893.t.12",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -2810,12 +3742,19 @@
       "CG": "8",
       "SV": "116",
       "ERA": "3.12",
-      "WHIP": "1.17"
+      "WHIP": "1.17",
+      "wins": "104",
+      "losses": "169",
+      "ties": "35",
+      "win_pct": "0.338",
+      "playoff_seed": "12",
+      "final_rank": "12"
     }
   ],
   "2013": [
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -2830,10 +3769,17 @@
       "CG": "15",
       "SV": "156",
       "ERA": "3.29",
-      "WHIP": "1.19"
+      "WHIP": "1.19",
+      "wins": "142",
+      "losses": "101",
+      "ties": "21",
+      "win_pct": "0.538",
+      "playoff_seed": "3",
+      "final_rank": "5"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.2",
       "team_name": "Slick McWilly",
       "manager_nickname": "Craig",
       "manager_email": "Private",
@@ -2848,10 +3794,17 @@
       "CG": "8",
       "SV": "75",
       "ERA": "3.62",
-      "WHIP": "1.21"
+      "WHIP": "1.21",
+      "wins": "128",
+      "losses": "105",
+      "ties": "31",
+      "win_pct": "0.485",
+      "playoff_seed": "4",
+      "final_rank": "3"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.3",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -2866,10 +3819,17 @@
       "CG": "4",
       "SV": "137",
       "ERA": "3.50",
-      "WHIP": "1.21"
+      "WHIP": "1.21",
+      "wins": "118",
+      "losses": "110",
+      "ties": "36",
+      "win_pct": "0.447",
+      "playoff_seed": "5",
+      "final_rank": "6"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.4",
       "team_name": "I Pitch You Catch!",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -2884,10 +3844,17 @@
       "CG": "3",
       "SV": "34",
       "ERA": "4.27",
-      "WHIP": "1.36"
+      "WHIP": "1.36",
+      "wins": "85",
+      "losses": "155",
+      "ties": "24",
+      "win_pct": "0.322",
+      "playoff_seed": "10",
+      "final_rank": "9"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.5",
       "team_name": "AllUrBaseRBelongToUs",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -2902,10 +3869,17 @@
       "CG": "7",
       "SV": "200",
       "ERA": "3.54",
-      "WHIP": "1.23"
+      "WHIP": "1.23",
+      "wins": "146",
+      "losses": "87",
+      "ties": "31",
+      "win_pct": "0.553",
+      "playoff_seed": "1",
+      "final_rank": "1"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.6",
       "team_name": "Sidd Finch IX",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -2920,10 +3894,17 @@
       "CG": "11",
       "SV": "0",
       "ERA": "3.64",
-      "WHIP": "1.25"
+      "WHIP": "1.25",
+      "wins": "121",
+      "losses": "113",
+      "ties": "30",
+      "win_pct": "0.458",
+      "playoff_seed": "6",
+      "final_rank": "4"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.7",
       "team_name": "Lt Dans Better Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -2938,10 +3919,17 @@
       "CG": "10",
       "SV": "71",
       "ERA": "3.51",
-      "WHIP": "1.14"
+      "WHIP": "1.14",
+      "wins": "107",
+      "losses": "124",
+      "ties": "33",
+      "win_pct": "0.405",
+      "playoff_seed": "7",
+      "final_rank": "8"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.8",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -2956,10 +3944,17 @@
       "CG": "7",
       "SV": "148",
       "ERA": "3.52",
-      "WHIP": "1.22"
+      "WHIP": "1.22",
+      "wins": "93",
+      "losses": "138",
+      "ties": "33",
+      "win_pct": "0.352",
+      "playoff_seed": "8",
+      "final_rank": "7"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.9",
       "team_name": "Troutstanding",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -2974,10 +3969,17 @@
       "CG": "6",
       "SV": "125",
       "ERA": "3.63",
-      "WHIP": "1.24"
+      "WHIP": "1.24",
+      "wins": "139",
+      "losses": "94",
+      "ties": "31",
+      "win_pct": "0.527",
+      "playoff_seed": "2",
+      "final_rank": "2"
     },
     {
       "season": "2013",
+      "team_key": "308.l.8419.t.10",
       "team_name": "Queen Bee",
       "manager_nickname": "MELISSA",
       "manager_email": "Private",
@@ -2992,12 +3994,19 @@
       "CG": "3",
       "SV": "113",
       "ERA": "3.29",
-      "WHIP": "1.24"
+      "WHIP": "1.24",
+      "wins": "93",
+      "losses": "145",
+      "ties": "26",
+      "win_pct": "0.352",
+      "playoff_seed": "9",
+      "final_rank": "10"
     }
   ],
   "2012": [
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -3012,10 +4021,17 @@
       "CG": "9",
       "SV": "63",
       "ERA": "3.76",
-      "WHIP": "1.23"
+      "WHIP": "1.23",
+      "wins": "138",
+      "losses": "97",
+      "ties": "29",
+      "win_pct": "0.523",
+      "playoff_seed": "2",
+      "final_rank": "3"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.2",
       "team_name": "I Pitch You Catch!",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -3030,10 +4046,17 @@
       "CG": "4",
       "SV": "94",
       "ERA": "3.43",
-      "WHIP": "1.23"
+      "WHIP": "1.23",
+      "wins": "106",
+      "losses": "126",
+      "ties": "32",
+      "win_pct": "0.402",
+      "playoff_seed": "10",
+      "final_rank": "7"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.3",
       "team_name": "AllUrBaseRBelongToUs",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -3048,10 +4071,17 @@
       "CG": "9",
       "SV": "113",
       "ERA": "3.39",
-      "WHIP": "1.16"
+      "WHIP": "1.16",
+      "wins": "139",
+      "losses": "98",
+      "ties": "27",
+      "win_pct": "0.527",
+      "playoff_seed": "1",
+      "final_rank": "1"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.4",
       "team_name": "Lt Dans New Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -3066,10 +4096,17 @@
       "CG": "7",
       "SV": "47",
       "ERA": "3.78",
-      "WHIP": "1.27"
+      "WHIP": "1.27",
+      "wins": "123",
+      "losses": "113",
+      "ties": "28",
+      "win_pct": "0.466",
+      "playoff_seed": "5",
+      "final_rank": "4"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.5",
       "team_name": "The Borkers",
       "manager_nickname": "--hidden--",
       "manager_email": "Private",
@@ -3084,10 +4121,17 @@
       "CG": "6",
       "SV": "104",
       "ERA": "3.54",
-      "WHIP": "1.20"
+      "WHIP": "1.20",
+      "wins": "126",
+      "losses": "113",
+      "ties": "25",
+      "win_pct": "0.477",
+      "playoff_seed": "4",
+      "final_rank": "5"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.6",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -3102,10 +4146,17 @@
       "CG": "6",
       "SV": "88",
       "ERA": "3.87",
-      "WHIP": "1.28"
+      "WHIP": "1.28",
+      "wins": "105",
+      "losses": "125",
+      "ties": "34",
+      "win_pct": "0.398",
+      "playoff_seed": "11",
+      "final_rank": "11"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.7",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -3120,10 +4171,17 @@
       "CG": "3",
       "SV": "87",
       "ERA": "3.68",
-      "WHIP": "1.22"
+      "WHIP": "1.22",
+      "wins": "112",
+      "losses": "121",
+      "ties": "31",
+      "win_pct": "0.424",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.8",
       "team_name": "quisenberry crunch",
       "manager_nickname": "NOBS",
       "manager_email": "Private",
@@ -3138,10 +4196,17 @@
       "CG": "7",
       "SV": "109",
       "ERA": "4.14",
-      "WHIP": "1.30"
+      "WHIP": "1.30",
+      "wins": "122",
+      "losses": "117",
+      "ties": "25",
+      "win_pct": "0.462",
+      "playoff_seed": "6",
+      "final_rank": "6"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.9",
       "team_name": "Queen Bee",
       "manager_nickname": "MELISSA",
       "manager_email": "Private",
@@ -3156,10 +4221,17 @@
       "CG": "12",
       "SV": "77",
       "ERA": "3.38",
-      "WHIP": "1.14"
+      "WHIP": "1.14",
+      "wins": "133",
+      "losses": "104",
+      "ties": "27",
+      "win_pct": "0.504",
+      "playoff_seed": "3",
+      "final_rank": "2"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.10",
       "team_name": "medulla oblongata",
       "manager_nickname": "Brett",
       "manager_email": "Private",
@@ -3174,10 +4246,17 @@
       "CG": "4",
       "SV": "81",
       "ERA": "3.96",
-      "WHIP": "1.27"
+      "WHIP": "1.27",
+      "wins": "109",
+      "losses": "123",
+      "ties": "32",
+      "win_pct": "0.413",
+      "playoff_seed": "8",
+      "final_rank": "8"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.11",
       "team_name": "White Clay Winos",
       "manager_nickname": "--hidden--",
       "manager_email": "Private",
@@ -3192,10 +4271,17 @@
       "CG": "7",
       "SV": "6",
       "ERA": "4.27",
-      "WHIP": "1.33"
+      "WHIP": "1.33",
+      "wins": "85",
+      "losses": "142",
+      "ties": "37",
+      "win_pct": "0.322",
+      "playoff_seed": "12",
+      "final_rank": "10"
     },
     {
       "season": "2012",
+      "team_key": "268.l.27921.t.12",
       "team_name": "Sidd Finch 8.0",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -3210,12 +4296,19 @@
       "CG": "4",
       "SV": "52",
       "ERA": "3.75",
-      "WHIP": "1.24"
+      "WHIP": "1.24",
+      "wins": "109",
+      "losses": "128",
+      "ties": "27",
+      "win_pct": "0.413",
+      "playoff_seed": "9",
+      "final_rank": "12"
     }
   ],
   "2011": [
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.1",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -3230,10 +4323,17 @@
       "W": "76",
       "SV": "128",
       "ERA": "3.63",
-      "WHIP": "1.23"
+      "WHIP": "1.23",
+      "wins": "187",
+      "losses": "103",
+      "ties": "18",
+      "win_pct": "0.607",
+      "playoff_seed": "1",
+      "final_rank": "1"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.2",
       "team_name": "Sidd Finch 9.0",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -3248,10 +4348,17 @@
       "W": "51",
       "SV": "106",
       "ERA": "3.17",
-      "WHIP": "1.14"
+      "WHIP": "1.14",
+      "wins": "143",
+      "losses": "144",
+      "ties": "21",
+      "win_pct": "0.464",
+      "playoff_seed": "4",
+      "final_rank": "6"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.3",
       "team_name": "Lt Dans New Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -3266,10 +4373,17 @@
       "W": "60",
       "SV": "80",
       "ERA": "4.01",
-      "WHIP": "1.25"
+      "WHIP": "1.25",
+      "wins": "117",
+      "losses": "169",
+      "ties": "22",
+      "win_pct": "0.380",
+      "playoff_seed": "10",
+      "final_rank": "8"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.4",
       "team_name": "The DIRTY JUICE",
       "manager_nickname": "Fat Jesus",
       "manager_email": "Private",
@@ -3284,10 +4398,17 @@
       "W": "65",
       "SV": "65",
       "ERA": "3.78",
-      "WHIP": "1.28"
+      "WHIP": "1.28",
+      "wins": "122",
+      "losses": "161",
+      "ties": "25",
+      "win_pct": "0.396",
+      "playoff_seed": "9",
+      "final_rank": "9"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.5",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -3302,10 +4423,17 @@
       "W": "65",
       "SV": "83",
       "ERA": "3.40",
-      "WHIP": "1.16"
+      "WHIP": "1.16",
+      "wins": "133",
+      "losses": "147",
+      "ties": "28",
+      "win_pct": "0.432",
+      "playoff_seed": "6",
+      "final_rank": "5"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.6",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -3320,10 +4448,17 @@
       "W": "60",
       "SV": "163",
       "ERA": "3.99",
-      "WHIP": "1.31"
+      "WHIP": "1.31",
+      "wins": "133",
+      "losses": "144",
+      "ties": "31",
+      "win_pct": "0.432",
+      "playoff_seed": "5",
+      "final_rank": "3"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.7",
       "team_name": "AllUrBaseRBelongToUs",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -3338,10 +4473,17 @@
       "W": "104",
       "SV": "106",
       "ERA": "3.21",
-      "WHIP": "1.19"
+      "WHIP": "1.19",
+      "wins": "171",
+      "losses": "121",
+      "ties": "16",
+      "win_pct": "0.555",
+      "playoff_seed": "2",
+      "final_rank": "2"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.8",
       "team_name": "I Pitch You Catch!",
       "manager_nickname": "DiZzY",
       "manager_email": "Private",
@@ -3356,10 +4498,17 @@
       "W": "75",
       "SV": "67",
       "ERA": "3.49",
-      "WHIP": "1.27"
+      "WHIP": "1.27",
+      "wins": "123",
+      "losses": "159",
+      "ties": "26",
+      "win_pct": "0.399",
+      "playoff_seed": "8",
+      "final_rank": "7"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.9",
       "team_name": "Queen Bee",
       "manager_nickname": "MELISSA",
       "manager_email": "Private",
@@ -3374,10 +4523,17 @@
       "W": "87",
       "SV": "88",
       "ERA": "2.96",
-      "WHIP": "1.10"
+      "WHIP": "1.10",
+      "wins": "164",
+      "losses": "124",
+      "ties": "20",
+      "win_pct": "0.532",
+      "playoff_seed": "3",
+      "final_rank": "4"
     },
     {
       "season": "2011",
+      "team_key": "253.l.71205.t.10",
       "team_name": "Asian League",
       "manager_nickname": "Jeff",
       "manager_email": "Private",
@@ -3392,12 +4548,19 @@
       "W": "66",
       "SV": "116",
       "ERA": "3.49",
-      "WHIP": "1.24"
+      "WHIP": "1.24",
+      "wins": "131",
+      "losses": "152",
+      "ties": "25",
+      "win_pct": "0.425",
+      "playoff_seed": "7",
+      "final_rank": "10"
     }
   ],
   "2010": [
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.1",
       "team_name": "The DIRTY JUICE",
       "manager_nickname": "Fat Jesus",
       "manager_email": "Private",
@@ -3411,10 +4574,17 @@
       "W": "26",
       "SV": "26",
       "ERA": "3.58",
-      "WHIP": "1.27"
+      "WHIP": "1.27",
+      "wins": "148",
+      "losses": "151",
+      "ties": "9",
+      "win_pct": "0.481",
+      "playoff_seed": "6",
+      "final_rank": "5"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.2",
       "team_name": "assbags",
       "manager_nickname": "Baby..I&#39;m gonna butter your bread",
       "manager_email": "Private",
@@ -3428,10 +4598,17 @@
       "W": "18",
       "SV": "4",
       "ERA": "2.81",
-      "WHIP": "1.21"
+      "WHIP": "1.21",
+      "wins": "117",
+      "losses": "163",
+      "ties": "28",
+      "win_pct": "0.380",
+      "playoff_seed": "12",
+      "final_rank": "7"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.3",
       "team_name": "GooseRules",
       "manager_nickname": "The Wizard",
       "manager_email": "Private",
@@ -3445,10 +4622,17 @@
       "W": "22",
       "SV": "46",
       "ERA": "2.92",
-      "WHIP": "1.17"
+      "WHIP": "1.17",
+      "wins": "171",
+      "losses": "110",
+      "ties": "27",
+      "win_pct": "0.555",
+      "playoff_seed": "1",
+      "final_rank": "4"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.4",
       "team_name": "Yank These",
       "manager_nickname": "--hidden--",
       "manager_email": "Private",
@@ -3462,10 +4646,17 @@
       "W": "17",
       "SV": "37",
       "ERA": "3.12",
-      "WHIP": "1.12"
+      "WHIP": "1.12",
+      "wins": "117",
+      "losses": "160",
+      "ties": "31",
+      "win_pct": "0.380",
+      "playoff_seed": "11",
+      "final_rank": "11"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.5",
       "team_name": "Lt Dans New Legs",
       "manager_nickname": "Dan",
       "manager_email": "Private",
@@ -3479,10 +4670,17 @@
       "W": "16",
       "SV": "18",
       "ERA": "4.14",
-      "WHIP": "1.34"
+      "WHIP": "1.34",
+      "wins": "131",
+      "losses": "152",
+      "ties": "25",
+      "win_pct": "0.425",
+      "playoff_seed": "9",
+      "final_rank": "12"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.6",
       "team_name": "Zegster",
       "manager_nickname": "M Z",
       "manager_email": "Private",
@@ -3496,10 +4694,17 @@
       "W": "20",
       "SV": "10",
       "ERA": "3.32",
-      "WHIP": "1.17"
+      "WHIP": "1.17",
+      "wins": "142",
+      "losses": "147",
+      "ties": "19",
+      "win_pct": "0.461",
+      "playoff_seed": "7",
+      "final_rank": "9"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.7",
       "team_name": "AllUrBaseRBelongToUs",
       "manager_nickname": "Nikolai Khabibulin",
       "manager_email": "Private",
@@ -3513,10 +4718,17 @@
       "W": "37",
       "SV": "49",
       "ERA": "3.38",
-      "WHIP": "1.19"
+      "WHIP": "1.19",
+      "wins": "153",
+      "losses": "137",
+      "ties": "18",
+      "win_pct": "0.497",
+      "playoff_seed": "4",
+      "final_rank": "2"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.8",
       "team_name": "Sidd part VI",
       "manager_nickname": "Paulie",
       "manager_email": "Private",
@@ -3530,10 +4742,17 @@
       "W": "16",
       "SV": "1",
       "ERA": "3.96",
-      "WHIP": "1.28"
+      "WHIP": "1.28",
+      "wins": "125",
+      "losses": "158",
+      "ties": "25",
+      "win_pct": "0.406",
+      "playoff_seed": "10",
+      "final_rank": "8"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.9",
       "team_name": "Asian League",
       "manager_nickname": "Jeff",
       "manager_email": "Private",
@@ -3547,10 +4766,17 @@
       "W": "21",
       "SV": "31",
       "ERA": "2.82",
-      "WHIP": "1.25"
+      "WHIP": "1.25",
+      "wins": "154",
+      "losses": "129",
+      "ties": "25",
+      "win_pct": "0.500",
+      "playoff_seed": "3",
+      "final_rank": "3"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.10",
       "team_name": "The Evil Empire",
       "manager_nickname": "Kevo",
       "manager_email": "Private",
@@ -3564,10 +4790,17 @@
       "W": "20",
       "SV": "33",
       "ERA": "3.91",
-      "WHIP": "1.33"
+      "WHIP": "1.33",
+      "wins": "168",
+      "losses": "127",
+      "ties": "13",
+      "win_pct": "0.545",
+      "playoff_seed": "2",
+      "final_rank": "1"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.11",
       "team_name": "Weazzills Wack Socks",
       "manager_nickname": "Weazy",
       "manager_email": "Private",
@@ -3581,10 +4814,17 @@
       "W": "28",
       "SV": "1",
       "ERA": "3.70",
-      "WHIP": "1.29"
+      "WHIP": "1.29",
+      "wins": "141",
+      "losses": "149",
+      "ties": "18",
+      "win_pct": "0.458",
+      "playoff_seed": "8",
+      "final_rank": "10"
     },
     {
       "season": "2010",
+      "team_key": "238.l.196954.t.12",
       "team_name": "QUEEN BEE",
       "manager_nickname": "MELISSA",
       "manager_email": "Private",
@@ -3598,7 +4838,13 @@
       "W": "17",
       "SV": "18",
       "ERA": "3.91",
-      "WHIP": "1.19"
+      "WHIP": "1.19",
+      "wins": "152",
+      "losses": "136",
+      "ties": "20",
+      "win_pct": "0.494",
+      "playoff_seed": "5",
+      "final_rank": "6"
     }
   ]
 }

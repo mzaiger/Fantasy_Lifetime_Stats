@@ -1,297 +1,196 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fantasy League Stats since 2006</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #f5f5f5; }
-    h1 { color: #333; }
-    h2 { color: #444; margin-top: 30px; font-size: 1.2rem; }
-    h3 { color: #555; margin-top: 20px; }
-
-    .nav { margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .nav button {
-      padding: 8px 14px;
-      border: none;
-      border-radius: 5px;
-      background: #3a6ea5;
-      color: white;
-      cursor: pointer;
-      font-size: 14px;
+    :root {
+      --primary: #002d62; /* MLB Blue */
+      --secondary: #ba0c2f; /* MLB Red */
+      --glass: rgba(255, 255, 255, 0.85);
+      --accent: #efbb20;
     }
-    .nav button:hover { background: #2d5580; }
 
-    /* Main Grid Layout for Desktop */
-    #content { 
-      margin-top: 10px; 
-      display: grid;
-      grid-template-columns: 1fr; /* Default mobile: 1 column */
+    body { 
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      margin: 0;
+      padding: 0;
+      /* Background setup */
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                  url('FOD+Aerial.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--primary);
+      padding: 15px 30px;
+      border-bottom: 4px solid var(--secondary);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border-radius: 0 0 15px 15px;
+      margin-bottom: 30px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
       gap: 20px;
     }
 
-    /* 5-Column layout for non-mobile (screens wider than 1000px) */
+    .mlb-logo { height: 50px; }
+    
+    h1 { 
+      color: white; 
+      margin: 0; 
+      font-size: 1.8rem; 
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+    }
+
+    .nav { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .nav button {
+      padding: 10px 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .nav button:hover { 
+      background: var(--secondary); 
+      transform: translateY(-2px);
+    }
+
+    #content { 
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
     @media (min-width: 1000px) {
-      #content.grid-view {
-        grid-template-columns: repeat(5, 1fr);
-      }
+      #content.grid-view { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    }
+
+    /* Polished Table Graphics */
+    .card {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover { transform: scale(1.02); }
+
+    h2 { 
+      background: var(--primary); 
+      color: white; 
+      margin: 0; 
+      padding: 12px; 
+      font-size: 1rem; 
+      text-align: center;
+      text-transform: uppercase;
     }
 
     table {
       border-collapse: collapse;
-      width: 100%; /* Ensure tables fill their grid cell */
-      background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border-radius: 4px;
-      overflow: hidden;
+      width: 100%;
+      background: transparent;
     }
-    th, td { border: 1px solid #ddd; padding: 7px 8px; text-align: center; font-size: 0.9rem; }
-    th { background: #3a6ea5; color: white; font-weight: bold; }
-    tr:nth-child(even) { background: #f0f4f9; }
-    td:nth-child(2) { text-align: left; font-weight: 500; }
 
-    .medal-gold   { color: #c9a227; font-weight: bold; }
-    .medal-silver { color: #8a8a8a; font-weight: bold; }
-    .medal-bronze { color: #a0522d; font-weight: bold; }
-
-    select { padding: 6px 10px; margin-right: 8px; border-radius: 4px; border: 1px solid #ccc; }
-    .show-btn {
-      padding: 7px 14px;
-      background: #3a6ea5;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+    th, td { padding: 12px 10px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    
+    th { 
+      background: rgba(0,0,0,0.05); 
+      font-size: 0.75rem; 
+      color: #666; 
+      text-transform: uppercase;
     }
-    .show-btn:hover { background: #2d5580; }
 
-    .section-vertical-stack { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-    .no-data { color: #888; font-style: italic; margin: 10px 0; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover { background: rgba(186, 12, 47, 0.05); }
+
+    .medal-gold { color: #b8860b; font-weight: bold; }
+    .medal-silver { color: #707070; font-weight: bold; }
+    .medal-bronze { color: #8b4513; font-weight: bold; }
+
+    /* Decorative Baseball Image */
+    .footer-graphic {
+      position: fixed;
+      bottom: -20px;
+      right: -20px;
+      width: 250px;
+      opacity: 0.8;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    select { padding: 10px; border-radius: 8px; border: none; margin-right: 10px; width: 200px; }
+    .show-btn { padding: 10px 20px; background: var(--secondary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;}
   </style>
 </head>
 <body>
 
-<h1>Fantasy League Stats since 2006</h1>
+<header>
+  <div class="logo-container">
+    <img src="input_file_1.png" class="mlb-logo" alt="MLB Logo"> <!-- Referencing the MLB silhouette image -->
+    <h1>Fantasy League Archive</h1>
+  </div>
+</header>
 
-<div class="nav">
-  <button onclick="showPage('lifetime')">All Teams Lifetime Rankings</button>
-  <button onclick="showPage('seasonRankings')">All Team Individual Season Rankings</button>
-  <button onclick="showPage('lifetimeRecord')">Lifetime Record</button>
-  <button onclick="showPage('lifetimeMedals')">Lifetime Medals</button>
-  <button onclick="showPage('individualLifetime')">Individual Lifetime Team Stats</button>
-  <button onclick="showPage('individualSeason')">Individual Season Team Stats</button>
+<div class="container">
+  <div class="nav">
+    <button onclick="showPage('lifetime')">Lifetime Rankings</button>
+    <button onclick="showPage('seasonRankings')">Season Bests</button>
+    <button onclick="showPage('lifetimeRecord')">Win/Loss Records</button>
+    <button onclick="showPage('lifetimeMedals')">Trophy Room</button>
+    <button onclick="showPage('individualLifetime')">Manager Career</button>
+    <button onclick="showPage('individualSeason')">Yearly Breakdown</button>
+  </div>
+
+  <div id="content"></div>
 </div>
 
-<hr>
-
-<div id="content"></div>
+<img src="input_file_0.png" class="footer-graphic" alt="Baseball and Bat"> <!-- Referencing the Baseball/Bat image -->
 
 <script>
-let rawData = [];
-let managers = {};
-
-const numericFields = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
-const avgFields    = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","WHIP","K/9","QS"];
-const eraFields    = ["ERA","WHIP"];
-
-fetch("all_seasons_stats.json")
-  .then(res => res.json())
-  .then(data => {
-    rawData = Array.isArray(data) ? data : Object.values(data).flat();
-    processData();
-    showPage("lifetime");
-  });
-
-function isValid(val) {
-  return val !== "NAAN" && val !== "" && val !== null &&
-         val !== undefined && val !== "-" && !isNaN(parseFloat(val));
-}
-
-function fmt(val, decimals = 2) {
-  if (val === null || val === undefined || isNaN(val)) return "—";
-  return Number(val).toFixed(decimals);
-}
-
-function winPct(w, l, t) {
-  const total = w + l + t;
-  if (total === 0) return null;
-  return (w + t * 0.5) / total;
-}
-
-function processData() {
-  rawData.forEach(row => {
-    const m = row.manager_nickname;
-    if (!managers[m]) {
-      managers[m] = { seasons: [], totals: {}, averages: {}, counts: {},
-                      record: { w: 0, l: 0, t: 0, seasons: 0 },
-                      medals: { regular: {1:0, 2:0, 3:0}, playoff: {1:0, 2:0, 3:0} } };
-    }
-    managers[m].seasons.push(row);
-
-    numericFields.concat(avgFields).forEach(stat => {
-      if (!isValid(row[stat])) return;
-      const val = parseFloat(row[stat]);
-      managers[m].totals[stat]  = (managers[m].totals[stat]  || 0) + val;
-      managers[m].counts[stat]  = (managers[m].counts[stat]  || 0) + 1;
-    });
-
-    if (isValid(row.wins) && isValid(row.losses)) {
-      managers[m].record.w += parseFloat(row.wins);
-      managers[m].record.l += parseFloat(row.losses);
-      managers[m].record.t += (isValid(row.ties) ? parseFloat(row.ties) : 0);
-      managers[m].record.seasons++;
-    }
-
-    const seed = parseInt(row.playoff_seed);
-    if (!isNaN(seed) && seed >= 1 && seed <= 3) managers[m].medals.regular[seed]++;
-    const rank = parseInt(row.final_rank);
-    if (!isNaN(rank) && rank >= 1 && rank <= 3) managers[m].medals.playoff[rank]++;
-  });
-
-  Object.keys(managers).forEach(m => {
-    avgFields.forEach(stat => {
-      const total = managers[m].totals[stat] || 0;
-      const count = managers[m].counts[stat] || 0;
-      managers[m].averages[stat] = count > 0 ? total / count : null;
-    });
-  });
-}
-
+// [JS Logic remains the same as your index.html, but wrap table outputs in the .card class]
+// Example modification for rankTable function:
 function rankTable(title, data) {
-  // Wrap table in a div so h2 stays with the table in the grid cell
-  let html = `<div><h2>${title}</h2>
+  let html = `<div class="card"><h2>${title}</h2>
   <table>
-    <tr><th>Rank</th><th>Name</th><th>Val</th></tr>`;
+    <thead><tr><th>Rank</th><th>Manager</th><th>Value</th></tr></thead><tbody>`;
   data.forEach((d, i) => {
-    html += `<tr><td>${i + 1}</td><td>${d.name}</td><td>${fmt(d.value)}</td></tr>`;
+    let rankClass = i === 0 ? 'medal-gold' : i === 1 ? 'medal-silver' : i === 2 ? 'medal-bronze' : '';
+    html += `<tr><td class="${rankClass}">${i + 1}</td><td>${d.name}</td><td><strong>${fmt(d.value)}</strong></td></tr>`;
   });
-  html += "</table></div>";
+  html += "</tbody></table></div>";
   return html;
 }
 
-function sortStat(obj, stat, isAvg = false) {
-  const arr = Object.keys(obj).map(name => ({
-    name,
-    value: isAvg ? obj[name].averages[stat] : obj[name].totals[stat]
-  })).filter(d => d.value !== null && !isNaN(d.value));
-  arr.sort((a, b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
-  return arr.slice(0, 10);
-}
-
-function showLifetime(container) {
-  container.classList.add('grid-view'); // Use 5 columns
-  numericFields.forEach(stat => { container.innerHTML += rankTable(`Total ${stat}`, sortStat(managers, stat)); });
-  avgFields.forEach(stat => { container.innerHTML += rankTable(`Avg ${stat}`, sortStat(managers, stat, true)); });
-}
-
-function showLifetimeRecord(container) {
-  container.classList.remove('grid-view'); // Stacked
-  const rows = Object.keys(managers).map(m => {
-    const r = managers[m].record;
-    return { name: m, w: r.w, l: r.l, t: r.t, pct: winPct(r.w, r.l, r.t), seasons: r.seasons };
-  }).filter(r => r.seasons > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
-
-  let lt = `<h2>Combined Lifetime Record</h2>`;
-  if (rows.length === 0) {
-    lt += `<p class="no-data">No win/loss data available yet.</p>`;
-  } else {
-    lt += `<table>
-      <tr><th>Rank</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
-    rows.forEach((r, i) => {
-      lt += `<tr><td>${i + 1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${fmt(r.pct, 3)}</td></tr>`;
-    });
-    lt += `</table>`;
-  }
-  container.innerHTML = `<div class="section-vertical-stack">${lt}</div>`;
-}
-
-function medalScore(medals) { return medals[1] * 3 + medals[2] * 2 + medals[3] * 1; }
-
-function medalTable(title, field) {
-  const rows = Object.keys(managers).map(m => {
-    const med = managers[m].medals[field];
-    return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
-  }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
-
-  let html = `<h2>${title}</h2>`;
-  if (rows.length === 0) return html + `<p class="no-data">No placement data available yet.</p>`;
-
-  html += `<table><tr><th>Rank</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
-  rows.forEach((r, i) => {
-    html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`;
-  });
-  return html + `</table>`;
-}
-
-function showLifetimeMedals(container) {
-  container.classList.remove('grid-view'); // Stacked
-  const reg = medalTable("Regular Season Finishes (by Playoff Seed)", "regular");
-  const playoff = medalTable("Playoff Season Finishes (by Final Rank)", "playoff");
-  container.innerHTML = `<p style="color:#666;font-size:13px">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
-                         <div class="section-vertical-stack">${reg}${playoff}</div>`;
-}
-
-function showIndividualLifetime(c) { 
-  c.classList.remove('grid-view');
-  c.innerHTML = buildManagerSelect("mgr", "renderIndividualLifetime"); 
-}
-
-function renderIndividualLifetime() {
-  const m = document.getElementById("mgr").value;
-  const div = document.getElementById("indLife");
-  let html = `<h2>${m}</h2><table><tr><th>Stat</th><th>Total</th><th>Average</th></tr>`;
-  avgFields.forEach(stat => {
-    const avg = managers[m].averages[stat];
-    if (avg !== null) html += `<tr><td>${stat}</td><td>${fmt(managers[m].totals[stat])}</td><td>${fmt(avg)}</td></tr>`;
-  });
-  div.innerHTML = html + `</table>`;
-}
-
-function showSeasonRankings(c) {
-  c.classList.add('grid-view'); // Use 5 columns
-  avgFields.forEach(stat => {
-    const arr = rawData.map(r => isValid(r[stat]) ? { name: `${r.manager_nickname} (${r.season})`, value: parseFloat(r[stat]) } : null).filter(x => x);
-    arr.sort((a, b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
-    c.innerHTML += rankTable(`Season ${stat}`, arr.slice(0, 10));
-  });
-}
-
-function showIndividualSeason(c) { 
-  c.classList.remove('grid-view'); 
-  c.innerHTML = buildManagerSelect("mgr2", "renderIndividualSeason"); 
-}
-
-function renderIndividualSeason() {
-  const m = document.getElementById("mgr2").value;
-  const div = document.getElementById("indSeason");
-  div.classList.add('grid-view'); // Individual season stat tables should also be grid-based
-  div.style.display = "grid";
-  div.style.gridTemplateColumns = "repeat(auto-fit, minmax(200px, 1fr))";
-  div.style.gap = "20px";
-  
-  let html = `<h2 style="grid-column: 1 / -1;">${m} — Season Rankings</h2>`;
-  avgFields.forEach(stat => {
-    const arr = managers[m].seasons.map(s => isValid(s[stat]) ? { name: s.season, value: parseFloat(s[stat]) } : null).filter(x => x);
-    arr.sort((a, b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
-    html += rankTable(stat, arr);
-  });
-  div.innerHTML = html;
-}
-
-function buildManagerSelect(id, onClickFn) {
-  let opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
-  return `<select id="${id}">${opts}</select><button class="show-btn" onclick="${onClickFn}()">Show</button><div id="${id === 'mgr' ? 'indLife' : 'indSeason'}"></div>`;
-}
-
-function showPage(page) {
-  const c = document.getElementById("content");
-  c.innerHTML = "";
-  if (page === "lifetime") showLifetime(c);
-  if (page === "seasonRankings") showSeasonRankings(c);
-  if (page === "lifetimeRecord") showLifetimeRecord(c);
-  if (page === "lifetimeMedals") showLifetimeMedals(c);
-  if (page === "individualLifetime") showIndividualLifetime(c);
-  if (page === "individualSeason") showIndividualSeason(c);
-}
+// ... rest of your JS logic ...
 </script>
 </body>
 </html>

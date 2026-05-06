@@ -6,7 +6,7 @@
   <style>
     body { font-family: Arial; padding: 20px; background: #f5f5f5; }
     h1 { color: #333; }
-    h2 { color: #444; margin-top: 30px; }
+    h2 { color: #444; margin-top: 30px; font-size: 1.2rem; }
     h3 { color: #555; margin-top: 20px; }
 
     .nav { margin-bottom: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -21,16 +21,30 @@
     }
     .nav button:hover { background: #2d5580; }
 
+    /* Main Grid Layout for Desktop */
+    #content { 
+      margin-top: 10px; 
+      display: grid;
+      grid-template-columns: 1fr; /* Default mobile: 1 column */
+      gap: 20px;
+    }
+
+    /* 5-Column layout for non-mobile (screens wider than 1000px) */
+    @media (min-width: 1000px) {
+      #content.grid-view {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
     table {
       border-collapse: collapse;
-      margin-bottom: 30px;
+      width: 100%; /* Ensure tables fill their grid cell */
       background: white;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       border-radius: 4px;
       overflow: hidden;
-      min-width: 300px;
     }
-    th, td { border: 1px solid #ddd; padding: 7px 12px; text-align: center; }
+    th, td { border: 1px solid #ddd; padding: 7px 8px; text-align: center; font-size: 0.9rem; }
     th { background: #3a6ea5; color: white; font-weight: bold; }
     tr:nth-child(even) { background: #f0f4f9; }
     td:nth-child(2) { text-align: left; font-weight: 500; }
@@ -50,11 +64,8 @@
     }
     .show-btn:hover { background: #2d5580; }
 
-    /* Changed to flex-direction column to stack headers and tables */
-    .section-vertical-stack { display: flex; flex-direction: column; gap: 10px; }
+    .section-vertical-stack { display: flex; flex-direction: column; gap: 10px; width: 100%; }
     .no-data { color: #888; font-style: italic; margin: 10px 0; }
-
-    #content { margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -146,13 +157,14 @@ function processData() {
 }
 
 function rankTable(title, data) {
-  let html = `<h2>${title}</h2>
+  // Wrap table in a div so h2 stays with the table in the grid cell
+  let html = `<div><h2>${title}</h2>
   <table>
-    <tr><th>Rank</th><th>Name</th><th>Value</th></tr>`;
+    <tr><th>Rank</th><th>Name</th><th>Val</th></tr>`;
   data.forEach((d, i) => {
     html += `<tr><td>${i + 1}</td><td>${d.name}</td><td>${fmt(d.value)}</td></tr>`;
   });
-  html += "</table>";
+  html += "</table></div>";
   return html;
 }
 
@@ -166,11 +178,13 @@ function sortStat(obj, stat, isAvg = false) {
 }
 
 function showLifetime(container) {
+  container.classList.add('grid-view'); // Use 5 columns
   numericFields.forEach(stat => { container.innerHTML += rankTable(`Total ${stat}`, sortStat(managers, stat)); });
-  avgFields.forEach(stat => { container.innerHTML += rankTable(`Average ${stat}`, sortStat(managers, stat, true)); });
+  avgFields.forEach(stat => { container.innerHTML += rankTable(`Avg ${stat}`, sortStat(managers, stat, true)); });
 }
 
 function showLifetimeRecord(container) {
+  container.classList.remove('grid-view'); // Stacked
   const rows = Object.keys(managers).map(m => {
     const r = managers[m].record;
     return { name: m, w: r.w, l: r.l, t: r.t, pct: winPct(r.w, r.l, r.t), seasons: r.seasons };
@@ -209,13 +223,18 @@ function medalTable(title, field) {
 }
 
 function showLifetimeMedals(container) {
+  container.classList.remove('grid-view'); // Stacked
   const reg = medalTable("Regular Season Finishes (by Playoff Seed)", "regular");
   const playoff = medalTable("Playoff Season Finishes (by Final Rank)", "playoff");
   container.innerHTML = `<p style="color:#666;font-size:13px">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
                          <div class="section-vertical-stack">${reg}${playoff}</div>`;
 }
 
-function showIndividualLifetime(c) { c.innerHTML = buildManagerSelect("mgr", "renderIndividualLifetime"); }
+function showIndividualLifetime(c) { 
+  c.classList.remove('grid-view');
+  c.innerHTML = buildManagerSelect("mgr", "renderIndividualLifetime"); 
+}
+
 function renderIndividualLifetime() {
   const m = document.getElementById("mgr").value;
   const div = document.getElementById("indLife");
@@ -228,6 +247,7 @@ function renderIndividualLifetime() {
 }
 
 function showSeasonRankings(c) {
+  c.classList.add('grid-view'); // Use 5 columns
   avgFields.forEach(stat => {
     const arr = rawData.map(r => isValid(r[stat]) ? { name: `${r.manager_nickname} (${r.season})`, value: parseFloat(r[stat]) } : null).filter(x => x);
     arr.sort((a, b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
@@ -235,11 +255,20 @@ function showSeasonRankings(c) {
   });
 }
 
-function showIndividualSeason(c) { c.innerHTML = buildManagerSelect("mgr2", "renderIndividualSeason"); }
+function showIndividualSeason(c) { 
+  c.classList.remove('grid-view'); 
+  c.innerHTML = buildManagerSelect("mgr2", "renderIndividualSeason"); 
+}
+
 function renderIndividualSeason() {
   const m = document.getElementById("mgr2").value;
   const div = document.getElementById("indSeason");
-  let html = `<h2>${m} — Season Rankings</h2>`;
+  div.classList.add('grid-view'); // Individual season stat tables should also be grid-based
+  div.style.display = "grid";
+  div.style.gridTemplateColumns = "repeat(auto-fit, minmax(200px, 1fr))";
+  div.style.gap = "20px";
+  
+  let html = `<h2 style="grid-column: 1 / -1;">${m} — Season Rankings</h2>`;
   avgFields.forEach(stat => {
     const arr = managers[m].seasons.map(s => isValid(s[stat]) ? { name: s.season, value: parseFloat(s[stat]) } : null).filter(x => x);
     arr.sort((a, b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);

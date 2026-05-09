@@ -1,0 +1,40 @@
+name: Daily Update Team Weakly Stats
+
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests requests-oauthlib
+
+      - name: Run Rank Tracker
+        run: python yahoo_fantasy_weekly_stats.py
+        env:
+          YAHOO_TOKEN: ${{ secrets.YAHOO_TOKEN }}
+          YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
+          YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add all_seasons_weeks_stats.json
+          git add all_seasons_weeks_stats.csv
+          git commit -m "Automated Daily Update Team Stats" || exit 0
+          git push

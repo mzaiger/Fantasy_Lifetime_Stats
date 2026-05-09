@@ -1,4 +1,4 @@
-name: Daily Update Team Stats
+name: Daily Update Team Season Stats
 
 on:
   schedule:

@@ -1,10 +1,10 @@
 """
 Fetches per-week stats for ALL seasons across ALL historical MLB fantasy leagues
-tied to the authenticated Yahoo account. Corrected to handle Yahoo's matrix 
+tied to the authenticated Yahoo account. Corrected to handle Yahoo's matrix
 parameter requirements for weekly stat filtering.
 
-Now includes `week_days`: the number of calendar days in each fantasy week,
-since Yahoo allows weeks longer (or shorter) than 7 days.
+Includes `week_days`: the number of calendar days in each fantasy week,
+derived from the scoreboard endpoint's week_start / week_end fields.
 """
 
 import csv
@@ -12,7 +12,7 @@ import json
 import os
 import time
 import webbrowser
-from datetime import datetime, date
+from datetime import datetime
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
 
@@ -175,54 +175,58 @@ def get_league_week_info(session: OAuth2Session, league_key: str) -> dict:
     }
 
 # ---------------------------------------------------------------------------
-# Week date ranges
+# Week day count via scoreboard
 # ---------------------------------------------------------------------------
-# Cache per game_key so we only call the API once per season, even if the
-# same season has multiple leagues.
-_week_dates_cache: dict[str, dict[int, int]] = {}
+# Keyed by (game_key, week) so multiple leagues in the same season reuse
+# the same lookup without an extra API call.
+_week_days_cache: dict[tuple[str, int], int] = {}
 
-def get_game_week_days(session: OAuth2Session, game_key: str) -> dict[int, int]:
+def get_week_days_from_scoreboard(
+    session: OAuth2Session,
+    game_key: str,
+    league_key: str,
+    week: int,
+) -> int:
     """
-    Returns a mapping of {week_number: day_count} for every week in the given
-    Yahoo game (season).  Uses the /game/{game_key}/weeks endpoint, which
-    returns a start_date and end_date for each week.
+    Returns the number of calendar days in `week` by reading week_start /
+    week_end from the first matchup in the scoreboard for that week.
 
-    day_count = (end_date - start_date).days + 1  (both endpoints inclusive).
-    Falls back to 7 if the endpoint is unavailable or dates are malformed.
+    Result is cached by (game_key, week) so the extra API call only happens
+    once per season/week pair, even when multiple leagues share a season.
+
+    Falls back to 7 if the endpoint returns no usable date strings.
     """
-    if game_key in _week_dates_cache:
-        return _week_dates_cache[game_key]
+    cache_key = (game_key, week)
+    if cache_key in _week_days_cache:
+        return _week_days_cache[cache_key]
 
-    url  = f"{BASE_URL}/game/{game_key}/weeks"
+    url  = f"{BASE_URL}/league/{league_key}/scoreboard;week={week}"
     data = api_get(session, url)
     time.sleep(API_DELAY)
 
-    week_days: dict[int, int] = {}
+    day_count = 7  # safe fallback
     try:
-        weeks_block = (
-            data.get("fantasy_content", {})
-                .get("game", [{}])[1]
-                .get("weeks", {})
-        )
-        count = int(weeks_block.get("count", 0))
-        for i in range(count):
-            w = weeks_block.get(str(i), {}).get("week", {})
-            week_num   = int(w.get("week",       i + 1))
-            start_str  = w.get("start",  "")
-            end_str    = w.get("end",    "")
-            if start_str and end_str:
-                fmt = "%Y-%m-%d"
-                start_dt = datetime.strptime(start_str, fmt).date()
-                end_dt   = datetime.strptime(end_str,   fmt).date()
-                day_count = (end_dt - start_dt).days + 1
-            else:
-                day_count = 7  # safe fallback
-            week_days[week_num] = day_count
-    except Exception as exc:
-        print(f"  WARNING: Could not parse week dates for game {game_key}: {exc}")
+        league_content = data.get("fantasy_content", {}).get("league", [])
+        scoreboard     = league_content[1].get("scoreboard", {})
+        matchups       = scoreboard.get("matchups", {})
 
-    _week_dates_cache[game_key] = week_days
-    return week_days
+        # Grab the first matchup — all matchups share the same week window
+        first_matchup = matchups.get("0", {}).get("matchup", {})
+        start_str     = first_matchup.get("week_start", "")
+        end_str       = first_matchup.get("week_end",   "")
+
+        if start_str and end_str:
+            fmt      = "%Y-%m-%d"
+            start_dt = datetime.strptime(start_str, fmt).date()
+            end_dt   = datetime.strptime(end_str,   fmt).date()
+            day_count = (end_dt - start_dt).days + 1
+        else:
+            print(f"  WARNING: week_start/week_end missing for {league_key} week {week}; defaulting to 7")
+    except Exception as exc:
+        print(f"  WARNING: Could not parse scoreboard dates for {league_key} week {week}: {exc}")
+
+    _week_days_cache[cache_key] = day_count
+    return day_count
 
 # ---------------------------------------------------------------------------
 # Parser
@@ -233,9 +237,8 @@ def parse_teams_for_week(
     week: int,
     week_days: int,
 ) -> list[dict]:
-    # The structure changes slightly when targeting /teams/stats
     fantasy_content = data.get("fantasy_content", {})
-    league_content = fantasy_content.get("league", [])
+    league_content  = fantasy_content.get("league", [])
     if len(league_content) < 2:
         return []
 
@@ -251,36 +254,36 @@ def parse_teams_for_week(
         team_info: dict = {
             "season":    season,
             "week":      week,
-            "week_days": week_days,  # <-- number of calendar days in this week
+            "week_days": week_days,
         }
 
         for item in meta_list:
             if not isinstance(item, dict): continue
             if "team_key" in item: team_info["team_key"] = item["team_key"]
-            if "name" in item: team_info["team_name"] = item["name"]
+            if "name"     in item: team_info["team_name"] = item["name"]
             if "managers" in item:
                 for m_wrap in item["managers"]:
                     mgr = m_wrap.get("manager", {})
                     team_info["manager_nickname"] = mgr.get("nickname", "-")
-                    team_info["manager_email"] = mgr.get("email", "Private")
+                    team_info["manager_email"]    = mgr.get("email", "Private")
 
         for block in team_entry[1:]:
             if not isinstance(block, dict): continue
             if "team_stats" in block:
                 for s in block["team_stats"].get("stats", []):
-                    stat = s.get("stat", {})
+                    stat    = s.get("stat", {})
                     stat_id = str(stat.get("stat_id", ""))
                     if stat_id in STAT_MAP:
                         team_info[STAT_MAP[stat_id]] = stat.get("value", "-")
 
             if "team_standings" in block:
-                ts = block["team_standings"]
+                ts      = block["team_standings"]
                 outcome = ts.get("outcome_totals", {})
-                team_info["wins"]   = outcome.get("wins", "-")
-                team_info["losses"] = outcome.get("losses", "-")
-                team_info["ties"]   = outcome.get("ties", "0")
+                team_info["wins"]         = outcome.get("wins",   "-")
+                team_info["losses"]       = outcome.get("losses", "-")
+                team_info["ties"]         = outcome.get("ties",   "0")
                 team_info["playoff_seed"] = str(ts.get("playoff_seed", "-"))
-                team_info["final_rank"]   = str(ts.get("rank", "-"))
+                team_info["final_rank"]   = str(ts.get("rank",         "-"))
 
         results.append(team_info)
     return results
@@ -320,29 +323,35 @@ def fetch_all_weeks() -> None:
     for league in leagues:
         lkey, lname = league["league_key"], league["league_name"]
         game_key    = league["game_key"]
-        info = get_league_week_info(session, lkey)
+        info        = get_league_week_info(session, lkey)
         season, start, last = info["season"], info["start_week"], info["current_week"]
 
         print(f"\n>> Processing {season}: {lname}")
-
-        # Fetch week date ranges once per game (season) – cached after first call
-        week_day_map = get_game_week_days(session, game_key)
-
         all_data.setdefault(season, {})
 
         for week in range(start, last + 1):
-            week_str = str(week)
+            week_str     = str(week)
             is_live_week = (season == current_year and week == last)
 
-            # Re-fetch the live week to keep it updated; skip others if already present
+            # ------------------------------------------------------------------
+            # Already stored weeks: reuse saved week_days, skip API calls
+            # ------------------------------------------------------------------
             if week_str in all_data[season] and not is_live_week:
+                # Back-fill the in-memory cache so later leagues in the same
+                # season don't need a scoreboard call for these weeks either.
+                rows = all_data[season][week_str]
+                if rows:
+                    saved_days = rows[0].get("week_days")
+                    if isinstance(saved_days, int):
+                        _week_days_cache.setdefault((game_key, week), saved_days)
                 continue
 
-            # Number of calendar days in this fantasy week (default 7 if unknown)
-            days_in_week = week_day_map.get(week, 7)
+            # ------------------------------------------------------------------
+            # New / live week: scoreboard → day count, then fetch stats
+            # ------------------------------------------------------------------
+            days_in_week = get_week_days_from_scoreboard(session, game_key, lkey, week)
 
-            # CRITICAL FIX: Direct path to stats with matrix parameters for weekly filtering
-            url = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
+            url  = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
             data = api_get(session, url)
             time.sleep(API_DELAY)
 

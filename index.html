@@ -108,7 +108,7 @@
   @media (max-width: 600px) {
     .header-imgs, .header-imgs-right { display: none; }
   nav button {
-    font-size: 0.65rem !important;
+    font-size: 0.45rem !important;
 }
 
   }
@@ -540,15 +540,18 @@ function showSeasonRankings(c){
   });
 }
 
+// Updates "ALL TEAMS WEEKLY RANKINGS"
 function showWeeklyRankings(c){
-
   c.classList.add("grid-view");
 
   avgFields.forEach(stat => {
-
     const arr = weeklyRawData
+      .filter(r => {
+        // Exclude Season 25 if the year is 2010 or less
+        const isExcluded = (r.season <= 2010 && r.week === 25);
+        return !isExcluded;
+      })
       .map(r => {
-
         if(!isValid(r[stat])) return null;
 
         return {
@@ -557,7 +560,6 @@ function showWeeklyRankings(c){
             ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0
           )
         };
-
       }).filter(Boolean);
 
     arr.sort((a,b)=>
@@ -925,30 +927,27 @@ function showIndividualWeekly(c){
   );
 }
 
+// Updates "INDIVIDUAL WEEKLY RANKINGS"
 function renderIndividualWeekly(){
-
   const m = document.getElementById("mgr3").value;
-
   const div = document.getElementById("indSeason");
 
   div.style.display = "grid";
-  div.style.gridTemplateColumns =
-    "repeat(auto-fit,minmax(250px,1fr))";
-
+  div.style.gridTemplateColumns = "repeat(auto-fit,minmax(250px,1fr))";
   div.style.gap = "20px";
 
-  let html = `
-    <h2 style="grid-column:1/-1">
-      ${m} — Weekly Rankings
-    </h2>
-  `;
+  let html = `<h2 style="grid-column:1/-1">${m} — Weekly Rankings</h2>`;
 
   avgFields.forEach(stat => {
-
     const arr = weeklyRawData
-      .filter(r => r.manager_nickname===m)
+      .filter(r => {
+        // Must match manager name
+        const isMgr = r.manager_nickname === m;
+        // Exclude Season 25 if the year is 2010 or less
+        const isExcluded = (r.season <= 2010 && r.week === 25);
+        return isMgr && !isExcluded;
+      })
       .map(r => {
-
         if(!isValid(r[stat])) return null;
 
         return {
@@ -957,7 +956,6 @@ function renderIndividualWeekly(){
             ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0
           )
         };
-
       }).filter(Boolean);
 
     arr.sort((a,b)=>

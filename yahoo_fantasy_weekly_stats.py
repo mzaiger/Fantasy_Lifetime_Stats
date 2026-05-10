@@ -3,8 +3,8 @@ Fetches per-week stats for ALL seasons across ALL historical MLB fantasy leagues
 tied to the authenticated Yahoo account. Corrected to handle Yahoo's matrix
 parameter requirements for weekly stat filtering.
 
-Includes `week_days`, `week_start`, and `week_end`: derived from the 
-scoreboard endpoint's fields.
+Includes `week_days`: the number of calendar days in each fantasy week,
+derived from the scoreboard endpoint's week_start / week_end fields.
 """
 
 import csv
@@ -12,7 +12,6 @@ import json
 import os
 import time
 import webbrowser
-import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
@@ -112,146 +111,276 @@ def api_get(session: OAuth2Session, url: str) -> dict:
     return resp.json()
 
 # ---------------------------------------------------------------------------
-# Scoreboard & Date Parsing
+# League discovery
 # ---------------------------------------------------------------------------
-def get_week_timing_info(session: OAuth2Session, lkey: str, week: int) -> dict:
-    """
-    Fetches the scoreboard in XML format to extract week_start and week_end.
-    Calculates number of days in that week.
-    """
-    url = f"{BASE_URL}/league/{lkey}/scoreboard;week={week}"
-    # Requesting XML because the user provided an XML structure
-    resp = session.get(url) 
-    
-    default_info = {"days": 7, "start": "", "end": ""}
-    if resp.status_code != 200:
-        return default_info
+def get_all_leagues(session: OAuth2Session) -> list[dict]:
+    print("Discovering all MLB fantasy leagues on this account...")
+    url  = f"{BASE_URL}/users;use_login=1/games;game_codes=mlb/leagues"
+    data = api_get(session, url)
 
     try:
-        root = ET.fromstring(resp.content)
-        ns = {'y': 'http://fantasysports.yahooapis.com/fantasy/v2/base.rng'}
-        
-        matchup = root.find(".//y:matchup", ns)
-        if matchup is not None:
-            start_str = matchup.find("y:week_start", ns).text
-            end_str   = matchup.find("y:week_end", ns).text
-            
-            d1 = datetime.strptime(start_str, "%Y-%m-%d")
-            d2 = datetime.strptime(end_str, "%Y-%m-%d")
-            days = (d2 - d1).days + 1
-            
-            return {"days": days, "start": start_str, "end": end_str}
-    except Exception as e:
-        print(f"    Warning: Could not parse dates for week {week}: {e}")
-        
-    return default_info
+        games = (
+            data.get("fantasy_content", {})
+                .get("users", {})
+                .get("0", {})
+                .get("user", [{}])[1]
+                .get("games", {})
+        )
+    except (IndexError, KeyError, TypeError):
+        raise ValueError("Unexpected API response structure.")
+
+    leagues: list[dict] = []
+    for i in range(int(games.get("count", 0))):
+        game = games.get(str(i), {}).get("game", [])
+        if not game: continue
+
+        game_meta = game[0] if isinstance(game[0], dict) else {}
+        season    = game_meta.get("season", "unknown")
+        game_key  = game_meta.get("game_key", "")
+
+        league_block = game[1].get("leagues", {}) if len(game) > 1 else {}
+        for j in range(int(league_block.get("count", 0))):
+            entry       = league_block.get(str(j), {}).get("league", [{}])
+            meta        = entry[0] if entry else {}
+            league_key  = meta.get("league_key", "")
+            league_name = meta.get("name", "?")
+            if league_key:
+                leagues.append({
+                    "season":      season,
+                    "game_key":    game_key,
+                    "league_key":  league_key,
+                    "league_name": league_name,
+                })
+
+    leagues.sort(key=lambda x: x["season"])
+    return leagues
+
+def get_league_week_info(session: OAuth2Session, league_key: str) -> dict:
+    url  = f"{BASE_URL}/league/{league_key}"
+    data = api_get(session, url)
+    time.sleep(API_DELAY)
+
+    meta = data.get("fantasy_content", {}).get("league", [{}])[0]
+    start_week   = int(meta.get("start_week",   1))
+    end_week     = int(meta.get("end_week",     26))
+    current_week = int(meta.get("current_week", end_week))
+    current_week = min(current_week, end_week)
+
+    return {
+        "season":       meta.get("season",  "unknown"),
+        "league_name":  meta.get("name",    league_key),
+        "start_week":   start_week,
+        "end_week":     end_week,
+        "current_week": current_week,
+    }
 
 # ---------------------------------------------------------------------------
-# Data Processing
+# Week day count via scoreboard
 # ---------------------------------------------------------------------------
-def parse_teams_for_week(data: dict, season: str, week: int, timing: dict) -> list[dict]:
+# Keyed by (game_key, week) so multiple leagues in the same season reuse
+# the same lookup without an extra API call.
+_week_days_cache: dict[tuple[str, int], int] = {}
+
+def get_week_days_from_scoreboard(
+    session: OAuth2Session,
+    game_key: str,
+    league_key: str,
+    week: int,
+) -> int:
+    """
+    Returns the number of calendar days in `week` by reading week_start /
+    week_end from the first matchup in the scoreboard for that week.
+
+    Result is cached by (game_key, week) so the extra API call only happens
+    once per season/week pair, even when multiple leagues share a season.
+
+    Falls back to 7 if the endpoint returns no usable date strings.
+    """
+    cache_key = (game_key, week)
+    if cache_key in _week_days_cache:
+        return _week_days_cache[cache_key]
+
+    url  = f"{BASE_URL}/league/{league_key}/scoreboard;week={week}"
+    data = api_get(session, url)
+    time.sleep(API_DELAY)
+
+    day_count = 7  # safe fallback
     try:
-        league_node = data.get("fantasy_content", {}).get("league", [])
-        if len(league_node) < 2: return []
-        
-        teams_data = league_node[1].get("teams", {})
-        count = int(teams_data.get("count", 0))
-    except (KeyError, IndexError, TypeError, ValueError):
+        league_content = data.get("fantasy_content", {}).get("league", [])
+        scoreboard     = league_content[1].get("scoreboard", {})
+
+        # Yahoo's JSON structure often nests complex siblings under a '0' index
+        matchups = scoreboard.get("0", {}).get("matchups") or scoreboard.get("matchups", {})
+
+        # Grab the first matchup — all matchups share the same week window
+        first_matchup = matchups.get("0", {}).get("matchup", {})
+
+        # CRITICAL FIX: Handle Yahoo's XML-to-JSON mixed node translation
+        # <matchup> contains both scalar text (week_start) and complex children (teams).
+        # This causes Yahoo to parse it as a list where index [0] is the scalar dict.
+        if isinstance(first_matchup, list) and len(first_matchup) > 0:
+            matchup_meta = first_matchup[0]
+        else:
+            matchup_meta = first_matchup
+
+        start_str = matchup_meta.get("week_start", "")
+        end_str   = matchup_meta.get("week_end",   "")
+
+        if start_str and end_str:
+            fmt      = "%Y-%m-%d"
+            start_dt = datetime.strptime(start_str, fmt).date()
+            end_dt   = datetime.strptime(end_str,   fmt).date()
+            day_count = (end_dt - start_dt).days + 1
+        else:
+            print(f"  WARNING: week_start/week_end missing for {league_key} week {week}; defaulting to 7")
+    except Exception as exc:
+        print(f"  WARNING: Could not parse scoreboard dates for {league_key} week {week}: {exc}")
+
+    _week_days_cache[cache_key] = day_count
+    return day_count
+
+# ---------------------------------------------------------------------------
+# Parser
+# ---------------------------------------------------------------------------
+def parse_teams_for_week(
+    data: dict,
+    season: str,
+    week: int,
+    week_days: int,
+) -> list[dict]:
+    fantasy_content = data.get("fantasy_content", {})
+    league_content  = fantasy_content.get("league", [])
+    if len(league_content) < 2:
         return []
 
-    parsed = []
+    teams_data = league_content[1].get("teams", {})
+    count      = int(teams_data.get("count", 0))
+    results    = []
+
     for i in range(count):
-        t_list = teams_data.get(str(i), {}).get("team", [])
-        if not t_list: continue
+        team_entry = teams_data.get(str(i), {}).get("team", [])
+        if not team_entry: continue
 
-        meta = t_list[0]
-        stats_node = t_list[1].get("team_stats", {}).get("stats", [])
-
-        team_dict = {
-            "season": season,
-            "week": week,
-            "week_days": timing["days"],
-            "week_start": timing["start"],
-            "week_end": timing["end"],
-            "team_key": meta.get("team_key"),
-            "team_name": meta.get("name"),
+        meta_list = team_entry[0]
+        team_info: dict = {
+            "season":    season,
+            "week":      week,
+            "week_days": week_days,
         }
 
-        # Initialize stats to 0 or empty
-        for col in STAT_COLS:
-            team_dict[col] = 0
+        for item in meta_list:
+            if not isinstance(item, dict): continue
+            if "team_key" in item: team_info["team_key"] = item["team_key"]
+            if "name"     in item: team_info["team_name"] = item["name"]
+            if "managers" in item:
+                for m_wrap in item["managers"]:
+                    mgr = m_wrap.get("manager", {})
+                    team_info["manager_nickname"] = mgr.get("nickname", "-")
+                    team_info["manager_email"]    = mgr.get("email", "Private")
 
-        for s in stats_node:
-            s_data = s.get("stat", {})
-            sid = str(s_data.get("stat_id"))
-            val = s_data.get("value")
-            if sid in STAT_MAP:
-                team_dict[STAT_MAP[sid]] = val
+        for block in team_entry[1:]:
+            if not isinstance(block, dict): continue
+            if "team_stats" in block:
+                for s in block["team_stats"].get("stats", []):
+                    stat    = s.get("stat", {})
+                    stat_id = str(stat.get("stat_id", ""))
+                    if stat_id in STAT_MAP:
+                        team_info[STAT_MAP[stat_id]] = stat.get("value", "-")
 
-        parsed.append(team_dict)
-    return parsed
+            if "team_standings" in block:
+                ts      = block["team_standings"]
+                outcome = ts.get("outcome_totals", {})
+                team_info["wins"]         = outcome.get("wins",   "-")
+                team_info["losses"]       = outcome.get("losses", "-")
+                team_info["ties"]         = outcome.get("ties",   "0")
+                team_info["playoff_seed"] = str(ts.get("playoff_seed", "-"))
+                team_info["final_rank"]   = str(ts.get("rank",         "-"))
 
-def write_csv(all_data: dict):
-    fieldnames = ["season", "week", "week_days", "week_start", "week_end", 
-                  "team_key", "team_name"] + STAT_COLS
-    
+        results.append(team_info)
+    return results
+
+def write_csv(all_data: dict) -> None:
+    record_cols = ["wins", "losses", "ties", "playoff_seed", "final_rank"]
+    fieldnames  = (
+        ["season", "week", "week_days", "team_key", "team_name",
+         "manager_nickname", "manager_email"]
+        + record_cols
+        + STAT_COLS
+    )
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
-        for season in sorted(all_data.keys()):
+        for season in sorted(all_data.keys(), reverse=True):
             for week_str in sorted(all_data[season].keys(), key=int):
-                writer.writerows(all_data[season][week_str])
+                for row in all_data[season][week_str]:
+                    writer.writerow({k: row.get(k, "-") for k in fieldnames})
 
 # ---------------------------------------------------------------------------
-# Main Logic
+# Main
 # ---------------------------------------------------------------------------
-def main():
-    session = get_session()
-    
-    # Load existing data
-    all_data = {}
+def fetch_all_weeks() -> None:
+    current_year = str(datetime.now().year)
+    session      = get_session()
+
     if OUTPUT_JSON.exists():
         with open(OUTPUT_JSON, "r", encoding="utf-8") as f:
             all_data = json.load(f)
+    else:
+        all_data = {}
 
-    # 1. Discover Leagues
-    url = f"{BASE_URL}/users;use_login=1/games;game_codes=mlb/leagues"
-    discovery = api_get(session, url)
-    
-    # (Simplified league traversal for brevity - matches your previous logic)
-    # This section finds all league_keys and their seasons...
-    leagues_to_process = [] 
-    # ... logic to populate leagues_to_process ...
+    leagues = get_all_leagues(session)
+    total_weeks_fetched = 0
 
-    for l in leagues_to_process:
-        lkey = l["league_key"]
-        season = str(l["season"])
-        if season not in all_data: all_data[season] = {}
+    for league in leagues:
+        lkey, lname = league["league_key"], league["league_name"]
+        game_key    = league["game_key"]
+        info        = get_league_week_info(session, lkey)
+        season, start, last = info["season"], info["start_week"], info["current_week"]
 
-        # Get week range for league
-        # ... logic to find start/end week ...
-        
-        for week in range(start_week, end_week + 1):
-            week_str = str(week)
-            
-            # Fetch timing and stats
-            timing = get_week_timing_info(session, lkey, week)
-            url = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
-            stats_data = api_get(session, url)
-            
-            teams = parse_teams_for_week(stats_data, season, week, timing)
-            if teams:
-                all_data[season][week_str] = teams
-                print(f"  {season} Week {week}: Extracted {timing['start']} to {timing['end']}")
-            
+        print(f"\n>> Processing {season}: {lname}")
+        all_data.setdefault(season, {})
+
+        for week in range(start, last + 1):
+            week_str     = str(week)
+            is_live_week = (season == current_year and week == last)
+
+            # ------------------------------------------------------------------
+            # Already stored weeks: reuse saved week_days, skip API calls
+            # ------------------------------------------------------------------
+            if week_str in all_data[season] and not is_live_week:
+                # Back-fill the in-memory cache so later leagues in the same
+                # season don't need a scoreboard call for these weeks either.
+                rows = all_data[season][week_str]
+                if rows:
+                    saved_days = rows[0].get("week_days")
+                    if isinstance(saved_days, int):
+                        _week_days_cache.setdefault((game_key, week), saved_days)
+                continue
+
+            # ------------------------------------------------------------------
+            # New / live week: scoreboard → day count, then fetch stats
+            # ------------------------------------------------------------------
+            days_in_week = get_week_days_from_scoreboard(session, game_key, lkey, week)
+
+            url  = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
+            data = api_get(session, url)
             time.sleep(API_DELAY)
 
-    # Save outputs
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(all_data, f, indent=2)
-    
+            teams = parse_teams_for_week(data, season, week, days_in_week)
+            if teams:
+                all_data[season][week_str] = teams
+                total_weeks_fetched += 1
+                print(
+                    f"   Week {week:>2} ({days_in_week} days): "
+                    f"Fetched {len(teams)} teams (True Weekly Stats)"
+                )
+
+        # Save after every league to avoid data loss
+        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(all_data, f, indent=2, ensure_ascii=False)
+
     write_csv(all_data)
-    print("Done.")
+    print(f"\nDone. Fetched {total_weeks_fetched} new/updated weeks.")
 
 if __name__ == "__main__":
-    main()
+    fetch_all_weeks()

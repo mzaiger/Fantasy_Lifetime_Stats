@@ -553,7 +553,7 @@ function showWeeklyRankings(c){
     const arr = weeklyRawData
       .filter(r => {
         // Exclude Season 25 if the year is 2010 or less
-        const isExcluded = (r.season <= 2010 && r.week === 25);
+        const isExcluded = (r.week_day <= 7);
         return !isExcluded;
       })
       .map(r => {
@@ -982,7 +982,7 @@ function renderIndividualWeekly(){
         // Must match manager name
         const isMgr = r.manager_nickname === m;
         // Exclude Season 25 if the year is 2010 or less
-        const isExcluded = (r.season <= 2010 && r.week === 25);
+        const isExcluded = (r.week_day <= 7);
         return isMgr && !isExcluded;
       })
       .map(r => {

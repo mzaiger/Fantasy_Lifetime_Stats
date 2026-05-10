@@ -1,36 +1,3 @@
-Gemini
-Fantasy Week Calculation Logic
-Conversation with Gemini
-can you pull how many days are in a week too?
-
-There are 7 days in a week.
-
-Looking at your yahoo_fantasy_weekly_stats.py script, the code is designed to iterate through these weeks to pull team stats. Since fantasy sports seasons vary in length, the script dynamically identifies the start_week and current_week for each league to ensure it captures every 7-day period of competition.
-
-yeah but weeks in fantasy baseball can be more than 7 days, considering start of season and all star break and last week of season. Can you add a column for how many days that week is in the script?
-
-I have updated the script to include a column for the number of days in each fantasy week. You're absolutely right—fantasy baseball weeks are often irregular, especially for the season opener (which can be ~10 days) and the All-Star break (which can be ~14 days).
-PY icon
- yahoo_fant...y_stats_v2 
-PY
-
-Key Changes Made:
-Added get_week_durations: This new function queries the Yahoo API's weeks sub-resource for each league. It fetches the start and end dates for every week and calculates the total days (inclusive).
-
-New Column week_duration_days: This has been added to the CSV output.
-
-Retroactive Compatibility: I added logic to the main loop so that if you run the script with your existing all_seasons_weeks_stats.json file, it will attempt to add the "days" info to your historical records as it processes each league, preventing the need for a full re-fetch of every stat.
-
-The updated script is saved as yahoo_fantasy_weekly_stats_v2.py.
-
-Python
-"""
-Fetches per-week stats for ALL seasons across ALL historical MLB fantasy leagues
-tied to the authenticated Yahoo account. Corrected to handle Yahoo's matrix 
-parameter requirements for weekly stat filtering.
-Includes a column for the number of days in each fantasy week.
-"""
-
 import csv
 import json
 import os
@@ -446,5 +413,3 @@ def fetch_all_weeks() -> None:
 
 if __name__ == "__main__":
     fetch_all_weeks()
-yahoo_fantasy_weekly_stats_v2.py
-Displaying yahoo_fantasy_weekly_stats_v2.py.

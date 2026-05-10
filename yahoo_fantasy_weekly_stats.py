@@ -101,7 +101,6 @@ def get_session() -> OAuth2Session:
     return session
 
 def api_get(session: OAuth2Session, url: str) -> dict:
-    # We use format=json as a standard query param, but week filters MUST be matrix params in the URL string
     resp = session.get(url, params={"format": "json"})
     if resp.status_code != 200:
         print(f"  ERROR {resp.status_code}: {resp.text[:300]}")
@@ -170,7 +169,9 @@ def get_league_week_info(session: OAuth2Session, league_key: str) -> dict:
 # Parser
 # ---------------------------------------------------------------------------
 def parse_teams_for_week(data: dict, season: str, week: int) -> list[dict]:
-    league_content = data.get("fantasy_content", {}).get("league", [])
+    # The structure changes slightly when targeting /teams/stats
+    fantasy_content = data.get("fantasy_content", {})
+    league_content = fantasy_content.get("league", [])
     if len(league_content) < 2:
         return []
 
@@ -255,11 +256,12 @@ def fetch_all_weeks() -> None:
             week_str = str(week)
             is_live_week = (season == current_year and week == last)
 
+            # Re-fetch the live week to keep it updated; skip others if already present
             if week_str in all_data[season] and not is_live_week:
                 continue
 
-            # CRITICAL FIX: Matrix parameters (;type=week;week=N)
-            url = f"{BASE_URL}/league/{lkey}/teams;out=stats,standings;type=week;week={week}"
+            # CRITICAL FIX: Direct path to stats with matrix parameters for weekly filtering
+            url = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
             data = api_get(session, url)
             time.sleep(API_DELAY)
 
@@ -267,8 +269,9 @@ def fetch_all_weeks() -> None:
             if teams:
                 all_data[season][week_str] = teams
                 total_weeks_fetched += 1
-                print(f"   Week {week:>2}: Fetched {len(teams)} teams")
+                print(f"   Week {week:>2}: Fetched {len(teams)} teams (True Weekly Stats)")
 
+        # Save after every league to avoid data loss
         with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
             json.dump(all_data, f, indent=2, ensure_ascii=False)
 

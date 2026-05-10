@@ -145,6 +145,25 @@
     transition: background 0.4s ease, border-color 0.4s ease;
   }
 
+/* ── Light Mode Specific Overrides ── */
+body.light-mode nav button {
+  background: #ffffff;           /* Force white background only in light mode */
+  color: var(--lm-text);         /* Force dark text only in light mode */
+  border-color: #c8d6e8;
+}
+
+/* ── Active State (Both Modes) ── */
+nav button.active {
+  background: var(--red) !important;
+  border-color: var(--red-bright) !important;
+  color: #fff !important;
+}
+
+body.light-mode nav button.active {
+  background: var(--lm-blue) !important;
+  color: #fff !important;
+}
+
   nav button {
     padding: 9px 18px;
     border: 1px solid var(--border);

@@ -47,6 +47,7 @@
       rgba(13,27,42,0.65) 40%,
       rgba(13,27,42,0.88) 100%
     );
+    transition: background 0.4s ease;
   }
 
   /* ── Header ── */
@@ -59,6 +60,7 @@
     gap: 0;
     border-bottom: 1px solid var(--border);
     background: linear-gradient(180deg, rgba(13,27,42,0.95) 0%, transparent 100%);
+    transition: background 0.4s ease, border-color 0.4s ease;
   }
 
   .header-imgs {
@@ -71,13 +73,20 @@
   .header-imgs img {
     height: 52px;
     width: auto;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
-    transition: transform 0.3s ease;
+    opacity: 0.60;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6))
+            drop-shadow(0 0 18px rgba(13,27,42,0.75))
+            drop-shadow(0 0 40px rgba(13,42,74,0.45));
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
   }
-  .header-imgs img:hover { transform: scale(1.08) rotate(-2deg); }
+  .header-imgs img:hover {
+    opacity: 1;
+    transform: scale(1.08) rotate(-2deg);
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5))
+            drop-shadow(0 0 22px rgba(13,42,74,0.55));
+  }
   .bat-img {
     height: 44px !important;
-    opacity: 0.9;
   }
   .bat-img:hover { transform: rotate(-35deg) scale(1.1) !important; }
 
@@ -94,30 +103,31 @@
     color: #fff;
     text-shadow: 0 2px 20px rgba(192,57,43,0.5), 0 0 60px rgba(0,0,0,0.8);
     line-height: 1;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
   .header-title .subtitle {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
+    font-weight: bold;
     margin-top: 4px;
     opacity: 0.9;
   }
 
   @media (max-width: 600px) {
     .header-imgs, .header-imgs-right { display: none; }
-  nav button {
-    font-size: 0.6rem !important;
-}
-
+    nav button { font-size: 0.6rem !important; }
   }
+
   .stitch-bar {
     position: relative;
     z-index: 10;
     height: 4px;
     background: var(--red);
     box-shadow: 0 0 12px rgba(192,57,43,0.6);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
   }
 
   /* ── Navigation ── */
@@ -132,6 +142,7 @@
     background: rgba(13,27,42,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
+    transition: background 0.4s ease, border-color 0.4s ease;
   }
 
   nav button {
@@ -192,6 +203,7 @@
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    transition: background 0.4s ease, border-color 0.4s ease;
   }
 
   th, td {
@@ -200,6 +212,7 @@
     text-align: center;
     font-size: 0.82rem;
     font-family: 'Barlow', sans-serif;
+    transition: color 0.3s ease;
   }
 
   th {
@@ -211,6 +224,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     border-color: rgba(255,255,255,0.15);
+    transition: background 0.4s ease;
   }
 
   tr:nth-child(even) { background: rgba(255,255,255,0.04); }
@@ -244,6 +258,7 @@
     letter-spacing: 0.05em;
     backdrop-filter: blur(8px);
     cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 
   .show-btn {
@@ -269,19 +284,138 @@
   .section-vertical-stack { display: flex; flex-direction: column; gap: 14px; width: 100%; }
   .no-data { color: rgba(255,255,255,0.4); font-style: italic; margin: 12px 0; }
 
-  /* Rank numbers */
   td:first-child { color: var(--gold); font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; }
-
-  /* Score column */
   td:last-child { color: #c9d5e0; }
 
   tfoot tr td { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; }
 
-  nav button[style*="gold"].active {
-    background: rgba(201,162,39,0.25);
-    border-color: var(--gold);
-    color: var(--gold);
+  /* ─────────────────────────────────────
+     THEME & PILL TOGGLE STYLES
+  ───────────────────────────────────── */
+  .theme-switch-wrapper {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.75);
+    z-index: 20;
   }
+
+  .filter-pill-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 26px;
+    flex-shrink: 0;
+  }
+
+  .theme-switch input { opacity: 0; width: 0; height: 0; }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #3a4a5a;
+    border-radius: 26px;
+    transition: background-color 0.35s ease;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.35s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+
+  input:checked + .slider {
+    background-color: var(--red);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  /* ─────────────────────────────────────
+     LIGHT MODE OVERRIDES
+  ───────────────────────────────────── */
+  body.light-mode {
+    --lm-blue:       rgba(13,42,74,0.78);
+    --lm-blue-mid:   #1565c0;
+    --lm-blue-light: #e3eeff;
+    --lm-grey:       #eaeff6;
+    --lm-text:       #0d1b2a;
+    --gold:       #c9a227;
+    --lm-text-sub:   #3a4f66;
+    color: var(--lm-text);
+  }
+body.light-mode #bg::after { 
+  background: linear-gradient(
+    180deg, 
+    rgba(255,255,255,0.86) 0%, 
+    rgba(255,255,255,0.64) 40%, 
+    rgba(255,255,255,0.80) 100%
+  ); 
+}
+body.light-mode select {
+  background: #ffffff;
+  color: var(--lm-text);
+  border-color: #c8d6e8;
+}
+
+body.light-mode .show-btn {
+  background: var(--lm-blue);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.4);
+}
+
+body.light-mode .show-btn:hover {
+  background: var(--lm-blue);
+  box-shadow: 0 4px 18px rgba(21, 101, 192, 0.8);
+}
+
+  body.light-mode header { background: linear-gradient(180deg, rgba(13,27,42,0.62) 0%, transparent 100%); }
+  body.light-mode .header-title h1 { text-shadow: 0 2px 20px rgba(13,71,161,0.4), 0 0 60px rgba(0,0,0,0.6); }
+  body.light-mode .stitch-bar { background: var(--lm-blue); }
+  body.light-mode nav { background: rgba(248,250,253,0.98); border-bottom: 2px solid var(--lm-grey); }
+  body.light-mode nav button { background: #ffffff; color: var(--lm-text); border-color: #c8d6e8; }
+  body.light-mode nav button.active { background: var(--lm-blue); color: #fff; }
+  body.light-mode table { background: #ffffff; border-color: #c8d6e8; }
+  body.light-mode th { background: var(--lm-blue); color: #fff; }
+  body.light-mode tbody tr:nth-child(even) { background: var(--lm-grey); }
+  body.light-mode tbody tr:hover { background: var(--lm-blue-light); }
+  body.light-mode td:nth-child(2) { color: var(--lm-text); }
+body.light-mode td:last-child { color: var(--lm-text); }
+  body.light-mode td:first-child { color: #c9a227; }
+  body.light-mode h2 { color: #c9a227; text-shadow: none; }
+  body.light-mode .filter-pill-wrapper { color: var(--lm-text); }
+  body.light-mode input:checked + .slider { background-color: var(--lm-blue); }
 </style>
 </head>
 <body>
@@ -302,6 +436,15 @@
   <div class="header-imgs header-imgs-right">
     <img src="Baseball-bat.jpg" class="bat-img" alt="bat" />
     <img src="MLB-Logo.jpg" alt="MLB" />
+  </div>
+
+  <div class="theme-switch-wrapper">
+    <span>Dark</span>
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider"></div>
+    </label>
+    <span>Light</span>
   </div>
 </header>
 
@@ -325,14 +468,52 @@
 </div>
 
 <script>
+/* ── Theme Toggle Logic ── */
+const toggleSwitch = document.querySelector('#checkbox');
+const savedTheme   = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (savedTheme) {
+  document.body.classList.toggle('light-mode', savedTheme === 'light');
+  toggleSwitch.checked = (savedTheme === 'light');
+} else {
+  if (!systemPrefersDark) {
+    document.body.classList.add('light-mode');
+    toggleSwitch.checked = true;
+  }
+}
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.body.classList.remove('light-mode');
+    localStorage.setItem('theme', 'dark');
+  }
+}
+toggleSwitch.addEventListener('change', switchTheme);
+
+/* ── Global Filter State ── */
+let includeLongWeeks = false;
+
+function handleLongWeeksToggle(e) {
+  includeLongWeeks = e.checked;
+  // Refresh the page to apply the filter
+  const c = document.getElementById("content");
+  if (currentPage === "weeklyRankings") showWeeklyRankings(c);
+  if (currentPage === "individualWeekly") renderIndividualWeekly();
+}
+
+/* ── Fantasy League Data & Logic ── */
 let rawData = [];
 let weeklyRawData = [];
 let managers = {};
 
 const numericFields = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
-const avgFields    = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","WHIP","K/9","QS"];
-const eraFields    = ["ERA","WHIP"];
-const sumFields    = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
+const avgFields     = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","WHIP","K/9","QS"];
+const eraFields     = ["ERA","WHIP"];
+const sumFields     = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 
 let currentPage = "lifetime";
 
@@ -340,43 +521,29 @@ Promise.all([
   fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()),
   fetch("all_seasons_weeks_stats.json?v=" + Date.now()).then(r => r.json())
 ]).then(([seasonData, weekData]) => {
-
-  rawData = Array.isArray(seasonData)
-    ? seasonData
-    : Object.values(seasonData).flat();
-
+  rawData = Array.isArray(seasonData) ? seasonData : Object.values(seasonData).flat();
   weeklyRawData = [];
-
   Object.keys(weekData).forEach(year => {
     Object.keys(weekData[year]).forEach(week => {
       weeklyRawData.push(...weekData[year][week]);
     });
   });
-
   processData();
   setPage("lifetime");
 });
-
-function winPct(w, l, t) {
-  const total = w + l + t;
-  if (total === 0) return null;
-  return (w + t * 0.5) / total;
-}
 
 function processData() {
   rawData.forEach(row => {
     const m = row.manager_nickname;
     if (!managers[m]) {
-      managers[m] = { seasons: [], totals: {}, averages: {}, counts: {},
-                      record: { w: 0, l: 0, t: 0, seasons: 0 },
-                      medals: { regular: {1:0, 2:0, 3:0}, playoff: {1:0, 2:0, 3:0} } };
+      managers[m] = { seasons: [], totals: {}, averages: {}, counts: {}, record: { w: 0, l: 0, t: 0, seasons: 0 }, medals: { regular: {1:0, 2:0, 3:0}, playoff: {1:0, 2:0, 3:0} } };
     }
     managers[m].seasons.push(row);
     numericFields.concat(avgFields).forEach(stat => {
       if (!isValid(row[stat])) return;
       const val = parseFloat(row[stat]);
-      managers[m].totals[stat]  = (managers[m].totals[stat]  || 0) + val;
-      managers[m].counts[stat]  = (managers[m].counts[stat]  || 0) + 1;
+      managers[m].totals[stat] = (managers[m].totals[stat] || 0) + val;
+      managers[m].counts[stat] = (managers[m].counts[stat] || 0) + 1;
     });
     if (isValid(row.wins) && isValid(row.losses)) {
       managers[m].record.w += parseFloat(row.wins);
@@ -389,43 +556,20 @@ function processData() {
     const rank = parseInt(row.final_rank);
     if (!isNaN(rank) && rank >= 1 && rank <= 3) managers[m].medals.playoff[rank]++;
   });
-  Object.keys(managers).forEach(m => {
-    avgFields.forEach(stat => {
-      const total = managers[m].totals[stat] || 0;
-      const count = managers[m].counts[stat] || 0;
-      managers[m].averages[stat] = count > 0 ? total / count : null;
-    });
-  });
 }
 
-function isValid(v){
-  return v !== undefined && v !== null && v !== "" && !isNaN(v);
-}
-
-function fmt(v,d=0){
-  return Number(v).toFixed(d);
-}
+function isValid(v){ return v !== undefined && v !== null && v !== "" && !isNaN(v); }
+function fmt(v,d=0){ return Number(v).toFixed(d); }
+function winPct(w, l, t) { const total = w + l + t; return total === 0 ? null : (w + t * 0.5) / total; }
 
 function rankTable(title,arr){
   return `
     <div class="card">
       <h2>${title}</h2>
       <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Team</th>
-            <th>Value</th>
-          </tr>
-        </thead>
+        <thead><tr><th>#</th><th>Team</th><th>Value</th></tr></thead>
         <tbody>
-          ${arr.map((r,i)=>`
-            <tr>
-              <td class="rank">${i+1}</td>
-              <td>${r.name}</td>
-              <td>${r.value}</td>
-            </tr>
-          `).join("")}
+          ${arr.map((r,i)=>`<tr><td class="rank">${i+1}</td><td>${r.name}</td><td>${r.value}</td></tr>`).join("")}
         </tbody>
       </table>
     </div>
@@ -435,12 +579,9 @@ function rankTable(title,arr){
 function setPage(page){
   currentPage = page;
   document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-  if(event && event.target){
-    event.target.classList.add("active");
-  }
+  if(event && event.target) event.target.classList.add("active");
   const c = document.getElementById("content");
   c.innerHTML = "";
-
   if(page==="lifetime") showLifetime(c);
   if(page==="seasonRankings") showSeasonRankings(c);
   if(page==="weeklyRankings") showWeeklyRankings(c);
@@ -453,27 +594,18 @@ function setPage(page){
   if(page==="exportData") showExportData(c);
 }
 
+/* ── Specific Render Functions ── */
+
 function showLifetime(c){
   c.classList.add("grid-view");
   avgFields.forEach(stat => {
     const arr = Object.keys(managers).map(mgr => {
-      const vals = managers[mgr].seasons
-        .map(s => parseFloat(s[stat]))
-        .filter(v => !isNaN(v));
+      const vals = managers[mgr].seasons.map(s => parseFloat(s[stat])).filter(v => !isNaN(v));
       if(vals.length===0) return null;
-      const val = sumFields.includes(stat)
-        ? vals.reduce((a,b)=>a+b,0)
-        : vals.reduce((a,b)=>a+b,0) / vals.length;
-      return {
-        name:mgr,
-        value:fmt(val, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)
-      };
+      const val = sumFields.includes(stat) ? vals.reduce((a,b)=>a+b,0) : vals.reduce((a,b)=>a+b,0) / vals.length;
+      return { name:mgr, value:fmt(val, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0) };
     }).filter(Boolean);
-    arr.sort((a,b)=>
-      eraFields.includes(stat)
-        ? parseFloat(a.value)-parseFloat(b.value)
-        : parseFloat(b.value)-parseFloat(a.value)
-    );
+    arr.sort((a,b)=> eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value) );
     c.innerHTML += rankTable(stat,arr.slice(0,10));
   });
 }
@@ -481,205 +613,72 @@ function showLifetime(c){
 function showSeasonRankings(c){
   c.classList.add("grid-view");
   avgFields.forEach(stat => {
-    const arr = rawData
-      .map(r => {
-        if(!isValid(r[stat])) return null;
-        return {
-          name:`${r.manager_nickname} (${r.season} ${r.league_name || ""})`,
-          value:parseFloat(r[stat]).toFixed(
-            ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0
-          )
-        };
-      }).filter(Boolean);
-    arr.sort((a,b)=>
-      eraFields.includes(stat)
-        ? parseFloat(a.value)-parseFloat(b.value)
-        : parseFloat(b.value)-parseFloat(a.value)
-    );
+    const arr = rawData.map(r => {
+      if(!isValid(r[stat])) return null;
+      return { name:`${r.manager_nickname} (${r.season} ${r.league_name || ""})`, value:parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat)?3:0) };
+    }).filter(Boolean);
+    arr.sort((a,b)=> eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value) );
     c.innerHTML += rankTable(stat,arr.slice(0,10));
   });
 }
 
 function showWeeklyRankings(c){
   c.classList.add("grid-view");
+  
+  // Add Filter Toggle
+  let filterHtml = `
+    <div class="filter-pill-wrapper" style="grid-column: 1/-1;">
+      <span style="opacity: 0.6;">Exclude</span>
+      <label class="theme-switch">
+        <input type="checkbox" onchange="handleLongWeeksToggle(this)" ${includeLongWeeks ? 'checked' : ''}>
+        <div class="slider"></div>
+      </label>
+      <span style="opacity: 0.6;">Include</span>
+      <span style="color: var(--gold); margin-left: 2px;">long weeks.</span>
+    </div>
+  `;
+  c.innerHTML = filterHtml;
+
   avgFields.forEach(stat => {
     const arr = weeklyRawData
       .filter(r => {
-        // Updated filter: Only include weeks with 7 or fewer days
-        return isValid(r.week_days) && parseFloat(r.week_days) <= 7;
+        // Updated filter logic based on toggle state
+        const validDays = includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7);
+        return validDays;
       })
       .map(r => {
         if(!isValid(r[stat])) return null;
         return {
           name:`${r.manager_nickname} (${r.season} W${r.week} ${r.league_name || ""})`,
-          value:parseFloat(r[stat]).toFixed(
-            ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0
-          )
+          value:parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)
         };
       }).filter(Boolean);
 
-    arr.sort((a,b)=>
-      eraFields.includes(stat)
-        ? parseFloat(a.value)-parseFloat(b.value)
-        : parseFloat(b.value)-parseFloat(a.value)
-    );
+    arr.sort((a,b)=> eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     c.innerHTML += rankTable(stat,arr.slice(0,10));
   });
 }
 
-function showLifetimeRecord(container) {
-  container.classList.remove('grid-view');
-  const rows = Object.keys(managers).map(m => {
-    const r = managers[m].record;
-    return { name: m, w: r.w, l: r.l, t: r.t, pct: winPct(r.w, r.l, r.t), seasons: r.seasons };
-  }).filter(r => r.seasons > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
-
-  let lt = `<h2>Combined Lifetime Record</h2>`;
-  if (rows.length === 0) {
-    lt += `<p class="no-data">No win/loss data available yet.</p>`;
-  } else {
-    lt += `<table>
-      <tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
-    rows.forEach((r, i) => {
-      lt += `<tr><td>${i + 1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${fmt(r.pct, 3)}</td></tr>`;
-    });
-    lt += `</table>`;
-  }
-  container.innerHTML = `<div class="section-vertical-stack">${lt}</div>`;
-}
-
-function medalScore(medals) { return medals[1] * 3 + medals[2] * 2 + medals[3] * 1; }
-
-function medalTable(title, field) {
-  const rows = Object.keys(managers).map(m => {
-    const med = managers[m].medals[field];
-    return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
-  }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
-
-  let html = `<h2>${title}</h2>`;
-  if (rows.length === 0) return html + `<p class="no-data">No placement data available yet.</p>`;
-
-  html += `<table><tr><th>#</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
-  rows.forEach((r, i) => {
-    html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`;
-  });
-  return html + `</table>`;
-}
-
-function showLifetimeMedals(container) {
-  container.classList.remove('grid-view');
-  const reg = medalTable("Regular Season Finishes (by Playoff Seed)", "regular");
-  const playoff = medalTable("Playoff Finishes (by Final Rank)", "playoff");
-  container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
-                         <div class="section-vertical-stack">${reg}${playoff}</div>`;
-}
-
-function buildManagerSelect(id,onClickFn){
-  const opts = Object.keys(managers)
-    .map(m => `<option value="${m}">${m}</option>`)
-    .join("");
-  let target = id==="mgr" ? "indLife" : "indSeason";
-  return `
-    <div style="margin-bottom:20px">
-      <select id="${id}">${opts}</select>
-      <button class="show-btn" onclick="${onClickFn}()">SHOW STATS</button>
-    </div>
-    <div id="${target}"></div>
-  `;
-}
-
-function showIndividualLifetime(c){
-  c.classList.remove("grid-view");
-  c.innerHTML = buildManagerSelect("mgr", "renderIndividualLifetime");
-}
-
-function renderIndividualLifetime(){
-  const m = document.getElementById("mgr").value;
-  const div = document.getElementById("indLife");
-  const seasons = managers[m].seasons.slice().sort((a,b)=>(a.season||0)-(b.season||0));
-  const footer = {};
-  const footerAvg = {};
-
-  avgFields.forEach(stat => {
-    const vals = seasons.map(s => isValid(s[stat]) ? parseFloat(s[stat]) : null).filter(v => v !== null);
-    if(vals.length===0){
-      footer[stat]=null; footerAvg[stat]=null; return;
-    }
-    const sum = vals.reduce((a,b)=>a+b,0);
-    footer[stat] = sumFields.includes(stat) ? sum : sum / vals.length;
-    footerAvg[stat] = sum / vals.length;
-  });
-
-  const decimalPlaces = stat => ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0;
-
-  let html = `<h2>${m} — Season-by-Season Stats</h2><div style="overflow-x:auto"><table><thead><tr><th>Season</th>${avgFields.map(s=>`<th>${s}</th>`).join("")}</tr></thead><tbody>`;
-  seasons.forEach(s => {
-    html += `<tr><td style="font-weight:700;color:var(--gold)">${s.season || "—"}</td>${avgFields.map(stat => {
-      const v = isValid(s[stat]) ? parseFloat(s[stat]) : null;
-      return `<td>${v!==null ? fmt(v,decimalPlaces(stat)) : "—"}</td>`;
-    }).join("")}</tr>`;
-  });
-
-  html += `</tbody><tfoot><tr style="background:rgba(192,57,43,.25)"><td style="font-weight:700;color:var(--gold)">TOTAL</td>${avgFields.map(stat => {
-    const v = sumFields.includes(stat) ? footer[stat] : null;
-    return `<td style="font-weight:700;color:var(--gold)">${v!==null ? fmt(v,decimalPlaces(stat)) : "—"}</td>`;
-  }).join("")}</tr><tr style="background:rgba(201,162,39,.1)"><td style="font-weight:700;color:var(--gold)">AVG</td>${avgFields.map(stat => {
-    const v = footerAvg[stat];
-    return `<td style="font-weight:700;color:var(--gold)">${v!==null ? fmt(v,decimalPlaces(stat)) : "—"}</td>`;
-  }).join("")}</tr></tfoot></table></div>`;
-  div.innerHTML = html;
-}
-
-function showIndividualYearly(c){
-  c.classList.remove("grid-view");
-  let opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
-  let years = [...new Set(weeklyRawData.map(r => r.season))].sort().map(y => `<option value="${y}">${y}</option>`).join("");
-  c.innerHTML = `<div style="margin-bottom:20px"><select id="yearMgr">${opts}</select><select id="yearSelect">${years}</select><button class="show-btn" onclick="renderIndividualYearly()">SHOW STATS</button></div><div id="individualYearlyTable"></div>`;
-}
-
-function renderIndividualYearly(){
-  const mgr = document.getElementById("yearMgr").value;
-  const year = document.getElementById("yearSelect").value;
-  const div = document.getElementById("individualYearlyTable");
-  const rows = weeklyRawData.filter(r => r.manager_nickname===mgr && String(r.season)===String(year)).sort((a,b)=>Number(a.week)-Number(b.week));
-
-  let html = `<h2>${mgr} — ${year} Weekly Stats</h2><div style="overflow-x:auto"><table><thead><tr><th>Week</th>${avgFields.map(s=>`<th>${s}</th>`).join("")}</tr></thead><tbody>`;
-  rows.forEach(r => {
-    html += `<tr><td>${r.week}</td>${avgFields.map(stat => {
-      const v = isValid(r[stat]) ? parseFloat(r[stat]) : null;
-      return `<td>${v!==null ? fmt(v,2) : "—"}</td>`;
-    }).join("")}</tr>`;
-  });
-  html += `</tbody></table></div>`;
-  div.innerHTML = html;
-}
-
-function showIndividualSeason(c){
-  c.classList.remove("grid-view");
-  c.innerHTML = buildManagerSelect("mgr2", "renderIndividualSeason");
-}
-
-function renderIndividualSeason(){
-  const m = document.getElementById("mgr2").value;
-  const div = document.getElementById("indSeason");
-  div.style.display = "grid";
-  div.style.gridTemplateColumns = "repeat(auto-fit,minmax(250px,1fr))";
-  div.style.gap = "20px";
-  let html = `<h2 style="grid-column:1/-1">${m} — Season Rankings</h2>`;
-  avgFields.forEach(stat => {
-    const arr = rawData.filter(r => r.manager_nickname===m).map(r => {
-      if(!isValid(r[stat])) return null;
-      return { name:`${r.season}`, value:parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat)?3:0) };
-    }).filter(Boolean);
-    arr.sort((a,b)=> eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
-	html += rankTable(stat, arr.slice(0, 10));
-  });
-  div.innerHTML = html;
-}
-
 function showIndividualWeekly(c){
   c.classList.remove("grid-view");
-  c.innerHTML = buildManagerSelect("mgr3", "renderIndividualWeekly");
+  // Build standard manager selection but result targets "indSeason" area
+  const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
+  c.innerHTML = `
+    <div class="filter-pill-wrapper">
+      <span style="opacity: 0.6;">Exclude</span>
+      <label class="theme-switch">
+        <input type="checkbox" onchange="handleLongWeeksToggle(this)" ${includeLongWeeks ? 'checked' : ''}>
+        <div class="slider"></div>
+      </label>
+      <span style="opacity: 0.6;">Include</span>
+      <span style="color: var(--gold); margin-left: 2px;">long weeks.</span>
+    </div>
+    <div style="margin-bottom:20px">
+      <select id="mgr3">${opts}</select>
+      <button class="show-btn" onclick="renderIndividualWeekly()">SHOW STATS</button>
+    </div>
+    <div id="indSeason"></div>
+  `;
 }
 
 function renderIndividualWeekly(){
@@ -693,9 +692,9 @@ function renderIndividualWeekly(){
   avgFields.forEach(stat => {
     const arr = weeklyRawData
       .filter(r => {
-        // Match manager name AND check for 7 or fewer days
         const isMgr = r.manager_nickname === m;
-        const validDays = isValid(r.week_days) && parseFloat(r.week_days) <= 7;
+        // Updated filter logic based on toggle state
+        const validDays = includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7);
         return isMgr && validDays;
       })
       .map(r => {
@@ -707,7 +706,102 @@ function renderIndividualWeekly(){
       }).filter(Boolean);
 
     arr.sort((a,b)=> eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
-	html += rankTable(stat, arr.slice(0, 10));
+    html += rankTable(stat, arr.slice(0, 10));
+  });
+  div.innerHTML = html;
+}
+
+/* ── Remaining functions (Medals, Export, etc) kept as-is ── */
+function showLifetimeRecord(container) {
+  container.classList.remove('grid-view');
+  const rows = Object.keys(managers).map(m => {
+    const r = managers[m].record;
+    return { name: m, w: r.w, l: r.l, t: r.t, pct: winPct(r.w, r.l, r.t), seasons: r.seasons };
+  }).filter(r => r.seasons > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
+  let lt = `<h2>Combined Lifetime Record</h2>`;
+  lt += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
+  rows.forEach((r, i) => { lt += `<tr><td>${i + 1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${fmt(r.pct, 3)}</td></tr>`; });
+  lt += `</table>`;
+  container.innerHTML = `<div class="section-vertical-stack">${lt}</div>`;
+}
+
+function showLifetimeMedals(container) {
+  container.classList.remove('grid-view');
+  const medalScore = (med) => med[1] * 3 + med[2] * 2 + med[3] * 1;
+  const buildMedalTable = (title, field) => {
+    const rows = Object.keys(managers).map(m => {
+      const med = managers[m].medals[field];
+      return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
+    }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
+    let html = `<h2>${title}</h2><table><tr><th>#</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
+    rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`; });
+    return html + `</table>`;
+  };
+  container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;font-weight:bold;">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
+                         <div class="section-vertical-stack">${buildMedalTable("Regular Season Finishes", "regular")}${buildMedalTable("Playoff Finishes", "playoff")}</div>`;
+}
+
+function showIndividualLifetime(c){
+  c.classList.remove("grid-view");
+  const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
+  c.innerHTML = `<div style="margin-bottom:20px"><select id="mgr">${opts}</select><button class="show-btn" onclick="renderIndividualLifetime()">SHOW STATS</button></div><div id="indLife"></div>`;
+}
+
+function renderIndividualLifetime(){
+  const m = document.getElementById("mgr").value;
+  const div = document.getElementById("indLife");
+  const seasons = managers[m].seasons.slice().sort((a,b)=>(a.season||0)-(b.season||0));
+  let html = `<h2>${m} — Season-by-Season Stats</h2><table><thead><tr><th>Season</th>${avgFields.map(s=>`<th>${s}</th>`).join("")}</tr></thead><tbody>`;
+  seasons.forEach(s => {
+    html += `<tr><td style="font-weight:700;color:var(--gold)">${s.season || "—"}</td>${avgFields.map(stat => {
+      const v = isValid(s[stat]) ? parseFloat(s[stat]) : null;
+      return `<td>${v!==null ? fmt(v, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0) : "—"}</td>`;
+    }).join("")}</tr>`;
+  });
+  div.innerHTML = html + `</tbody></table>`;
+}
+
+function showIndividualYearly(c){
+  c.classList.remove("grid-view");
+  let opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
+  let years = [...new Set(weeklyRawData.map(r => r.season))].sort().map(y => `<option value="${y}">${y}</option>`).join("");
+  c.innerHTML = `<div style="margin-bottom:20px"><select id="yearMgr">${opts}</select><select id="yearSelect">${years}</select><button class="show-btn" onclick="renderIndividualYearly()">SHOW STATS</button></div><div id="individualYearlyTable"></div>`;
+}
+
+function renderIndividualYearly(){
+  const mgr = document.getElementById("yearMgr").value;
+  const year = document.getElementById("yearSelect").value;
+  const rows = weeklyRawData.filter(r => r.manager_nickname===mgr && String(r.season)===String(year)).sort((a,b)=>Number(a.week)-Number(b.week));
+  let html = `<h2>${mgr} — ${year} Weekly Stats</h2><table><thead><tr><th>Week</th>${avgFields.map(s=>`<th>${s}</th>`).join("")}</tr></thead><tbody>`;
+  rows.forEach(r => {
+    html += `<tr><td>${r.week}</td>${avgFields.map(stat => {
+      const v = isValid(r[stat]) ? parseFloat(r[stat]) : null;
+      return `<td>${v!==null ? fmt(v,2) : "—"}</td>`;
+    }).join("")}</tr>`;
+  });
+  document.getElementById("individualYearlyTable").innerHTML = html + `</tbody></table>`;
+}
+
+function showIndividualSeason(c){
+  c.classList.remove("grid-view");
+  const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
+  c.innerHTML = `<div style="margin-bottom:20px"><select id="mgr2">${opts}</select><button class="show-btn" onclick="renderIndividualSeason()">SHOW STATS</button></div><div id="indSeasonArea"></div>`;
+}
+
+function renderIndividualSeason(){
+  const m = document.getElementById("mgr2").value;
+  const div = document.getElementById("indSeasonArea");
+  div.style.display = "grid";
+  div.style.gridTemplateColumns = "repeat(auto-fit,minmax(250px,1fr))";
+  div.style.gap = "20px";
+  let html = `<h2 style="grid-column:1/-1">${m} — Season Rankings</h2>`;
+  avgFields.forEach(stat => {
+    const arr = rawData.filter(r => r.manager_nickname===m).map(r => {
+      if(!isValid(r[stat])) return null;
+      return { name:`${r.season}`, value:parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat)?3:0) };
+    }).filter(Boolean);
+    arr.sort((a,b)=> eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    html += rankTable(stat, arr.slice(0, 10));
   });
   div.innerHTML = html;
 }

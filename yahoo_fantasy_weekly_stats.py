@@ -1,7 +1,129 @@
+Gemini
+Fantasy Week Calculation Logic
+Conversation with Gemini
+can you pull how many days are in a week too?
+
+There are 7 days in a week.
+
+Looking at your yahoo_fantasy_weekly_stats.py script, the code is designed to iterate through these weeks to pull team stats. Since fantasy sports seasons vary in length, the script dynamically identifies the start_week and current_week for each league to ensure it captures every 7-day period of competition.
+
+yeah but weeks in fantasy baseball can be more than 7 days, considering start of season and all star break and last week of season. Can you add a column for how many days that week is in the script?
+
+I have updated the script to include a column for the number of days in each fantasy week. You're absolutely right—fantasy baseball weeks are often irregular, especially for the season opener (which can be ~10 days) and the All-Star break (which can be ~14 days).
+PY icon
+ yahoo_fant...y_stats_v2 
+PY
+
+Key Changes Made:
+Added get_week_durations: This new function queries the Yahoo API's weeks sub-resource for each league. It fetches the start and end dates for every week and calculates the total days (inclusive).
+
+New Column week_duration_days: This has been added to the CSV output.
+
+Retroactive Compatibility: I added logic to the main loop so that if you run the script with your existing all_seasons_weeks_stats.json file, it will attempt to add the "days" info to your historical records as it processes each league, preventing the need for a full re-fetch of every stat.
+
+The updated script is saved as yahoo_fantasy_weekly_stats_v2.py.
+
+Python
 """
 Fetches per-week stats for ALL seasons across ALL historical MLB fantasy leagues
 tied to the authenticated Yahoo account. Corrected to handle Yahoo's matrix 
 parameter requirements for weekly stat filtering.
+Includes a column for the number of days in each fantasy week.
+"""
+
+import csv
+import json
+import os
+import time
+import webbrowser
+from datetime import datetime
+from pathlib import Path
+from requests_oauthlib import OAuth2Session
+
+# ... (OAuth and Config remains the same) ...
+
+def get_week_durations(session: OAuth2Session, league_key: str) -> dict[int, int]:
+    """Fetches the start and end dates for all weeks in a league and calculates duration."""
+    url = f"{BASE_URL}/league/{league_key}/weeks"
+    data = api_get(session, url)
+    time.sleep(API_DELAY)
+
+    try:
+        weeks_data = data.get("fantasy_content", {}).get("league", [{}, {}])[1].get("weeks", {})
+    except (IndexError, KeyError):
+        return {}
+
+    durations = {}
+    count = int(weeks_data.get("count", 0))
+    for i in range(count):
+        w = weeks_data.get(str(i), {}).get("week", {})
+        week_num = int(w.get("week", 0))
+        start_str = w.get("start")
+        end_str = w.get("end")
+
+        if week_num and start_str and end_str:
+            try:
+                start_dt = datetime.strptime(start_str, "%Y-%m-%d")
+                end_dt = datetime.strptime(end_str, "%Y-%m-%d")
+                # Duration is (end - start) + 1 (inclusive)
+                days = (end_dt - start_dt).days + 1
+                durations[week_num] = days
+            except ValueError:
+                continue
+    return durations
+
+def parse_teams_for_week(data: dict, season: str, week: int, week_duration: int = None) -> list[dict]:
+    # ... (Meta parsing) ...
+    team_info: dict = {
+        "season": season, 
+        "week": week, 
+        "week_duration_days": week_duration if week_duration is not None else "-"
+    }
+    # ... (Stat parsing) ...
+    return results
+
+def write_csv(all_data: dict) -> None:
+    record_cols = ["wins", "losses", "ties", "playoff_seed", "final_rank"]
+    # Added "week_duration_days" to fieldnames
+    fieldnames  = ["season", "week", "week_duration_days", "team_key", "team_name", "manager_nickname", "manager_email"] + record_cols + STAT_COLS
+    with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        # ... (Writing rows) ...
+
+def fetch_all_weeks() -> None:
+    # ... (Loading sessions) ...
+    for league in leagues:
+        lkey, lname = league["league_key"], league["league_name"]
+        # ... (League info) ...
+        
+        # Fetch durations for all weeks in this specific league
+        durations = get_week_durations(session, lkey)
+
+        for week in range(start, last + 1):
+            # If week is already in JSON, we check if we need to add the duration key
+            if week_str in all_data[season] and not is_live_week:
+                if all_data[season][week_str] and "week_duration_days" not in all_data[season][week_str][0]:
+                    duration = durations.get(week, "-")
+                    for team in all_data[season][week_str]:
+                        team["week_duration_days"] = duration
+                continue
+
+            # Fetch fresh stats for new or live weeks
+            duration = durations.get(week)
+            teams = parse_teams_for_week(data, season, week, week_duration=duration)
+            # ... (Save results) ...
+
+
+
+
+Gemini is AI and can make mistakes.
+
+"""
+Fetches per-week stats for ALL seasons across ALL historical MLB fantasy leagues
+tied to the authenticated Yahoo account. Corrected to handle Yahoo's matrix 
+parameter requirements for weekly stat filtering.
+Includes a column for the number of days in each fantasy week.
 """
 
 import csv
@@ -165,11 +287,40 @@ def get_league_week_info(session: OAuth2Session, league_key: str) -> dict:
         "current_week": current_week,
     }
 
+def get_week_durations(session: OAuth2Session, league_key: str) -> dict[int, int]:
+    """Fetches the start and end dates for all weeks in a league and calculates duration."""
+    url = f"{BASE_URL}/league/{league_key}/weeks"
+    data = api_get(session, url)
+    time.sleep(API_DELAY)
+
+    try:
+        weeks_data = data.get("fantasy_content", {}).get("league", [{}, {}])[1].get("weeks", {})
+    except (IndexError, KeyError):
+        return {}
+
+    durations = {}
+    count = int(weeks_data.get("count", 0))
+    for i in range(count):
+        w = weeks_data.get(str(i), {}).get("week", {})
+        week_num = int(w.get("week", 0))
+        start_str = w.get("start")
+        end_str = w.get("end")
+
+        if week_num and start_str and end_str:
+            try:
+                start_dt = datetime.strptime(start_str, "%Y-%m-%d")
+                end_dt = datetime.strptime(end_str, "%Y-%m-%d")
+                # Duration is (end - start) + 1 (inclusive)
+                days = (end_dt - start_dt).days + 1
+                durations[week_num] = days
+            except ValueError:
+                continue
+    return durations
+
 # ---------------------------------------------------------------------------
 # Parser
 # ---------------------------------------------------------------------------
-def parse_teams_for_week(data: dict, season: str, week: int) -> list[dict]:
-    # The structure changes slightly when targeting /teams/stats
+def parse_teams_for_week(data: dict, season: str, week: int, week_duration: int = None) -> list[dict]:
     fantasy_content = data.get("fantasy_content", {})
     league_content = fantasy_content.get("league", [])
     if len(league_content) < 2:
@@ -184,7 +335,11 @@ def parse_teams_for_week(data: dict, season: str, week: int) -> list[dict]:
         if not team_entry: continue
 
         meta_list = team_entry[0]
-        team_info: dict = {"season": season, "week": week}
+        team_info: dict = {
+            "season": season, 
+            "week": week, 
+            "week_duration_days": week_duration if week_duration is not None else "-"
+        }
 
         for item in meta_list:
             if not isinstance(item, dict): continue
@@ -219,7 +374,7 @@ def parse_teams_for_week(data: dict, season: str, week: int) -> list[dict]:
 
 def write_csv(all_data: dict) -> None:
     record_cols = ["wins", "losses", "ties", "playoff_seed", "final_rank"]
-    fieldnames  = ["season", "week", "team_key", "team_name", "manager_nickname", "manager_email"] + record_cols + STAT_COLS
+    fieldnames  = ["season", "week", "week_duration_days", "team_key", "team_name", "manager_nickname", "manager_email"] + record_cols + STAT_COLS
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
@@ -248,6 +403,10 @@ def fetch_all_weeks() -> None:
         lkey, lname = league["league_key"], league["league_name"]
         info = get_league_week_info(session, lkey)
         season, start, last = info["season"], info["start_week"], info["current_week"]
+        
+        # Fetch durations for all weeks in this league
+        print(f"   Fetching week durations for {lname}...")
+        durations = get_week_durations(session, lkey)
 
         print(f"\n>> Processing {season}: {lname}")
         all_data.setdefault(season, {})
@@ -258,18 +417,25 @@ def fetch_all_weeks() -> None:
 
             # Re-fetch the live week to keep it updated; skip others if already present
             if week_str in all_data[season] and not is_live_week:
-                continue
+                # Update existing records with duration if they don't have it
+                if all_data[season][week_str] and "week_duration_days" not in all_data[season][week_str][0]:
+                    duration = durations.get(week, "-")
+                    for team in all_data[season][week_str]:
+                        team["week_duration_days"] = duration
+                else:
+                    continue
 
             # CRITICAL FIX: Direct path to stats with matrix parameters for weekly filtering
             url = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
             data = api_get(session, url)
             time.sleep(API_DELAY)
 
-            teams = parse_teams_for_week(data, season, week)
+            duration = durations.get(week)
+            teams = parse_teams_for_week(data, season, week, week_duration=duration)
             if teams:
                 all_data[season][week_str] = teams
                 total_weeks_fetched += 1
-                print(f"   Week {week:>2}: Fetched {len(teams)} teams (True Weekly Stats)")
+                print(f"   Week {week:>2}: Fetched {len(teams)} teams ({duration} days)")
 
         # Save after every league to avoid data loss
         with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
@@ -280,3 +446,5 @@ def fetch_all_weeks() -> None:
 
 if __name__ == "__main__":
     fetch_all_weeks()
+yahoo_fantasy_weekly_stats_v2.py
+Displaying yahoo_fantasy_weekly_stats_v2.py.

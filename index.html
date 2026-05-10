@@ -282,20 +282,6 @@
     border-color: var(--gold);
     color: var(--gold);
   }
-
-.menu-container {
-  display: flex;
-  flex-direction: column; /* Stack the rows vertically */
-  gap: 10px;             /* Space between the two rows */
-  align-items: center;    /* Optional: centers the rows */
-}
-
-.menu-row {
-  display: flex;
-  flex-wrap: wrap;       /* Allows buttons to wrap on mobile */
-  justify-content: center;
-  gap: 8px;              /* Space between buttons */
-}
 </style>
 </head>
 <body>
@@ -321,21 +307,17 @@
 
 <div class="stitch-bar"></div>
 
-<nav class="menu-container">
-  <div class="menu-row">
-    <button onclick="setPage('lifetime')">ALL TEAMS LIFETIME RANKINGS</button>
-    <button onclick="setPage('seasonRankings')">ALL TEAMS SEASON RANKINGS</button>
-    <button onclick="setPage('weeklyRankings')">ALL TEAMS WEEKLY RANKINGS</button>
-    <button onclick="setPage('lifetimeRecord')">LIFETIME RECORD</button>
-    <button onclick="setPage('lifetimeMedals')">LIFETIME MEDALS</button>
-  </div>
-  <div class="menu-row">
-    <button onclick="setPage('individualLifetime')">INDIVIDUAL LIFETIME STATS</button>
-    <button onclick="setPage('individualYearly')">INDIVIDUAL YEARLY STATS</button>
-    <button onclick="setPage('individualSeason')">INDIVIDUAL SEASON RANKINGS</button>
-    <button onclick="setPage('individualWeekly')">INDIVIDUAL WEEKLY RANKINGS</button>
+<nav>
+    <button onclick="setPage('lifetime')">LIFETIME RANKINGS</button>
+    <button onclick="setPage('seasonRankings')">SEASON RANKINGS</button>
+    <button onclick="setPage('weeklyRankings')">WEEKLY RANKINGS</button>
+    <button onclick="setPage('lifetimeRecord')">RECORDS</button>
+    <button onclick="setPage('lifetimeMedals')">MEDALS</button>
+    <button onclick="setPage('individualLifetime')">LIFETIME STATS</button>
+    <button onclick="setPage('individualYearly')">YEARLY STATS</button>
+    <button onclick="setPage('individualSeason')">PERSONAL YEARLY RANKINGS</button>
+    <button onclick="setPage('individualWeekly')">PERSONAL WEEKLY RANKINGS</button>
     <button onclick="setPage('exportData')">EXPORT DATA</button>
-  </div>
 </nav>
 
 <div id="wrapper">
@@ -377,24 +359,47 @@ Promise.all([
   setPage("lifetime");
 });
 
-function processData(){
+function winPct(w, l, t) {
+  const total = w + l + t;
+  if (total === 0) return null;
+  return (w + t * 0.5) / total;
+}
 
-  managers = {};
-
-  rawData.forEach(r => {
-
-    const mgr = r.manager_nickname || "Unknown";
-
-    if(!managers[mgr]){
-
-      managers[mgr] = {
-        seasons:[]
-      };
+function processData() {
+  rawData.forEach(row => {
+    const m = row.manager_nickname;
+    if (!managers[m]) {
+      managers[m] = { seasons: [], totals: {}, averages: {}, counts: {},
+                      record: { w: 0, l: 0, t: 0, seasons: 0 },
+                      medals: { regular: {1:0, 2:0, 3:0}, playoff: {1:0, 2:0, 3:0} } };
     }
-
-    managers[mgr].seasons.push(r);
+    managers[m].seasons.push(row);
+    numericFields.concat(avgFields).forEach(stat => {
+      if (!isValid(row[stat])) return;
+      const val = parseFloat(row[stat]);
+      managers[m].totals[stat]  = (managers[m].totals[stat]  || 0) + val;
+      managers[m].counts[stat]  = (managers[m].counts[stat]  || 0) + 1;
+    });
+    if (isValid(row.wins) && isValid(row.losses)) {
+      managers[m].record.w += parseFloat(row.wins);
+      managers[m].record.l += parseFloat(row.losses);
+      managers[m].record.t += (isValid(row.ties) ? parseFloat(row.ties) : 0);
+      managers[m].record.seasons++;
+    }
+    const seed = parseInt(row.playoff_seed);
+    if (!isNaN(seed) && seed >= 1 && seed <= 3) managers[m].medals.regular[seed]++;
+    const rank = parseInt(row.final_rank);
+    if (!isNaN(rank) && rank >= 1 && rank <= 3) managers[m].medals.playoff[rank]++;
+  });
+  Object.keys(managers).forEach(m => {
+    avgFields.forEach(stat => {
+      const total = managers[m].totals[stat] || 0;
+      const count = managers[m].counts[stat] || 0;
+      managers[m].averages[stat] = count > 0 ? total / count : null;
+    });
   });
 }
+
 
 function isValid(v){
 
@@ -572,21 +577,54 @@ function showWeeklyRankings(c){
   });
 }
 
-function showLifetimeRecord(c){
 
-  c.innerHTML = `
-    <h2>Lifetime Record</h2>
-    <p>Add your lifetime record code here.</p>
-  `;
+function showLifetimeRecord(container) {
+  container.classList.remove('grid-view');
+  const rows = Object.keys(managers).map(m => {
+    const r = managers[m].record;
+    return { name: m, w: r.w, l: r.l, t: r.t, pct: winPct(r.w, r.l, r.t), seasons: r.seasons };
+  }).filter(r => r.seasons > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
+
+  let lt = `<h2>Combined Lifetime Record</h2>`;
+  if (rows.length === 0) {
+    lt += `<p class="no-data">No win/loss data available yet.</p>`;
+  } else {
+    lt += `<table>
+      <tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
+    rows.forEach((r, i) => {
+      lt += `<tr><td>${i + 1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${fmt(r.pct, 3)}</td></tr>`;
+    });
+    lt += `</table>`;
+  }
+  container.innerHTML = `<div class="section-vertical-stack">${lt}</div>`;
 }
 
-function showLifetimeMedals(c){
+function medalScore(medals) { return medals[1] * 3 + medals[2] * 2 + medals[3] * 1; }
 
-  c.innerHTML = `
-    <h2>Lifetime Medals</h2>
-    <p>Add your lifetime medals code here.</p>
-  `;
+function medalTable(title, field) {
+  const rows = Object.keys(managers).map(m => {
+    const med = managers[m].medals[field];
+    return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
+  }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
+
+  let html = `<h2>${title}</h2>`;
+  if (rows.length === 0) return html + `<p class="no-data">No placement data available yet.</p>`;
+
+  html += `<table><tr><th>#</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
+  rows.forEach((r, i) => {
+    html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`;
+  });
+  return html + `</table>`;
 }
+
+function showLifetimeMedals(container) {
+  container.classList.remove('grid-view');
+  const reg = medalTable("Regular Season Finishes (by Playoff Seed)", "regular");
+  const playoff = medalTable("Playoff Finishes (by Final Rank)", "playoff");
+  container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
+                         <div class="section-vertical-stack">${reg}${playoff}</div>`;
+}
+
 
 function buildManagerSelect(id,onClickFn){
 
@@ -911,7 +949,7 @@ function renderIndividualSeason(){
         : parseFloat(b.value)-parseFloat(a.value)
     );
 
-    html += rankTable(stat,arr);
+	html += rankTable(stat, arr.slice(0, 10));
   });
 
   div.innerHTML = html;
@@ -964,7 +1002,7 @@ function renderIndividualWeekly(){
         : parseFloat(b.value)-parseFloat(a.value)
     );
 
-    html += rankTable(stat,arr);
+	html += rankTable(stat, arr.slice(0, 10));
   });
 
   div.innerHTML = html;

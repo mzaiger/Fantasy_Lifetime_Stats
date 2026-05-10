@@ -16,6 +16,7 @@
     --glass: rgba(13,27,42,0.78);
     --glass-light: rgba(255,255,255,0.07);
     --border: rgba(255,255,255,0.12);
+    --border_header: #f5f0e8;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -116,10 +117,18 @@
     opacity: 0.9;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .header-imgs, .header-imgs-right { display: none; }
-    nav button { font-size: 0.6rem !important; }
   }
+
+@media (min-width: 801px) {
+  .nav-links a {
+    border: 1px solid var(--gold); /* Uses your existing variable */
+    padding: 2px 4px;              /* Adds some space inside the border */
+    border-radius: 4px;             /* Optional: rounds the corners */
+    transition: all 0.3s ease;
+  }
+}
 
   .stitch-bar {
     position: relative;
@@ -134,62 +143,87 @@
   nav {
     position: relative;
     z-index: 10;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 18px 32px;
     background: rgba(13,27,42,0.92);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    transition: background 0.4s ease, border-color 0.4s ease;
+    transition: background 0.4s ease, border-color 0.4s ease; 
   }
 
-/* ── Light Mode Specific Overrides ── */
-body.light-mode nav button {
-  background: #ffffff;           /* Force white background only in light mode */
-  color: var(--lm-text);         /* Force dark text only in light mode */
-  border-color: #c8d6e8;
-}
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 16px 32px;
+    width: fit-content;
+    margin: 0 auto;
+  }
 
-/* ── Active State (Both Modes) ── */
-nav button.active {
-  background: var(--red) !important;
-  border-color: var(--red-bright) !important;
-  color: #fff !important;
-}
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cream);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
 
-body.light-mode nav button.active {
-  background: var(--lm-blue) !important;
-  color: #fff !important;
-}
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 18px 32px;
+  }
 
-  nav button {
-    padding: 9px 18px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    background: var(--glass-light);
+  .nav-links a {
     color: var(--cream);
     cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    text-decoration: none;
     transition: all 0.2s ease;
-    backdrop-filter: blur(6px);
+    border: 2px solid;
+    padding-bottom: 2px;
   }
-  nav button:hover {
-    background: var(--red);
+
+  .nav-links a:hover {
+    color: var(--red-bright);
+  }
+
+  .nav-links a.active {
+    color: var(--red);
     border-color: var(--red);
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(192,57,43,0.4);
   }
-  nav button.active {
-    background: var(--red);
-    border-color: var(--red-bright);
-    color: #fff;
+
+  /* Mobile Hamburger Menu */
+  @media (max-width: 800px) {
+    nav { padding: 0; }
+    .hamburger {
+      display: flex;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 20px 0;
+      gap: 15px;
+    border: 0px;
+    }
+    .nav-links a {
+    border: 0px;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+    
+    /* Hamburger turning into an X */
+    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   }
 
   /* ── Main Content ── */
@@ -392,45 +426,50 @@ body.light-mode nav button.active {
     --lm-text:       #0d1b2a;
     --gold:       #c9a227;
     --lm-text-sub:   #3a4f66;
+    --border_header: #3a4f66;
     color: var(--lm-text);
   }
-body.light-mode #bg::after { 
-  background: linear-gradient(
-    180deg, 
-    rgba(255,255,255,0.86) 0%, 
-    rgba(255,255,255,0.64) 40%, 
-    rgba(255,255,255,0.80) 100%
-  ); 
-}
-body.light-mode select {
-  background: #ffffff;
-  color: var(--lm-text);
-  border-color: #c8d6e8;
-}
+  body.light-mode #bg::after { 
+    background: linear-gradient(
+      180deg, 
+      rgba(255,255,255,0.86) 0%, 
+      rgba(255,255,255,0.64) 40%, 
+      rgba(255,255,255,0.80) 100%
+    ); 
+  }
+  body.light-mode select {
+    background: #ffffff;
+    color: var(--lm-text);
+    border-color: #c8d6e8;
+  }
 
-body.light-mode .show-btn {
-  background: var(--lm-blue);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.4);
-}
+  body.light-mode .show-btn {
+    background: var(--lm-blue);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(21, 101, 192, 0.4);
+  }
 
-body.light-mode .show-btn:hover {
-  background: var(--lm-blue);
-  box-shadow: 0 4px 18px rgba(21, 101, 192, 0.8);
-}
+  body.light-mode .show-btn:hover {
+    background: var(--lm-blue);
+    box-shadow: 0 4px 18px rgba(21, 101, 192, 0.8);
+  }
 
   body.light-mode header { background: linear-gradient(180deg, rgba(13,27,42,0.62) 0%, transparent 100%); }
   body.light-mode .header-title h1 { text-shadow: 0 2px 20px rgba(13,71,161,0.4), 0 0 60px rgba(0,0,0,0.6); }
   body.light-mode .stitch-bar { background: var(--lm-blue); }
-  body.light-mode nav { background: rgba(248,250,253,0.98); border-bottom: 2px solid var(--lm-grey); }
-  body.light-mode nav button { background: #ffffff; color: var(--lm-text); border-color: #c8d6e8; }
-  body.light-mode nav button.active { background: var(--lm-blue); color: #fff; }
+  
+  body.light-mode nav { background: rgba(248,250,253,0.98); border: 2px solid var(--lm-grey); }
+  body.light-mode .nav-links a { color: var(--lm-text-sub); }
+  body.light-mode .nav-links a:hover { color: var(--gold); }
+  body.light-mode .nav-links a.active { color: var(--gold); border-color: var(--gold); }
+  body.light-mode .hamburger span { background-color: var(--lm-text); }
+  
   body.light-mode table { background: #ffffff; border-color: #c8d6e8; }
   body.light-mode th { background: var(--lm-blue); color: #fff; }
   body.light-mode tbody tr:nth-child(even) { background: var(--lm-grey); }
   body.light-mode tbody tr:hover { background: var(--lm-blue-light); }
   body.light-mode td:nth-child(2) { color: var(--lm-text); }
-body.light-mode td:last-child { color: var(--lm-text); }
+  body.light-mode td:last-child { color: var(--lm-text); }
   body.light-mode td:first-child { color: #c9a227; }
   body.light-mode h2 { color: #c9a227; text-shadow: none; }
   body.light-mode .filter-pill-wrapper { color: var(--lm-text); }
@@ -470,16 +509,23 @@ body.light-mode td:last-child { color: var(--lm-text); }
 <div class="stitch-bar"></div>
 
 <nav>
-    <button onclick="setPage('lifetime')">LIFETIME RANKINGS</button>
-    <button onclick="setPage('seasonRankings')">SEASON RANKINGS</button>
-    <button onclick="setPage('weeklyRankings')">WEEKLY RANKINGS</button>
-    <button onclick="setPage('lifetimeRecord')">RECORDS</button>
-    <button onclick="setPage('lifetimeMedals')">MEDALS</button>
-    <button onclick="setPage('individualLifetime')">LIFETIME STATS</button>
-    <button onclick="setPage('individualYearly')">YEARLY STATS</button>
-    <button onclick="setPage('individualSeason')">PERSONAL YEARLY RANKINGS</button>
-    <button onclick="setPage('individualWeekly')">PERSONAL WEEKLY RANKINGS</button>
-    <button onclick="setPage('exportData')">EXPORT DATA</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a class="active" onclick="setPage('lifetime'); toggleMenu()">LIFETIME RANKINGS</a>
+        <a onclick="setPage('seasonRankings'); toggleMenu()">SEASON RANKINGS</a>
+        <a onclick="setPage('weeklyRankings'); toggleMenu()">WEEKLY RANKINGS</a>
+        <a onclick="setPage('lifetimeRecord'); toggleMenu()">RECORDS</a>
+        <a onclick="setPage('lifetimeMedals'); toggleMenu()">MEDALS</a>
+        <a onclick="setPage('individualLifetime'); toggleMenu()">LIFETIME STATS</a>
+        <a onclick="setPage('individualYearly'); toggleMenu()">YEARLY STATS</a>
+        <a onclick="setPage('individualSeason'); toggleMenu()">PERSONAL YEARLY RANKINGS</a>
+        <a onclick="setPage('individualWeekly'); toggleMenu()">PERSONAL WEEKLY RANKINGS</a>
+        <a onclick="setPage('exportData'); toggleMenu()">EXPORT DATA</a>
+    </div>
 </nav>
 
 <div id="wrapper">
@@ -487,6 +533,14 @@ body.light-mode td:last-child { color: var(--lm-text); }
 </div>
 
 <script>
+/* ── Mobile Menu Toggle ── */
+function toggleMenu() {
+  if (window.innerWidth <= 800) {
+    document.getElementById('navLinks').classList.toggle('show');
+    document.getElementById('hamburger').classList.toggle('active');
+  }
+}
+
 /* ── Theme Toggle Logic ── */
 const toggleSwitch = document.querySelector('#checkbox');
 const savedTheme   = localStorage.getItem('theme');
@@ -595,12 +649,31 @@ function rankTable(title,arr){
   `;
 }
 
-function setPage(page){
+function setPage(page) {
   currentPage = page;
-  document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
-  if(event && event.target) event.target.classList.add("active");
+  
+  // 1. Clear 'active' class from ALL links
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach(b => b.classList.remove("active"));
+  
+  // 2. Determine which link should be active
+  if (event && event.target && event.target.tagName === 'A') {
+    // If called by a click, use the clicked element
+    event.target.classList.add("active");
+  } else {
+    // If called on page load, find the link that matches the 'page' argument
+    // This looks for the link that runs the specific setPage command
+    links.forEach(link => {
+      if (link.getAttribute('onclick').includes(`setPage('${page}')`)) {
+        link.classList.add("active");
+      }
+    });
+  }
+
   const c = document.getElementById("content");
   c.innerHTML = "";
+  
+  // 3. Render the correct content
   if(page==="lifetime") showLifetime(c);
   if(page==="seasonRankings") showSeasonRankings(c);
   if(page==="weeklyRankings") showWeeklyRankings(c);
@@ -612,7 +685,6 @@ function setPage(page){
   if(page==="individualWeekly") showIndividualWeekly(c);
   if(page==="exportData") showExportData(c);
 }
-
 /* ── Specific Render Functions ── */
 
 function showLifetime(c){
@@ -730,7 +802,6 @@ function renderIndividualWeekly(){
   div.innerHTML = html;
 }
 
-/* ── Remaining functions (Medals, Export, etc) kept as-is ── */
 function showLifetimeRecord(container) {
   container.classList.remove('grid-view');
   const rows = Object.keys(managers).map(m => {

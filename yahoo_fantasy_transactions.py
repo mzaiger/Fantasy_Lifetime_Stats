@@ -180,6 +180,9 @@ def download_all_transactions():
                     tx_meta = tx_entry[0] if isinstance(tx_entry[0], dict) else {}
                     tx_id = tx_meta.get("transaction_id", "-")
                     tx_timestamp = tx_meta.get("timestamp", "-")
+                    
+                    # Extraction of faab_bid mapping matching Transactions.py logic
+                    faab_bid = tx_meta.get("faab_bid") 
 
                     for block in tx_entry[1:]:
                         if not isinstance(block, dict) or "players" not in block: continue
@@ -229,7 +232,8 @@ def download_all_transactions():
                                 "timestamp": tx_timestamp,
                                 "transaction_type": raw_action,
                                 "player_name": player_name,
-                                "player_action": action
+                                "player_action": action,
+                                "faab_bid": faab_bid if action == "add" and faab_bid else "0"
                             })
 
     # ── [3/3] Exporting Data ───────────────────────────────────────────────
@@ -245,7 +249,7 @@ def download_all_transactions():
     csv_file = Path("all_seasons_transactions.csv")
     fieldnames = [
         "season", "league_key", "team_key", "team_name", "manager_nickname",
-        "transaction_id", "timestamp", "transaction_type", "player_name", "player_action"
+        "transaction_id", "timestamp", "transaction_type", "player_name", "player_action", "faab_bid"
     ]
     with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)

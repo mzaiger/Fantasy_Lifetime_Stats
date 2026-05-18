@@ -24,14 +24,12 @@ def _save_token(token):
     TOKEN_CACHE.write_text(json.dumps(token, indent=2))
 
 def _load_token():
-    # Check for token in environment variables first
     token_from_env = os.getenv("YAHOO_TOKEN")
     if token_from_env:
         try:
             return json.loads(token_from_env)
         except Exception:
             pass
-    # Fallback to local file for testing
     if TOKEN_CACHE.exists():
         try:
             return json.loads(TOKEN_CACHE.read_text())
@@ -110,7 +108,7 @@ def download_all_transactions():
         game_key = item["key"]
         season   = item["season"]
 
-        leagues_url  = f"{BASE_URL}/users;use_login=1/games;game_keys={game_key}/leagues"
+        leagues_url = f"{BASE_URL}/users;use_login=1/games;game_keys={game_key}/leagues"
         leagues_data = api_get(session, leagues_url)
         time.sleep(0.4)
 
@@ -128,15 +126,13 @@ def download_all_transactions():
             if not league_key:
                 continue
 
-            # Grab all teams in the league
-            teams_url  = f"{BASE_URL}/league/{league_key}/teams"
+            teams_url = f"{BASE_URL}/league/{league_key}/teams"
             teams_data = api_get(session, teams_url)
             time.sleep(0.4)
 
             league_teams = teams_data.get("fantasy_content", {}).get("league", [{}, {}])[1].get("teams", {})
             t_count      = int(league_teams.get("count", 0))
 
-            # Build list of all team keys + names + manager nicknames
             all_teams = []
             for t_idx in range(t_count):
                 t_entry    = league_teams.get(str(t_idx), {}).get("team", [[]])[0]
@@ -145,9 +141,9 @@ def download_all_transactions():
                 m_nickname = ""
                 for prop in t_entry:
                     if not isinstance(prop, dict): continue
-                    if "team_key"  in prop: t_key      = prop["team_key"]
-                    if "name"      in prop: t_name     = prop["name"]
-                    if "managers"  in prop:
+                    if "team_key" in prop: t_key      = prop["team_key"]
+                    if "name"     in prop: t_name     = prop["name"]
+                    if "managers" in prop:
                         try:
                             m_nickname = prop["managers"][0]["manager"].get("nickname", "")
                         except (IndexError, KeyError):
@@ -157,7 +153,6 @@ def download_all_transactions():
 
             print(f"  {season} | league {league_key} | {len(all_teams)} teams")
 
-            # Query transactions for EVERY team
             for team in all_teams:
                 tx_url  = f"{BASE_URL}/team/{team['key']}/transactions;types=add,drop"
                 tx_data = api_get(session, tx_url)
@@ -198,10 +193,17 @@ def download_all_transactions():
                             if not isinstance(p_tx, dict): p_tx = {}
 
                             player_name = ""
+                            player_position = "-"
+                            
+                            # Extract name and display position from player metadata list
                             for it in p_meta:
-                                if isinstance(it, dict) and "name" in it:
+                                if not isinstance(it, dict):
+                                    continue
+                                if "name" in it:
                                     player_name = it["name"].get("full", "")
-                                    break
+                                if "display_position" in it:
+                                    player_position = it.get("display_position", "-")
+                                    
                             if not player_name:
                                 continue
 
@@ -214,7 +216,6 @@ def download_all_transactions():
                             elif raw_action == "drop":
                                 action = "drop"
                             elif raw_action == "add/drop":
-                                # If it's a drop, there will be a source_team_key present on the player token side
                                 if p_tx.get("source_team_key"):
                                     action = "drop"
                                 else:
@@ -232,6 +233,7 @@ def download_all_transactions():
                                 "timestamp": tx_timestamp,
                                 "transaction_type": raw_action,
                                 "player_name": player_name,
+                                "player_position": player_position,
                                 "player_action": action,
                                 "faab_bid": faab_bid if action == "add" and faab_bid else "0"
                             })
@@ -249,7 +251,8 @@ def download_all_transactions():
     csv_file = Path("all_seasons_transactions.csv")
     fieldnames = [
         "season", "league_key", "team_key", "team_name", "manager_nickname",
-        "transaction_id", "timestamp", "transaction_type", "player_name", "player_action", "faab_bid"
+        "transaction_id", "timestamp", "transaction_type", "player_name", 
+        "player_position", "player_action", "faab_bid"
     ]
     with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)

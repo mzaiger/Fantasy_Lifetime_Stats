@@ -143,22 +143,22 @@
   .tx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
   @media (max-width: 800px) { .tx-grid { grid-template-columns: 1fr; } }
 
-  /* TX tables — col overrides */
+  /* TX tables — col overrides: #, Player, Pos, Adds, Drops, Total */
   .tx-table td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
-  .tx-table td:nth-child(3) { text-align: center; color: #7ecfa0; font-weight: 600; }
-  .tx-table td:nth-child(4) { text-align: center; color: #e07070; font-weight: 600; }
-  .tx-table td:nth-child(5) { text-align: center; color: var(--cream); font-weight: 700; }
+  .tx-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); font-weight: 400; }
+  .tx-table td:nth-child(4) { text-align: center; color: #7ecfa0; font-weight: 600; }
+  .tx-table td:nth-child(5) { text-align: center; color: #e07070; font-weight: 600; }
 
-  /* FAAB table col overrides */
+  /* FAAB table col overrides: #, Player, Pos, Manager, Season, FAAB $ */
   .faab-table td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
-  .faab-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.6); }
-  .faab-table td:nth-child(4) { text-align: left; color: rgba(255,255,255,0.6); font-size: 0.78rem; }
-  .faab-table td:nth-child(5) { text-align: center; color: rgba(255,255,255,0.6); }
+  .faab-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); }
+  .faab-table td:nth-child(4) { text-align: left; color: rgba(255,255,255,0.55); font-size: 0.78rem; }
+  .faab-table td:nth-child(5) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-table td:nth-child(6) { text-align: center; color: var(--gold); font-weight: 700; }
 
-  /* FAAB personal — fewer cols */
-  .faab-personal td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.6); }
-  .faab-personal td:nth-child(4) { text-align: center; color: rgba(255,255,255,0.6); }
+  /* FAAB personal — fewer cols: #, Player, Pos, Season, FAAB $ */
+  .faab-personal td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); }
+  .faab-personal td:nth-child(4) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-personal td:nth-child(5) { text-align: center; color: var(--gold); font-weight: 700; }
 
   /* Team tx table */
@@ -202,9 +202,16 @@
   body.light-mode .filter-pill-wrapper { color: var(--lm-text); }
   body.light-mode input:checked + .slider { background-color: var(--lm-blue); }
   body.light-mode .subtitle { color: var(--lm-text); }
-  body.light-mode .tx-table td:nth-child(3) { color: #1a7a45; }
-  body.light-mode .tx-table td:nth-child(4) { color: #a02020; }
+  body.light-mode .tx-table td:nth-child(3) { color: #556070; }
+  body.light-mode .tx-table td:nth-child(4) { color: #1a7a45; }
+  body.light-mode .tx-table td:nth-child(5) { color: #a02020; }
+  body.light-mode .faab-table td:nth-child(2) { color: var(--lm-text); }
+  body.light-mode .faab-table td:nth-child(3) { color: #556070; }
+  body.light-mode .faab-table td:nth-child(4) { color: var(--lm-text); }
+  body.light-mode .faab-table td:nth-child(5) { color: #556070; }
   body.light-mode .faab-table td:nth-child(6) { color: #8a6d00; }
+  body.light-mode .faab-personal td:nth-child(3) { color: #556070; }
+  body.light-mode .faab-personal td:nth-child(4) { color: #556070; }
   body.light-mode .faab-personal td:nth-child(5) { color: #8a6d00; }
   body.light-mode .team-tx-table td:nth-child(3) { color: #1a7a45; }
   body.light-mode .team-tx-table td:nth-child(4) { color: #a02020; }

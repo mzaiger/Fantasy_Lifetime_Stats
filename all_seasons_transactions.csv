@@ -27957,6 +27957,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,577,1779697611,add/drop,Nathaniel Lowe,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,577,1779697611,drop,Kazuma Okamoto,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,576,1779697611,add/drop,Kirby Yates,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,576,1779697611,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,565,1779438977,add/drop,Esmerlyn Valdez,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,565,1779438977,drop,Spencer Jones,OF,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,561,1779351532,add,Grant Taylor,"SP,RP",add,0
@@ -28181,7 +28185,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,256,1775549875,add,Brandon Marsh,OF,add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,224,1775040495,drop,Payton Tolle,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,216,1775031609,add,Matt Strahm,RP,add,0
-2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,214,1775031609,add/drop,Colt Emerson,SS,add,1
+2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,214,1775031609,add/drop,Colt Emerson,"3B,SS",add,1
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,214,1775031609,drop,Nolan Arenado,3B,drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,157,1774512763,add,Reynaldo López,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,156,1774512763,add,Jake Cronenworth,"1B,2B,SS",add,0
@@ -28190,38 +28194,40 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,138,1774425768,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,137,1774425768,add,Nolan Arenado,3B,add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,83,1774339163,add,Riley O'Brien,RP,add,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,571,1779610830,add,Kai-Wei Teng,"SP,RP",add,3
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,554,1779291318,drop,Daniel Schneemann,"2B,3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,516,1778942002,drop,Kumar Rocker,SP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,434,1777770358,drop,Ryan Pepiot,SP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,394,1777278125,add/drop,Jacob Latz,"SP,RP",add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,394,1777278125,drop,Aaron Nola,SP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,393,1777278125,add,Aaron Ashby,RP,add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,392,1777278125,add/drop,Kumar Rocker,SP,add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,392,1777278125,drop,Luis Robert Jr.,OF,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,390,1777240777,drop,Jeremiah Estrada,RP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,331,1776500274,add/drop,Daniel Schneemann,"2B,3B,SS,OF",add,2
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,331,1776500274,drop,Shane Baz,SP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,303,1776068714,add/drop,Mickey Moniak,OF,add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,303,1776068714,drop,Nolan Gorman,"2B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,302,1776068714,add/drop,Antonio Senzatela,"SP,RP",add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,302,1776068714,drop,Brad Keller,RP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,301,1776068714,add/drop,Steven Matz,"SP,RP",add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,301,1776068714,drop,Roki Sasaki,SP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,300,1776068714,add/drop,Rico Garcia,RP,add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,300,1776068714,drop,Adrian Morejon,RP,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,298,1776068714,add/drop,Joel Kuhnel,RP,add,3
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,298,1776068714,drop,David Peterson,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,284,1775895490,add,Davis Martin,SP,add,2
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,254,1775549875,add,Dillon Dingler,C,add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,249,1775529563,drop,Kyle Teel,C,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,248,1775529554,drop,Ryan Jeffers,C,drop,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,210,1775031609,add,Nolan Gorman,"2B,3B",add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,148,1774512763,add,Ryan Jeffers,C,add,1
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,132,1774425768,add,David Peterson,"SP,RP",add,2
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,13,1774232901,add,Brad Keller,RP,add,0
-2026,469.l.23321,469.l.23321.t.4,dungeon crawler carl,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,571,1779610830,add,Kai-Wei Teng,"SP,RP",add,3
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,554,1779291318,drop,Daniel Schneemann,"2B,3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,516,1778942002,drop,Kumar Rocker,SP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,434,1777770358,drop,Ryan Pepiot,SP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,394,1777278125,add/drop,Jacob Latz,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,394,1777278125,drop,Aaron Nola,SP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,393,1777278125,add,Aaron Ashby,RP,add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,392,1777278125,add/drop,Kumar Rocker,SP,add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,392,1777278125,drop,Luis Robert Jr.,OF,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,390,1777240777,drop,Jeremiah Estrada,RP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,331,1776500274,add/drop,Daniel Schneemann,"2B,3B,SS,OF",add,2
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,331,1776500274,drop,Shane Baz,SP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,303,1776068714,add/drop,Mickey Moniak,OF,add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,303,1776068714,drop,Nolan Gorman,"2B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,302,1776068714,add/drop,Antonio Senzatela,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,302,1776068714,drop,Brad Keller,RP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,301,1776068714,add/drop,Steven Matz,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,301,1776068714,drop,Roki Sasaki,SP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,300,1776068714,add/drop,Rico Garcia,RP,add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,300,1776068714,drop,Adrian Morejon,RP,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,298,1776068714,add/drop,Joel Kuhnel,RP,add,3
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,298,1776068714,drop,David Peterson,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,284,1775895490,add,Davis Martin,SP,add,2
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,254,1775549875,add,Dillon Dingler,C,add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,249,1775529563,drop,Kyle Teel,C,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,248,1775529554,drop,Ryan Jeffers,C,drop,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,210,1775031609,add,Nolan Gorman,"2B,3B",add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,148,1774512763,add,Ryan Jeffers,C,add,1
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,132,1774425768,add,David Peterson,"SP,RP",add,2
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,575,1779697611,add/drop,Carlos Cortes,OF,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,575,1779697611,drop,Noah Schultz,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,567,1779524286,add/drop,Troy Melton,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,567,1779524286,drop,Gavin Sheets,"1B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,563,1779438977,add/drop,Eury Pérez,SP,add,0
@@ -28397,6 +28403,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,574,1779697611,add/drop,Justin Steele,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,574,1779697611,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,526,1779025950,drop,Seth Lugo,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,522,1779005936,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,0
 2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,522,1779005936,drop,Gage Workman,"3B,SS,OF",drop,0

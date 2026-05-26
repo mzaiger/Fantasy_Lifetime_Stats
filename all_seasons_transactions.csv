@@ -27957,6 +27957,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,583,1779783632,add/drop,Joey Cantillo,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,583,1779783632,drop,Zack Gelof,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,582,1779783632,add/drop,Bryan King,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,582,1779783632,drop,Esmerlyn Valdez,"1B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,577,1779697611,add/drop,Nathaniel Lowe,1B,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,577,1779697611,drop,Kazuma Okamoto,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,576,1779697611,add/drop,Kirby Yates,RP,add,0
@@ -28080,6 +28084,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,579,1779783632,add/drop,Chad Patrick,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,579,1779783632,drop,Erik Sabrowski,RP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,566,1779524286,add/drop,Taylor Walls,SS,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,566,1779524286,drop,Dustin May,SP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,559,1779351532,add/drop,Keibert Ruiz,C,add,0
@@ -28105,7 +28111,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,442,1777883153,drop,J.T. Realmuto,C,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,426,1777623462,add/drop,Jake Bennett,SP,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,426,1777623462,drop,Colin Rea,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,413,1777450747,add/drop,Casey Schmitt,"1B,2B,3B",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,413,1777450747,add/drop,Casey Schmitt,"1B,2B,3B,OF",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,413,1777450747,drop,Walbert Ureña,SP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,398,1777278126,add/drop,Ryan Jeffers,C,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,398,1777278126,drop,Javier Assad,"SP,RP",drop,0
@@ -28153,6 +28159,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,581,1779783632,add,Ian Seymour,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,568,1779524286,add/drop,Mitch Garver,C,add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,568,1779524286,drop,Oswald Peraza,"1B,2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,555,1779299788,drop,Eric Haase,C,drop,0
@@ -28354,6 +28361,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,57,1774339163,add,Clayton Beeter,RP,add,3
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,43,1774339163,add,Paul Sewald,RP,add,4
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,33,1774339163,add,Mike Burrows,"SP,RP",add,5
+2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,578,1779783632,add/drop,TJ Rumfield,1B,add,0
+2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,578,1779783632,drop,Jose Fernandez,"1B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,517,1778950660,drop,Reid Detmers,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,515,1778919561,add,Angel Martínez,"2B,OF",add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,451,1777954331,drop,Edwin Uceta,RP,drop,0
@@ -28403,70 +28412,71 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,574,1779697611,add/drop,Justin Steele,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,574,1779697611,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,526,1779025950,drop,Seth Lugo,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,522,1779005936,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,522,1779005936,drop,Gage Workman,"3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,509,1778833100,add/drop,Gage Workman,"3B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,509,1778833100,drop,Chase Meidroth,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,502,1778660339,add/drop,Chase Meidroth,"2B,3B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,502,1778660339,drop,Gage Workman,"3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,501,1778660339,add/drop,Edwin Arroyo,"2B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,501,1778660339,drop,Aaron Nola,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,485,1778487847,add/drop,Gage Workman,"3B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,485,1778487847,drop,Chase Meidroth,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,484,1778401065,add/drop,Chase Meidroth,"2B,3B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,484,1778401065,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,461,1778082980,drop,Brady Singer,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,453,1777969090,add/drop,Aaron Nola,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,453,1777969090,drop,Tomoyuki Sugano,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,452,1777956291,drop,Andrew Vaughn,1B,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,419,1777537042,add/drop,Tomoyuki Sugano,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,419,1777537042,drop,Walker Buehler,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,386,1777191522,add,Matt McLain,2B,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,385,1777191522,add/drop,Lucas Erceg,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,385,1777191522,drop,Kodai Senga,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,382,1777157988,drop,Jonathan India,"2B,3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,371,1777018657,add/drop,Spencer Arrighetti,SP,add,4
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,371,1777018657,drop,Lucas Erceg,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,364,1776932239,add/drop,Walker Buehler,SP,add,1
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,364,1776932239,drop,Noah Cameron,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,357,1776845949,add/drop,Carmen Mlodzinski,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,357,1776845949,drop,John Schreiber,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,345,1776759374,add,Justin Wrobleski,"SP,RP",add,4
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,341,1776673249,add/drop,Kodai Senga,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,341,1776673249,drop,Mark Vientos,"1B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,337,1776586789,add/drop,John Schreiber,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,337,1776586789,drop,Robert Garcia,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,276,1775722697,add/drop,Spencer Steer,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,276,1775722697,drop,Justin Crawford,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,263,1775550114,drop,Jorge Polanco,"2B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,255,1775549875,add/drop,Jonathan India,"2B,3B,OF",add,1
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,255,1775549875,drop,Luisangel Acuña,"2B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,239,1775290599,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,1
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,239,1775290599,drop,Alejandro Kirk,C,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,237,1775204206,add,Alejandro Kirk,C,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,220,1775031609,add/drop,Justin Crawford,OF,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,220,1775031609,drop,Jesús Made,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,219,1775031609,add/drop,Andrew Vaughn,1B,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,219,1775031609,drop,Jonathan India,"2B,3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,188,1774772233,add/drop,Lucas Erceg,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,188,1774772233,drop,Starling Marte,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,166,1774599374,add/drop,Jesús Made,"2B,3B,SS",add,1
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,166,1774599374,drop,Cam Smith,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,149,1774512763,add,Cam Smith,OF,add,0
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,134,1774425768,add,Robert Garcia,RP,add,1
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,73,1774339163,add,Leo De Vries,SS,add,1
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,63,1774339163,add,Cade Cavalli,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,55,1774339163,add,Jonathan India,"2B,3B,OF",add,3
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,31,1774339163,add,Grayson Rodriguez,SP,add,5
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,27,1774339163,add,Will Warren,SP,add,6
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,22,1774339163,add,Seth Lugo,SP,add,8
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,21,1774339163,add,Michael Wacha,SP,add,8
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,19,1774339163,add,Brady Singer,SP,add,16
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
-2026,469.l.23321,469.l.23321.t.9,Loose bodies,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,580,1779783632,add,Seth Lugo,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,574,1779697611,add/drop,Justin Steele,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,574,1779697611,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,526,1779025950,drop,Seth Lugo,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,522,1779005936,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,522,1779005936,drop,Gage Workman,"3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,509,1778833100,add/drop,Gage Workman,"3B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,509,1778833100,drop,Chase Meidroth,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,502,1778660339,add/drop,Chase Meidroth,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,502,1778660339,drop,Gage Workman,"3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,501,1778660339,add/drop,Edwin Arroyo,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,501,1778660339,drop,Aaron Nola,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,485,1778487847,add/drop,Gage Workman,"3B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,485,1778487847,drop,Chase Meidroth,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,484,1778401065,add/drop,Chase Meidroth,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,484,1778401065,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,461,1778082980,drop,Brady Singer,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,453,1777969090,add/drop,Aaron Nola,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,453,1777969090,drop,Tomoyuki Sugano,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,452,1777956291,drop,Andrew Vaughn,1B,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,419,1777537042,add/drop,Tomoyuki Sugano,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,419,1777537042,drop,Walker Buehler,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,386,1777191522,add,Matt McLain,2B,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,385,1777191522,add/drop,Lucas Erceg,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,385,1777191522,drop,Kodai Senga,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,382,1777157988,drop,Jonathan India,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,371,1777018657,add/drop,Spencer Arrighetti,SP,add,4
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,371,1777018657,drop,Lucas Erceg,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,364,1776932239,add/drop,Walker Buehler,SP,add,1
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,364,1776932239,drop,Noah Cameron,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,357,1776845949,add/drop,Carmen Mlodzinski,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,357,1776845949,drop,John Schreiber,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,345,1776759374,add,Justin Wrobleski,"SP,RP",add,4
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,341,1776673249,add/drop,Kodai Senga,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,341,1776673249,drop,Mark Vientos,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,337,1776586789,add/drop,John Schreiber,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,337,1776586789,drop,Robert Garcia,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,276,1775722697,add/drop,Spencer Steer,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,276,1775722697,drop,Justin Crawford,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,263,1775550114,drop,Jorge Polanco,"2B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,255,1775549875,add/drop,Jonathan India,"2B,3B,OF",add,1
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,255,1775549875,drop,Luisangel Acuña,"2B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,239,1775290599,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,1
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,239,1775290599,drop,Alejandro Kirk,C,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,237,1775204206,add,Alejandro Kirk,C,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,220,1775031609,add/drop,Justin Crawford,OF,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,220,1775031609,drop,Jesús Made,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,219,1775031609,add/drop,Andrew Vaughn,1B,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,219,1775031609,drop,Jonathan India,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,188,1774772233,add/drop,Lucas Erceg,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,188,1774772233,drop,Starling Marte,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,166,1774599374,add/drop,Jesús Made,"2B,3B,SS",add,1
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,166,1774599374,drop,Cam Smith,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,149,1774512763,add,Cam Smith,OF,add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,134,1774425768,add,Robert Garcia,RP,add,1
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,73,1774339163,add,Leo De Vries,SS,add,1
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,63,1774339163,add,Cade Cavalli,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,55,1774339163,add,Jonathan India,"2B,3B,OF",add,3
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,31,1774339163,add,Grayson Rodriguez,SP,add,5
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,27,1774339163,add,Will Warren,SP,add,6
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,22,1774339163,add,Seth Lugo,SP,add,8
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,21,1774339163,add,Michael Wacha,SP,add,8
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,19,1774339163,add,Brady Singer,SP,add,16
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,569,1779524286,add/drop,Stephen Kolek,SP,add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,569,1779524286,drop,J.P. Crawford,SS,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,557,1779351532,add/drop,Brett Baty,"1B,2B,3B,OF",add,2

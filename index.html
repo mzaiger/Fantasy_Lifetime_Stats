@@ -923,6 +923,7 @@ function buildWorstTradesData(trades) {
 }
 
 /* Render the shared 4-column worst-trades table */
+/* Render the shared 4-column worst-trades table */
 function renderWorstTradesTable(title, trades) {
   let html = `<h2>${title}</h2>
     <div style="overflow-x:auto; width:100%;">
@@ -942,12 +943,19 @@ function renderWorstTradesTable(title, trades) {
     const toClass = toIsWinner ? 'trade-win' : 'trade-lose';
     const fromClass = toIsWinner ? 'trade-lose' : 'trade-win';
 
-    const mgrCell = `<span class="${toClass}" style="font-weight:700;">To: ${t.toManager}</span><br><span class="${fromClass}" style="font-weight:700;">From: ${t.fromManager}</span>`;
-    const toLines = `<span class="${toClass}" style="font-weight:600;">To: ${t.toPlayers[0]}</span>` +
-      t.toPlayers.slice(1).map(p => `<br><span style="padding-left:1.2em;">${p}</span>`).join('');
-    const fromLines = `<span class="${fromClass}" style="font-weight:600;">From: ${t.fromPlayers[0]}</span>` +
-      t.fromPlayers.slice(1).map(p => `<br><span style="padding-left:1.6em;">${p}</span>`).join('');
+    // Updated "To" -> "Approver" and "From" -> "Initiator"
+    const mgrCell = `<span class="${toClass}" style="font-weight:700;">Approver: ${t.toManager}</span><br><span class="${fromClass}" style="font-weight:700;">Initiator: ${t.fromManager}</span>`;
+    
+    // Bug Fix: Added class="${toClass}" and class="${fromClass}" to the spans inside the map()
+    // Also increased the padding-left slightly to account for the longer words "Approver" and "Initiator"
+    const toLines = `<span class="${toClass}" style="font-weight:600;">Approver: ${t.toPlayers[0]}</span>` +
+      t.toPlayers.slice(1).map(p => `<br><span class="${toClass}" style="padding-left:4.5em;">${p}</span>`).join('');
+      
+    const fromLines = `<span class="${fromClass}" style="font-weight:600;">Initiator: ${t.fromPlayers[0]}</span>` +
+      t.fromPlayers.slice(1).map(p => `<br><span class="${fromClass}" style="padding-left:4.5em;">${p}</span>`).join('');
+      
     const playerCell = `${toLines}<br>${fromLines}`;
+    
     html += `<tr>
       <td>${i+1}</td>
       <td style="font-weight:700;color:var(--gold);font-family:'Barlow Condensed',sans-serif;">${t.season}</td>
@@ -959,7 +967,6 @@ function renderWorstTradesTable(title, trades) {
   html += `</tbody></table></div>`;
   return html;
 }
-
 /* ── LIFETIME WORST TRADES ── */
 function showWorstTrades(c) {
   c.classList.remove("grid-view");

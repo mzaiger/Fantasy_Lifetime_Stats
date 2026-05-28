@@ -185,7 +185,6 @@ def build_team_map(session, league_key):
                         if isinstance(mgr, dict):
                             manager_name = (
                                 mgr.get("nickname")
-                                or mgr.get("nickname")
                                 or mgr.get("guid")
                                 or "-"
                             )
@@ -310,6 +309,10 @@ def fetch_league_trades(
                     elif isinstance(item, dict):
 
                         tx_data = item.get("transaction_data")
+                        
+                        # Yahoo returns transaction_data as a list for trades
+                        if isinstance(tx_data, list) and len(tx_data) > 0:
+                            tx_data = tx_data[0]
 
                         if isinstance(tx_data, dict):
 
@@ -372,7 +375,7 @@ def get_roster_percent_map(
 
         keys_str = ",".join(batch)
 
-        url = f"{BASE_URL}/players;player_keys={keys_str}/ownership"
+        url = f"{BASE_URL}/players;player_keys={keys_str}/percent_owned"
 
         data = api_get(session, url)
 
@@ -410,20 +413,17 @@ def get_roster_percent_map(
                 # OWNERSHIP
                 # -----------------------------------------------------------
 
-                elif isinstance(item, dict):
-
-                    if "ownership" in item:
-
-                        ownership = item["ownership"]
-
-                        if isinstance(ownership, dict):
-
-                            pct = ownership.get("percent_owned")
-
-                            if isinstance(pct, dict):
-                                roster_pct = pct.get("value", "-")
-                            else:
-                                roster_pct = pct
+                elif isinstance(item, dict) and "percent_owned" in item:
+                    
+                    po_data = item["percent_owned"]
+                    
+                    if isinstance(po_data, list):
+                        for entry in po_data:
+                            if isinstance(entry, dict) and "value" in entry:
+                                roster_pct = entry["value"]
+                                break
+                    elif isinstance(po_data, dict):
+                        roster_pct = po_data.get("value", "-")
 
             if p_key:
                 roster_map[p_key] = roster_pct

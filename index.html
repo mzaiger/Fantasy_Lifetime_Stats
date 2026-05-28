@@ -57,21 +57,17 @@
     transition: background 0.4s ease, border-color 0.4s ease;
   }
 
-  .header-imgs { display: flex;
-    align-items: center; gap: 14px; flex-shrink: 0; }
+  .header-imgs { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
   .header-imgs img {
     height: 52px; width: auto; opacity: 0.60;
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6)) drop-shadow(0 0 18px rgba(13,27,42,0.75)) drop-shadow(0 0 40px rgba(13,42,74,0.45));
     transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
   }
-  .header-imgs img:hover { opacity: 1; transform: scale(1.08) rotate(-2deg);
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 22px rgba(13,42,74,0.55)); }
-  .bat-img { height: 44px !important;
-    }
+  .header-imgs img:hover { opacity: 1; transform: scale(1.08) rotate(-2deg); filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)) drop-shadow(0 0 22px rgba(13,42,74,0.55)); }
+  .bat-img { height: 44px !important; }
   .bat-img:hover { transform: rotate(-35deg) scale(1.1) !important; }
 
-  .header-title { flex: 1; text-align: center; padding: 0 20px;
-    }
+  .header-title { flex: 1; text-align: center; padding: 0 20px; }
   .header-title h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.2rem, 5vw, 3.8rem);
@@ -82,219 +78,143 @@
   .header-title .subtitle {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.05rem; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--gold);
-    font-weight: bold; margin-top: 4px; opacity: 0.9;
+    color: var(--gold); font-weight: bold; margin-top: 4px; opacity: 0.9;
   }
 
-  @media (max-width: 800px) { .header-imgs, .header-imgs-right { display: none;
-    } }
+  @media (max-width: 800px) { .header-imgs, .header-imgs-right { display: none; } }
   @media (min-width: 801px) {
-    .nav-links a { border: 1px solid var(--gold); padding: 2px 4px;
-      border-radius: 4px; transition: all 0.3s ease; }
+    .nav-links a { border: 1px solid var(--gold); padding: 2px 4px; border-radius: 4px; transition: all 0.3s ease; }
   }
 
-  .stitch-bar { position: relative; z-index: 10; height: 4px; background: var(--red);
-    box-shadow: 0 0 12px rgba(192,57,43,0.6); transition: background 0.4s ease, box-shadow 0.4s ease; }
+  .stitch-bar { position: relative; z-index: 10; height: 4px; background: var(--red); box-shadow: 0 0 12px rgba(192,57,43,0.6); transition: background 0.4s ease, box-shadow 0.4s ease; }
 
-  nav { position: relative; z-index: 10;
-    background: rgba(13,27,42,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); transition: background 0.4s ease, border-color 0.4s ease;
-    }
+  nav { position: relative; z-index: 10; background: rgba(13,27,42,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); transition: background 0.4s ease, border-color 0.4s ease; }
 
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 16px 32px; width: fit-content; margin: 0 auto;
-    }
-  .hamburger span { display: block; width: 25px; height: 3px; background-color: var(--cream); transition: all 0.3s ease; border-radius: 2px;
-    }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 16px 32px; width: fit-content; margin: 0 auto; }
+  .hamburger span { display: block; width: 25px; height: 3px; background-color: var(--cream); transition: all 0.3s ease; border-radius: 2px; }
 
-  .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 18px 32px;
-    }
+  .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 18px 32px; }
   .nav-links a {
     color: var(--cream); cursor: pointer;
     font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
     transition: all 0.2s ease; border: 2px solid; padding-bottom: 2px;
-    }
+  }
   .nav-links a:hover { color: var(--red-bright); }
-  .nav-links a.active { color: var(--red); border-color: var(--red);
-    }
+  .nav-links a.active { color: var(--red); border-color: var(--red); }
 
   @media (max-width: 800px) {
-    nav { padding: 0;
-    }
+    nav { padding: 0; }
     .hamburger { display: flex; }
-    .nav-links { display: none; flex-direction: column; align-items: center;
-      padding: 0 0 20px 0; gap: 15px; border: 0px; }
-    .nav-links a { border: 0px;
-    }
+    .nav-links { display: none; flex-direction: column; align-items: center; padding: 0 0 20px 0; gap: 15px; border: 0px; }
+    .nav-links a { border: 0px; }
     .nav-links.show { display: flex; }
-    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg);
-    }
+    .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg);
-    }
+    .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   }
 
-  #wrapper { position: relative; z-index: 10; padding: 28px 24px; min-height: calc(100vh - 180px);
-    }
-  #content { display: grid; grid-template-columns: 1fr; gap: 20px;
-    }
+  #wrapper { position: relative; z-index: 10; padding: 28px 24px; min-height: calc(100vh - 180px); }
+  #content { display: grid; grid-template-columns: 1fr; gap: 20px; }
   @media (min-width: 1000px) { #content.grid-view { grid-template-columns: repeat(5, 1fr); } }
 
-  table { border-collapse: collapse; width: 100%;
-    background: var(--glass); backdrop-filter: blur(12px); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    transition: background 0.4s ease, border-color 0.4s ease; }
-  th, td { border: 1px solid rgba(255,255,255,0.07); padding: 7px 9px;
-    text-align: center; font-size: 0.82rem; font-family: 'Barlow', sans-serif; transition: color 0.3s ease; }
-  th { background: rgba(192,57,43,0.85); color: #fff;
-    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.1em; font-size: 0.8rem; text-transform: uppercase; border-color: rgba(255,255,255,0.15); transition: background 0.4s ease;
-    }
+  table { border-collapse: collapse; width: 100%; background: var(--glass); backdrop-filter: blur(12px); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(0,0,0,0.4); transition: background 0.4s ease, border-color 0.4s ease; }
+  th, td { border: 1px solid rgba(255,255,255,0.07); padding: 7px 9px; text-align: center; font-size: 0.82rem; font-family: 'Barlow', sans-serif; transition: color 0.3s ease; }
+  th { background: rgba(192,57,43,0.85); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.1em; font-size: 0.8rem; text-transform: uppercase; border-color: rgba(255,255,255,0.15); transition: background 0.4s ease; }
   tr:nth-child(even) { background: rgba(255,255,255,0.04); }
-  tr:hover { background: rgba(201,162,39,0.08); transition: background 0.15s;
-    }
+  tr:hover { background: rgba(201,162,39,0.08); transition: background 0.15s; }
   td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
-  h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem;
-    letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-    }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 8px; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
   .medal-gold   { color: var(--gold); font-weight: 700; }
-  .medal-silver { color: #aaa; font-weight: 700;
-    }
+  .medal-silver { color: #aaa; font-weight: 700; }
   .medal-bronze { color: #cd7f32; font-weight: 700; }
 
-  select { padding: 8px 14px; margin-right: 10px; border-radius: 4px;
-    border: 1px solid var(--border); background: var(--glass); color: var(--cream); font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; backdrop-filter: blur(8px); cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
-  .show-btn { padding: 8px 20px; background: var(--red);
-    color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase;
-    transition: all 0.2s; }
-  .show-btn:hover { background: var(--red-bright); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(192,57,43,0.4);
-    }
+  select { padding: 8px 14px; margin-right: 10px; border-radius: 4px; border: 1px solid var(--border); background: var(--glass); color: var(--cream); font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 0.05em; backdrop-filter: blur(8px); cursor: pointer; transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+  .show-btn { padding: 8px 20px; background: var(--red); color: white; border: none; border-radius: 4px; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; transition: all 0.2s; }
+  .show-btn:hover { background: var(--red-bright); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(192,57,43,0.4); }
 
   .section-vertical-stack { display: flex; flex-direction: column; gap: 14px; width: 100%; }
-  .no-data { color: rgba(255,255,255,0.4); font-style: italic;
-    margin: 12px 0; }
-  td:first-child { color: var(--gold); font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem;
-    }
+  .no-data { color: rgba(255,255,255,0.4); font-style: italic; margin: 12px 0; }
+  td:first-child { color: var(--gold); font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; }
   td:last-child { color: #c9d5e0; }
-  tfoot tr td { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem;
-    }
+  tfoot tr td { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; }
 
-  .tx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%;
-    }
+  .tx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
   @media (max-width: 800px) { .tx-grid { grid-template-columns: 1fr; } }
 
-  .tx-table td:nth-child(2) { text-align: left; font-weight: 500;
-    color: #e8dfc8; }
+  .tx-table td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
   .tx-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); font-weight: 400; }
-  .tx-table td:nth-child(4) { text-align: center;
-    color: #7ecfa0; font-weight: 600; }
-  .tx-table td:nth-child(5) { text-align: center; color: #e07070; font-weight: 600;
-    }
+  .tx-table td:nth-child(4) { text-align: center; color: #7ecfa0; font-weight: 600; }
+  .tx-table td:nth-child(5) { text-align: center; color: #e07070; font-weight: 600; }
 
   .faab-table td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
-  .faab-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55);
-    }
+  .faab-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-table td:nth-child(4) { text-align: left; color: rgba(255,255,255,0.55); font-size: 0.78rem; }
-  .faab-table td:nth-child(5) { text-align: center; color: rgba(255,255,255,0.55);
-    }
+  .faab-table td:nth-child(5) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-table td:nth-child(6) { text-align: center; color: var(--gold); font-weight: 700; }
 
-  .faab-personal td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55);
-    }
+  .faab-personal td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-personal td:nth-child(4) { text-align: center; color: rgba(255,255,255,0.55); }
-  .faab-personal td:nth-child(5) { text-align: center; color: var(--gold); font-weight: 700;
-    }
+  .faab-personal td:nth-child(5) { text-align: center; color: var(--gold); font-weight: 700; }
 
   .team-tx-table td:nth-child(2) { text-align: left; }
-  .team-tx-table td:nth-child(3) { color: #7ecfa0; font-weight: 600;
-    }
+  .team-tx-table td:nth-child(3) { color: #7ecfa0; font-weight: 600; }
   .team-tx-table td:nth-child(4) { color: #e07070; font-weight: 600; }
-  .team-tx-table td:nth-child(5) { color: var(--cream); font-weight: 700;
-    }
+  .team-tx-table td:nth-child(5) { color: var(--cream); font-weight: 700; }
 
   /* ── Theme toggle ── */
-  .theme-switch-wrapper { position: absolute; top: 16px; right: 20px; display: flex;
-    align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.75); z-index: 20;
-    }
-  .filter-pill-wrapper { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); }
-  .theme-switch { position: relative; display: inline-block; width: 46px; height: 26px; flex-shrink: 0;
-    }
+  .theme-switch-wrapper { position: absolute; top: 16px; right: 20px; display: flex; align-items: center; gap: 8px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.75); z-index: 20; }
+  .filter-pill-wrapper { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); }
+  .theme-switch { position: relative; display: inline-block; width: 46px; height: 26px; flex-shrink: 0; }
   .theme-switch input { opacity: 0; width: 0; height: 0; }
-  .slider { position: absolute; cursor: pointer;
-    inset: 0; background-color: #3a4a5a; border-radius: 26px; transition: background-color 0.35s ease; border: 1px solid rgba(255,255,255,0.15); }
-  .slider:before { position: absolute;
-    content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: #fff; border-radius: 50%; transition: transform 0.35s ease;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
-  input:checked + .slider { background-color: var(--red);
-    }
+  .slider { position: absolute; cursor: pointer; inset: 0; background-color: #3a4a5a; border-radius: 26px; transition: background-color 0.35s ease; border: 1px solid rgba(255,255,255,0.15); }
+  .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: #fff; border-radius: 50%; transition: transform 0.35s ease; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+  input:checked + .slider { background-color: var(--red); }
   input:checked + .slider:before { transform: translateX(20px); }
 
   /* ── Light Mode ── */
-  body.light-mode { --lm-blue: rgba(13,42,74,0.78);
-    --lm-blue-mid: #1565c0; --lm-blue-light: #e3eeff; --lm-grey: #eaeff6; --lm-text: #0d1b2a; --gold: #c9a227; --lm-text-sub: #3a4f66; --border_header: #3a4f66; color: var(--lm-text);
-    }
+  body.light-mode { --lm-blue: rgba(13,42,74,0.78); --lm-blue-mid: #1565c0; --lm-blue-light: #e3eeff; --lm-grey: #eaeff6; --lm-text: #0d1b2a; --gold: #c9a227; --lm-text-sub: #3a4f66; --border_header: #3a4f66; color: var(--lm-text); }
   body.light-mode #bg::after { background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.64) 40%, rgba(255,255,255,0.80) 100%); }
-  body.light-mode select { background: #ffffff;
-    color: var(--lm-text); border-color: #c8d6e8; }
-  body.light-mode .show-btn { background: var(--lm-blue); color: #fff; box-shadow: 0 4px 14px rgba(21,101,192,0.4);
-    }
-  body.light-mode .show-btn:hover { background: var(--lm-blue); box-shadow: 0 4px 18px rgba(21,101,192,0.8);
-    }
-  body.light-mode header { background: linear-gradient(180deg, rgba(13,27,42,0.62) 0%, transparent 100%);
-    }
-  body.light-mode .header-title h1 { text-shadow: 0 2px 20px rgba(13,71,161,0.4), 0 0 60px rgba(0,0,0,0.6);
-    }
+  body.light-mode select { background: #ffffff; color: var(--lm-text); border-color: #c8d6e8; }
+  body.light-mode .show-btn { background: var(--lm-blue); color: #fff; box-shadow: 0 4px 14px rgba(21,101,192,0.4); }
+  body.light-mode .show-btn:hover { background: var(--lm-blue); box-shadow: 0 4px 18px rgba(21,101,192,0.8); }
+  body.light-mode header { background: linear-gradient(180deg, rgba(13,27,42,0.62) 0%, transparent 100%); }
+  body.light-mode .header-title h1 { text-shadow: 0 2px 20px rgba(13,71,161,0.4), 0 0 60px rgba(0,0,0,0.6); }
   body.light-mode .stitch-bar { background: var(--lm-blue); }
-  body.light-mode nav { background: rgba(248,250,253,0.98); border: 2px solid var(--lm-grey);
-    }
+  body.light-mode nav { background: rgba(248,250,253,0.98); border: 2px solid var(--lm-grey); }
   body.light-mode .nav-links a { color: var(--lm-text-sub); }
-  body.light-mode .nav-links a:hover { color: var(--gold);
-    }
+  body.light-mode .nav-links a:hover { color: var(--gold); }
   body.light-mode .nav-links a.active { color: var(--gold); border-color: var(--gold); }
-  body.light-mode .hamburger span { background-color: var(--lm-text);
-    }
+  body.light-mode .hamburger span { background-color: var(--lm-text); }
   body.light-mode table { background: #ffffff; border-color: #c8d6e8; }
-  body.light-mode th { background: var(--lm-blue); color: #fff;
-    }
+  body.light-mode th { background: var(--lm-blue); color: #fff; }
   body.light-mode tbody tr:nth-child(even) { background: var(--lm-grey); }
-  body.light-mode tbody tr:hover { background: var(--lm-blue-light);
-    }
+  body.light-mode tbody tr:hover { background: var(--lm-blue-light); }
   body.light-mode td:nth-child(2) { color: var(--lm-text); }
-  body.light-mode td:last-child { color: var(--lm-text);
-    }
+  body.light-mode td:last-child { color: var(--lm-text); }
   body.light-mode td:first-child { color: #c9a227; }
-  body.light-mode h2 { color: #c9a227; text-shadow: none;
-    }
+  body.light-mode h2 { color: #c9a227; text-shadow: none; }
   body.light-mode .filter-pill-wrapper { color: var(--lm-text); }
-  body.light-mode input:checked + .slider { background-color: var(--lm-blue);
-    }
+  body.light-mode input:checked + .slider { background-color: var(--lm-blue); }
   body.light-mode .subtitle { color: var(--lm-text); }
-  body.light-mode .tx-table td:nth-child(3) { color: #556070;
-    }
+  body.light-mode .tx-table td:nth-child(3) { color: #556070; }
   body.light-mode .tx-table td:nth-child(4) { color: #1a7a45; }
-  body.light-mode .tx-table td:nth-child(5) { color: #a02020;
-    }
+  body.light-mode .tx-table td:nth-child(5) { color: #a02020; }
   body.light-mode .faab-table td:nth-child(2) { color: var(--lm-text); }
-  body.light-mode .faab-table td:nth-child(3) { color: #556070;
-    }
+  body.light-mode .faab-table td:nth-child(3) { color: #556070; }
   body.light-mode .faab-table td:nth-child(4) { color: var(--lm-text); }
-  body.light-mode .faab-table td:nth-child(5) { color: #556070;
-    }
+  body.light-mode .faab-table td:nth-child(5) { color: #556070; }
   body.light-mode .faab-table td:nth-child(6) { color: #8a6d00; }
-  body.light-mode .faab-personal td:nth-child(3) { color: #556070;
-    }
+  body.light-mode .faab-personal td:nth-child(3) { color: #556070; }
   body.light-mode .faab-personal td:nth-child(4) { color: #556070; }
-  body.light-mode .faab-personal td:nth-child(5) { color: #8a6d00;
-    }
+  body.light-mode .faab-personal td:nth-child(5) { color: #8a6d00; }
   body.light-mode .team-tx-table td:nth-child(3) { color: #1a7a45; }
-  body.light-mode .team-tx-table td:nth-child(4) { color: #a02020;
-    }
+  body.light-mode .team-tx-table td:nth-child(4) { color: #a02020; }
 
   /* Dynamic worst-trades styling rules */
-  .trade-win { color: #7ecfa0 !important;
-    }
+  .trade-win { color: #7ecfa0 !important; }
   .trade-lose { color: #e07070 !important; }
-  body.light-mode .trade-win { color: #1a7a45 !important;
-    }
+  body.light-mode .trade-win { color: #1a7a45 !important; }
   body.light-mode .trade-lose { color: #a02020 !important; }
 </style>
 </head>
@@ -389,6 +309,7 @@ toggleSwitch.addEventListener('change', switchTheme);
 
 /* ── Global Filter State ── */
 let includeLongWeeks = false;
+
 function handleLongWeeksToggle(e) {
   includeLongWeeks = e.checked;
   const c = document.getElementById("content");
@@ -409,6 +330,7 @@ const eraFields     = ["ERA","WHIP"];
 const sumFields     = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 
 let currentPage = "lifetime";
+
 Promise.all([
   fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
   fetch("all_seasons_weeks_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => ({})),
@@ -567,10 +489,7 @@ function showWeeklyRankings(c) {
   c.innerHTML = filterHtml;
   avgFields.forEach(stat => {
     const arr = weeklyRawData
-      .filter(r => {
-        const validDays = includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7);
-        return validDays;
-      })
+      .filter(r => { const validDays = includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7); return validDays; })
       .map(r => {
         if (!isValid(r[stat])) return null;
         return { name: `${r.manager_nickname} (${r.season} W${r.week} ${r.league_name || ""})`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
@@ -610,11 +529,7 @@ function renderIndividualWeekly() {
   let html = `<h2 style="grid-column:1/-1">${m} — Weekly Rankings</h2>`;
   avgFields.forEach(stat => {
     const arr = weeklyRawData
-      .filter(r => {
-        const isMgr = r.manager_nickname === m;
-        const validDays = includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7);
-        return isMgr && validDays;
-      })
+      .filter(r => { const isMgr = r.manager_nickname === m; const validDays = includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7); return isMgr && validDays; })
       .map(r => {
         if (!isValid(r[stat])) return null;
         return { name: `${r.season} W${r.week}`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
@@ -625,546 +540,498 @@ function renderIndividualWeekly() {
   div.innerHTML = html;
 }
 
-function showWorstTrades(c) {
-  c.classList.remove("grid-view");
-  const validTrades = tradeRanksData.filter(t => !isHiddenManager(t.toManager) && !isHiddenManager(t.fromManager));
-  validTrades.sort((a, b) => b.diff - a.diff);
-  c.innerHTML = renderWorstTradesTable("LIFETIME WORST TRADES", validTrades);
-}
-
-function showPersonalWorstTrades(c) {
-  c.classList.remove("grid-view");
-  const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
-  c.innerHTML = `
-    <div style="margin-bottom:20px">
-      <select id="tradeMgr">${opts}</select>
-      <button class="show-btn" onclick="renderPersonalWorstTrades()">SHOW TRADES</button>
-    </div>
-    <div id="personalTradesContainer"></div>
-  `;
-}
-
-function renderPersonalWorstTrades() {
-  const m = document.getElementById("tradeMgr").value;
-  const container = document.getElementById("personalTradesContainer");
-  const filtered = tradeRanksData.filter(t => 
-    (t.toManager === m || t.fromManager === m) && 
-    !isHiddenManager(t.toManager) && 
-    !isHiddenManager(t.fromManager)
-  );
-  filtered.sort((a, b) => b.diff - a.diff);
-  container.innerHTML = renderWorstTradesTable(`${m} — Personal Worst Trades`, filtered);
-}
-
-function showYearlyWorstTrades(c) {
-  c.classList.remove("grid-view");
-  const seasons = [...new Set(tradeRanksData.map(t => t.season))].sort((a,b) => b-a);
-  const opts = seasons.map(s => `<option value="${s}">${s}</option>`).join("");
-  c.innerHTML = `
-    <div style="margin-bottom:20px">
-      <select id="tradeSeason">${opts}</select>
-      <button class="show-btn" onclick="renderYearlyWorstTrades()">SHOW TRADES</button>
-    </div>
-    <div id="yearlyTradesContainer"></div>
-  `;
-}
-
-function renderYearlyWorstTrades() {
-  const s = parseInt(document.getElementById("tradeSeason").value);
-  const container = document.getElementById("yearlyTradesContainer");
-  const filtered = tradeRanksData.filter(t => t.season === s && !isHiddenManager(t.toManager) && !isHiddenManager(t.fromManager));
-  filtered.sort((a, b) => b.diff - a.diff);
-  container.innerHTML = renderWorstTradesTable(`${s} — Worst Trades`, filtered);
-}
-
-function renderWorstTradesTable(title, trades) {
-  let html = `<h2>${title}</h2>
-    <div style="overflow-x:auto; width:100%;">
-      <table class="tx-table" style="width:100%; min-width:1100px;">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Season</th>
-            <th style="min-width:260px;">Managers</th>
-            <th style="min-width:520px;">Players</th>
-            <th>Winner Score</th>
-            <th>Trade Gap</th>
-          </tr>
-        </thead>
-        <tbody>`;
-
-  trades.forEach((t, i) => {
-
-    const winnerColor = "#2ecc71";
-    const loserColor  = "#e74c3c";
-
-    const winnerScore = Math.max(t.toScore, t.fromScore);
-
-    const mgrCell = `
-      <div style="line-height:1.8;">
-        <span style="
-          color:${winnerColor};
-          font-weight:700;
-          white-space:nowrap;
-        ">
-          To: ${t.toManager}
-        </span>
-
-        <br>
-
-        <span style="
-          color:${loserColor};
-          font-weight:700;
-          white-space:nowrap;
-        ">
-          From: ${t.fromManager}
-        </span>
-      </div>
-    `;
-
-    const toPlayersHtml = `
-      <div style="
-        color:${winnerColor};
-        font-weight:600;
-        white-space:nowrap;
-        overflow-x:auto;
-      ">
-        To:
-        ${t.toPlayers.join(', ')}
-      </div>
-    `;
-
-    const fromPlayersHtml = `
-      <div style="
-        color:${loserColor};
-        font-weight:600;
-        margin-top:6px;
-        white-space:nowrap;
-        overflow-x:auto;
-      ">
-        From:
-        ${t.fromPlayers.join(', ')}
-      </div>
-    `;
-
-    const playerCell = `
-      <div style="
-        min-width:500px;
-        line-height:1.8;
-      ">
-        ${toPlayersHtml}
-        ${fromPlayersHtml}
-      </div>
-    `;
-
-    html += `
-      <tr>
-        <td>${i + 1}</td>
-
-        <td style="
-          font-weight:700;
-          color:var(--gold);
-          font-family:'Barlow Condensed',sans-serif;
-          white-space:nowrap;
-        ">
-          ${t.season}
-        </td>
-
-        <td style="
-          text-align:left;
-          min-width:260px;
-          vertical-align:top;
-        ">
-          ${mgrCell}
-        </td>
-
-        <td style="
-          text-align:left;
-          min-width:520px;
-          max-width:700px;
-          overflow-x:auto;
-          vertical-align:top;
-        ">
-          ${playerCell}
-        </td>
-
-        <td style="
-          font-weight:700;
-          color:${winnerColor};
-          font-size:1.05rem;
-          white-space:nowrap;
-        ">
-          ${fmt(winnerScore, 2)}
-        </td>
-
-        <td style="
-          font-weight:700;
-          color:var(--red-bright);
-          font-size:1.05rem;
-          white-space:nowrap;
-        ">
-          ${fmt(t.diff, 2)}
-        </td>
-
-      </tr>
-    `;
-  });
-
-  html += `
-      </tbody>
-    </table>
-  </div>`;
-
-  return html;
-}
-
-function showLifetimeRecord(c) {
-  c.classList.remove("grid-view");
-  const arr = Object.keys(managers).map(m => {
+function showLifetimeRecord(container) {
+  container.classList.remove('grid-view');
+  const rows = Object.keys(managers).map(m => {
     const r = managers[m].record;
-    const pct = winPct(r.w, r.l, r.t);
-    return { name: m, w: r.w, l: r.l, t: r.t, pct: pct, seasons: r.seasons };
-  }).filter(r => r.pct !== null);
-  arr.sort((a,b) => b.pct - a.pct);
-  c.innerHTML = `
-    <h2>Lifetime Win/Loss Records</h2>
-    <table>
-      <thead><tr><th>#</th><th>Manager</th><th>Seasons</th><th>Wins</th><th>Losses</th><th>Ties</th><th>Win %</th></tr></thead>
-      <tbody>
-        ${arr.map((r,i) => `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.seasons}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${fmt(r.pct*100,1)}%</td></tr>`).join("")}
-      </tbody>
-    </table>
-  `;
+    return { name: m, w: r.w, l: r.l, t: r.t, pct: winPct(r.w, r.l, r.t), seasons: r.seasons };
+  }).filter(r => r.seasons > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
+  let lt = `<h2>Combined Lifetime Record</h2>`;
+  lt += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
+  rows.forEach((r, i) => { lt += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${fmt(r.pct, 3)}</td></tr>`; });
+  lt += `</table>`;
+  container.innerHTML = `<div class="section-vertical-stack">${lt}</div>`;
 }
 
-function showLifetimeMedals(c) {
-  c.classList.remove("grid-view");
-  const arr = Object.keys(managers).map(m => {
-    const med = managers[m].medals;
-    const g = med.playoff[1];
-    const s = med.playoff[2];
-    const b = med.playoff[3];
-    const rg = med.regular[1];
-    const rs = med.regular[2];
-    const rb = med.regular[3];
-    const score = (g*10 + s*5 + b*2) + (rg*5 + rs*2 + rb*1);
-    return { name: m, g, s, b, rg, rs, rb, score };
-  });
-  arr.sort((a,b) => b.score - a.score);
-  c.innerHTML = `
-    <h2>Lifetime Medals & Trophies</h2>
-    <table>
-      <thead>
-        <tr>
-          <th rowspan="2">#</th><th rowspan="2">Manager</th><th colspan="3">Playoff Finish (Trophies)</th><th colspan="3">Regular Season Finish (Pills)</th><th rowspan="2">Custom Score</th>
-        </tr>
-        <tr>
-          <th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th>
-          <th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${arr.map((r,i) => `
-          <tr>
-            <td>${i+1}</td><td>${r.name}</td>
-            <td class="medal-gold">${r.g}</td><td class="medal-silver">${r.s}</td><td class="medal-bronze">${r.b}</td>
-            <td class="medal-gold">${r.rg}</td><td class="medal-silver">${r.rs}</td><td class="medal-bronze">${r.rb}</td>
-            <td><strong>${r.score}</strong></td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
+function showLifetimeMedals(container) {
+  container.classList.remove('grid-view');
+  const medalScore = (med) => med[1] * 3 + med[2] * 2 + med[3] * 1;
+  const buildMedalTable = (title, field) => {
+    const rows = Object.keys(managers).map(m => {
+      const med = managers[m].medals[field];
+      return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
+    }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
+    let html = `<h2>${title}</h2><table><tr><th>#</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
+    rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`; });
+    return html + `</table>`;
+  };
+  container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;font-weight:bold;">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
+                         <div class="section-vertical-stack">${buildMedalTable("Regular Season Finishes", "regular")}${buildMedalTable("Playoff Finishes", "playoff")}</div>`;
 }
 
 function showIndividualLifetime(c) {
   c.classList.remove("grid-view");
   const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
-  c.innerHTML = `
-    <div style="margin-bottom:20px">
-      <select id="mgr1">${opts}</select>
-      <button class="show-btn" onclick="renderIndividualLifetime()">SHOW STATS</button>
-    </div>
-    <div id="indLifetime"></div>
-  `;
+  c.innerHTML = `<div style="margin-bottom:20px"><select id="mgr">${opts}</select><button class="show-btn" onclick="renderIndividualLifetime()">SHOW STATS</button></div><div id="indLife"></div>`;
 }
 
 function renderIndividualLifetime() {
-  const m = document.getElementById("mgr1").value;
-  const div = document.getElementById("indLifetime");
-  div.style.display = "grid";
-  div.style.gridTemplateColumns = "repeat(auto-fit,minmax(250px,1fr))";
-  div.style.gap = "20px";
-  let html = `<h2 style="grid-column:1/-1">${m} — Lifetime Averages/Totals</h2>`;
-  avgFields.forEach(stat => {
-    const vals = managers[m].seasons.map(s => parseFloat(s[stat])).filter(v => !isNaN(v));
-    if (vals.length === 0) return;
-    const total = vals.reduce((a,b) => a+b, 0);
-    const avg = total / vals.length;
-    html += `
-      <div class="card">
-        <h2>${stat}</h2>
-        <table>
-          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-          <tbody>
-            <tr><td>Total</td><td>${fmt(total, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0)}</td></tr>
-            <tr><td>Average</td><td>${fmt(avg, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0)}</td></tr>
-          </tbody>
-        </table>
-      </div>
-    `;
+  const m = document.getElementById("mgr").value;
+  const div = document.getElementById("indLife");
+  const seasons = managers[m].seasons.slice().sort((a,b) => (a.season||0)-(b.season||0));
+  let html = `<h2>${m} — Season-by-Season Stats</h2><table><thead><tr><th>Season</th>${avgFields.map(s => `<th>${s}</th>`).join("")}</tr></thead><tbody>`;
+  seasons.forEach(s => {
+    html += `<tr><td style="font-weight:700;color:var(--gold)">${s.season || "—"}</td>${avgFields.map(stat => {
+      const v = isValid(s[stat]) ? parseFloat(s[stat]) : null;
+      return `<td>${v !== null ? fmt(v, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) : "—"}</td>`;
+    }).join("")}</tr>`;
   });
-  div.innerHTML = html;
+  div.innerHTML = html + `</tbody></table>`;
 }
 
 function showIndividualYearly(c) {
   c.classList.remove("grid-view");
-  const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
-  c.innerHTML = `
-    <div style="margin-bottom:20px">
-      <select id="mgr2">${opts}</select>
-      <button class="show-btn" onclick="renderIndividualYearly()">SHOW STATS</button>
-    </div>
-    <div id="indYearly" style="overflow-x:auto; width:100%;"></div>
-  `;
+  let opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
+  let years = [...new Set(weeklyRawData.map(r => r.season))].sort().map(y => `<option value="${y}">${y}</option>`).join("");
+  c.innerHTML = `<div style="margin-bottom:20px"><select id="yearMgr">${opts}</select><select id="yearSelect">${years}</select><button class="show-btn" onclick="renderIndividualYearly()">SHOW STATS</button></div><div id="individualYearlyTable"></div>`;
 }
 
 function renderIndividualYearly() {
-  const m = document.getElementById("mgr2").value;
-  const div = document.getElementById("indYearly");
-  const rows = managers[m].seasons.sort((a,b) => b.season - a.season);
-  let html = `<h2>${m} — History By Season</h2>
-    <table>
-      <thead>
-        <tr><th>Season</th><th>League</th><th>Seed</th><th>Rank</th>${avgFields.map(f => `<th>${f}</th>`).join("")}</tr>
-      </thead>
-      <tbody>
-        ${rows.map(r => `
-          <tr>
-            <td>${r.season}</td><td>${r.league_name || ""}</td><td>${r.playoff_seed || ""}</td><td>${r.final_rank || ""}</td>
-            ${avgFields.map(f => `<td>${isValid(r[f]) ? fmt(r[f], ["OBP","ERA","WHIP","K/9"].includes(f) ? 3 : 0) : "-"}</td>`).join("")}
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>`;
-  div.innerHTML = html;
+  const mgr = document.getElementById("yearMgr").value;
+  const year = document.getElementById("yearSelect").value;
+  const rows = weeklyRawData.filter(r => r.manager_nickname === mgr && String(r.season) === String(year)).sort((a,b) => Number(a.week)-Number(b.week));
+  let html = `<h2>${mgr} — ${year} Weekly Stats</h2><table><thead><tr><th>Week</th>${avgFields.map(s => `<th>${s}</th>`).join("")}</tr></thead><tbody>`;
+  rows.forEach(r => {
+    html += `<tr><td>${r.week}</td>${avgFields.map(stat => {
+      const v = isValid(r[stat]) ? parseFloat(r[stat]) : null;
+      return `<td>${v !== null ? fmt(v, 2) : "—"}</td>`;
+    }).join("")}</tr>`;
+  });
+  document.getElementById("individualYearlyTable").innerHTML = html + `</tbody></table>`;
 }
 
 function showIndividualSeason(c) {
   c.classList.remove("grid-view");
   const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
-  c.innerHTML = `
-    <div style="margin-bottom:20px">
-      <select id="mgrIndividualSeason">${opts}</select>
-      <button class="show-btn" onclick="renderIndividualSeason()">SHOW STATS</button>
-    </div>
-    <div id="indIndividualSeason" class="grid-view" style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 20px;"></div>
-  `;
+  c.innerHTML = `<div style="margin-bottom:20px"><select id="mgr2">${opts}</select><button class="show-btn" onclick="renderIndividualSeason()">SHOW STATS</button></div><div id="indSeasonArea"></div>`;
 }
 
 function renderIndividualSeason() {
-  const m = document.getElementById("mgrIndividualSeason").value;
-  const div = document.getElementById("indIndividualSeason");
-  div.innerHTML = "";
+  const m = document.getElementById("mgr2").value;
+  const div = document.getElementById("indSeasonArea");
+  div.style.display = "grid";
+  div.style.gridTemplateColumns = "repeat(auto-fit,minmax(250px,1fr))";
+  div.style.gap = "20px";
+  let html = `<h2 style="grid-column:1/-1">${m} — Season Rankings</h2>`;
   avgFields.forEach(stat => {
     const arr = rawData.filter(r => r.manager_nickname === m).map(r => {
       if (!isValid(r[stat])) return null;
-      return { name: `${r.season} (${r.league_name || ""})`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
+      return { name: `${r.season}`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
     }).filter(Boolean);
     arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
-    div.innerHTML += rankTable(stat, arr);
+    html += rankTable(stat, arr.slice(0, 10));
   });
+  div.innerHTML = html;
 }
 
+/* ── TRANSACTION HELPERS ── */
+function getTxManagers() {
+  return [...new Set(txRawData
+    .filter(d => !isHiddenManager(d.manager_nickname))
+    .map(d => d.manager_nickname)
+  )].sort();
+}
+
+function buildPlayerTxMap(records) {
+  const map = {};
+  records.forEach(d => {
+    const key = d.player_name;
+    if (!map[key]) map[key] = { name: d.player_name, pos: d.player_position, adds: 0, drops: 0 };
+    if (d.player_action === 'add') map[key].adds++;
+    if (d.player_action === 'drop') map[key].drops++;
+  });
+  return Object.values(map).map(v => ({ ...v, total: v.adds + v.drops }));
+}
+
+function playerTxTable(title, rows, cssClass) {
+  const top20 = rows.sort((a,b) => b.total - a.total).slice(0, 20);
+  let html = `<div><h2>${title}</h2>
+    <table class="tx-table ${cssClass || ''}">
+      <thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Adds</th><th>Drops</th><th>Total</th></tr></thead>
+      <tbody>`;
+  top20.forEach((r, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td style="text-align:left">${r.name}</td>
+      <td>${r.pos || '—'}</td>
+      <td>${r.adds}</td>
+      <td>${r.drops}</td>
+      <td>${r.total}</td>
+    </tr>`;
+  });
+  html += `</tbody></table></div>`;
+  return html;
+}
+
+/* ── LIFETIME TEAM TRANSACTIONS ── */
 function showLifetimeTeamTx(c) {
   c.classList.remove("grid-view");
-  const summary = {};
-  txRawData.forEach(tx => {
-    const m = tx.manager;
-    if (!m || isHiddenManager(m)) return;
-    if (!summary[m]) summary[m] = { adds: 0, drops: 0, trades: 0 };
-    if (tx.type === 'add') summary[m].adds++;
-    if (tx.type === 'drop') summary[m].drops++;
-    if (tx.type === 'trade') summary[m].trades++;
+
+  const teamMap = {};
+  txRawData.forEach(d => {
+    if (isHiddenManager(d.manager_nickname)) return;
+    const m = d.manager_nickname;
+    if (!teamMap[m]) teamMap[m] = { adds: 0, drops: 0 };
+    if (d.player_action === 'add')  teamMap[m].adds++;
+    if (d.player_action === 'drop') teamMap[m].drops++;
   });
-  const arr = Object.keys(summary).map(m => ({ name: m, ...summary[m], total: summary[m].adds + summary[m].drops + summary[m].trades }));
-  arr.sort((a,b) => b.total - a.total);
-  c.innerHTML = `
-    <h2>Lifetime Team Transactions</h2>
+
+  const rows = Object.entries(teamMap)
+    .map(([name, v]) => ({ name, adds: v.adds, drops: v.drops, total: v.adds + v.drops }))
+    .sort((a, b) => b.total - a.total);
+
+  let html = `<h2>Lifetime Team Transactions — All Seasons</h2>
     <table class="team-tx-table">
-      <thead><tr><th>#</th><th>Manager</th><th>Adds</th><th>Drops</th><th>Trades</th><th>Total</th></tr></thead>
-      <tbody>
-        ${arr.map((r,i) => `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.adds}</td><td>${r.drops}</td><td>${r.trades}</td><td>${r.total}</td></tr>`).join("")}
-      </tbody>
-    </table>
-  `;
+      <thead><tr><th>#</th><th>Manager</th><th>Adds</th><th>Drops</th><th>Total</th></tr></thead>
+      <tbody>`;
+  rows.forEach((r, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td style="text-align:left">${r.name}</td>
+      <td>${r.adds}</td>
+      <td>${r.drops}</td>
+      <td>${r.total}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+
+  c.innerHTML = `<div class="section-vertical-stack" style="max-width:700px">${html}</div>`;
 }
 
+/* ── LIFETIME PLAYER TRANSACTIONS ── */
 function showLifetimePlayerTx(c) {
   c.classList.remove("grid-view");
-  const playerStats = {};
-  txRawData.forEach(tx => {
-    const p = tx.player;
-    if (!p) return;
-    if (!playerStats[p]) playerStats[p] = { player: p, position: tx.position, adds: 0, drops: 0, trades: 0 };
-    if (tx.type === 'add') playerStats[p].adds++;
-    if (tx.type === 'drop') playerStats[p].drops++;
-    if (tx.type === 'trade') playerStats[p].trades++;
-  });
-  const arr = Object.values(playerStats).map(p => ({ ...p, total: p.adds + p.drops + p.trades }));
-  arr.sort((a,b) => b.total - a.total);
+
+  const hitterRecs  = txRawData.filter(d => !isPitcher(d.player_position));
+  const pitcherRecs = txRawData.filter(d => isPitcher(d.player_position));
+
+  const hitterRows  = buildPlayerTxMap(hitterRecs);
+  const pitcherRows = buildPlayerTxMap(pitcherRecs);
+
   c.innerHTML = `
-    <h2>Lifetime Player Transactions (Top 250)</h2>
-    <table class="team-tx-table">
-      <thead><tr><th>#</th><th>Player</th><th>Position</th><th>Adds</th><th>Drops</th><th>Trades</th><th>Total</th></tr></thead>
-      <tbody>
-        ${arr.slice(0, 250).map((r,i) => `<tr><td>${i+1}</td><td>${r.player}</td><td>${r.position || ""}</td><td>${r.adds}</td><td>${r.drops}</td><td>${r.trades}</td><td>${r.total}</td></tr>`).join("")}
-      </tbody>
-    </table>
-  `;
+    <h2 style="margin-bottom:16px">Lifetime Player Transactions — All Teams · All Seasons</h2>
+    <div class="tx-grid">
+      ${playerTxTable("Top 20 Hitters", hitterRows)}
+      ${playerTxTable("Top 20 Pitchers", pitcherRows)}
+    </div>`;
 }
 
+/* ── PERSONAL TRANSACTIONS ── */
 function showPersonalTx(c) {
   c.classList.remove("grid-view");
-  const activeManagers = [...new Set(txRawData.map(tx => tx.manager))].filter(m => m && !isHiddenManager(m)).sort();
-  const opts = activeManagers.map(m => `<option value="${m}">${m}</option>`).join("");
+  const txManagers = getTxManagers();
+  const opts = txManagers.map(m => `<option value="${m}">${m}</option>`).join("");
   c.innerHTML = `
     <div style="margin-bottom:20px">
-      <select id="personalTxMgr">${opts}</select>
+      <select id="txMgr">${opts}</select>
       <button class="show-btn" onclick="renderPersonalTx()">SHOW TRANSACTIONS</button>
     </div>
-    <div id="personalTxGrid" class="tx-grid"></div>
-  `;
+    <div id="personalTxArea"></div>`;
 }
 
 function renderPersonalTx() {
-  const m = document.getElementById("personalTxGrid");
-  const mgr = document.getElementById("personalTxMgr").value;
-  const filtered = txRawData.filter(tx => tx.manager === mgr);
-  const addDrop = filtered.filter(tx => tx.type === 'add' || tx.type === 'drop');
-  addDrop.sort((a,b) => b.date - a.date);
-  const trades = filtered.filter(tx => tx.type === 'trade');
-  trades.sort((a,b) => b.date - a.date);
-  
-  let leftHtml = `
-    <div class="card">
-      <h2>Adds & Drops (${addDrop.length})</h2>
-      <table class="tx-table">
-        <thead><tr><th>Date</th><th>Player</th><th>Action</th></tr></thead>
-        <tbody>
-          ${addDrop.slice(0, 100).map(tx => `
-            <tr>
-              <td>${tx.date_str || ""}</td>
-              <td>${tx.player}<br><small style="opacity:0.5">${tx.position || ""}</small></td>
-              <td><span style="color:${tx.type==='add'?'#7ecfa0':'#e07070'}">${tx.type.toUpperCase()}</span></td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    </div>
-  `;
-  
-  let rightHtml = `
-    <div class="card">
-      <h2>Trades (${trades.length})</h2>
-      <table class="tx-table">
-        <thead><tr><th>Date</th><th>Player</th><th>Action</th></tr></thead>
-        <tbody>
-          ${trades.slice(0, 100).map(tx => `
-            <tr>
-              <td>${tx.date_str || ""}</td>
-              <td>${tx.player}<br><small style="opacity:0.5">${tx.position || ""}</small></td>
-              <td><span style="color:#var(--gold)">TRADE</span></td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    </div>
-  `;
-  m.innerHTML = leftHtml + rightHtml;
+  const m = document.getElementById("txMgr").value;
+  const div = document.getElementById("personalTxArea");
+
+  const mgrRecs = txRawData.filter(d => d.manager_nickname === m);
+  const hitterRecs  = mgrRecs.filter(d => !isPitcher(d.player_position));
+  const pitcherRecs = mgrRecs.filter(d => isPitcher(d.player_position));
+
+  const hitterRows  = buildPlayerTxMap(hitterRecs);
+  const pitcherRows = buildPlayerTxMap(pitcherRecs);
+
+  div.innerHTML = `
+    <h2 style="margin-bottom:16px">${m} — Personal Transactions (All Seasons)</h2>
+    <div class="tx-grid">
+      ${playerTxTable("Top 20 Hitters", hitterRows)}
+      ${playerTxTable("Top 20 Pitchers", pitcherRows)}
+    </div>`;
 }
 
+/* ── LIFETIME FAAB ── */
 function showLifetimeFaab(c) {
   c.classList.remove("grid-view");
-  const faabTx = txRawData.filter(tx => tx.faab !== undefined && tx.faab !== null && tx.faab !== "" && !isNaN(tx.faab));
-  faabTx.sort((a,b) => b.faab - a.faab);
-  c.innerHTML = `
-    <h2>Lifetime FAAB Transactions (Top 250)</h2>
+
+  const faabAdds = txRawData
+    .filter(d => d.player_action === 'add' && parseFloat(d.faab_bid || '0') > 0)
+    .map(d => ({
+      player: d.player_name,
+      pos:    d.player_position || '—',
+      mgr:    d.manager_nickname,
+      season: d.season,
+      faab:   parseFloat(d.faab_bid)
+    }))
+    .sort((a, b) => b.faab - a.faab)
+    .slice(0, 20);
+
+  let html = `<h2>Lifetime Top 20 FAAB Adds — All Teams · All Seasons</h2>
     <table class="faab-table">
-      <thead><tr><th>#</th><th>Player</th><th>Manager</th><th>Date</th><th>Action</th><th>Bid</th></tr></thead>
-      <tbody>
-        ${faabTx.slice(0, 250).map((tx,i) => `
-          <tr>
-            <td>${i+1}</td>
-            <td>${tx.player}<br><small style="opacity:0.5">${tx.position || ""}</small></td>
-            <td>${tx.manager}</td>
-            <td>${tx.date_str || ""}</td>
-            <td><span style="color:${tx.type==='add'?'#7ecfa0':'#e07070'}">${tx.type.toUpperCase()}</span></td>
-            <td>$${tx.faab}</td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
+      <thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Manager</th><th>Season</th><th>FAAB $</th></tr></thead>
+      <tbody>`;
+  faabAdds.forEach((r, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td style="text-align:left">${r.player}</td>
+      <td>${r.pos}</td>
+      <td style="text-align:left">${r.mgr}</td>
+      <td>${r.season}</td>
+      <td>$${r.faab}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+
+  c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px">${html}</div>`;
 }
 
+/* ── PERSONAL FAAB ── */
 function showPersonalFaab(c) {
   c.classList.remove("grid-view");
-  const activeManagers = [...new Set(txRawData.map(tx => tx.manager))].filter(m => m && !isHiddenManager(m)).sort();
-  const opts = activeManagers.map(m => `<option value="${m}">${m}</option>`).join("");
+  const txManagers = getTxManagers();
+  const opts = txManagers.map(m => `<option value="${m}">${m}</option>`).join("");
   c.innerHTML = `
     <div style="margin-bottom:20px">
-      <select id="personalFaabMgr">${opts}</select>
+      <select id="faabMgr">${opts}</select>
       <button class="show-btn" onclick="renderPersonalFaab()">SHOW FAAB</button>
     </div>
-    <div id="personalFaabContainer"></div>
-  `;
+    <div id="personalFaabArea"></div>`;
 }
 
 function renderPersonalFaab() {
-  const mgr = document.getElementById("personalFaabMgr").value;
-  const container = document.getElementById("personalFaabContainer");
-  const filtered = txRawData.filter(tx => tx.manager === mgr && tx.faab !== undefined && tx.faab !== null && tx.faab !== "" && !isNaN(tx.faab));
-  filtered.sort((a,b) => b.faab - a.faab);
-  
-  const totalBids = filtered.length;
-  const totalSpent = filtered.reduce((sum, tx) => sum + parseFloat(tx.faab), 0);
-  const avgBid = totalBids > 0 ? (totalSpent / totalBids) : 0;
-  
-  container.innerHTML = `
-    <div style="margin-bottom: 20px; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em;">
-      Total FAAB Transactions: <strong style="color: var(--gold);">${totalBids}</strong> &nbsp;|&nbsp; 
-      Total FAAB Spent: <strong style="color: var(--gold);">$${totalSpent}</strong> &nbsp;|&nbsp; 
-      Average FAAB Bid: <strong style="color: var(--gold);">$${fmt(avgBid, 2)}</strong>
-    </div>
-    <table class="faab-personal">
-      <thead><tr><th>#</th><th>Player</th><th>Date</th><th>Action</th><th>Bid</th></tr></thead>
-      <tbody>
-        ${filtered.map((tx,i) => `
-          <tr>
-            <td>${i+1}</td>
-            <td>${tx.player}<br><small style="opacity:0.5">${tx.position || ""}</small></td>
-            <td>${tx.date_str || ""}</td>
-            <td><span style="color:${tx.type==='add'?'#7ecfa0':'#e07070'}">${tx.type.toUpperCase()}</span></td>
-            <td>$${tx.faab}</td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
+  const m = document.getElementById("faabMgr").value;
+  const div = document.getElementById("personalFaabArea");
+
+  const faabAdds = txRawData
+    .filter(d => d.manager_nickname === m && d.player_action === 'add' && parseFloat(d.faab_bid || '0') > 0)
+    .map(d => ({
+      player: d.player_name,
+      pos:    d.player_position || '—',
+      season: d.season,
+      faab:   parseFloat(d.faab_bid)
+    }))
+    .sort((a, b) => b.faab - a.faab)
+    .slice(0, 20);
+
+  if (faabAdds.length === 0) {
+    div.innerHTML = `<p class="no-data">No FAAB data found for ${m}.</p>`;
+    return;
+  }
+
+  let html = `<h2>${m} — Top 20 FAAB Adds (All Seasons)</h2>
+    <table class="faab-table faab-personal">
+      <thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Season</th><th>FAAB $</th></tr></thead>
+      <tbody>`;
+  faabAdds.forEach((r, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td style="text-align:left">${r.player}</td>
+      <td>${r.pos}</td>
+      <td>${r.season}</td>
+      <td>$${r.faab}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+
+  div.innerHTML = `<div style="max-width:700px">${html}</div>`;
 }
 
+/* ── WORST TRADES — SCORING & HELPERS ── */
+function rankScore(rank) {
+  if (rank <= 20)  return 10;
+  if (rank <= 50)  return 8;
+  if (rank <= 100) return 5;
+  if (rank <= 150) return 3;
+  if (rank <= 300) return 1;
+  return 0;
+}
+
+function rosterPctScore(pct) {
+  if (pct > 90) return 10;
+  if (pct >= 80) return 5;
+  if (pct >= 60) return 1;
+  return 0;
+}
+
+/* For a single player: average of available category scores */
+function calcPlayerScore(player) {
+  let parts = [];
+  if (player.roster_pct !== "-" && !isNaN(player.roster_pct))
+    parts.push(rosterPctScore(parseFloat(player.roster_pct)));
+  if (player.preseason_rank !== "-" && !isNaN(player.preseason_rank))
+    parts.push(rankScore(parseFloat(player.preseason_rank)));
+  if (player.current_rank !== "-" && !isNaN(player.current_rank))
+    parts.push(rankScore(parseFloat(player.current_rank)));
+  if (parts.length === 0) return 0;
+  return parts.reduce((a, b) => a + b, 0) / parts.length;
+}
+
+/* For one side of a trade: Sum all player scores per category bucket, then average category totals */
+function calcTradeSideScore(players) {
+  const catSums = {};
+  players.forEach(p => {
+    if (p.roster_pct !== "-" && !isNaN(p.roster_pct)) {
+      catSums.roster_pct = (catSums.roster_pct || 0) + rosterPctScore(parseFloat(p.roster_pct));
+    }
+    if (p.preseason_rank !== "-" && !isNaN(p.preseason_rank)) {
+      catSums.preseason_rank = (catSums.preseason_rank || 0) + rankScore(parseFloat(p.preseason_rank));
+    }
+    if (p.current_rank !== "-" && !isNaN(p.current_rank)) {
+      catSums.current_rank = (catSums.current_rank || 0) + rankScore(parseFloat(p.current_rank));
+    }
+  });
+  const vals = Object.values(catSums);
+  if (vals.length === 0) return 0;
+  return vals.reduce((a, b) => a + b, 0) / vals.length;
+}
+
+/* Build sorted worst-trade array from a given set of trade records */
+function buildWorstTradesData(trades) {
+  let results = [];
+  trades.forEach(trade => {
+    if (!trade.players || trade.players.length === 0) return;
+    const managersInvolved = [...new Set(trade.players.map(p => p.to_manager))];
+    if (managersInvolved.length < 2) return;
+    const mgr1 = managersInvolved[0];
+    const mgr2 = managersInvolved[1];
+    const mgr1_players = trade.players.filter(p => p.to_manager === mgr1);
+    const mgr2_players = trade.players.filter(p => p.to_manager === mgr2);
+    const s1 = calcTradeSideScore(mgr1_players);
+    const s2 = calcTradeSideScore(mgr2_players);
+
+    results.push({
+      season: trade.season,
+      toManager: mgr1,
+      fromManager: mgr2,
+      toPlayers: mgr1_players.map(p => p.player_name),
+      fromPlayers: mgr2_players.map(p => p.player_name),
+      toScore: s1,
+      fromScore: s2,
+      diff: Math.abs(s1 - s2)
+    });
+  });
+  results.sort((a, b) => b.diff - a.diff);
+  return results;
+}
+
+/* Render the shared 4-column worst-trades table */
+function renderWorstTradesTable(title, trades) {
+  let html = `<h2>${title}</h2>
+    <div style="overflow-x:auto; width:100%;">
+      <table class="tx-table" style="width:100%; min-width:560px;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Season</th>
+            <th>Managers</th>
+            <th>Players</th>
+            <th>Worst Score</th>
+          </tr>
+        </thead>
+        <tbody>`;
+  trades.forEach((t, i) => {
+    const toIsWinner = t.toScore >= t.fromScore;
+    const toClass = toIsWinner ? 'trade-win' : 'trade-lose';
+    const fromClass = toIsWinner ? 'trade-lose' : 'trade-win';
+
+    const mgrCell = `<span class="${toClass}" style="font-weight:700;">To: ${t.toManager}</span><br><span class="${fromClass}" style="font-weight:700;">From: ${t.fromManager}</span>`;
+    const toLines = `<span class="${toClass}" style="font-weight:600;">To: ${t.toPlayers[0]}</span>` +
+      t.toPlayers.slice(1).map(p => `<br><span style="padding-left:1.2em;">${p}</span>`).join('');
+    const fromLines = `<span class="${fromClass}" style="font-weight:600;">From: ${t.fromPlayers[0]}</span>` +
+      t.fromPlayers.slice(1).map(p => `<br><span style="padding-left:1.6em;">${p}</span>`).join('');
+    const playerCell = `${toLines}<br>${fromLines}`;
+    html += `<tr>
+      <td>${i+1}</td>
+      <td style="font-weight:700;color:var(--gold);font-family:'Barlow Condensed',sans-serif;">${t.season}</td>
+      <td style="text-align:left;white-space:nowrap;line-height:1.7;">${mgrCell}</td>
+      <td style="text-align:left;line-height:1.65;">${playerCell}</td>
+      <td style="font-weight:700;color:var(--red-bright);font-size:1.05rem;">${fmt(t.diff, 2)}</td>
+    </tr>`;
+  });
+  html += `</tbody></table></div>`;
+  return html;
+}
+
+/* ── LIFETIME WORST TRADES ── */
+function showWorstTrades(c) {
+  c.classList.remove("grid-view");
+  const top50 = buildWorstTradesData(tradeRanksData).slice(0, 50);
+  const html = renderWorstTradesTable("Top 50 Lifetime Worst Trades", top50);
+  c.innerHTML = `<div class="section-vertical-stack" style="width:100%;max-width:1100px;">${html}</div>`;
+}
+
+/* ── PERSONAL WORST TRADES ── */
+function showPersonalWorstTrades(c) {
+  c.classList.remove("grid-view");
+  const allManagers = [...new Set(
+    tradeRanksData.flatMap(t => (t.players || []).map(p => p.to_manager).filter(Boolean))
+  )].sort();
+  const opts = allManagers.map(m => `<option value="${m}">${m}</option>`).join("");
+  c.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="wtMgr">${opts}</select>
+      <button class="show-btn" onclick="renderPersonalWorstTrades()">SHOW TRADES</button>
+    </div>
+    <div id="personalWtArea"></div>`;
+}
+
+function renderPersonalWorstTrades() {
+  const m = document.getElementById("wtMgr").value;
+  const div = document.getElementById("personalWtArea");
+  const filtered = tradeRanksData.filter(t =>
+    t.players && t.players.some(p => p.to_manager === m)
+  );
+  const top50 = buildWorstTradesData(filtered).slice(0, 50);
+  if (top50.length === 0) {
+    div.innerHTML = `<p class="no-data">No trade data found for ${m}.</p>`;
+    return;
+  }
+  const html = renderWorstTradesTable(`${m} — Top 50 Worst Trades`, top50);
+  div.innerHTML = `<div style="width:100%;max-width:1100px;">${html}</div>`;
+}
+
+/* ── YEARLY WORST TRADES ── */
+function showYearlyWorstTrades(c) {
+  c.classList.remove("grid-view");
+  const years = [...new Set(tradeRanksData.map(t => t.season).filter(Boolean))].sort();
+  const opts = years.map(y => `<option value="${y}">${y}</option>`).join("");
+  c.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="wtYear">${opts}</select>
+      <button class="show-btn" onclick="renderYearlyWorstTrades()">SHOW TRADES</button>
+    </div>
+    <div id="yearlyWtArea"></div>`;
+}
+
+function renderYearlyWorstTrades() {
+  const year = document.getElementById("wtYear").value;
+  const div = document.getElementById("yearlyWtArea");
+  const filtered = tradeRanksData.filter(t => String(t.season) === String(year));
+  const trades = buildWorstTradesData(filtered);
+  if (trades.length === 0) {
+    div.innerHTML = `<p class="no-data">No trade data found for ${year}.</p>`;
+    return;
+  }
+  const html = renderWorstTradesTable(`${year} — Worst Trades`, trades);
+  div.innerHTML = `<div style="width:100%;max-width:1100px;">${html}</div>`;
+}
+
+/* ── EXPORT DATA ── */
 function showExportData(c) {
   c.classList.remove("grid-view");
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date().toISOString().split('T')[0];
   c.innerHTML = `
-    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center; padding: 40px 20px;">
-      <h2>Export Data Files</h2>
-      <p style="margin-bottom: 30px; opacity: 0.7; font-size: 0.95rem; line-height: 1.6;">
-        Download the underlying data for this application in raw JSON or flattened CSV formats. 
-        These exports include records up through the current season.
-      </p>
-      <div style="display: flex; flex-direction: column; gap: 15px; max-width: 320px; margin: 0 auto;">
+    <div style="max-width:700px; margin:40px auto; text-align:center;">
+      <h2>EXPORT DATA</h2>
+      <div style="display:flex; flex-direction:column; gap:18px;" id="exportLinks">
         <a href="all_seasons_stats.json" download="all_seasons_stats_${today}.json" class="export-link">📄 ALL SEASONS JSON</a>
         <a href="all_seasons_stats.csv" download="all_seasons_stats_${today}.csv" class="export-link">📊 ALL SEASONS CSV</a>
         <a href="all_seasons_weeks_stats.json" download="all_seasons_weeks_stats_${today}.json" class="export-link">📄 ALL WEEKS JSON</a>
@@ -1179,27 +1046,12 @@ function showExportData(c) {
     link.style.display = "block";
     link.style.padding = "20px";
     link.style.background = "var(--glass)";
+    link.style.border = "1px solid var(--border)";
+    link.style.borderRadius = "8px";
     link.style.color = "var(--cream)";
     link.style.textDecoration = "none";
-    link.style.fontFamily = "'Barlow Condensed', sans-serif";
     link.style.fontWeight = "700";
-    link.style.fontSize = "1rem";
-    link.style.letterSpacing = "0.1em";
-    link.style.border = "1px solid var(--border)";
-    link.style.borderRadius = "6px";
-    link.style.transition = "all 0.2s ease";
-    link.addEventListener("mouseenter", () => {
-      link.style.background = "var(--red)";
-      link.style.borderColor = "var(--red-bright)";
-      link.style.transform = "translateY(-2px)";
-      link.style.boxShadow = "0 6px 20px rgba(0,0,0,0.3)";
-    });
-    link.addEventListener("mouseleave", () => {
-      link.style.background = "var(--glass)";
-      link.style.borderColor = "var(--border)";
-      link.style.transform = "none";
-      link.style.boxShadow = "none";
-    });
+    link.style.letterSpacing = ".08em";
   });
 }
 </script>

@@ -1,17 +1,16 @@
 """
 Fetches all TRADE transactions across every historical MLB fantasy season and
 enriches each traded player with:
-  - current_rank   (Yahoo season rank, rank_type="S" for CURRENT_YEAR)
+
+  - current_rank   (Yahoo season rank, rank_type="S")
   - preseason_rank (Yahoo overall pre-draft rank, rank_type="OR")
-  - roster_pct     (percent_owned in your league)
+  - roster_pct     (Yahoo ownership %)
+  - from_manager
+  - to_manager
 
-Output files:
-  trade_ranks.json  — grouped by trade (one object per trade, players array)
-  trade_ranks.csv   — flat (one row per player per trade)
-
-Patterns borrowed from:
-  yahoo_fantasy_transactions.py    → season/league traversal
-  Fantasy_Auto_Pilot_Get_Roster.py → rank parsing (OR / S), percent_owned
+Outputs:
+  trade_ranks.json
+  trade_ranks.csv
 """
 
 import csv
@@ -21,43 +20,51 @@ import time
 import webbrowser
 from datetime import datetime
 from pathlib import Path
+
 from requests_oauthlib import OAuth2Session
 
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-CLIENT_ID         = os.getenv("YAHOO_CLIENT_ID")
-CLIENT_SECRET     = os.getenv("YAHOO_CLIENT_SECRET")
-REDIRECT_URI      = "https://localhost"
-AUTHORIZATION_URL = "https://api.login.yahoo.com/oauth2/request_auth"
-TOKEN_URL         = "https://api.login.yahoo.com/oauth2/get_token"
-TOKEN_CACHE       = Path("token_cache.json")
-BASE_URL          = "https://fantasysports.yahooapis.com/fantasy/v2"
 
-# Used to match the "S" (season) rank_type entry returned by Yahoo's ranks API.
-# For historical seasons Yahoo only reliably returns "OR" (overall/preseason) ranks;
-# "S" rank is live and reflects the current season.
+CLIENT_ID = os.getenv("YAHOO_CLIENT_ID")
+CLIENT_SECRET = os.getenv("YAHOO_CLIENT_SECRET")
+
+REDIRECT_URI = "https://localhost"
+
+AUTHORIZATION_URL = "https://api.login.yahoo.com/oauth2/request_auth"
+TOKEN_URL = "https://api.login.yahoo.com/oauth2/get_token"
+
+TOKEN_CACHE = Path("token_cache.json")
+
+BASE_URL = "https://fantasysports.yahooapis.com/fantasy/v2"
+
 CURRENT_YEAR = str(datetime.now().year)
 
 # ---------------------------------------------------------------------------
-# OAuth helpers  (identical to yahoo_fantasy_ranks.py / transactions.py)
+# AUTH HELPERS
 # ---------------------------------------------------------------------------
-def _save_token(token: dict) -> None:
+
+
+def _save_token(token):
     TOKEN_CACHE.write_text(json.dumps(token, indent=2))
 
 
-def _load_token() -> dict | None:
+def _load_token():
     token_from_env = os.getenv("YAHOO_TOKEN")
+
     if token_from_env:
         try:
             return json.loads(token_from_env)
         except Exception:
             pass
+
     if TOKEN_CACHE.exists():
         try:
             return json.loads(TOKEN_CACHE.read_text())
         except Exception:
             pass
+
     return None
 
 
@@ -66,102 +73,162 @@ def get_session() -> OAuth2Session:
         client_id=CLIENT_ID,
         redirect_uri=REDIRECT_URI,
         auto_refresh_url=TOKEN_URL,
-        auto_refresh_kwargs={"client_id": CLIENT_ID, "client_secret": CLIENT_SECRET},
+        auto_refresh_kwargs={
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET,
+        },
         token_updater=_save_token,
     )
+
     cached = _load_token()
+
     if cached:
         session.token = cached
         print("Using cached OAuth token.")
+
     else:
         auth_url, _ = session.authorization_url(AUTHORIZATION_URL)
+
         webbrowser.open(auth_url)
-        print(f"\nIf browser didn't open:\n  {auth_url}\n")
-        redirect = input("Paste the full redirect URL: ").strip()
+
+        print(f"\nAuthorize here:\n{auth_url}\n")
+
+        redirect = input("Paste redirect URL: ").strip()
+
         token = (
             session.fetch_token(
-                TOKEN_URL, authorization_response=redirect, client_secret=CLIENT_SECRET
+                TOKEN_URL,
+                authorization_response=redirect,
+                client_secret=CLIENT_SECRET,
             )
             if redirect.startswith("http")
             else session.fetch_token(
-                TOKEN_URL, code=redirect, client_secret=CLIENT_SECRET
+                TOKEN_URL,
+                code=redirect,
+                client_secret=CLIENT_SECRET,
             )
         )
+
         _save_token(token)
-        print("Token saved.")
+
     return session
 
 
-def api_get(session: OAuth2Session, url: str) -> dict:
+def api_get(session, url):
     resp = session.get(url, params={"format": "json"})
+
     if resp.status_code != 200:
-        print(f"  ERROR {resp.status_code}: {resp.text[:300]}")
+        print(f"ERROR {resp.status_code}: {resp.text[:300]}")
         return {}
+
     return resp.json()
 
 
 # ---------------------------------------------------------------------------
-# Build team_key → manager_nickname lookup for a single league
+# BUILD TEAM MAP
 # ---------------------------------------------------------------------------
-def build_team_map(session: OAuth2Session, league_key: str) -> dict[str, str]:
-    """Returns {team_key: manager_nickname} for every team in the league."""
-    url  = f"{BASE_URL}/league/{league_key}/teams"
+
+
+def build_team_map(session, league_key):
+    """
+    Returns:
+        {
+            team_key: manager_nickname
+        }
+    """
+
+    url = f"{BASE_URL}/league/{league_key}/teams"
+
     data = api_get(session, url)
+
     time.sleep(0.3)
 
-    team_map: dict[str, str] = {}
+    team_map = {}
+
     try:
         teams_dict = (
             data.get("fantasy_content", {})
-                .get("league", [{}, {}])[1]
-                .get("teams", {})
+            .get("league", [{}, {}])[1]
+            .get("teams", {})
         )
+
         for i in range(int(teams_dict.get("count", 0))):
-            t_entry = teams_dict.get(str(i), {}).get("team", [[]])[0]
-            t_key   = None
-            m_nick  = "-"
-            for prop in t_entry:
-                if not isinstance(prop, dict):
-                    continue
-                if "team_key" in prop:
-                    t_key = prop["team_key"]
-                if "managers" in prop:
-                    try:
-                        m_nick = prop["managers"][0]["manager"].get("nickname", "-")
-                    except (IndexError, KeyError):
-                        pass
-            if t_key:
-                team_map[t_key] = m_nick
-    except (IndexError, KeyError, AttributeError):
-        pass
+
+            team_data = teams_dict.get(str(i), {}).get("team", [])
+
+            team_info = {}
+
+            for entry in team_data:
+
+                if isinstance(entry, list):
+                    for sub in entry:
+                        if isinstance(sub, dict):
+                            team_info.update(sub)
+
+                elif isinstance(entry, dict):
+                    team_info.update(entry)
+
+            team_key = team_info.get("team_key")
+
+            manager_name = "-"
+
+            managers = team_info.get("managers")
+
+            if isinstance(managers, list):
+
+                for mgr_wrap in managers:
+
+                    if isinstance(mgr_wrap, dict):
+
+                        mgr = mgr_wrap.get("manager", mgr_wrap)
+
+                        if isinstance(mgr, dict):
+                            manager_name = (
+                                mgr.get("nickname")
+                                or mgr.get("nickname")
+                                or mgr.get("guid")
+                                or "-"
+                            )
+
+            if team_key:
+                team_map[team_key] = manager_name
+
+    except Exception as e:
+        print("build_team_map error:", e)
 
     return team_map
 
 
 # ---------------------------------------------------------------------------
-# Fetch all trade transactions for one league  (league-level endpoint —
-# much more efficient than the per-team add/drop approach in transactions.py)
+# FETCH LEAGUE TRADES
 # ---------------------------------------------------------------------------
+
+
 def fetch_league_trades(
-    session: OAuth2Session,
-    league_key: str,
-    season: str,
-    team_map: dict[str, str],
-) -> list[dict]:
-    """
-    Returns flat list — one dict per player per trade — with all metadata
-    except ranks/roster_pct (those are filled in by enrich_player_ranks).
-    """
-    url  = f"{BASE_URL}/league/{league_key}/transactions;types=trade"
+    session,
+    league_key,
+    season,
+    team_map,
+):
+
+    url = f"{BASE_URL}/league/{league_key}/transactions;types=trade"
+
     data = api_get(session, url)
+
     time.sleep(0.4)
 
-    records: list[dict] = []
+    records = []
 
     try:
         league_list = data.get("fantasy_content", {}).get("league", [])
-        tx_dict     = league_list[1].get("transactions", {}) if len(league_list) > 1 else {}
-    except (IndexError, KeyError, AttributeError):
+
+        tx_dict = (
+            league_list[1].get("transactions", {})
+            if len(league_list) > 1
+            else {}
+        )
+
+    except Exception:
         return records
 
     if not isinstance(tx_dict, dict):
@@ -170,339 +237,632 @@ def fetch_league_trades(
     tx_count = int(tx_dict.get("count", 0))
 
     for i in range(tx_count):
+
         tx_entry = tx_dict.get(str(i), {}).get("transaction", [])
+
         if not tx_entry:
             continue
 
-        tx_meta  = tx_entry[0] if isinstance(tx_entry[0], dict) else {}
-        tx_id    = tx_meta.get("transaction_id", "-")
-        tx_ts    = tx_meta.get("timestamp", "-")
-        tx_type  = tx_meta.get("type", "").lower()
+        tx_meta = tx_entry[0] if isinstance(tx_entry[0], dict) else {}
 
-        # Belt-and-suspenders: skip anything that isn't a trade
+        tx_id = tx_meta.get("transaction_id", "-")
+        tx_ts = tx_meta.get("timestamp", "-")
+        tx_type = tx_meta.get("type", "").lower()
+
         if tx_type != "trade":
             continue
 
         for block in tx_entry[1:]:
-            if not isinstance(block, dict) or "players" not in block:
+
+            if not isinstance(block, dict):
+                continue
+
+            if "players" not in block:
                 continue
 
             players_dict = block["players"]
-            p_count      = int(players_dict.get("count", 0))
+
+            p_count = int(players_dict.get("count", 0))
 
             for j in range(p_count):
+
                 p_entry = players_dict.get(str(j), {}).get("player", [])
-                if not p_entry or len(p_entry) < 2:
+
+                if not p_entry:
                     continue
 
-                p_meta = p_entry[0]  # list of property dicts
-                p_tx   = p_entry[1].get("transaction_data", {})
-                if not isinstance(p_tx, dict):
-                    p_tx = {}
-
-                # ── parse player metadata ──────────────────────────────────
-                player_key  = "-"
+                player_key = "-"
                 player_name = "-"
-                player_pos  = "-"
-                for it in p_meta:
-                    if not isinstance(it, dict):
-                        continue
-                    if "player_key"       in it:
-                        player_key  = it["player_key"]
-                    if "name"             in it:
-                        player_name = it["name"].get("full", "-")
-                    if "display_position" in it:
-                        player_pos  = it.get("display_position", "-")
+                player_pos = "-"
 
-                # ── resolve manager names from team keys ───────────────────
-                source_key   = p_tx.get("source_team_key", "")
-                dest_key     = p_tx.get("destination_team_key", "")
-                from_manager = team_map.get(source_key, source_key or "-")
-                to_manager   = team_map.get(dest_key,   dest_key   or "-")
+                from_manager = "-"
+                to_manager = "-"
 
-                records.append({
-                    "season":          season,
-                    "league_key":      league_key,
-                    "trade_id":        tx_id,
-                    "timestamp":       tx_ts,
-                    "from_manager":    from_manager,
-                    "to_manager":      to_manager,
-                    "player_key":      player_key,
-                    "player_name":     player_name,
-                    "player_position": player_pos,
-                    # Populated later by enrich_player_ranks()
-                    "current_rank":    "-",
-                    "preseason_rank":  "-",
-                    "roster_pct":      "-",
-                })
+                for item in p_entry:
+
+                    # -------------------------------------------------------
+                    # METADATA LIST
+                    # -------------------------------------------------------
+
+                    if isinstance(item, list):
+
+                        for sub in item:
+
+                            if not isinstance(sub, dict):
+                                continue
+
+                            if "player_key" in sub:
+                                player_key = sub["player_key"]
+
+                            if "name" in sub:
+                                player_name = sub["name"].get("full", "-")
+
+                            if "display_position" in sub:
+                                player_pos = sub.get(
+                                    "display_position",
+                                    "-",
+                                )
+
+                    # -------------------------------------------------------
+                    # TRANSACTION DATA
+                    # -------------------------------------------------------
+
+                    elif isinstance(item, dict):
+
+                        tx_data = item.get("transaction_data")
+
+                        if isinstance(tx_data, dict):
+
+                            source_key = tx_data.get(
+                                "source_team_key",
+                                "",
+                            )
+
+                            dest_key = tx_data.get(
+                                "destination_team_key",
+                                "",
+                            )
+
+                            from_manager = team_map.get(
+                                source_key,
+                                source_key or "-",
+                            )
+
+                            to_manager = team_map.get(
+                                dest_key,
+                                dest_key or "-",
+                            )
+
+                records.append(
+                    {
+                        "season": season,
+                        "league_key": league_key,
+                        "trade_id": tx_id,
+                        "timestamp": tx_ts,
+                        "from_manager": from_manager,
+                        "to_manager": to_manager,
+                        "player_name": player_name,
+                        "player_position": player_pos,
+                        "player_key": player_key,
+                        "current_rank": "-",
+                        "preseason_rank": "-",
+                        "roster_pct": "-",
+                    }
+                )
 
     return records
 
 
 # ---------------------------------------------------------------------------
-# Enrich player records with ranks + roster %
-# Rank-parsing logic mirrors Fantasy_Auto_Pilot_Get_Roster.py exactly:
-#   rank_type "OR"  → preseason overall rank
-#   rank_type "S"   → in-season rank (only meaningful for CURRENT_YEAR)
+# OWNERSHIP LOOKUP
 # ---------------------------------------------------------------------------
+
+
+def get_roster_percent_map(
+    session,
+    player_keys,
+    batch_size=25,
+):
+
+    roster_map = {}
+
+    for start in range(0, len(player_keys), batch_size):
+
+        batch = player_keys[start : start + batch_size]
+
+        keys_str = ",".join(batch)
+
+        url = f"{BASE_URL}/players;player_keys={keys_str}/ownership"
+
+        data = api_get(session, url)
+
+        time.sleep(0.35)
+
+        players_block = (
+            data.get("fantasy_content", {})
+            .get("players", {})
+        )
+
+        for i in range(int(players_block.get("count", 0))):
+
+            p_data = players_block.get(str(i), {}).get("player", [])
+
+            p_key = None
+            roster_pct = "-"
+
+            for item in p_data:
+
+                # -----------------------------------------------------------
+                # METADATA LIST
+                # -----------------------------------------------------------
+
+                if isinstance(item, list):
+
+                    for sub in item:
+
+                        if (
+                            isinstance(sub, dict)
+                            and "player_key" in sub
+                        ):
+                            p_key = sub["player_key"]
+
+                # -----------------------------------------------------------
+                # OWNERSHIP
+                # -----------------------------------------------------------
+
+                elif isinstance(item, dict):
+
+                    if "ownership" in item:
+
+                        ownership = item["ownership"]
+
+                        if isinstance(ownership, dict):
+
+                            pct = ownership.get("percent_owned")
+
+                            if isinstance(pct, dict):
+                                roster_pct = pct.get("value", "-")
+                            else:
+                                roster_pct = pct
+
+            if p_key:
+                roster_map[p_key] = roster_pct
+
+    return roster_map
+
+
+# ---------------------------------------------------------------------------
+# ENRICH PLAYER RANKS
+# ---------------------------------------------------------------------------
+
+
 def enrich_player_ranks(
-    session: OAuth2Session,
-    league_key: str,
-    records: list[dict],
-) -> None:
-    """
-    Batches unique player keys (25 per call) and calls:
-      /league/{lk}/players;player_keys=...;out=ranks,ownership
+    session,
+    league_key,
+    records,
+):
 
-    Patches each record in `records` in-place with:
-      current_rank, preseason_rank, roster_pct
+    unique_keys = list(
+        {
+            r["player_key"]
+            for r in records
+            if r["player_key"] != "-"
+        }
+    )
 
-    NOTE: Yahoo's live rank/ownership endpoints reflect the *current* moment.
-    For trades made in past seasons the ranks will be today's values, not
-    the values at the time of the trade — this is a Yahoo API limitation.
-    """
-    unique_keys = list({r["player_key"] for r in records if r["player_key"] != "-"})
     if not unique_keys:
         return
 
-    rank_map:    dict[str, dict] = {}
-    percent_map: dict[str, str]  = {}
+    rank_map = {}
 
     BATCH = 25
+
     for i in range(0, len(unique_keys), BATCH):
-        batch    = unique_keys[i : i + BATCH]
+
+        batch = unique_keys[i : i + BATCH]
+
         keys_str = ",".join(batch)
 
-        url  = (
+        url = (
             f"{BASE_URL}/league/{league_key}/players"
-            f";player_keys={keys_str};out=ranks,ownership"
+            f";player_keys={keys_str};out=ranks"
         )
+
         data = api_get(session, url)
+
         time.sleep(0.35)
 
         try:
             players_block = (
                 data.get("fantasy_content", {})
-                    .get("league", [{}, {}])[1]
-                    .get("players", {})
+                .get("league", [{}, {}])[1]
+                .get("players", {})
             )
-        except (IndexError, KeyError):
+
+        except Exception:
             players_block = {}
 
         p_count = int(players_block.get("count", 0))
+
         for j in range(p_count):
+
             p_entry = players_block.get(str(j), {}).get("player", [])
+
             if not p_entry:
                 continue
 
-            p_key        = "-"
+            p_key = "-"
+            preseason_rank = "-"
             current_rank = "-"
-            pre_rank     = "-"
-            roster_pct   = "-"
 
-            # player_key lives in the first element (list of property dicts)
-            meta_list = p_entry[0] if isinstance(p_entry[0], list) else []
-            for it in meta_list:
-                if isinstance(it, dict) and "player_key" in it:
-                    p_key = it["player_key"]
-                    break
+            for item in p_entry:
 
-            # Additional resource blocks (ranks, ownership)
-            for block in p_entry[1:]:
-                if not isinstance(block, dict):
-                    continue
+                # -----------------------------------------------------------
+                # METADATA LIST
+                # -----------------------------------------------------------
 
-                # ── ranks — same logic as flatten_yahoo_player() ──────────
-                if "player_ranks" in block:
-                    ranks_list = block["player_ranks"]
-                    if isinstance(ranks_list, list):
-                        for r_wrap in ranks_list:
-                            r = r_wrap.get("player_rank", {})
-                            rank_type   = r.get("rank_type", "")
-                            rank_season = r.get("rank_season", "")
-                            rank_value  = r.get("rank_value", "-")
+                if isinstance(item, list):
 
-                            # OR = overall preseason rank (available for all seasons)
-                            if rank_type == "OR":
-                                pre_rank = rank_value
+                    for sub in item:
 
-                            # S  = live in-season rank (only current season)
-                            if rank_type == "S" and rank_season == CURRENT_YEAR:
-                                current_rank = rank_value
+                        if (
+                            isinstance(sub, dict)
+                            and "player_key" in sub
+                        ):
+                            p_key = sub["player_key"]
 
-                # ── ownership → percent_owned ─────────────────────────────
-                if "ownership" in block:
-                    owned = block["ownership"].get("percent_owned", {})
-                    if isinstance(owned, dict):
-                        roster_pct = owned.get("value", "-")
-                    elif isinstance(owned, (str, int, float)):
-                        roster_pct = str(owned)
+                # -----------------------------------------------------------
+                # PLAYER RANKS
+                # -----------------------------------------------------------
+
+                elif isinstance(item, dict):
+
+                    if "player_ranks" in item:
+
+                        ranks = item["player_ranks"]
+
+                        # Sometimes Yahoo returns dict instead of list
+                        if isinstance(ranks, dict):
+                            ranks = [ranks]
+
+                        if isinstance(ranks, list):
+
+                            for r_wrap in ranks:
+
+                                if not isinstance(r_wrap, dict):
+                                    continue
+
+                                r = r_wrap.get(
+                                    "player_rank",
+                                    r_wrap,
+                                )
+
+                                rank_type = r.get("rank_type")
+                                rank_season = str(
+                                    r.get("rank_season", "")
+                                )
+
+                                rank_value = r.get(
+                                    "rank_value",
+                                    "-",
+                                )
+
+                                if rank_type == "OR":
+                                    preseason_rank = rank_value
+
+                                if (
+                                    rank_type == "S"
+                                    and rank_season == CURRENT_YEAR
+                                ):
+                                    current_rank = rank_value
 
             if p_key != "-":
-                rank_map[p_key]    = {"current_rank": current_rank, "preseason_rank": pre_rank}
-                percent_map[p_key] = roster_pct
 
-    # Patch every record in-place
+                rank_map[p_key] = {
+                    "current_rank": current_rank,
+                    "preseason_rank": preseason_rank,
+                }
+
+    # -----------------------------------------------------------------------
+    # OWNERSHIP
+    # -----------------------------------------------------------------------
+
+    roster_map = get_roster_percent_map(
+        session,
+        unique_keys,
+    )
+
+    # -----------------------------------------------------------------------
+    # PATCH RECORDS
+    # -----------------------------------------------------------------------
+
     for rec in records:
+
         pk = rec["player_key"]
+
         if pk in rank_map:
-            rec["current_rank"]   = rank_map[pk]["current_rank"]
+
+            rec["current_rank"] = rank_map[pk]["current_rank"]
+
             rec["preseason_rank"] = rank_map[pk]["preseason_rank"]
-        if pk in percent_map:
-            rec["roster_pct"] = percent_map[pk]
+
+        if pk in roster_map:
+
+            rec["roster_pct"] = roster_map[pk]
 
 
 # ---------------------------------------------------------------------------
-# Main
+# SAVE OUTPUTS
 # ---------------------------------------------------------------------------
-def download_all_trades() -> None:
+
+
+def save_outputs(records):
+
+    # -----------------------------------------------------------------------
+    # JSON GROUPED BY TRADE
+    # -----------------------------------------------------------------------
+
+    grouped = {}
+
+    for rec in records:
+
+        key = (
+            rec["season"],
+            rec["league_key"],
+            rec["trade_id"],
+        )
+
+        if key not in grouped:
+
+            grouped[key] = {
+                "season": rec["season"],
+                "league_key": rec["league_key"],
+                "trade_id": rec["trade_id"],
+                "timestamp": rec["timestamp"],
+                "players": [],
+            }
+
+        grouped[key]["players"].append(
+            {
+                "from_manager": rec["from_manager"],
+                "to_manager": rec["to_manager"],
+                "player_name": rec["player_name"],
+                "player_position": rec["player_position"],
+                "player_key": rec["player_key"],
+                "current_rank": rec["current_rank"],
+                "preseason_rank": rec["preseason_rank"],
+                "roster_pct": rec["roster_pct"],
+            }
+        )
+
+    grouped_list = list(grouped.values())
+
+    with open(
+        "trade_ranks.json",
+        "w",
+        encoding="utf-8",
+    ) as f:
+
+        json.dump(
+            grouped_list,
+            f,
+            indent=2,
+            ensure_ascii=False,
+        )
+
+    # -----------------------------------------------------------------------
+    # CSV
+    # -----------------------------------------------------------------------
+
+    csv_fields = [
+        "season",
+        "league_key",
+        "trade_id",
+        "timestamp",
+        "from_manager",
+        "to_manager",
+        "player_name",
+        "player_position",
+        "player_key",
+        "current_rank",
+        "preseason_rank",
+        "roster_pct",
+    ]
+
+    with open(
+        "trade_ranks.csv",
+        "w",
+        newline="",
+        encoding="utf-8",
+    ) as f:
+
+        writer = csv.DictWriter(
+            f,
+            fieldnames=csv_fields,
+        )
+
+        writer.writeheader()
+
+        for row in records:
+            writer.writerow(row)
+
+    print(
+        f"\nSaved {len(records)} player trade rows "
+        f"to trade_ranks.json and trade_ranks.csv"
+    )
+
+
+# ---------------------------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------------------------
+
+
+def download_all_trades():
+
     if not CLIENT_ID or not CLIENT_SECRET:
-        print("ERROR: Set YAHOO_CLIENT_ID and YAHOO_CLIENT_SECRET environment variables.")
+
+        print(
+            "ERROR: Missing YAHOO_CLIENT_ID "
+            "or YAHOO_CLIENT_SECRET"
+        )
+
         return
 
-    session     = get_session()
-    all_records: list[dict] = []
+    session = get_session()
 
-    # ── [1/4] Discover all historical MLB seasons ──────────────────────────
-    print("\n[1/4] Querying Yahoo profile for all historical MLB seasons...")
-    games_data = api_get(session, f"{BASE_URL}/users;use_login=1/games;game_codes=mlb")
+    all_records = []
+
+    # -----------------------------------------------------------------------
+    # GET ALL MLB SEASONS
+    # -----------------------------------------------------------------------
+
+    print("\nFetching MLB game history...")
+
+    games_data = api_get(
+        session,
+        f"{BASE_URL}/users;use_login=1/games;game_codes=mlb",
+    )
 
     try:
+
         user_wrapper = (
             games_data.get("fantasy_content", {})
-                      .get("users", {})
-                      .get("0", {})
-                      .get("user", [])
+            .get("users", {})
+            .get("0", {})
+            .get("user", [])
         )
-        games_dict = user_wrapper[1].get("games", {})
-        game_count = int(games_dict.get("count", 0))
-    except (IndexError, AttributeError, ValueError):
-        print("Failed to parse user game profile.")
+
+        games = user_wrapper[1].get("games", {})
+
+    except Exception:
+        print("Unable to fetch game history.")
         return
 
-    mlb_game_keys: list[dict] = []
-    for i in range(game_count):
-        gm = games_dict.get(str(i), {}).get("game", [{}])[0]
-        if gm.get("game_key") and gm.get("season"):
-            mlb_game_keys.append({"key": gm["game_key"], "season": gm["season"]})
+    game_keys = []
 
-    mlb_game_keys.sort(key=lambda x: x["season"])
-    seasons_str = ", ".join(x["season"] for x in mlb_game_keys)
-    print(f"Found {len(mlb_game_keys)} MLB seasons: {seasons_str}")
+    for i in range(int(games.get("count", 0))):
 
-    # ── [2/4] Collect trades from every league ─────────────────────────────
-    print("\n[2/4] Fetching trades from every league/season...")
+        g = games.get(str(i), {}).get("game", [])
 
-    # Group by league_key so we can batch the enrichment calls per league
-    records_by_league: dict[str, list[dict]] = {}
+        game_key = None
+        season = None
 
-    for item in mlb_game_keys:
-        game_key = item["key"]
-        season   = item["season"]
+        for item in g:
 
-        leagues_url  = f"{BASE_URL}/users;use_login=1/games;game_keys={game_key}/leagues"
+            if isinstance(item, dict):
+
+                if "game_key" in item:
+                    game_key = item["game_key"]
+
+                if "season" in item:
+                    season = item["season"]
+
+        if game_key and season:
+            game_keys.append((game_key, season))
+
+    print(f"Found {len(game_keys)} MLB seasons")
+
+    # -----------------------------------------------------------------------
+    # PROCESS EACH SEASON
+    # -----------------------------------------------------------------------
+
+    for game_key, season in game_keys:
+
+        print(f"\n=== {season} ===")
+
+        leagues_url = (
+            f"{BASE_URL}/users;use_login=1/games;"
+            f"game_keys={game_key}/leagues"
+        )
+
         leagues_data = api_get(session, leagues_url)
+
         time.sleep(0.4)
 
         try:
-            l_wrapper = (
+
+            user_wrapper = (
                 leagues_data.get("fantasy_content", {})
-                            .get("users", {})
-                            .get("0", {})
-                            .get("user", [])
+                .get("users", {})
+                .get("0", {})
+                .get("user", [])
             )
-            l_games   = l_wrapper[1].get("games", {})
-            l_leagues = l_games.get("0", {}).get("game", [{}, {}])[1].get("leagues", {})
-            l_count   = int(l_leagues.get("count", 0))
-        except (IndexError, AttributeError, ValueError):
+
+            leagues = user_wrapper[1].get("games", {}).get(
+                "0",
+                {},
+            ).get("game", [])[1].get("leagues", {})
+
+        except Exception:
             continue
 
-        for l_idx in range(l_count):
-            league_meta = l_leagues.get(str(l_idx), {}).get("league", [{}])[0]
-            league_key  = league_meta.get("league_key")
+        league_count = int(leagues.get("count", 0))
+
+        print(f"Leagues: {league_count}")
+
+        for i in range(league_count):
+
+            league_data = (
+                leagues.get(str(i), {})
+                .get("league", [])
+            )
+
+            league_key = None
+
+            for item in league_data:
+
+                if (
+                    isinstance(item, dict)
+                    and "league_key" in item
+                ):
+                    league_key = item["league_key"]
+
             if not league_key:
                 continue
 
-            # Build {team_key: manager} map for this league
-            team_map = build_team_map(session, league_key)
+            print(f"  League: {league_key}")
 
-            # Pull trades for this league
-            league_trades = fetch_league_trades(session, league_key, season, team_map)
-            unique_trade_ids = len({r["trade_id"] for r in league_trades})
-            print(
-                f"  {season} | {league_key} | "
-                f"{unique_trade_ids} trades | {len(league_trades)} player rows"
-            )
+            try:
 
-            if league_trades:
-                records_by_league.setdefault(league_key, []).extend(league_trades)
+                team_map = build_team_map(
+                    session,
+                    league_key,
+                )
 
-    # ── [3/4] Enrich with ranks + roster % (batched per league) ───────────
-    print("\n[3/4] Enriching players with current rank, preseason rank, roster %...")
-    for league_key, recs in records_by_league.items():
-        season_label = recs[0]["season"] if recs else "?"
-        print(
-            f"  {league_key} ({season_label}) — "
-            f"{len({r['player_key'] for r in recs})} unique players"
-        )
-        enrich_player_ranks(session, league_key, recs)
-        all_records.extend(recs)
+                trade_records = fetch_league_trades(
+                    session,
+                    league_key,
+                    season,
+                    team_map,
+                )
 
-    # ── [4/4] Write outputs ────────────────────────────────────────────────
-    total_player_rows = len(all_records)
-    print(f"\n[4/4] Saving {total_player_rows} trade-player rows to files...")
+                if not trade_records:
+                    continue
 
-    # Sort globally by season then trade_id for predictable output ordering
-    all_records.sort(key=lambda x: (x["season"], x["trade_id"]))
+                enrich_player_ranks(
+                    session,
+                    league_key,
+                    trade_records,
+                )
 
-    # --- JSON: one object per trade, with a nested players list ---
-    json_trades: dict[str, dict] = {}   # key = "league_key|trade_id"
-    for rec in all_records:
-        composite_key = f"{rec['league_key']}|{rec['trade_id']}"
-        if composite_key not in json_trades:
-            json_trades[composite_key] = {
-                "season":     rec["season"],
-                "league_key": rec["league_key"],
-                "trade_id":   rec["trade_id"],
-                "timestamp":  rec["timestamp"],
-                "players":    [],
-            }
-        json_trades[composite_key]["players"].append({
-            "from_manager":    rec["from_manager"],
-            "to_manager":      rec["to_manager"],
-            "player_name":     rec["player_name"],
-            "player_position": rec["player_position"],
-            "player_key":      rec["player_key"],
-            "current_rank":    rec["current_rank"],
-            "preseason_rank":  rec["preseason_rank"],
-            "roster_pct":      rec["roster_pct"],
-        })
+                all_records.extend(trade_records)
 
-    json_out = sorted(json_trades.values(), key=lambda x: (x["season"], x["trade_id"]))
+                print(
+                    f"    Trades: {len(trade_records)}"
+                )
 
-    json_file = Path("trade_ranks.json")
-    with open(json_file, "w", encoding="utf-8") as f:
-        json.dump(json_out, f, indent=2, ensure_ascii=False)
-    print(f"Saved JSON → {json_file}  ({len(json_out)} trades)")
+            except Exception as e:
 
-    # --- CSV: flat, one row per player per trade ---
-    csv_file   = Path("trade_ranks.csv")
-    fieldnames = [
-        "season", "league_key", "trade_id", "timestamp",
-        "from_manager", "to_manager",
-        "player_name", "player_position", "player_key",
-        "current_rank", "preseason_rank", "roster_pct",
-    ]
-    with open(csv_file, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
-        writer.writeheader()
-        for row in all_records:
-            writer.writerow(row)
-    print(f"Saved CSV  → {csv_file}  ({total_player_rows} rows)")
-    print(
-        f"\nDone — {len(json_out)} total trades across "
-        f"{len(records_by_league)} leagues."
-    )
+                print(
+                    f"    ERROR processing "
+                    f"{league_key}: {e}"
+                )
+
+    # -----------------------------------------------------------------------
+    # SAVE
+    # -----------------------------------------------------------------------
+
+    save_outputs(all_records)
 
 
 if __name__ == "__main__":

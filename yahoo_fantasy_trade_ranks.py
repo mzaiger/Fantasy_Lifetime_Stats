@@ -1,12 +1,9 @@
 """
 Fetches all TRADE transactions across every historical MLB fantasy season and
 enriches each traded player with:
+  - current_rank   (Yahoo season rank, rank_type="S" for CURRENT_YEAR)
   - preseason_rank (Yahoo overall pre-draft rank, rank_type="OR")
   - roster_pct     (percent_owned in your league)
-
-NOTE: current/in-season rank (rank_type="S") is a live value from Yahoo and
-only reflects today — not the state at trade time — so it is intentionally
-excluded. preseason_rank ("OR") is stable and meaningful across all seasons.
 
 Output files:
   trade_ranks.json  — grouped by trade (one object per trade, players array)
@@ -14,7 +11,7 @@ Output files:
 
 Patterns borrowed from:
   yahoo_fantasy_transactions.py    → season/league traversal
-  Fantasy_Auto_Pilot_Get_Roster.py → rank parsing (OR), percent_owned
+  Fantasy_Auto_Pilot_Get_Roster.py → rank parsing (OR / S), percent_owned
 """
 
 import csv
@@ -22,6 +19,7 @@ import json
 import os
 import time
 import webbrowser
+from datetime import datetime
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
 
@@ -35,6 +33,11 @@ AUTHORIZATION_URL = "https://api.login.yahoo.com/oauth2/request_auth"
 TOKEN_URL         = "https://api.login.yahoo.com/oauth2/get_token"
 TOKEN_CACHE       = Path("token_cache.json")
 BASE_URL          = "https://fantasysports.yahooapis.com/fantasy/v2"
+
+# Used to match the "S" (season) rank_type entry returned by Yahoo's ranks API.
+# For historical seasons Yahoo only reliably returns "OR" (overall/preseason) ranks;
+# "S" rank is live and reflects the current season.
+CURRENT_YEAR = str(datetime.now().year)
 
 # ---------------------------------------------------------------------------
 # OAuth helpers  (identical to yahoo_fantasy_ranks.py / transactions.py)
@@ -228,6 +231,7 @@ def fetch_league_trades(
                     "player_name":     player_name,
                     "player_position": player_pos,
                     # Populated later by enrich_player_ranks()
+                    "current_rank":    "-",
                     "preseason_rank":  "-",
                     "roster_pct":      "-",
                 })
@@ -251,10 +255,11 @@ def enrich_player_ranks(
       /league/{lk}/players;player_keys=...;out=ranks,ownership
 
     Patches each record in `records` in-place with:
-      preseason_rank, roster_pct
+      current_rank, preseason_rank, roster_pct
 
-    Only rank_type "OR" (overall preseason) is captured — it is stable across
-    all seasons. The "S" (in-season) rank is live/current-only and excluded.
+    NOTE: Yahoo's live rank/ownership endpoints reflect the *current* moment.
+    For trades made in past seasons the ranks will be today's values, not
+    the values at the time of the trade — this is a Yahoo API limitation.
     """
     unique_keys = list({r["player_key"] for r in records if r["player_key"] != "-"})
     if not unique_keys:
@@ -291,6 +296,7 @@ def enrich_player_ranks(
                 continue
 
             p_key        = "-"
+            current_rank = "-"
             pre_rank     = "-"
             roster_pct   = "-"
 
@@ -306,14 +312,23 @@ def enrich_player_ranks(
                 if not isinstance(block, dict):
                     continue
 
-                # ── ranks — only "OR" (overall preseason) is stable ──────
+                # ── ranks — same logic as flatten_yahoo_player() ──────────
                 if "player_ranks" in block:
                     ranks_list = block["player_ranks"]
                     if isinstance(ranks_list, list):
                         for r_wrap in ranks_list:
                             r = r_wrap.get("player_rank", {})
-                            if r.get("rank_type") == "OR":
-                                pre_rank = r.get("rank_value", "-")
+                            rank_type   = r.get("rank_type", "")
+                            rank_season = r.get("rank_season", "")
+                            rank_value  = r.get("rank_value", "-")
+
+                            # OR = overall preseason rank (available for all seasons)
+                            if rank_type == "OR":
+                                pre_rank = rank_value
+
+                            # S  = live in-season rank (only current season)
+                            if rank_type == "S" and rank_season == CURRENT_YEAR:
+                                current_rank = rank_value
 
                 # ── ownership → percent_owned ─────────────────────────────
                 if "ownership" in block:
@@ -324,13 +339,14 @@ def enrich_player_ranks(
                         roster_pct = str(owned)
 
             if p_key != "-":
-                rank_map[p_key]    = {"preseason_rank": pre_rank}
+                rank_map[p_key]    = {"current_rank": current_rank, "preseason_rank": pre_rank}
                 percent_map[p_key] = roster_pct
 
     # Patch every record in-place
     for rec in records:
         pk = rec["player_key"]
         if pk in rank_map:
+            rec["current_rank"]   = rank_map[pk]["current_rank"]
             rec["preseason_rank"] = rank_map[pk]["preseason_rank"]
         if pk in percent_map:
             rec["roster_pct"] = percent_map[pk]
@@ -422,7 +438,7 @@ def download_all_trades() -> None:
                 records_by_league.setdefault(league_key, []).extend(league_trades)
 
     # ── [3/4] Enrich with ranks + roster % (batched per league) ───────────
-    print("\n[3/4] Enriching players with preseason rank and roster %...")
+    print("\n[3/4] Enriching players with current rank, preseason rank, roster %...")
     for league_key, recs in records_by_league.items():
         season_label = recs[0]["season"] if recs else "?"
         print(
@@ -457,6 +473,7 @@ def download_all_trades() -> None:
             "player_name":     rec["player_name"],
             "player_position": rec["player_position"],
             "player_key":      rec["player_key"],
+            "current_rank":    rec["current_rank"],
             "preseason_rank":  rec["preseason_rank"],
             "roster_pct":      rec["roster_pct"],
         })
@@ -474,7 +491,7 @@ def download_all_trades() -> None:
         "season", "league_key", "trade_id", "timestamp",
         "from_manager", "to_manager",
         "player_name", "player_position", "player_key",
-        "preseason_rank", "roster_pct",
+        "current_rank", "preseason_rank", "roster_pct",
     ]
     with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")

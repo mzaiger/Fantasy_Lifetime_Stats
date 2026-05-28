@@ -139,29 +139,24 @@
   td:last-child { color: #c9d5e0; }
   tfoot tr td { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; }
 
-  /* Dual-table layout for player/personal tx pages */
   .tx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
   @media (max-width: 800px) { .tx-grid { grid-template-columns: 1fr; } }
 
-  /* TX tables — col overrides: #, Player, Pos, Adds, Drops, Total */
   .tx-table td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
   .tx-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); font-weight: 400; }
   .tx-table td:nth-child(4) { text-align: center; color: #7ecfa0; font-weight: 600; }
   .tx-table td:nth-child(5) { text-align: center; color: #e07070; font-weight: 600; }
 
-  /* FAAB table col overrides: #, Player, Pos, Manager, Season, FAAB $ */
   .faab-table td:nth-child(2) { text-align: left; font-weight: 500; color: #e8dfc8; }
   .faab-table td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-table td:nth-child(4) { text-align: left; color: rgba(255,255,255,0.55); font-size: 0.78rem; }
   .faab-table td:nth-child(5) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-table td:nth-child(6) { text-align: center; color: var(--gold); font-weight: 700; }
 
-  /* FAAB personal — fewer cols: #, Player, Pos, Season, FAAB $ */
   .faab-personal td:nth-child(3) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-personal td:nth-child(4) { text-align: center; color: rgba(255,255,255,0.55); }
   .faab-personal td:nth-child(5) { text-align: center; color: var(--gold); font-weight: 700; }
 
-  /* Team tx table */
   .team-tx-table td:nth-child(2) { text-align: left; }
   .team-tx-table td:nth-child(3) { color: #7ecfa0; font-weight: 600; }
   .team-tx-table td:nth-child(4) { color: #e07070; font-weight: 600; }
@@ -254,6 +249,7 @@
     <a class="active" onclick="setPage('lifetime'); toggleMenu()">LIFETIME RANKINGS</a>
     <a onclick="setPage('seasonRankings'); toggleMenu()">SEASON RANKINGS</a>
     <a onclick="setPage('weeklyRankings'); toggleMenu()">WEEKLY RANKINGS</a>
+    <a onclick="setPage('worstTrades'); toggleMenu()">WORST TRADES</a>
     <a onclick="setPage('lifetimeRecord'); toggleMenu()">RECORDS</a>
     <a onclick="setPage('lifetimeMedals'); toggleMenu()">MEDALS</a>
     <a onclick="setPage('individualLifetime'); toggleMenu()">LIFETIME STATS</a>
@@ -318,6 +314,7 @@ let rawData = [];
 let weeklyRawData = [];
 let managers = {};
 let txRawData = [];
+let tradeRanksData = [];
 
 const numericFields = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 const avgFields     = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","WHIP","K/9","QS"];
@@ -327,18 +324,23 @@ const sumFields     = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 let currentPage = "lifetime";
 
 Promise.all([
-  fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()),
-  fetch("all_seasons_weeks_stats.json?v=" + Date.now()).then(r => r.json()),
-  fetch("all_seasons_transactions.json?v=" + Date.now()).then(r => r.json()).catch(() => [])
-]).then(([seasonData, weekData, txData]) => {
-  rawData = Array.isArray(seasonData) ? seasonData : Object.values(seasonData).flat();
+  fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
+  fetch("all_seasons_weeks_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => ({})),
+  fetch("all_seasons_transactions.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
+  fetch("trade_ranks.json?v=" + Date.now()).then(r => r.json()).catch(() => [])
+]).then(([seasonData, weekData, txData, tradesData]) => {
+  rawData = Array.isArray(seasonData) ? seasonData : Object.values(seasonData || {}).flat();
   weeklyRawData = [];
-  Object.keys(weekData).forEach(year => {
-    Object.keys(weekData[year]).forEach(week => {
-      weeklyRawData.push(...weekData[year][week]);
+  if (weekData) {
+    Object.keys(weekData).forEach(year => {
+      Object.keys(weekData[year]).forEach(week => {
+        weeklyRawData.push(...weekData[year][week]);
+      });
     });
-  });
+  }
   txRawData = Array.isArray(txData) ? txData : [];
+  tradeRanksData = Array.isArray(tradesData) ? tradesData : [];
+  
   processData();
   setPage("lifetime");
 });
@@ -416,6 +418,7 @@ function setPage(page) {
   if (page === "lifetime")           showLifetime(c);
   if (page === "seasonRankings")     showSeasonRankings(c);
   if (page === "weeklyRankings")     showWeeklyRankings(c);
+  if (page === "worstTrades")        showWorstTrades(c);
   if (page === "lifetimeRecord")     showLifetimeRecord(c);
   if (page === "lifetimeMedals")     showLifetimeMedals(c);
   if (page === "individualLifetime") showIndividualLifetime(c);
@@ -850,6 +853,115 @@ function renderPersonalFaab() {
 }
 
 /* ══════════════════════════════════════════
+   WORST TRADES
+══════════════════════════════════════════ */
+
+function calcPlayerScore(player) {
+  let parts = [];
+  
+  // Create an intuitive 1-100 scale where Rank 1 = ~99, Rank 500 = ~50, Rank 1000 = ~0.
+  if (player.preseason_rank !== "-" && !isNaN(player.preseason_rank)) {
+     parts.push(Math.max(0, 100 - (parseFloat(player.preseason_rank) / 10)));
+  }
+  if (player.current_rank !== "-" && !isNaN(player.current_rank)) {
+     parts.push(Math.max(0, 100 - (parseFloat(player.current_rank) / 10)));
+  }
+  if (player.roster_pct !== "-" && !isNaN(player.roster_pct)) {
+     parts.push(parseFloat(player.roster_pct));
+  }
+  
+  if (parts.length === 0) return 0;
+  return parts.reduce((a, b) => a + b, 0) / parts.length;
+}
+
+function showWorstTrades(c) {
+  c.classList.remove("grid-view");
+
+  let lopsidedTrades = [];
+
+  tradeRanksData.forEach(trade => {
+    if (!trade.players || trade.players.length === 0) return;
+
+    // Identify the two sides of the trade by mapping to_manager
+    let managersInvolved = [...new Set(trade.players.map(p => p.to_manager))];
+    if (managersInvolved.length < 2) return; 
+
+    let mgr1 = managersInvolved[0];
+    let mgr2 = managersInvolved[1];
+
+    let mgr1_players = trade.players.filter(p => p.to_manager === mgr1);
+    let mgr2_players = trade.players.filter(p => p.to_manager === mgr2);
+
+    let mgr1_score = mgr1_players.reduce((sum, p) => sum + calcPlayerScore(p), 0);
+    let mgr2_score = mgr2_players.reduce((sum, p) => sum + calcPlayerScore(p), 0);
+
+    let winner, loser, winnerPlayers, loserPlayers, winnerScore, loserScore;
+
+    // The side with the much higher value received the better deal
+    if (mgr1_score >= mgr2_score) {
+      winner = mgr1; loser = mgr2;
+      winnerPlayers = mgr1_players; loserPlayers = mgr2_players;
+      winnerScore = mgr1_score; loserScore = mgr2_score;
+    } else {
+      winner = mgr2; loser = mgr1;
+      winnerPlayers = mgr2_players; loserPlayers = mgr1_players;
+      winnerScore = mgr2_score; loserScore = mgr1_score;
+    }
+
+    let diff = winnerScore - loserScore;
+
+    lopsidedTrades.push({
+      season: trade.season,
+      toManager: winner,
+      fromManager: loser,
+      toPlayers: winnerPlayers.map(p => p.player_name).join(", "),
+      toScore: winnerScore,
+      fromPlayers: loserPlayers.map(p => p.player_name).join(", "),
+      fromScore: loserScore,
+      diff: diff
+    });
+  });
+
+  // Sort by the largest discrepancy in composite score
+  lopsidedTrades.sort((a, b) => b.diff - a.diff);
+  let top50 = lopsidedTrades.slice(0, 50);
+
+  let html = `<h2>Top 50 Worst Trades (Most Lopsided)</h2>
+    <p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;font-weight:bold;">Calculated via Average of Scaled Preseason Rank, Current Rank, and Roster %</p>
+    <div style="overflow-x: auto; width: 100%;">
+      <table class="tx-table" style="width:100%; min-width: 800px;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Season Year</th>
+            <th>To Manager</th>
+            <th>From Manager</th>
+            <th>To Players</th>
+            <th>To Composite Score</th>
+            <th>From Players</th>
+            <th>From Composite Score</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+  top50.forEach((t, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td style="color:var(--cream);">${t.season}</td>
+      <td style="color:var(--gold); font-weight:700;">${t.toManager}</td>
+      <td style="color:#e07070;">${t.fromManager}</td>
+      <td style="text-align:left; color:#e8dfc8;">${t.toPlayers}</td>
+      <td style="font-weight:bold; color:#7ecfa0;">${fmt(t.toScore, 1)}</td>
+      <td style="text-align:left; color:#e8dfc8;">${t.fromPlayers}</td>
+      <td style="font-weight:bold; color:#e07070;">${fmt(t.fromScore, 1)}</td>
+    </tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+  c.innerHTML = `<div class="section-vertical-stack" style="width:100%; max-width: 1400px;">${html}</div>`;
+}
+
+/* ══════════════════════════════════════════
    EXPORT DATA
 ══════════════════════════════════════════ */
 
@@ -866,6 +978,8 @@ function showExportData(c) {
         <a href="all_seasons_weeks_stats.csv" download="all_seasons_weeks_stats_${today}.csv" class="export-link">📊 ALL WEEKS CSV</a>
         <a href="all_seasons_transactions.json" download="all_seasons_transactions_${today}.json" class="export-link">📄 TRANSACTIONS JSON</a>
         <a href="all_seasons_transactions.csv" download="all_seasons_transactions_${today}.csv" class="export-link">📊 TRANSACTIONS CSV</a>
+        <a href="trade_ranks.json" download="trade_ranks_${today}.json" class="export-link">📄 TRADE RANKS JSON</a>
+        <a href="trade_ranks.csv" download="trade_ranks_${today}.csv" class="export-link">📊 TRADE RANKS CSV</a>
       </div>
     </div>`;
   document.querySelectorAll(".export-link").forEach(link => {

@@ -249,7 +249,9 @@
     <a class="active" onclick="setPage('lifetime'); toggleMenu()">LIFETIME RANKINGS</a>
     <a onclick="setPage('seasonRankings'); toggleMenu()">SEASON RANKINGS</a>
     <a onclick="setPage('weeklyRankings'); toggleMenu()">WEEKLY RANKINGS</a>
-    <a onclick="setPage('worstTrades'); toggleMenu()">WORST TRADES</a>
+    <a onclick="setPage('worstTrades'); toggleMenu()">LIFETIME WORST TRADES</a>
+    <a onclick="setPage('personalWorstTrades'); toggleMenu()">PERSONAL WORST TRADES</a>
+    <a onclick="setPage('yearlyWorstTrades'); toggleMenu()">YEARLY WORST TRADES</a>
     <a onclick="setPage('lifetimeRecord'); toggleMenu()">RECORDS</a>
     <a onclick="setPage('lifetimeMedals'); toggleMenu()">MEDALS</a>
     <a onclick="setPage('individualLifetime'); toggleMenu()">LIFETIME STATS</a>
@@ -418,7 +420,9 @@ function setPage(page) {
   if (page === "lifetime")           showLifetime(c);
   if (page === "seasonRankings")     showSeasonRankings(c);
   if (page === "weeklyRankings")     showWeeklyRankings(c);
-  if (page === "worstTrades")        showWorstTrades(c);
+  if (page === "worstTrades")           showWorstTrades(c);
+  if (page === "personalWorstTrades")   showPersonalWorstTrades(c);
+  if (page === "yearlyWorstTrades")     showYearlyWorstTrades(c);
   if (page === "lifetimeRecord")     showLifetimeRecord(c);
   if (page === "lifetimeMedals")     showLifetimeMedals(c);
   if (page === "individualLifetime") showIndividualLifetime(c);
@@ -853,114 +857,199 @@ function renderPersonalFaab() {
 }
 
 /* ══════════════════════════════════════════
-   WORST TRADES
+   WORST TRADES — SCORING & HELPERS
 ══════════════════════════════════════════ */
 
-/* ══════════════════════════════════════════
-   WORST TRADES (UPDATED: NORMALIZED BY AVERAGE)
-══════════════════════════════════════════ */
+function rankScore(rank) {
+  if (rank <= 20)  return 10;
+  if (rank <= 50)  return 8;
+  if (rank <= 100) return 5;
+  if (rank <= 150) return 3;
+  if (rank <= 300) return 1;
+  return 0;
+}
 
+function rosterPctScore(pct) {
+  if (pct > 90) return 10;
+  if (pct >= 80) return 5;
+  if (pct >= 60) return 1;
+  return 0;
+}
+
+/* For a single player: average of available category scores */
 function calcPlayerScore(player) {
   let parts = [];
-  
-  // Create an intuitive 1-100 scale where Rank 1 = ~99, Rank 500 = ~50, Rank 1000 = ~0.
-  if (player.preseason_rank !== "-" && !isNaN(player.preseason_rank)) {
-     parts.push(Math.max(0, 100 - (parseFloat(player.preseason_rank) / 10)));
-  }
-  if (player.current_rank !== "-" && !isNaN(player.current_rank)) {
-     parts.push(Math.max(0, 100 - (parseFloat(player.current_rank) / 10)));
-  }
-  if (player.roster_pct !== "-" && !isNaN(player.roster_pct)) {
-     parts.push(parseFloat(player.roster_pct));
-  }
-  
+  if (player.roster_pct !== "-" && !isNaN(player.roster_pct))
+    parts.push(rosterPctScore(parseFloat(player.roster_pct)));
+  if (player.preseason_rank !== "-" && !isNaN(player.preseason_rank))
+    parts.push(rankScore(parseFloat(player.preseason_rank)));
+  if (player.current_rank !== "-" && !isNaN(player.current_rank))
+    parts.push(rankScore(parseFloat(player.current_rank)));
   if (parts.length === 0) return 0;
   return parts.reduce((a, b) => a + b, 0) / parts.length;
 }
 
-function showWorstTrades(c) {
-  c.classList.remove("grid-view");
-
-  let lopsidedTrades = [];
-
-  tradeRanksData.forEach(trade => {
-    if (!trade.players || trade.players.length === 0) return;
-
-    let managersInvolved = [...new Set(trade.players.map(p => p.to_manager))];
-    if (managersInvolved.length < 2) return; 
-
-    let mgr1 = managersInvolved[0];
-    let mgr2 = managersInvolved[1];
-
-    let mgr1_players = trade.players.filter(p => p.to_manager === mgr1);
-    let mgr2_players = trade.players.filter(p => p.to_manager === mgr2);
-
-    // Calculate Average Score per player to normalize for trade size
-    let mgr1_avg = mgr1_players.reduce((sum, p) => sum + calcPlayerScore(p), 0) / mgr1_players.length;
-    let mgr2_avg = mgr2_players.reduce((sum, p) => sum + calcPlayerScore(p), 0) / mgr2_players.length;
-
-    let winner, loser, winnerPlayers, loserPlayers, winnerScore, loserScore;
-
-    if (mgr1_avg >= mgr2_avg) {
-      winner = mgr1; loser = mgr2;
-      winnerPlayers = mgr1_players; loserPlayers = mgr2_players;
-      winnerScore = mgr1_avg; loserScore = mgr2_avg;
-    } else {
-      winner = mgr2; loser = mgr1;
-      winnerPlayers = mgr2_players; loserPlayers = mgr1_players;
-      winnerScore = mgr2_avg; loserScore = mgr1_avg;
+/* For one side of a trade:
+   - Sum all player scores per category bucket, then average category totals */
+function calcTradeSideScore(players) {
+  const catSums = {};
+  players.forEach(p => {
+    if (p.roster_pct !== "-" && !isNaN(p.roster_pct)) {
+      catSums.roster_pct = (catSums.roster_pct || 0) + rosterPctScore(parseFloat(p.roster_pct));
     }
+    if (p.preseason_rank !== "-" && !isNaN(p.preseason_rank)) {
+      catSums.preseason_rank = (catSums.preseason_rank || 0) + rankScore(parseFloat(p.preseason_rank));
+    }
+    if (p.current_rank !== "-" && !isNaN(p.current_rank)) {
+      catSums.current_rank = (catSums.current_rank || 0) + rankScore(parseFloat(p.current_rank));
+    }
+  });
+  const vals = Object.values(catSums);
+  if (vals.length === 0) return 0;
+  return vals.reduce((a, b) => a + b, 0) / vals.length;
+}
 
-    let diff = winnerScore - loserScore;
-
-    lopsidedTrades.push({
+/* Build sorted worst-trade array from a given set of trade records */
+function buildWorstTradesData(trades) {
+  let results = [];
+  trades.forEach(trade => {
+    if (!trade.players || trade.players.length === 0) return;
+    const managersInvolved = [...new Set(trade.players.map(p => p.to_manager))];
+    if (managersInvolved.length < 2) return;
+    const mgr1 = managersInvolved[0];
+    const mgr2 = managersInvolved[1];
+    const mgr1_players = trade.players.filter(p => p.to_manager === mgr1);
+    const mgr2_players = trade.players.filter(p => p.to_manager === mgr2);
+    const s1 = calcTradeSideScore(mgr1_players);
+    const s2 = calcTradeSideScore(mgr2_players);
+    let winner, loser, winnerPlayers, loserPlayers, winnerScore, loserScore;
+    if (s1 >= s2) {
+      winner = mgr1; loser = mgr2; winnerPlayers = mgr1_players; loserPlayers = mgr2_players;
+      winnerScore = s1; loserScore = s2;
+    } else {
+      winner = mgr2; loser = mgr1; winnerPlayers = mgr2_players; loserPlayers = mgr1_players;
+      winnerScore = s2; loserScore = s1;
+    }
+    results.push({
       season: trade.season,
       toManager: winner,
       fromManager: loser,
-      toPlayers: winnerPlayers.map(p => p.player_name).join(", "),
+      toPlayers: winnerPlayers.map(p => p.player_name),
+      fromPlayers: loserPlayers.map(p => p.player_name),
       toScore: winnerScore,
-      fromPlayers: loserPlayers.map(p => p.player_name).join(", "),
       fromScore: loserScore,
-      diff: diff
+      diff: Math.abs(winnerScore - loserScore)
     });
   });
+  results.sort((a, b) => b.diff - a.diff);
+  return results;
+}
 
-  lopsidedTrades.sort((a, b) => b.diff - a.diff);
-  let top50 = lopsidedTrades.slice(0, 50);
-
-  let html = `<h2>Top 50 Worst Trades (Normalized)</h2>
-    <p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;font-weight:bold;">Average composite score per player (prevents size bias)</p>
-    <div style="overflow-x: auto; width: 100%;">
-      <table class="tx-table" style="width:100%; min-width: 800px;">
+/* Render the shared 4-column worst-trades table */
+function renderWorstTradesTable(title, trades) {
+  let html = `<h2>${title}</h2>
+    <div style="overflow-x:auto; width:100%;">
+      <table class="tx-table" style="width:100%; min-width:560px;">
         <thead>
           <tr>
             <th>#</th>
             <th>Season</th>
-            <th>To Manager</th>
-            <th>From Manager</th>
-            <th>To Players</th>
-            <th>To Avg Score</th>
-            <th>From Players</th>
-            <th>From Avg Score</th>
+            <th>Managers</th>
+            <th>Players</th>
+            <th>Worst Score</th>
           </tr>
         </thead>
         <tbody>`;
-
-  top50.forEach((t, i) => {
+  trades.forEach((t, i) => {
+    const mgrCell = `<span style="color:var(--gold);font-weight:700;">To: ${t.toManager}</span><br><span style="color:#e07070;">From: ${t.fromManager}</span>`;
+    const toLines = `<span style="color:var(--gold);font-weight:600;">To: ${t.toPlayers[0]}</span>` +
+      t.toPlayers.slice(1).map(p => `<br><span style="color:#e8dfc8;padding-left:1.2em;">${p}</span>`).join('');
+    const fromLines = `<span style="color:#e07070;font-weight:600;">From: ${t.fromPlayers[0]}</span>` +
+      t.fromPlayers.slice(1).map(p => `<br><span style="color:#e8dfc8;padding-left:1.6em;">${p}</span>`).join('');
+    const playerCell = `${toLines}<br>${fromLines}`;
     html += `<tr>
       <td>${i+1}</td>
-      <td>${t.season}</td>
-      <td style="color:var(--gold); font-weight:700;">${t.toManager}</td>
-      <td style="color:#e07070;">${t.fromManager}</td>
-      <td style="text-align:left; color:#e8dfc8;">${t.toPlayers}</td>
-      <td style="font-weight:bold; color:#7ecfa0;">${fmt(t.toScore, 1)}</td>
-      <td style="text-align:left; color:#e8dfc8;">${t.fromPlayers}</td>
-      <td style="font-weight:bold; color:#e07070;">${fmt(t.fromScore, 1)}</td>
+      <td style="font-weight:700;color:var(--gold);font-family:'Barlow Condensed',sans-serif;">${t.season}</td>
+      <td style="text-align:left;white-space:nowrap;line-height:1.7;">${mgrCell}</td>
+      <td style="text-align:left;line-height:1.65;">${playerCell}</td>
+      <td style="font-weight:700;color:var(--red-bright);font-size:1.05rem;">${fmt(t.diff, 2)}</td>
     </tr>`;
   });
-
   html += `</tbody></table></div>`;
-  c.innerHTML = `<div class="section-vertical-stack" style="width:100%; max-width: 1400px;">${html}</div>`;
+  return html;
+}
+
+/* ══════════════════════════════════════════
+   LIFETIME WORST TRADES
+══════════════════════════════════════════ */
+
+function showWorstTrades(c) {
+  c.classList.remove("grid-view");
+  const top50 = buildWorstTradesData(tradeRanksData).slice(0, 50);
+  const html = renderWorstTradesTable("Top 50 Lifetime Worst Trades", top50);
+  c.innerHTML = `<div class="section-vertical-stack" style="width:100%;max-width:1100px;">${html}</div>`;
+}
+
+/* ══════════════════════════════════════════
+   PERSONAL WORST TRADES
+══════════════════════════════════════════ */
+
+function showPersonalWorstTrades(c) {
+  c.classList.remove("grid-view");
+  const allManagers = [...new Set(
+    tradeRanksData.flatMap(t => (t.players || []).map(p => p.to_manager).filter(Boolean))
+  )].sort();
+  const opts = allManagers.map(m => `<option value="${m}">${m}</option>`).join("");
+  c.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="wtMgr">${opts}</select>
+      <button class="show-btn" onclick="renderPersonalWorstTrades()">SHOW TRADES</button>
+    </div>
+    <div id="personalWtArea"></div>`;
+}
+
+function renderPersonalWorstTrades() {
+  const m = document.getElementById("wtMgr").value;
+  const div = document.getElementById("personalWtArea");
+  const filtered = tradeRanksData.filter(t =>
+    t.players && t.players.some(p => p.to_manager === m)
+  );
+  const top50 = buildWorstTradesData(filtered).slice(0, 50);
+  if (top50.length === 0) {
+    div.innerHTML = `<p class="no-data">No trade data found for ${m}.</p>`;
+    return;
+  }
+  const html = renderWorstTradesTable(`${m} — Top 50 Worst Trades`, top50);
+  div.innerHTML = `<div style="width:100%;max-width:1100px;">${html}</div>`;
+}
+
+/* ══════════════════════════════════════════
+   YEARLY WORST TRADES
+══════════════════════════════════════════ */
+
+function showYearlyWorstTrades(c) {
+  c.classList.remove("grid-view");
+  const years = [...new Set(tradeRanksData.map(t => t.season).filter(Boolean))].sort();
+  const opts = years.map(y => `<option value="${y}">${y}</option>`).join("");
+  c.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="wtYear">${opts}</select>
+      <button class="show-btn" onclick="renderYearlyWorstTrades()">SHOW TRADES</button>
+    </div>
+    <div id="yearlyWtArea"></div>`;
+}
+
+function renderYearlyWorstTrades() {
+  const year = document.getElementById("wtYear").value;
+  const div = document.getElementById("yearlyWtArea");
+  const filtered = tradeRanksData.filter(t => String(t.season) === String(year));
+  const trades = buildWorstTradesData(filtered);
+  if (trades.length === 0) {
+    div.innerHTML = `<p class="no-data">No trade data found for ${year}.</p>`;
+    return;
+  }
+  const html = renderWorstTradesTable(`${year} — Worst Trades`, trades);
+  div.innerHTML = `<div style="width:100%;max-width:1100px;">${html}</div>`;
 }
 
 /* ══════════════════════════════════════════

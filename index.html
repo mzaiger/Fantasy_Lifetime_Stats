@@ -856,6 +856,10 @@ function renderPersonalFaab() {
    WORST TRADES
 ══════════════════════════════════════════ */
 
+/* ══════════════════════════════════════════
+   WORST TRADES (UPDATED: NORMALIZED BY AVERAGE)
+══════════════════════════════════════════ */
+
 function calcPlayerScore(player) {
   let parts = [];
   
@@ -882,7 +886,6 @@ function showWorstTrades(c) {
   tradeRanksData.forEach(trade => {
     if (!trade.players || trade.players.length === 0) return;
 
-    // Identify the two sides of the trade by mapping to_manager
     let managersInvolved = [...new Set(trade.players.map(p => p.to_manager))];
     if (managersInvolved.length < 2) return; 
 
@@ -892,20 +895,20 @@ function showWorstTrades(c) {
     let mgr1_players = trade.players.filter(p => p.to_manager === mgr1);
     let mgr2_players = trade.players.filter(p => p.to_manager === mgr2);
 
-    let mgr1_score = mgr1_players.reduce((sum, p) => sum + calcPlayerScore(p), 0);
-    let mgr2_score = mgr2_players.reduce((sum, p) => sum + calcPlayerScore(p), 0);
+    // Calculate Average Score per player to normalize for trade size
+    let mgr1_avg = mgr1_players.reduce((sum, p) => sum + calcPlayerScore(p), 0) / mgr1_players.length;
+    let mgr2_avg = mgr2_players.reduce((sum, p) => sum + calcPlayerScore(p), 0) / mgr2_players.length;
 
     let winner, loser, winnerPlayers, loserPlayers, winnerScore, loserScore;
 
-    // The side with the much higher value received the better deal
-    if (mgr1_score >= mgr2_score) {
+    if (mgr1_avg >= mgr2_avg) {
       winner = mgr1; loser = mgr2;
       winnerPlayers = mgr1_players; loserPlayers = mgr2_players;
-      winnerScore = mgr1_score; loserScore = mgr2_score;
+      winnerScore = mgr1_avg; loserScore = mgr2_avg;
     } else {
       winner = mgr2; loser = mgr1;
       winnerPlayers = mgr2_players; loserPlayers = mgr1_players;
-      winnerScore = mgr2_score; loserScore = mgr1_score;
+      winnerScore = mgr2_avg; loserScore = mgr1_avg;
     }
 
     let diff = winnerScore - loserScore;
@@ -922,24 +925,23 @@ function showWorstTrades(c) {
     });
   });
 
-  // Sort by the largest discrepancy in composite score
   lopsidedTrades.sort((a, b) => b.diff - a.diff);
   let top50 = lopsidedTrades.slice(0, 50);
 
-  let html = `<h2>Top 50 Worst Trades (Most Lopsided)</h2>
-    <p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;font-weight:bold;">Calculated via Average of Scaled Preseason Rank, Current Rank, and Roster %</p>
+  let html = `<h2>Top 50 Worst Trades (Normalized)</h2>
+    <p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;font-weight:bold;">Average composite score per player (prevents size bias)</p>
     <div style="overflow-x: auto; width: 100%;">
       <table class="tx-table" style="width:100%; min-width: 800px;">
         <thead>
           <tr>
             <th>#</th>
-            <th>Season Year</th>
+            <th>Season</th>
             <th>To Manager</th>
             <th>From Manager</th>
             <th>To Players</th>
-            <th>To Composite Score</th>
+            <th>To Avg Score</th>
             <th>From Players</th>
-            <th>From Composite Score</th>
+            <th>From Avg Score</th>
           </tr>
         </thead>
         <tbody>`;
@@ -947,7 +949,7 @@ function showWorstTrades(c) {
   top50.forEach((t, i) => {
     html += `<tr>
       <td>${i+1}</td>
-      <td style="color:var(--cream);">${t.season}</td>
+      <td>${t.season}</td>
       <td style="color:var(--gold); font-weight:700;">${t.toManager}</td>
       <td style="color:#e07070;">${t.fromManager}</td>
       <td style="text-align:left; color:#e8dfc8;">${t.toPlayers}</td>

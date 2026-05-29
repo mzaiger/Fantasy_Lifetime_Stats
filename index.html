@@ -320,14 +320,22 @@
   </div>
   <div class="nav-links" id="navLinks">
 
-    <!-- Medals (no submenu) -->
-    <div class="nav-item">
-      <a onclick="setPage('lifetimeMedals'); closeMenu()">MEDALS</a>
+    <!-- Medals -->
+    <div class="nav-item has-sub">
+      <a>MEDALS</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('playoffMedals'); closeMobileItem(this)">Playoff</a>
+        <a onclick="setPage('regularMedals'); closeMobileItem(this)">Regular Season</a>
+      </div></div>
     </div>
 
-    <!-- Records (no submenu) -->
-    <div class="nav-item">
-      <a onclick="setPage('lifetimeRecord'); closeMenu()">RECORDS</a>
+    <!-- Records -->
+    <div class="nav-item has-sub">
+      <a>RECORDS</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('lifetimeRecord'); closeMobileItem(this)">Lifetime</a>
+        <a onclick="setPage('seasonRecord'); closeMobileItem(this)">Season</a>
+      </div></div>
     </div>
 
     <!-- Rankings -->
@@ -479,7 +487,7 @@ const avgFields     = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","W
 const eraFields     = ["ERA","WHIP"];
 const sumFields     = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 
-let currentPage = "lifetimeMedals";
+let currentPage = "playoffMedals";
 
 Promise.all([
   fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
@@ -500,7 +508,7 @@ Promise.all([
   tradeRanksData = Array.isArray(tradesData) ? tradesData : [];
   
   processData();
-  setPage("lifetimeMedals");
+  setPage("playoffMedals");
 });
 
 function processData() {
@@ -589,7 +597,10 @@ function setPage(page) {
   if (page === "personalWorstTrades")   showPersonalWorstTrades(c);
   if (page === "yearlyWorstTrades")     showYearlyWorstTrades(c);
   if (page === "lifetimeRecord")     showLifetimeRecord(c);
+  if (page === "seasonRecord")       showSeasonRecord(c);
   if (page === "lifetimeMedals")     showLifetimeMedals(c);
+  if (page === "playoffMedals")      showPlayoffMedals(c);
+  if (page === "regularMedals")      showRegularMedals(c);
   if (page === "individualLifetime") showIndividualLifetime(c);
   if (page === "individualYearly")   showIndividualYearly(c);
   if (page === "individualSeason")   showIndividualSeason(c);
@@ -712,21 +723,60 @@ function showLifetimeRecord(container) {
   container.innerHTML = `<div class="section-vertical-stack">${lt}</div>`;
 }
 
-function showLifetimeMedals(container) {
+function showSeasonRecord(container) {
+  container.classList.remove('grid-view');
+  const years = [...new Set(rawData.map(r => r.season).filter(Boolean))].sort();
+  const opts = years.map(y => `<option value="${y}">${y}</option>`).join("");
+  container.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="recordYear">${opts}</select>
+      <button class="show-btn" onclick="renderSeasonRecord()">SHOW RECORDS</button>
+    </div>
+    <div id="seasonRecordArea"></div>`;
+}
+
+function renderSeasonRecord() {
+  const year = document.getElementById("recordYear").value;
+  const div = document.getElementById("seasonRecordArea");
+  const seasonRows = rawData.filter(r => String(r.season) === String(year));
+  if (seasonRows.length === 0) {
+    div.innerHTML = `<p class="no-data">No data found for ${year}.</p>`;
+    return;
+  }
+  const rows = seasonRows.map(r => ({
+    name: r.manager_nickname,
+    w: isValid(r.wins) ? parseFloat(r.wins) : 0,
+    l: isValid(r.losses) ? parseFloat(r.losses) : 0,
+    t: isValid(r.ties) ? parseFloat(r.ties) : 0,
+    pct: winPct(
+      isValid(r.wins) ? parseFloat(r.wins) : 0,
+      isValid(r.losses) ? parseFloat(r.losses) : 0,
+      isValid(r.ties) ? parseFloat(r.ties) : 0
+    )
+  })).filter(r => r.w + r.l + r.t > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
+  let html = `<h2>${year} Season Record</h2>`;
+  html += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
+  rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${r.pct !== null ? fmt(r.pct, 3) : "—"}</td></tr>`; });
+  html += `</table>`;
+  div.innerHTML = `<div class="section-vertical-stack">${html}</div>`;
+}
+
+function _buildMedalTable(title, field, container) {
   container.classList.remove('grid-view');
   const medalScore = (med) => med[1] * 3 + med[2] * 2 + med[3] * 1;
-  const buildMedalTable = (title, field) => {
-    const rows = Object.keys(managers).map(m => {
-      const med = managers[m].medals[field];
-      return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
-    }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
-    let html = `<h2>${title}</h2><table><tr><th>#</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
-    rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`; });
-    return html + `</table>`;
-  };
-  container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;font-weight:bold;">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
-                         <div class="section-vertical-stack">${buildMedalTable("Playoff Finishes", "playoff")}${buildMedalTable("Regular Season Finishes", "regular")}</div>`;
+  const rows = Object.keys(managers).map(m => {
+    const med = managers[m].medals[field];
+    return { name: m, first: med[1], second: med[2], third: med[3], score: medalScore(med) };
+  }).filter(r => r.first + r.second + r.third > 0).sort((a, b) => b.score - a.score);
+  let html = `<h2>${title}</h2><table><tr><th>#</th><th>Manager</th><th class="medal-gold">🥇 1st</th><th class="medal-silver">🥈 2nd</th><th class="medal-bronze">🥉 3rd</th><th>Score</th></tr>`;
+  rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td class="medal-gold">${r.first}</td><td class="medal-silver">${r.second}</td><td class="medal-bronze">${r.third}</td><td>${r.score}</td></tr>`; });
+  html += `</table>`;
+  container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;font-weight:bold;">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p><div class="section-vertical-stack">${html}</div>`;
 }
+
+function showPlayoffMedals(c)  { _buildMedalTable("Playoff Finishes", "playoff", c); }
+function showRegularMedals(c)  { _buildMedalTable("Regular Season Finishes", "regular", c); }
+function showLifetimeMedals(c) { showPlayoffMedals(c); }
 
 function showIndividualLifetime(c) {
   c.classList.remove("grid-view");

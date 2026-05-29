@@ -342,7 +342,8 @@
     <div class="nav-item has-sub">
       <a>RANKINGS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
-        <a onclick="setPage('lifetime'); closeMobileItem(this)">Lifetime</a>
+        <a onclick="setPage('lifetime'); closeMobileItem(this)">Lifetime (Totals)</a>
+        <a onclick="setPage('lifetimeAvg'); closeMobileItem(this)">Lifetime (Averages)</a>
         <a onclick="setPage('seasonRankings'); closeMobileItem(this)">Season</a>
         <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
         <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
@@ -591,6 +592,7 @@ function setPage(page) {
   const c = document.getElementById("content");
   c.innerHTML = "";
   if (page === "lifetime")           showLifetime(c);
+  if (page === "lifetimeAvg")        showLifetimeAvg(c);
   if (page === "seasonRankings")     showSeasonRankings(c);
   if (page === "weeklyRankings")     showWeeklyRankings(c);
   if (page === "worstTrades")           showWorstTrades(c);
@@ -624,6 +626,20 @@ function showLifetime(c) {
       const vals = managers[mgr].seasons.map(s => parseFloat(s[stat])).filter(v => !isNaN(v));
       if (vals.length === 0) return null;
       const val = sumFields.includes(stat) ? vals.reduce((a,b) => a+b, 0) : vals.reduce((a,b) => a+b, 0) / vals.length;
+      return { name: mgr, value: fmt(val, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
+    }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    c.innerHTML += rankTable(stat, arr.slice(0, 10));
+  });
+}
+
+function showLifetimeAvg(c) {
+  c.classList.add("grid-view");
+  avgFields.forEach(stat => {
+    const arr = Object.keys(managers).map(mgr => {
+      const vals = managers[mgr].seasons.map(s => parseFloat(s[stat])).filter(v => !isNaN(v));
+      if (vals.length === 0) return null;
+      const val = vals.reduce((a,b) => a+b, 0) / vals.length;
       return { name: mgr, value: fmt(val, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
     }).filter(Boolean);
     arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));

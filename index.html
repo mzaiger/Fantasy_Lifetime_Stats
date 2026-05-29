@@ -109,21 +109,25 @@
 
   /* caret for items with submenus */
   .nav-item.has-sub > a::after {
-    content: '▾'; font-size: 0.7rem; opacity: 0.7; transition: transform 0.2s ease;
+    content: '▾'; font-size: 1rem; opacity: 0.85; transition: transform 0.2s ease; line-height: 1;
   }
-  .nav-item.has-sub:hover > a::after { transform: rotate(180deg); }
+  .nav-item.open > a::after { transform: rotate(180deg); }
 
   /* ── Dropdown panel ── */
   .sub-menu {
     display: none;
-    position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    padding-top: 8px;
+    background: transparent;
+    z-index: 200;
+  }
+  .sub-menu-inner {
     background: rgba(13,27,42,0.97); backdrop-filter: blur(14px);
     border: 1px solid var(--border); border-radius: 6px;
     min-width: 180px; padding: 6px 0;
     box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-    z-index: 200;
   }
-  .nav-item.has-sub:hover .sub-menu { display: block; }
+  .nav-item.open .sub-menu { display: block; }
 
   .sub-menu a {
     display: block; padding: 8px 18px;
@@ -152,8 +156,12 @@
     /* mobile: submenu revealed by .open class toggled via JS */
     .sub-menu {
       position: static; transform: none; display: none;
-      background: rgba(0,0,0,0.25); border: none; border-radius: 0;
+      background: transparent; border: none; border-radius: 0;
       box-shadow: none; padding: 0; min-width: unset;
+    }
+    .sub-menu-inner {
+      background: rgba(0,0,0,0.25); border-radius: 0;
+      border: none; box-shadow: none; padding: 0;
     }
     .nav-item.open .sub-menu { display: block; }
     .nav-item.open > a::after { transform: rotate(180deg); }
@@ -239,7 +247,8 @@
   body.light-mode .nav-item > a { color: var(--lm-text-sub); border-color: var(--lm-text-sub); }
   body.light-mode .nav-item > a:hover { color: var(--gold); border-color: var(--gold); }
   body.light-mode .nav-item > a.active { color: var(--gold); border-color: var(--gold); }
-  body.light-mode .sub-menu { background: rgba(248,250,253,0.99); border-color: #c8d6e8; }
+  body.light-mode .sub-menu { background: transparent; border-color: #c8d6e8; }
+  body.light-mode .sub-menu-inner { background: rgba(248,250,253,0.99); border-color: #c8d6e8; backdrop-filter: blur(14px); }
   body.light-mode .sub-menu a { color: var(--lm-text-sub); }
   body.light-mode .sub-menu a:hover { color: var(--gold); background: rgba(0,0,0,0.04); }
   body.light-mode .sub-menu a.active { color: var(--gold); }
@@ -311,26 +320,9 @@
   </div>
   <div class="nav-links" id="navLinks">
 
-    <!-- Rankings -->
-    <div class="nav-item has-sub">
-      <a>RANKINGS</a>
-      <div class="sub-menu">
-        <a onclick="setPage('lifetime'); closeMobileItem(this)">Lifetime</a>
-        <a onclick="setPage('seasonRankings'); closeMobileItem(this)">Season</a>
-        <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
-        <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
-        <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
-      </div>
-    </div>
-
-    <!-- Trades -->
-    <div class="nav-item has-sub">
-      <a>TRADES</a>
-      <div class="sub-menu">
-        <a onclick="setPage('worstTrades'); closeMobileItem(this)">Lifetime</a>
-        <a onclick="setPage('yearlyWorstTrades'); closeMobileItem(this)">Season</a>
-        <a onclick="setPage('personalWorstTrades'); closeMobileItem(this)">Individual</a>
-      </div>
+    <!-- Medals (no submenu) -->
+    <div class="nav-item">
+      <a onclick="setPage('lifetimeMedals'); closeMenu()">MEDALS</a>
     </div>
 
     <!-- Records (no submenu) -->
@@ -338,37 +330,54 @@
       <a onclick="setPage('lifetimeRecord'); closeMenu()">RECORDS</a>
     </div>
 
-    <!-- Medals (no submenu) -->
-    <div class="nav-item">
-      <a onclick="setPage('lifetimeMedals'); closeMenu()">MEDALS</a>
+    <!-- Rankings -->
+    <div class="nav-item has-sub">
+      <a>RANKINGS</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('lifetime'); closeMobileItem(this)">Lifetime</a>
+        <a onclick="setPage('seasonRankings'); closeMobileItem(this)">Season</a>
+        <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
+        <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
+        <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
+      </div></div>
     </div>
 
     <!-- Stats -->
     <div class="nav-item has-sub">
       <a>STATS</a>
-      <div class="sub-menu">
+      <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('individualYearly'); closeMobileItem(this)">Yearly</a>
         <a onclick="setPage('individualLifetime'); closeMobileItem(this)">Weekly</a>
-      </div>
+      </div></div>
     </div>
 
-    <!-- Transactions -->
+    <!-- Trades -->
     <div class="nav-item has-sub">
-      <a>TRANSACTIONS</a>
-      <div class="sub-menu">
-        <a onclick="setPage('lifetimeTeamTx'); closeMobileItem(this)">Manager</a>
-        <a onclick="setPage('lifetimePlayerTx'); closeMobileItem(this)">Player</a>
-        <a onclick="setPage('personalTx'); closeMobileItem(this)">Individual</a>
-      </div>
+      <a>TRADES</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('worstTrades'); closeMobileItem(this)">Lifetime</a>
+        <a onclick="setPage('yearlyWorstTrades'); closeMobileItem(this)">Season</a>
+        <a onclick="setPage('personalWorstTrades'); closeMobileItem(this)">Individual</a>
+      </div></div>
     </div>
 
     <!-- FAAB -->
     <div class="nav-item has-sub">
       <a>FAAB</a>
-      <div class="sub-menu">
+      <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('lifetimeFaab'); closeMobileItem(this)">Lifetime</a>
         <a onclick="setPage('personalFaab'); closeMobileItem(this)">Individual</a>
-      </div>
+      </div></div>
+    </div>
+
+    <!-- Transactions -->
+    <div class="nav-item has-sub">
+      <a>TRANSACTIONS</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('lifetimeTeamTx'); closeMobileItem(this)">Manager</a>
+        <a onclick="setPage('lifetimePlayerTx'); closeMobileItem(this)">Player</a>
+        <a onclick="setPage('personalTx'); closeMobileItem(this)">Individual</a>
+      </div></div>
     </div>
 
     <!-- Export -->
@@ -393,36 +402,39 @@ function toggleMenu() {
 }
 
 function closeMenu() {
-  if (window.innerWidth <= 800) {
-    document.getElementById('navLinks').classList.remove('show');
-    document.getElementById('hamburger').classList.remove('active');
-  }
+  document.getElementById('navLinks').classList.remove('show');
+  document.getElementById('hamburger').classList.remove('active');
+  document.querySelectorAll('.nav-item.open').forEach(function(i){ i.classList.remove('open'); });
 }
-
-/* Toggle sub-menu open/close on mobile tap of parent <a> */
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.nav-item.has-sub > a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      if (window.innerWidth <= 800) {
-        e.preventDefault();
-        e.stopPropagation();
-        var item = link.closest('.nav-item');
-        var wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.nav-item.open').forEach(function(i){ i.classList.remove('open'); });
-        if (!wasOpen) item.classList.add('open');
-      }
-    });
-  });
-});
 
 /* Called by sub-menu items on mobile: close everything */
 function closeMobileItem(el) {
   if (window.innerWidth <= 800) {
-    var item = el.closest('.nav-item');
-    if (item) item.classList.remove('open');
     closeMenu();
   }
 }
+
+/* ── Dropdown click-toggle (desktop + mobile) ── */
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.nav-item.has-sub > a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var item = link.closest('.nav-item');
+      var wasOpen = item.classList.contains('open');
+      /* close all open dropdowns first */
+      document.querySelectorAll('.nav-item.open').forEach(function(i){ i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  /* clicking anywhere outside closes all dropdowns */
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-item')) {
+      document.querySelectorAll('.nav-item.open').forEach(function(i){ i.classList.remove('open'); });
+    }
+  });
+});
 
 /* ── Theme Toggle Logic ── */
 const toggleSwitch = document.querySelector('#checkbox');
@@ -467,7 +479,7 @@ const avgFields     = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","W
 const eraFields     = ["ERA","WHIP"];
 const sumFields     = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 
-let currentPage = "lifetime";
+let currentPage = "lifetimeMedals";
 
 Promise.all([
   fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
@@ -488,7 +500,7 @@ Promise.all([
   tradeRanksData = Array.isArray(tradesData) ? tradesData : [];
   
   processData();
-  setPage("lifetime");
+  setPage("lifetimeMedals");
 });
 
 function processData() {

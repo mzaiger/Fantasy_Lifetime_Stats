@@ -725,7 +725,7 @@ function showLifetimeMedals(container) {
     return html + `</table>`;
   };
   container.innerHTML = `<p style="color:var(--gold);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;font-weight:bold;">Score = (1st × 3) + (2nd × 2) + (3rd × 1)</p>
-                         <div class="section-vertical-stack">${buildMedalTable("Regular Season Finishes", "regular")}${buildMedalTable("Playoff Finishes", "playoff")}</div>`;
+                         <div class="section-vertical-stack">${buildMedalTable("Playoff Finishes", "playoff")}${buildMedalTable("Regular Season Finishes", "regular")}</div>`;
 }
 
 function showIndividualLifetime(c) {

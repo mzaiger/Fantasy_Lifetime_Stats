@@ -28240,6 +28240,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,598,1780042741,add/drop,David Sandlin,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,598,1780042741,drop,Kazuma Okamoto,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,597,1780042741,add/drop,Caleb Kilian,RP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,597,1780042741,drop,Esmerlyn Valdez,"1B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,591,1779956315,add/drop,Kazuma Okamoto,"1B,3B",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,591,1779956315,drop,Carson Benge,OF,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,590,1779956315,add/drop,Esmerlyn Valdez,"1B,OF",add,0
@@ -28391,37 +28395,38 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,584,1779869996,add,Griffin Jax,"SP,RP",add,1
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,570,1779541376,drop,Jorge Soler,OF,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,564,1779438977,add/drop,Blaze Jordan,"1B,3B",add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,564,1779438977,drop,Jameson Taillon,SP,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,558,1779351532,add,Paul Goldschmidt,1B,add,1
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,556,1779351532,add,Miguel Andujar,"3B,OF",add,2
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,483,1778401065,add/drop,Jameson Taillon,SP,add,1
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,483,1778401065,drop,Gabriel Moreno,C,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,448,1777901106,drop,Chase Dollander,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,388,1777218266,drop,Max Muncy,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,379,1777105069,add,Jose Quintana,SP,add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,370,1777018657,add/drop,Ildemaro Vargas,"1B,2B",add,6
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,370,1777018657,drop,Josh Bell,1B,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,346,1776759374,add/drop,Josh Jung,3B,add,3
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,346,1776759374,drop,Griffin Jax,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,285,1775895490,add,Jorge Soler,OF,add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,282,1775829570,drop,Joey Wiemer,OF,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,270,1775722697,add,Josh Bell,1B,add,3
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,268,1775663598,drop,Jordan Lawlar,"3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,250,1775549875,add,Max Muncy,"2B,3B,SS",add,4
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,233,1775204206,add,Taj Bradley,SP,add,3
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,232,1775153329,drop,Shane Smith,SP,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,198,1774858830,add/drop,Jake Burger,1B,add,2
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,198,1774858830,drop,Andrew Vaughn,1B,drop,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,177,1774685798,add,Joey Wiemer,OF,add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,150,1774512763,add,Bailey Ober,SP,add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,82,1774339163,add,Jeffrey Springs,SP,add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,81,1774339163,add,Luis Severino,SP,add,0
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,76,1774339163,add,Shane Smith,SP,add,1
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,75,1774339163,add,Gabriel Moreno,C,add,1
-2026,469.l.23321,469.l.23321.t.7,Stink Finger,Dan,74,1774339163,add,Chase Dollander,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,601,1780076454,drop,Jose Quintana,SP,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,584,1779869996,add,Griffin Jax,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,570,1779541376,drop,Jorge Soler,OF,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,564,1779438977,add/drop,Blaze Jordan,"1B,3B",add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,564,1779438977,drop,Jameson Taillon,SP,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,558,1779351532,add,Paul Goldschmidt,1B,add,1
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,556,1779351532,add,Miguel Andujar,"3B,OF",add,2
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,483,1778401065,add/drop,Jameson Taillon,SP,add,1
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,483,1778401065,drop,Gabriel Moreno,C,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,448,1777901106,drop,Chase Dollander,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,388,1777218266,drop,Max Muncy,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,379,1777105069,add,Jose Quintana,SP,add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,370,1777018657,add/drop,Ildemaro Vargas,"1B,2B",add,6
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,370,1777018657,drop,Josh Bell,1B,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,346,1776759374,add/drop,Josh Jung,3B,add,3
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,346,1776759374,drop,Griffin Jax,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,285,1775895490,add,Jorge Soler,OF,add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,282,1775829570,drop,Joey Wiemer,OF,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,270,1775722697,add,Josh Bell,1B,add,3
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,268,1775663598,drop,Jordan Lawlar,"3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,250,1775549875,add,Max Muncy,"2B,3B,SS",add,4
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,233,1775204206,add,Taj Bradley,SP,add,3
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,232,1775153329,drop,Shane Smith,SP,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,198,1774858830,add/drop,Jake Burger,1B,add,2
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,198,1774858830,drop,Andrew Vaughn,1B,drop,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,177,1774685798,add,Joey Wiemer,OF,add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,150,1774512763,add,Bailey Ober,SP,add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,82,1774339163,add,Jeffrey Springs,SP,add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,81,1774339163,add,Luis Severino,SP,add,0
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,76,1774339163,add,Shane Smith,SP,add,1
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,75,1774339163,add,Gabriel Moreno,C,add,1
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,74,1774339163,add,Chase Dollander,"SP,RP",add,1
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,562,1779395080,drop,Carlos Narváez,C,drop,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,545,1779209799,drop,Brayan Bello,SP,drop,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,469,1778158592,drop,Tyler O'Neill,OF,drop,0
@@ -28493,6 +28498,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,600,1780042741,add/drop,Colin Holderman,RP,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,600,1780042741,drop,Garrett Whitlock,RP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,599,1780042741,add/drop,Andre Pallante,SP,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,599,1780042741,drop,Noah Cameron,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,593,1779956315,add/drop,Cam Smith,OF,add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,593,1779956315,drop,Cedric Mullins,OF,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,592,1779956315,add/drop,Anthony Kay,SP,add,0

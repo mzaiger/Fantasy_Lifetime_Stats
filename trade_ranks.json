@@ -6969,7 +6969,7 @@
         "player_name": "Ivan Herrera",
         "player_position": "C",
         "player_key": "469.p.11836",
-        "current_rank": "65",
+        "current_rank": "53",
         "preseason_rank": "214",
         "roster_pct": 91
       },
@@ -6979,7 +6979,7 @@
         "player_name": "Braxton Ashcraft",
         "player_position": "SP,RP",
         "player_key": "469.p.11372",
-        "current_rank": "68",
+        "current_rank": "67",
         "preseason_rank": "210",
         "roster_pct": 82
       }
@@ -6997,9 +6997,9 @@
         "player_name": "A.J. Ewing",
         "player_position": "2B,OF",
         "player_key": "469.p.63129",
-        "current_rank": "926",
+        "current_rank": "904",
         "preseason_rank": "192",
-        "roster_pct": 29
+        "roster_pct": 28
       },
       {
         "from_manager": "The Wizard",
@@ -7007,9 +7007,9 @@
         "player_name": "Ryan Waldschmidt",
         "player_position": "OF",
         "player_key": "469.p.64479",
-        "current_rank": "886",
-        "preseason_rank": "1620",
-        "roster_pct": 29
+        "current_rank": "899",
+        "preseason_rank": "1629",
+        "roster_pct": 28
       },
       {
         "from_manager": "Paulie",
@@ -7017,7 +7017,7 @@
         "player_name": "Freddie Freeman",
         "player_position": "1B",
         "player_key": "469.p.8658",
-        "current_rank": "91",
+        "current_rank": "82",
         "preseason_rank": "37",
         "roster_pct": 99
       },
@@ -7027,9 +7027,9 @@
         "player_name": "Kenley Jansen",
         "player_position": "RP",
         "player_key": "469.p.8758",
-        "current_rank": "180",
+        "current_rank": "188",
         "preseason_rank": "160",
-        "roster_pct": 74
+        "roster_pct": 72
       }
     ]
   },
@@ -7055,7 +7055,7 @@
         "player_name": "Wyatt Langford",
         "player_position": "OF",
         "player_key": "469.p.62973",
-        "current_rank": "923",
+        "current_rank": "929",
         "preseason_rank": "99",
         "roster_pct": 87
       },
@@ -7065,7 +7065,7 @@
         "player_name": "Jose Altuve",
         "player_position": "2B,OF",
         "player_key": "469.p.8996",
-        "current_rank": "686",
+        "current_rank": "707",
         "preseason_rank": "225",
         "roster_pct": 85
       }
@@ -7083,7 +7083,7 @@
         "player_name": "Ronald Acuña Jr.",
         "player_position": "OF",
         "player_key": "469.p.10646",
-        "current_rank": "206",
+        "current_rank": "173",
         "preseason_rank": "19",
         "roster_pct": 99
       },
@@ -7093,9 +7093,9 @@
         "player_name": "Max Fried",
         "player_position": "SP",
         "player_key": "469.p.9620",
-        "current_rank": "119",
+        "current_rank": "116",
         "preseason_rank": "103",
-        "roster_pct": 99
+        "roster_pct": 98
       },
       {
         "from_manager": "The Wizard",
@@ -7103,9 +7103,9 @@
         "player_name": "Blake Snell",
         "player_position": "SP",
         "player_key": "469.p.10148",
-        "current_rank": "533",
+        "current_rank": "532",
         "preseason_rank": "200",
-        "roster_pct": 79
+        "roster_pct": 78
       }
     ]
   },
@@ -7121,9 +7121,9 @@
         "player_name": "Kenley Jansen",
         "player_position": "RP",
         "player_key": "469.p.8758",
-        "current_rank": "180",
+        "current_rank": "188",
         "preseason_rank": "160",
-        "roster_pct": 74
+        "roster_pct": 72
       },
       {
         "from_manager": "The Wizard",
@@ -7131,7 +7131,7 @@
         "player_name": "Landen Roupp",
         "player_position": "SP",
         "player_key": "469.p.60650",
-        "current_rank": "103",
+        "current_rank": "105",
         "preseason_rank": "295",
         "roster_pct": 72
       },
@@ -7141,7 +7141,7 @@
         "player_name": "Logan Webb",
         "player_position": "SP",
         "player_key": "469.p.11235",
-        "current_rank": "673",
+        "current_rank": "658",
         "preseason_rank": "114",
         "roster_pct": 96
       }
@@ -7159,7 +7159,7 @@
         "player_name": "Nico Hoerner",
         "player_position": "2B",
         "player_key": "469.p.11284",
-        "current_rank": "96",
+        "current_rank": "109",
         "preseason_rank": "75",
         "roster_pct": 97
       },
@@ -7179,9 +7179,9 @@
         "player_name": "Payton Tolle",
         "player_position": "SP,RP",
         "player_key": "469.p.64394",
-        "current_rank": "87",
+        "current_rank": "90",
         "preseason_rank": "262",
-        "roster_pct": 64
+        "roster_pct": 63
       }
     ]
   },
@@ -7197,7 +7197,7 @@
         "player_name": "MacKenzie Gore",
         "player_position": "SP",
         "player_key": "469.p.10940",
-        "current_rank": "343",
+        "current_rank": "199",
         "preseason_rank": "198",
         "roster_pct": 81
       },
@@ -7207,7 +7207,7 @@
         "player_name": "Rafael Devers",
         "player_position": "1B",
         "player_key": "469.p.10235",
-        "current_rank": "616",
+        "current_rank": "558",
         "preseason_rank": "101",
         "roster_pct": 95
       }
@@ -7225,7 +7225,7 @@
         "player_name": "David Bednar",
         "player_position": "RP",
         "player_key": "469.p.11645",
-        "current_rank": "212",
+        "current_rank": "208",
         "preseason_rank": "90",
         "roster_pct": 95
       },
@@ -7235,7 +7235,7 @@
         "player_name": "Bryan Woo",
         "player_position": "SP",
         "player_key": "469.p.60584",
-        "current_rank": "120",
+        "current_rank": "118",
         "preseason_rank": "27",
         "roster_pct": 99
       }
@@ -7253,9 +7253,9 @@
         "player_name": "Mitch Keller",
         "player_position": "SP",
         "player_key": "469.p.10565",
-        "current_rank": "157",
+        "current_rank": "154",
         "preseason_rank": "224",
-        "roster_pct": 55
+        "roster_pct": 60
       },
       {
         "from_manager": "Douglas",
@@ -7263,7 +7263,7 @@
         "player_name": "Lucas Erceg",
         "player_position": "RP",
         "player_key": "469.p.10659",
-        "current_rank": "251",
+        "current_rank": "248",
         "preseason_rank": "179",
         "roster_pct": 50
       }
@@ -7281,7 +7281,7 @@
         "player_name": "Rafael Devers",
         "player_position": "1B",
         "player_key": "469.p.10235",
-        "current_rank": "616",
+        "current_rank": "558",
         "preseason_rank": "101",
         "roster_pct": 95
       },
@@ -7291,7 +7291,7 @@
         "player_name": "Corey Seager",
         "player_position": "SS",
         "player_key": "469.p.9584",
-        "current_rank": "712",
+        "current_rank": "727",
         "preseason_rank": "93",
         "roster_pct": 90
       }
@@ -7309,7 +7309,7 @@
         "player_name": "George Springer",
         "player_position": "OF",
         "player_key": "469.p.9339",
-        "current_rank": "734",
+        "current_rank": "741",
         "preseason_rank": "116",
         "roster_pct": 84
       },
@@ -7319,7 +7319,7 @@
         "player_name": "Clayton Beeter",
         "player_position": "RP",
         "player_key": "469.p.12014",
-        "current_rank": "252",
+        "current_rank": "249",
         "preseason_rank": "339",
         "roster_pct": 5
       },
@@ -7329,9 +7329,9 @@
         "player_name": "Max Muncy",
         "player_position": "3B",
         "player_key": "469.p.9606",
-        "current_rank": "136",
+        "current_rank": "121",
         "preseason_rank": "211",
-        "roster_pct": 80
+        "roster_pct": 81
       }
     ]
   },
@@ -7347,7 +7347,7 @@
         "player_name": "Cole Ragans",
         "player_position": "SP",
         "player_key": "469.p.10610",
-        "current_rank": "494",
+        "current_rank": "486",
         "preseason_rank": "231",
         "roster_pct": 92
       },
@@ -7357,7 +7357,7 @@
         "player_name": "Eugenio Suárez",
         "player_position": "3B",
         "player_key": "469.p.9724",
-        "current_rank": "846",
+        "current_rank": "866",
         "preseason_rank": "176",
         "roster_pct": 87
       }
@@ -7375,7 +7375,7 @@
         "player_name": "Wyatt Langford",
         "player_position": "OF",
         "player_key": "469.p.62973",
-        "current_rank": "923",
+        "current_rank": "929",
         "preseason_rank": "99",
         "roster_pct": 87
       },
@@ -7385,7 +7385,7 @@
         "player_name": "Mark Vientos",
         "player_position": "1B,3B",
         "player_key": "469.p.10922",
-        "current_rank": "763",
+        "current_rank": "776",
         "preseason_rank": "218",
         "roster_pct": 8
       },
@@ -7395,7 +7395,7 @@
         "player_name": "Byron Buxton",
         "player_position": "OF",
         "player_key": "469.p.9590",
-        "current_rank": "24",
+        "current_rank": "28",
         "preseason_rank": "48",
         "roster_pct": 97
       }
@@ -7413,7 +7413,7 @@
         "player_name": "Hunter Greene",
         "player_position": "SP",
         "player_key": "469.p.10862",
-        "current_rank": "2161",
+        "current_rank": "2164",
         "preseason_rank": "370",
         "roster_pct": 63
       },
@@ -7423,7 +7423,7 @@
         "player_name": "Daulton Varsho",
         "player_position": "OF",
         "player_key": "469.p.10843",
-        "current_rank": "269",
+        "current_rank": "254",
         "preseason_rank": "172",
         "roster_pct": 37
       }
@@ -7451,8 +7451,8 @@
         "player_name": "Jordan Westburg",
         "player_position": "2B,3B",
         "player_key": "469.p.12122",
-        "current_rank": "1806",
-        "preseason_rank": "1448",
+        "current_rank": "1809",
+        "preseason_rank": "1455",
         "roster_pct": 11
       },
       {
@@ -7461,9 +7461,9 @@
         "player_name": "Dennis Santana",
         "player_position": "RP",
         "player_key": "469.p.10901",
-        "current_rank": "622",
+        "current_rank": "616",
         "preseason_rank": "266",
-        "roster_pct": 49
+        "roster_pct": 48
       },
       {
         "from_manager": "The Wizard",
@@ -7471,7 +7471,7 @@
         "player_name": "Seranthony Domínguez",
         "player_position": "RP",
         "player_key": "469.p.11011",
-        "current_rank": "104",
+        "current_rank": "99",
         "preseason_rank": "166",
         "roster_pct": 54
       },
@@ -7481,7 +7481,7 @@
         "player_name": "Parker Messick",
         "player_position": "SP",
         "player_key": "469.p.60042",
-        "current_rank": "43",
+        "current_rank": "44",
         "preseason_rank": "86",
         "roster_pct": 91
       },
@@ -7491,7 +7491,7 @@
         "player_name": "Byron Buxton",
         "player_position": "OF",
         "player_key": "469.p.9590",
-        "current_rank": "24",
+        "current_rank": "28",
         "preseason_rank": "48",
         "roster_pct": 97
       },
@@ -7501,9 +7501,9 @@
         "player_name": "Max Fried",
         "player_position": "SP",
         "player_key": "469.p.9620",
-        "current_rank": "119",
+        "current_rank": "116",
         "preseason_rank": "103",
-        "roster_pct": 99
+        "roster_pct": 98
       }
     ]
   }

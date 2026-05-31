@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,609,1780215625,add/drop,Curtis Mead,"1B,2B,3B",add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,609,1780215625,drop,Mark Vientos,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,606,1780129192,add/drop,Carson Benge,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,606,1780129192,drop,Nasim Nuñez,"2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,587,1779869996,add/drop,Eric Lauer,"SP,RP",add,0
@@ -28403,6 +28405,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,610,1780215625,add,Keider Montero,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,605,1780129192,add/drop,Joshua Baez,OF,add,0
 2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,605,1780129192,drop,Paul Goldschmidt,1B,drop,0
 2026,469.l.23321,469.l.23321.t.7,Zero Homer Tatis,Dan,601,1780076454,drop,Jose Quintana,SP,drop,0
@@ -28597,6 +28600,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,41,1774339163,add,Garrett Whitlock,RP,add,4
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,26,1774339163,add,Ernie Clement,"1B,2B,3B,SS",add,7
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,25,1774339163,add,Giancarlo Stanton,OF,add,7
+2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,611,1780245271,drop,Brandon Sproat,SP,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,573,1779610830,add,Spencer Jones,OF,add,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,534,1779120599,drop,Lawrence Butler,OF,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,529,1779052155,drop,Jeremy Peña,SS,drop,0

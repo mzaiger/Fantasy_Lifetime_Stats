@@ -554,7 +554,7 @@ season,league_key,trade_id,timestamp,from_manager,to_manager,player_name,player_
 2026,469.l.23321,625,1780427795,Douglas,NOBS,Payton Tolle,"SP,RP",469.p.64394,96,264,64
 2026,469.l.23321,535,1779124700,The Wizard,NOBS,Ivan Herrera,C,469.p.11836,64,210,91
 2026,469.l.23321,535,1779124700,NOBS,The Wizard,Braxton Ashcraft,"SP,RP",469.p.11372,42,148,85
-2026,469.l.23321,528,1779034756,The Wizard,Paulie,A.J. Ewing,"2B,OF",469.p.63129,933,187,24
+2026,469.l.23321,528,1779034756,The Wizard,Paulie,A.J. Ewing,"2B,OF",469.p.63129,933,187,23
 2026,469.l.23321,528,1779034756,The Wizard,Paulie,Ryan Waldschmidt,OF,469.p.64479,916,1638,21
 2026,469.l.23321,528,1779034756,Paulie,The Wizard,Freddie Freeman,1B,469.p.8658,87,36,99
 2026,469.l.23321,528,1779034756,Paulie,The Wizard,Kenley Jansen,RP,469.p.8758,180,158,69
@@ -565,7 +565,7 @@ season,league_key,trade_id,timestamp,from_manager,to_manager,player_name,player_
 2026,469.l.23321,518,1778952916,The Wizard,Paulie,Max Fried,SP,469.p.9620,118,101,98
 2026,469.l.23321,518,1778952916,The Wizard,Paulie,Blake Snell,SP,469.p.10148,540,198,76
 2026,469.l.23321,468,1778155894,The Wizard,Paulie,Kenley Jansen,RP,469.p.8758,180,158,69
-2026,469.l.23321,468,1778155894,The Wizard,Paulie,Landen Roupp,SP,469.p.60650,188,296,62
+2026,469.l.23321,468,1778155894,The Wizard,Paulie,Landen Roupp,SP,469.p.60650,188,296,61
 2026,469.l.23321,468,1778155894,Paulie,The Wizard,Logan Webb,SP,469.p.11235,651,113,96
 2026,469.l.23321,460,1778082980,Douglas,The Wizard,Nico Hoerner,2B,469.p.11284,115,72,97
 2026,469.l.23321,460,1778082980,The Wizard,Douglas,Brandon Lowe,2B,469.p.11125,40,165,91
@@ -590,7 +590,7 @@ season,league_key,trade_id,timestamp,from_manager,to_manager,player_name,player_
 2026,469.l.23321,129,1774399577,NOBS,Douglas,Daulton Varsho,OF,469.p.10843,342,169,36
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Mike Trout,OF,469.p.8861,13,73,96
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Jordan Westburg,"2B,3B",469.p.12122,1818,1481,10
-2026,469.l.23321,14,1774287072,The Wizard,Paulie,Dennis Santana,RP,469.p.10901,575,271,48
+2026,469.l.23321,14,1774287072,The Wizard,Paulie,Dennis Santana,RP,469.p.10901,575,271,47
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Seranthony Domínguez,RP,469.p.11011,101,163,54
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Parker Messick,SP,469.p.60042,50,83,91
 2026,469.l.23321,14,1774287072,Paulie,The Wizard,Byron Buxton,OF,469.p.9590,28,49,97

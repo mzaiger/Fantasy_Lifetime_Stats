@@ -248,8 +248,8 @@ def parse_matchups(data, season, league_name, league_key, week):
             "team_a_manager": team_a_info["manager"],
             "team_a_record": rec_a,
 
-            "team_b_name": team_b["team_name"],
-            "team_b_manager": team_b["manager"],
+            "team_b_name": team_b_info["name"],
+            "team_b_manager": team_b_info["manager"],
             "team_b_record": rec_b,
         })
 

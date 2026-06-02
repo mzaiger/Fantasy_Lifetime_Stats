@@ -130,13 +130,18 @@ def find_key_recursive(data, target_key):
 
 def extract_team_data(team_obj):
     """
-    Deep-crawls the team object structure to gather identity metadata
-    and target precise category matchup totals or fallback values.
+    Extract team identity and weekly matchup record from a Yahoo team object.
 
-    Category wins/losses/ties are set once from the first outcome_totals
-    block found and never overwritten, preventing later zero-value stubs
-    from clobbering real data.  Points are only used as a fallback when
-    no category data is present at all.
+    Yahoo's team list is structured as:
+        [ {metadata dict: name, managers, ...}, {stats dict: team_points, ...} ]
+
+    Identity (name, manager nickname) is read ONLY from team_obj[0] — the
+    metadata dict at the head of the list.  This prevents the recursive stats
+    walk from accidentally picking up the opponent's nickname when Yahoo embeds
+    adjacent team data inside the stats block.
+
+    Stats (points or outcome_totals) are found by a recursive walk of the
+    remainder of the list (team_obj[1:]), which never touches name/nickname.
     """
     info = {
         "name": "",
@@ -147,51 +152,61 @@ def extract_team_data(team_obj):
         "points": None
     }
 
+    # ── Step 1: identity from metadata block only ──────────────────────────
+    meta = team_obj[0] if isinstance(team_obj, list) and len(team_obj) > 0 else {}
+    if isinstance(meta, dict):
+        info["name"] = meta.get("name", "")
+        # managers key holds a list; nickname lives inside each manager entry
+        mgrs = meta.get("managers", {})
+        if isinstance(mgrs, dict):
+            for v in mgrs.values():
+                if isinstance(v, dict):
+                    mgr = v.get("manager", {})
+                    if isinstance(mgr, dict) and "nickname" in mgr:
+                        info["manager"] = mgr["nickname"]
+                        break
+        elif isinstance(mgrs, list):
+            for entry in mgrs:
+                if isinstance(entry, dict):
+                    mgr = entry.get("manager", {})
+                    if isinstance(mgr, dict) and "nickname" in mgr:
+                        info["manager"] = mgr["nickname"]
+                        break
+        # fallback: nickname directly in meta (older API responses)
+        if not info["manager"] and "nickname" in meta:
+            info["manager"] = meta["nickname"]
+
+    # ── Step 2: stats walk — never touches name or nickname ─────────────────
     def _apply_outcome_totals(totals):
-        """Write wins/losses/ties only if they haven't been set yet."""
         if not isinstance(totals, dict):
             return
-        # Only record category data if wins AND losses are present (a real result)
         if "wins" in totals and "losses" in totals:
-            if info["wins"] is None:  # first credible outcome_totals wins
+            if info["wins"] is None:
                 info["wins"] = int(totals["wins"])
                 info["losses"] = int(totals["losses"])
                 info["ties"] = int(totals.get("ties", 0))
 
-    def walk(data):
+    def walk_stats(data):
         if isinstance(data, dict):
-            # Extract basic identifiers
-            if "name" in data:
-                info["name"] = data["name"]
-            if "nickname" in data:
-                info["manager"] = data["nickname"]
-
-            # Locate category outcome totals directly
             if "outcome_totals" in data:
                 _apply_outcome_totals(data["outcome_totals"])
-
-            # Locate team outcome wrappers containing totals
             if "team_outcome" in data:
                 to = data["team_outcome"]
                 if isinstance(to, dict):
                     _apply_outcome_totals(to.get("outcome_totals", {}))
-
-            # Only capture points if we have not already found category data.
-            # This prevents points stubs that exist in category-league responses
-            # from masking real W-L-T data.
             if info["wins"] is None and "team_points" in data:
                 tp = data["team_points"]
                 if isinstance(tp, dict) and "total" in tp:
                     info["points"] = tp["total"]
-
             for v in data.values():
-                walk(v)
+                walk_stats(v)
         elif isinstance(data, list):
             for item in data:
-                walk(item)
+                walk_stats(item)
 
-    walk(team_obj)
-    
+    stats_block = team_obj[1:] if isinstance(team_obj, list) else team_obj
+    walk_stats(stats_block)
+
     is_category = False
     if info["wins"] is not None and info["losses"] is not None:
         is_category = True
@@ -205,7 +220,7 @@ def extract_team_data(team_obj):
     else:
         record_str = "0-0-0"
         w, l, t = 0, 0, 0
-        
+
     return {
         "name": info["name"],
         "manager": info["manager"],

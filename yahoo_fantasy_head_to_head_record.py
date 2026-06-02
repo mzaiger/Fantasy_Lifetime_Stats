@@ -283,6 +283,12 @@ def parse_matchups(data, season, league_name, league_key, week):
         team_a_info = extract_team_data(team_a_obj)
         team_b_info = extract_team_data(team_b_obj)
 
+        # Skip phantom matchups where the same manager appears on both sides.
+        # The Yahoo API occasionally registers a manager with multiple team
+        # entries in one league, producing bogus self-matchup rows.
+        if team_a_info["manager"] == team_b_info["manager"]:
+            continue
+
         # NOTE: The Yahoo scoreboard API never returns outcome_totals (W-L-T)
         # at the matchup level. For category leagues, team_points.total holds
         # the number of categories won that week. Ties are inferred in
@@ -296,13 +302,11 @@ def parse_matchups(data, season, league_name, league_key, week):
             "league_name": league_name,
             "ties": 0,  # filled in by backfill_ties() after collection
 
-            "team_a_name": team_a_info["name"],
-            "team_a_manager": team_a_info["manager"],
-            "team_a_record": team_a_info["record"],
+            "manager_a": team_a_info["manager"],
+            "manager_a_record": team_a_info["record"],
 
-            "team_b_name": team_b_info["name"],
-            "team_b_manager": team_b_info["manager"],
-            "team_b_record": team_b_info["record"],
+            "manager_b": team_b_info["manager"],
+            "manager_b_record": team_b_info["record"],
         })
 
     return results
@@ -331,8 +335,8 @@ def backfill_ties(all_rows):
     league_max_cats = defaultdict(int)
     for row in all_rows:
         try:
-            a = int(row["team_a_record"])
-            b = int(row["team_b_record"])
+            a = int(row["manager_a_record"])
+            b = int(row["manager_b_record"])
             league_max_cats[row["league_key"]] = max(
                 league_max_cats[row["league_key"]], a + b
             )
@@ -345,8 +349,8 @@ def backfill_ties(all_rows):
         if max_cats == 0:
             continue  # points league or no data
         try:
-            a = int(row["team_a_record"])
-            b = int(row["team_b_record"])
+            a = int(row["manager_a_record"])
+            b = int(row["manager_b_record"])
             row["ties"] = max(0, max_cats - a - b)
         except (ValueError, TypeError):
             pass
@@ -359,12 +363,10 @@ def write_csv(rows):
         "league_key",
         "league_name",
         "ties",
-        "team_a_name",
-        "team_a_manager",
-        "team_a_record",
-        "team_b_name",
-        "team_b_manager",
-        "team_b_record",
+        "manager_a",
+        "manager_a_record",
+        "manager_b",
+        "manager_b_record",
     ]
 
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:

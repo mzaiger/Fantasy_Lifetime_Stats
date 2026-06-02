@@ -628,133 +628,75 @@ function setPage(page) {
 
 function processH2H() {
   const map = {};
-  
   h2hRawData.forEach(r => {
-    let m1 = r.team_a || r.team_a_manager_nickname || r.team_a_name;
-    let m2 = r.team_b || r.team_b_manager_nickname || r.team_b_name;
+    // Using Manager names instead of Team names
+    let m1 = r.team_a_manager;
+    let m2 = r.team_b_manager;
     if (!m1 || !m2) return;
-
-    let w1 = parseFloat(r.team_a_record !== undefined ? r.team_a_record : r.team_a_wins) || 0;
-    let w2 = parseFloat(r.team_b_record !== undefined ? r.team_b_record : r.team_b_wins) || 0;
+    
+    let w1 = parseFloat(r.team_a_record.wins) || 0;
+    let w2 = parseFloat(r.team_b_record.wins) || 0;
     let t = parseFloat(r.ties) || 0;
-
-    // Build consistent matchup key alphabetically
+    
+    // Create key based on managers to group properly
     let key = m1 < m2 ? m1 + "||" + m2 : m2 + "||" + m1;
-
-    if (!map[key]) {
-      map[key] = { m1: m1, m2: m2, w1: 0, w2: 0, t: 0 };
-    }
-
-    if (m1 === map[key].m1) {
-      map[key].w1 += w1;
-      map[key].w2 += w2;
-      map[key].t += t;
-    } else {
-      map[key].w1 += w2;
-      map[key].w2 += w1;
-      map[key].t += t;
+    if (!map[key]) map[key] = { m1: m1, m2: m2, w1: 0, w2: 0, t: 0 };
+    
+    if (m1 === map[key].m1) { 
+      map[key].w1 += w1; 
+      map[key].w2 += w2; 
+      map[key].t += t; 
+    } else { 
+      map[key].w1 += w2; 
+      map[key].w2 += w1; 
+      map[key].t += t; 
     }
   });
-
+  
   let results = [];
   for (let key in map) {
     let item = map[key];
-    let totalMatches = item.w1 + item.w2 + item.t;
-    if (totalMatches === 0) continue;
-
-    // Designate A as the winning team to sum into one category securely
     let isM1Winner = item.w1 >= item.w2;
-    let mgrA = isM1Winner ? item.m1 : item.m2;
-    let mgrB = isM1Winner ? item.m2 : item.m1;
-    let wA = isM1Winner ? item.w1 : item.w2;
-    let wB = isM1Winner ? item.w2 : item.w1;
-    
     results.push({
-      mgrA: mgrA,
-      mgrB: mgrB,
-      w: wA,
-      l: wB,
+      managerA: isM1Winner ? item.m1 : item.m2,
+      managerB: isM1Winner ? item.m2 : item.m1,
+      w: isM1Winner ? item.w1 : item.w2,
+      l: isM1Winner ? item.w2 : item.w1,
       t: item.t,
-      pct: winPct(wA, wB, item.t)
+      pct: winPct(isM1Winner ? item.w1 : item.w2, isM1Winner ? item.w2 : item.w1, item.t)
     });
   }
-  
   return results;
 }
 
 function renderH2HTable(title, rows) {
   let html = `<h2>${title}</h2>
     <table class="tx-table" style="width:100%; text-align:center;">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Manager A</th>
-          <th>Manager B</th>
-          <th>W</th>
-          <th>L</th>
-          <th>T</th>
-          <th>Win%</th>
-        </tr>
-      </thead>
+      <thead><tr><th>#</th><th>Manager A</th><th>Manager B</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr></thead>
       <tbody>`;
   rows.forEach((r, i) => {
-    html += `<tr>
-      <td>${i+1}</td>
-      <td class="trade-win" style="font-weight:700;">${r.mgrA}</td>
-      <td class="trade-lose" style="font-weight:700;">${r.mgrB}</td>
-      <td>${r.w}</td>
-      <td>${r.l}</td>
-      <td>${r.t}</td>
-      <td style="font-weight:bold; color:var(--gold);">${fmt(r.pct, 3)}</td>
-    </tr>`;
+    html += `<tr><td>${i+1}</td><td class="trade-win" style="font-weight:700;">${r.managerA}</td><td class="trade-lose" style="font-weight:700;">${r.managerB}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td style="font-weight:bold; color:var(--gold);">${fmt(r.pct, 3)}</td></tr>`;
   });
   html += `</tbody></table>`;
   return html;
 }
 
-function showLifetimeH2H(c) {
-  c.classList.remove('grid-view');
-  let h2hData = processH2H();
-  
-  // Rank by biggest win percentage
-  h2hData.sort((a, b) => b.pct - a.pct); 
-  let top20 = h2hData.slice(0, 20);
-  
-  c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px">${renderH2HTable('Top 20 Lifetime Head-to-Head Matchups', top20)}</div>`;
-}
-
 function showManagerH2H(c) {
   c.classList.remove('grid-view');
   const h2hData = processH2H();
-  
-  // Gather all unique managers involved in H2H matches
-  const allMgrs = [...new Set([...h2hData.map(d=>d.mgrA), ...h2hData.map(d=>d.mgrB)])].sort();
-  const opts = allMgrs.map(m => `<option value="${m}">${m}</option>`).join("");
-  
+  // Get unique managers
+  const allManagers = [...new Set([...h2hData.map(d=>d.managerA), ...h2hData.map(d=>d.managerB)])].sort();
+  const opts = allManagers.map(m => `<option value="${m}">${m}</option>`).join("");
   c.innerHTML = `
-    <div style="margin-bottom:20px">
-      <select id="h2hMgr">${opts}</select>
-      <button class="show-btn" onclick="renderManagerH2H()">SHOW MATCHUPS</button>
-    </div>
+    <div style="margin-bottom:20px"><select id="h2hManager">${opts}</select><button class="show-btn" onclick="renderManagerH2H()">SHOW MATCHUPS</button></div>
     <div id="managerH2HArea"></div>`;
 }
 
 function renderManagerH2H() {
-  const m = document.getElementById("h2hMgr").value;
+  const m = document.getElementById("h2hManager").value;
   const div = document.getElementById("managerH2HArea");
-  
-  let h2hData = processH2H();
-  let filtered = h2hData.filter(d => d.mgrA === m || d.mgrB === m);
-  
-  // Rank by biggest win percentage
-  filtered.sort((a, b) => b.pct - a.pct);
-  
-  if (filtered.length === 0) {
-    div.innerHTML = `<p class="no-data">No head-to-head data found for ${m}.</p>`;
-    return;
-  }
-  
-  div.innerHTML = `<div style="max-width:900px">${renderH2HTable(`${m} — Head-to-Head Records`, filtered)}</div>`;
+  let filtered = processH2H().filter(d => d.managerA === m || d.managerB === m).sort((a, b) => b.pct - a.pct);
+  div.innerHTML = filtered.length === 0 ? `<p class="no-data">No head-to-head data found for ${m}.</p>` : `<div style="max-width:900px">${renderH2HTable(`${m} — Manager Head-to-Head`, filtered)}</div>`;
 }
 
 /* ══════════════════════════════════════════

@@ -1273,7 +1273,7 @@ function renderYearlyWorstTrades() {
 }
 
 /* ── HEAD TO HEAD ── */
-function computeH2HMatchups(filterManager) {
+function computeH2HMatchups(filterManager, applyThreshold) {
   // map: canonical key -> {managerA, managerB, wins, losses, ties}
   const map = {};
   h2hRawData.forEach(row => {
@@ -1303,7 +1303,8 @@ function computeH2HMatchups(filterManager) {
   // Build rows: winner = higher win%, loser = other
   let rows = Object.values(map).map(m => {
     const total = m.firstWins + m.secondWins + m.ties;
-    if (total < 200 || total > 1000) return null;
+    if (applyThreshold && (total < 200 || total > 1000)) return null;
+    if (total === 0) return null;
     let winnerMgr, loserMgr, wins, losses;
     if (m.firstWins >= m.secondWins) {
       winnerMgr = m.managerA; loserMgr = m.managerB;
@@ -1354,7 +1355,7 @@ function renderH2HTable(rows, limit) {
 
 function showH2HLifetime(c) {
   c.classList.remove('grid-view');
-  const rows = computeH2HMatchups(null);
+  const rows = computeH2HMatchups(null, true);
   c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px">
     <h2>Head to Head — Lifetime (Top 20)</h2>
     ${renderH2HTable(rows, 20)}
@@ -1371,7 +1372,7 @@ function showH2HManager(c) {
   const sortedMgrs = Array.from(mgrs).sort();
 
   function render(mgr) {
-    const rows = computeH2HMatchups(mgr);
+    const rows = computeH2HMatchups(mgr, false);
     return renderH2HTable(rows, null);
   }
 

@@ -153,28 +153,39 @@ def extract_team_data(team_obj):
     }
 
     # ── Step 1: identity from metadata block only ──────────────────────────
-    meta = team_obj[0] if isinstance(team_obj, list) and len(team_obj) > 0 else {}
-    if isinstance(meta, dict):
-        info["name"] = meta.get("name", "")
-        # managers key holds a list; nickname lives inside each manager entry
-        mgrs = meta.get("managers", {})
-        if isinstance(mgrs, dict):
-            for v in mgrs.values():
-                if isinstance(v, dict):
-                    mgr = v.get("manager", {})
-                    if isinstance(mgr, dict) and "nickname" in mgr:
-                        info["manager"] = mgr["nickname"]
-                        break
-        elif isinstance(mgrs, list):
-            for entry in mgrs:
-                if isinstance(entry, dict):
-                    mgr = entry.get("manager", {})
-                    if isinstance(mgr, dict) and "nickname" in mgr:
-                        info["manager"] = mgr["nickname"]
-                        break
-        # fallback: nickname directly in meta (older API responses)
-        if not info["manager"] and "nickname" in meta:
-            info["manager"] = meta["nickname"]
+    # Yahoo's team list structure:
+    #   team_obj[0] = a LIST of metadata dicts, e.g.:
+    #     [{team_key:...}, {name:"GooseRules"}, ..., {managers:{0:{manager:{nickname:"chris"}}}}]
+    #   team_obj[1+] = stats dicts (team_points, team_outcome, etc.)
+    # We iterate only team_obj[0] for identity — never the stats block.
+    meta_list = team_obj[0] if isinstance(team_obj, list) and len(team_obj) > 0 else []
+    if isinstance(meta_list, dict):
+        meta_list = [meta_list]  # handle rare case where meta is a bare dict
+    for item in (meta_list if isinstance(meta_list, list) else []):
+        if not isinstance(item, dict):
+            continue
+        if "name" in item and not info["name"]:
+            info["name"] = item["name"]
+        # managers block: {count:N, "0":{manager:{nickname:...}}, "1":...}
+        if "managers" in item and not info["manager"]:
+            mgrs = item["managers"]
+            if isinstance(mgrs, dict):
+                for v in mgrs.values():
+                    if isinstance(v, dict):
+                        mgr = v.get("manager", {})
+                        if isinstance(mgr, dict) and "nickname" in mgr:
+                            info["manager"] = mgr["nickname"]
+                            break
+            elif isinstance(mgrs, list):
+                for entry in mgrs:
+                    if isinstance(entry, dict):
+                        mgr = entry.get("manager", {})
+                        if isinstance(mgr, dict) and "nickname" in mgr:
+                            info["manager"] = mgr["nickname"]
+                            break
+        # fallback: nickname directly in item (older API responses)
+        if not info["manager"] and "nickname" in item:
+            info["manager"] = item["nickname"]
 
     # ── Step 2: stats walk — never touches name or nickname ─────────────────
     def _apply_outcome_totals(totals):

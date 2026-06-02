@@ -36546,9 +36546,9 @@
     "week": 11,
     "league_key": "469.l.23321",
     "league_name": "Walking On The Fightin' Side",
-    "ties": 5,
+    "ties": 6,
     "manager_a": "The Wizard",
-    "manager_a_record": "4",
+    "manager_a_record": "3",
     "manager_b": "Paulie",
     "manager_b_record": "5"
   },
@@ -36570,8 +36570,8 @@
     "league_name": "Walking On The Fightin' Side",
     "ties": 4,
     "manager_a": "Dan",
-    "manager_a_record": "2",
+    "manager_a_record": "4",
     "manager_b": "Theodore",
-    "manager_b_record": "8"
+    "manager_b_record": "6"
   }
 ]

@@ -1,6 +1,4 @@
-from pathlib import Path
-
-script = r'''"""
+"""
 yahoo_fantasy_weekly_head_to_head_record.py
 
 Fetches weekly Yahoo Fantasy Baseball head-to-head matchup results for all

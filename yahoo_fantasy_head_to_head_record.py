@@ -112,6 +112,53 @@ def api_get(session, url):
     return r.json()
 
 
+def find_key_recursive(data, target_key):
+    """Safely traverses Yahoo's mixed list/dict JSON format to find a target key."""
+    if isinstance(data, dict):
+        if target_key in data:
+            return data[target_key]
+        for value in data.values():
+            res = find_key_recursive(value, target_key)
+            if res is not None:
+                return res
+    elif isinstance(data, list):
+        for item in data:
+            res = find_key_recursive(item, target_key)
+            if res is not None:
+                return res
+    return None
+
+
+def extract_team_data(team_obj):
+    """Recursively crawls the team object to gather metadata and weekly scores."""
+    info = {
+        "name": "",
+        "manager": "",
+        "points": "",
+        "outcome": ""
+    }
+    
+    def walk(data):
+        if isinstance(data, dict):
+            if "name" in data:
+                info["name"] = data["name"]
+            if "nickname" in data:
+                info["manager"] = data["nickname"]
+            if "total" in data:
+                info["points"] = str(data["total"])
+            if "outcome" in data:
+                info["outcome"] = str(data["outcome"])
+            
+            for v in data.values():
+                walk(v)
+        elif isinstance(data, list):
+            for item in data:
+                walk(item)
+                
+    walk(team_obj)
+    return info
+
+
 def get_all_leagues(session):
     print("Fetching all historical MLB leagues...", flush=True)
     url = f"{BASE_URL}/users;use_login=1/games;game_codes=mlb/leagues"
@@ -154,71 +201,42 @@ def get_all_leagues(session):
     return leagues
 
 
-def extract_team(team_obj):
-    result = {
-        "team_key": "",
-        "team_name": "",
-        "manager": "",
-        "wins": "0",
-        "losses": "0",
-        "ties": "0",
-    }
-
-    if isinstance(team_obj, list):
-        for item in team_obj:
-            # 1. Yahoo places team identity metadata in a nested list
-            if isinstance(item, list):
-                for subitem in item:
-                    if isinstance(subitem, dict):
-                        if "team_key" in subitem:
-                            result["team_key"] = subitem["team_key"]
-
-                        if "name" in subitem:
-                            result["team_name"] = subitem["name"]
-
-                        if "managers" in subitem:
-                            for mgr_wrap in subitem["managers"]:
-                                mgr = mgr_wrap.get("manager", {})
-                                if "nickname" in mgr:
-                                    result["manager"] = mgr["nickname"]
-
-            # 2. Standings records live inside standalone dictionaries
-            elif isinstance(item, dict):
-                if "team_standings" in item:
-                    totals = item["team_standings"].get("outcome_totals", {})
-                    result["wins"] = str(totals.get("wins", 0))
-                    result["losses"] = str(totals.get("losses", 0))
-                    result["ties"] = str(totals.get("ties", 0))
-
-    return result
-
-
 def parse_matchups(data, season, league_name, league_key, week):
     results = []
 
-    league = data.get("fantasy_content", {}).get("league", [])
-    if len(league) < 2:
+    matchups_block = find_key_recursive(data, "matchups")
+    if not matchups_block:
         return results
 
-    scoreboard = league[1].get("scoreboard", {})
-    matchups = scoreboard.get("0", {}).get("matchups") or scoreboard.get("matchups", {})
-
-    matchup_count = int(matchups.get("count", 0))
+    matchup_count = int(matchups_block.get("count", 0))
 
     for idx in range(matchup_count):
-        matchup = matchups.get(str(idx), {}).get("matchup", {})
+        matchup = matchups_block.get(str(idx), {}).get("matchup")
+        if not matchup:
+            continue
 
-        matchup_meta = matchup[0] if isinstance(matchup, list) else matchup
+        teams_block = find_key_recursive(matchup, "teams")
+        if not teams_block:
+            continue
 
-        teams_block = matchup_meta.get("teams", {})
+        team_a_obj = teams_block.get("0", {}).get("team", [])
+        team_b_obj = teams_block.get("1", {}).get("team", [])
 
-        team_a = extract_team(
-            teams_block.get("0", {}).get("team", [])
-        )
+        team_a_info = extract_team_data(team_a_obj)
+        team_b_info = extract_team_data(team_b_obj)
 
-        team_b = extract_team(
-            teams_block.get("1", {}).get("team", [])
-        )
+        # Construct highly readable weekly matchup record lines based on league types
+        rec_a = team_a_info["points"]
+        if team_a_info["outcome"]:
+            rec_a = f'{rec_a} ({team_a_info["outcome"].capitalize()})' if rec_a else team_a_info["outcome"].capitalize()
+        if not rec_a: 
+            rec_a = "0"
+
+        rec_b = team_b_info["points"]
+        if team_b_info["outcome"]:
+            rec_b = f'{rec_b} ({team_b_info["outcome"].capitalize()})' if rec_b else team_b_info["outcome"].capitalize()
+        if not rec_b: 
+            rec_b = "0"
 
         results.append({
             "season": season,
@@ -226,13 +244,13 @@ def parse_matchups(data, season, league_name, league_key, week):
             "league_key": league_key,
             "league_name": league_name,
 
-            "team_a_name": team_a["team_name"],
-            "team_a_manager": team_a["manager"],
-            "team_a_record": f'{team_a["wins"]}-{team_a["losses"]}-{team_a["ties"]}',
+            "team_a_name": team_a_info["name"],
+            "team_a_manager": team_a_info["manager"],
+            "team_a_record": rec_a,
 
             "team_b_name": team_b["team_name"],
             "team_b_manager": team_b["manager"],
-            "team_b_record": f'{team_b["wins"]}-{team_b["losses"]}-{team_b["ties"]}',
+            "team_b_record": rec_b,
         })
 
     return results
@@ -277,7 +295,11 @@ def main():
         meta = api_get(session, scoreboard_url)
         time.sleep(API_DELAY)
 
-        league_meta = meta.get("fantasy_content", {}).get("league", [{}])[0]
+        league_meta = find_key_recursive(meta, "league")
+        if isinstance(league_meta, list):
+            league_meta = league_meta[0]
+        elif not league_meta:
+            league_meta = {}
 
         start_week = int(league_meta.get("start_week", 1))
         end_week = int(league_meta.get("current_week", league_meta.get("end_week", 1)))

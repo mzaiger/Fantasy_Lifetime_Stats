@@ -1277,11 +1277,11 @@ function computeH2HMatchups(filterManager, applyThreshold) {
   // map: canonical key -> {managerA, managerB, wins, losses, ties}
   const map = {};
   h2hRawData.forEach(row => {
-    const mA = row.team_a_manager;
-    const mB = row.team_b_manager;
+    const mA = row.manager_a;
+    const mB = row.manager_b;
     if (!mA || !mB) return;
-    const winsA = parseFloat(row.team_a_record) || 0;
-    const winsB = parseFloat(row.team_b_record) || 0;
+    const winsA = parseFloat(row.manager_a_record) || 0;
+    const winsB = parseFloat(row.manager_b_record) || 0;
     const ties  = parseFloat(row.ties) || 0;
 
     // canonical key: alphabetically sorted pair
@@ -1366,8 +1366,8 @@ function showH2HManager(c) {
   c.classList.remove('grid-view');
   const mgrs = new Set();
   h2hRawData.forEach(r => {
-    if (r.team_a_manager && !r.team_a_manager.includes('hidden')) mgrs.add(r.team_a_manager);
-    if (r.team_b_manager && !r.team_b_manager.includes('hidden')) mgrs.add(r.team_b_manager);
+    if (r.manager_a && !r.manager_a.includes('hidden')) mgrs.add(r.manager_a);
+    if (r.manager_b && !r.manager_b.includes('hidden')) mgrs.add(r.manager_b);
   });
   const sortedMgrs = Array.from(mgrs).sort();
 

@@ -37,26 +37,35 @@ def _save_token(token):
     TOKEN_CACHE.write_text(json.dumps(token, indent=2))
 
 
-def _load_token():
+def _load_token() -> dict | None:
+    token_from_env = os.getenv("YAHOO_TOKEN")
+
+    if token_from_env:
+        try:
+            return json.loads(token_from_env)
+        except Exception:
+            pass
+
     if TOKEN_CACHE.exists():
         try:
             return json.loads(TOKEN_CACHE.read_text())
         except Exception:
             pass
+
     return None
 
 
 def get_session():
-    session = OAuth2Session(
-        client_id=CLIENT_ID,
-        redirect_uri=REDIRECT_URI,
-        auto_refresh_url=TOKEN_URL,
-        auto_refresh_kwargs={
-            "client_id": CLIENT_ID,
-            "client_secret": CLIENT_SECRET,
-        },
-        token_updater=_save_token,
-    )
+session = OAuth2Session(
+    client_id=CLIENT_ID,
+    redirect_uri=REDIRECT_URI,
+    auto_refresh_url=TOKEN_URL,
+    auto_refresh_kwargs={
+        "client_id": CLIENT_ID,
+        "client_secret": CLIENT_SECRET
+    },
+    token_updater=_save_token,
+)
 
     cached = _load_token()
 

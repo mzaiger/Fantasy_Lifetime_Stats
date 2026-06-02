@@ -130,8 +130,13 @@ def find_key_recursive(data, target_key):
 
 def extract_team_data(team_obj):
     """
-    Deep-crawls the team object structure to gather identity metadata 
+    Deep-crawls the team object structure to gather identity metadata
     and target precise category matchup totals or fallback values.
+
+    Category wins/losses/ties are set once from the first outcome_totals
+    block found and never overwritten, preventing later zero-value stubs
+    from clobbering real data.  Points are only used as a fallback when
+    no category data is present at all.
     """
     info = {
         "name": "",
@@ -141,7 +146,18 @@ def extract_team_data(team_obj):
         "ties": None,
         "points": None
     }
-    
+
+    def _apply_outcome_totals(totals):
+        """Write wins/losses/ties only if they haven't been set yet."""
+        if not isinstance(totals, dict):
+            return
+        # Only record category data if wins AND losses are present (a real result)
+        if "wins" in totals and "losses" in totals:
+            if info["wins"] is None:  # first credible outcome_totals wins
+                info["wins"] = int(totals["wins"])
+                info["losses"] = int(totals["losses"])
+                info["ties"] = int(totals.get("ties", 0))
+
     def walk(data):
         if isinstance(data, dict):
             # Extract basic identifiers
@@ -149,37 +165,31 @@ def extract_team_data(team_obj):
                 info["name"] = data["name"]
             if "nickname" in data:
                 info["manager"] = data["nickname"]
-            
+
             # Locate category outcome totals directly
             if "outcome_totals" in data:
-                totals = data["outcome_totals"]
-                if isinstance(totals, dict):
-                    if "wins" in totals: info["wins"] = int(totals["wins"])
-                    if "losses" in totals: info["losses"] = int(totals["losses"])
-                    if "ties" in totals: info["ties"] = int(totals["ties"])
-            
+                _apply_outcome_totals(data["outcome_totals"])
+
             # Locate team outcome wrappers containing totals
             if "team_outcome" in data:
                 to = data["team_outcome"]
-                if isinstance(to, dict) and "outcome_totals" in to:
-                    totals = to["outcome_totals"]
-                    if isinstance(totals, dict):
-                        if "wins" in totals: info["wins"] = int(totals["wins"])
-                        if "losses" in totals: info["losses"] = int(totals["losses"])
-                        if "ties" in totals: info["ties"] = int(totals["ties"])
+                if isinstance(to, dict):
+                    _apply_outcome_totals(to.get("outcome_totals", {}))
 
-            # Isolate team points specifically to prevent hitting total-stubs from game logs
-            if "team_points" in data:
+            # Only capture points if we have not already found category data.
+            # This prevents points stubs that exist in category-league responses
+            # from masking real W-L-T data.
+            if info["wins"] is None and "team_points" in data:
                 tp = data["team_points"]
                 if isinstance(tp, dict) and "total" in tp:
                     info["points"] = tp["total"]
-                    
+
             for v in data.values():
                 walk(v)
         elif isinstance(data, list):
             for item in data:
                 walk(item)
-                
+
     walk(team_obj)
     
     is_category = False
@@ -273,8 +283,15 @@ def parse_matchups(data, season, league_name, league_key, week):
         team_a_info = extract_team_data(team_a_obj)
         team_b_info = extract_team_data(team_b_obj)
 
-        # Grab the explicit tie total for the matchup
-        ties_count = team_a_info["ties"] if team_a_info["is_category"] else 0
+        # In category leagues each team's outcome_totals carries the number of
+        # tied stat categories for that matchup week. The two sides should agree;
+        # prefer team_a but fall back to team_b if team_a came back as points-only.
+        if team_a_info["is_category"]:
+            ties_count = team_a_info["ties"]
+        elif team_b_info["is_category"]:
+            ties_count = team_b_info["ties"]
+        else:
+            ties_count = 0
 
         results.append({
             "season": season,

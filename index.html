@@ -278,7 +278,7 @@
   body.light-mode .team-tx-table td:nth-child(3) { color: #1a7a45; }
   body.light-mode .team-tx-table td:nth-child(4) { color: #a02020; }
 
-  /* Dynamic worst-trades styling rules */
+  /* Dynamic worst-trades & h2h styling rules */
   .trade-win { color: #7ecfa0 !important; }
   .trade-lose { color: #e07070 !important; }
   body.light-mode .trade-win { color: #1a7a45 !important; }
@@ -320,7 +320,6 @@
   </div>
   <div class="nav-links" id="navLinks">
 
-    <!-- Medals -->
     <div class="nav-item has-sub">
       <a>MEDALS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -329,7 +328,6 @@
       </div></div>
     </div>
 
-    <!-- Records -->
     <div class="nav-item has-sub">
       <a>RECORDS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -338,7 +336,14 @@
       </div></div>
     </div>
 
-    <!-- Rankings -->
+    <div class="nav-item has-sub">
+      <a>HEAD TO HEAD</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('lifetimeH2H'); closeMobileItem(this)">Lifetime</a>
+        <a onclick="setPage('managerH2H'); closeMobileItem(this)">Manager</a>
+      </div></div>
+    </div>
+
     <div class="nav-item has-sub">
       <a>RANKINGS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -351,7 +356,6 @@
       </div></div>
     </div>
 
-    <!-- Stats -->
     <div class="nav-item has-sub">
       <a>STATS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -360,7 +364,6 @@
       </div></div>
     </div>
 
-    <!-- Trades -->
     <div class="nav-item has-sub">
       <a>TRADES</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -370,7 +373,6 @@
       </div></div>
     </div>
 
-    <!-- FAAB -->
     <div class="nav-item has-sub">
       <a>FAAB</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -379,7 +381,6 @@
       </div></div>
     </div>
 
-    <!-- Transactions -->
     <div class="nav-item has-sub">
       <a>TRANSACTIONS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -389,7 +390,6 @@
       </div></div>
     </div>
 
-    <!-- Export -->
     <div class="nav-item">
       <a onclick="setPage('exportData'); closeMenu()">EXPORT</a>
     </div>
@@ -482,6 +482,7 @@ let weeklyRawData = [];
 let managers = {};
 let txRawData = [];
 let tradeRanksData = [];
+let h2hRawData = [];
 
 const numericFields = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 const avgFields     = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","WHIP","K/9","QS"];
@@ -494,8 +495,9 @@ Promise.all([
   fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
   fetch("all_seasons_weeks_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => ({})),
   fetch("all_seasons_transactions.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
-  fetch("trade_ranks.json?v=" + Date.now()).then(r => r.json()).catch(() => [])
-]).then(([seasonData, weekData, txData, tradesData]) => {
+  fetch("trade_ranks.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
+  fetch("weekly_head_to_head_record.json?v=" + Date.now()).then(r => r.json()).catch(() => [])
+]).then(([seasonData, weekData, txData, tradesData, h2hData]) => {
   rawData = Array.isArray(seasonData) ? seasonData : Object.values(seasonData || {}).flat();
   weeklyRawData = [];
   if (weekData) {
@@ -507,6 +509,7 @@ Promise.all([
   }
   txRawData = Array.isArray(txData) ? txData : [];
   tradeRanksData = Array.isArray(tradesData) ? tradesData : [];
+  h2hRawData = Array.isArray(h2hData) ? h2hData : Object.values(h2hData || {}).flat();
   
   processData();
   setPage("playoffMedals");
@@ -595,6 +598,10 @@ function setPage(page) {
   if (page === "lifetimeAvg")        showLifetimeAvg(c);
   if (page === "seasonRankings")     showSeasonRankings(c);
   if (page === "weeklyRankings")     showWeeklyRankings(c);
+  
+  if (page === "lifetimeH2H")        showLifetimeH2H(c);
+  if (page === "managerH2H")         showManagerH2H(c);
+  
   if (page === "worstTrades")           showWorstTrades(c);
   if (page === "personalWorstTrades")   showPersonalWorstTrades(c);
   if (page === "yearlyWorstTrades")     showYearlyWorstTrades(c);
@@ -613,6 +620,141 @@ function setPage(page) {
   if (page === "lifetimeFaab")       showLifetimeFaab(c);
   if (page === "personalFaab")       showPersonalFaab(c);
   if (page === "exportData")         showExportData(c);
+}
+
+/* ══════════════════════════════════════════
+   HEAD TO HEAD LOGIC
+══════════════════════════════════════════ */
+
+function processH2H() {
+  const map = {};
+  
+  h2hRawData.forEach(r => {
+    let m1 = r.team_a || r.team_a_manager_nickname || r.team_a_name;
+    let m2 = r.team_b || r.team_b_manager_nickname || r.team_b_name;
+    if (!m1 || !m2) return;
+
+    let w1 = parseFloat(r.team_a_record !== undefined ? r.team_a_record : r.team_a_wins) || 0;
+    let w2 = parseFloat(r.team_b_record !== undefined ? r.team_b_record : r.team_b_wins) || 0;
+    let t = parseFloat(r.ties) || 0;
+
+    // Build consistent matchup key alphabetically
+    let key = m1 < m2 ? m1 + "||" + m2 : m2 + "||" + m1;
+
+    if (!map[key]) {
+      map[key] = { m1: m1, m2: m2, w1: 0, w2: 0, t: 0 };
+    }
+
+    if (m1 === map[key].m1) {
+      map[key].w1 += w1;
+      map[key].w2 += w2;
+      map[key].t += t;
+    } else {
+      map[key].w1 += w2;
+      map[key].w2 += w1;
+      map[key].t += t;
+    }
+  });
+
+  let results = [];
+  for (let key in map) {
+    let item = map[key];
+    let totalMatches = item.w1 + item.w2 + item.t;
+    if (totalMatches === 0) continue;
+
+    // Designate A as the winning team to sum into one category securely
+    let isM1Winner = item.w1 >= item.w2;
+    let mgrA = isM1Winner ? item.m1 : item.m2;
+    let mgrB = isM1Winner ? item.m2 : item.m1;
+    let wA = isM1Winner ? item.w1 : item.w2;
+    let wB = isM1Winner ? item.w2 : item.w1;
+    
+    results.push({
+      mgrA: mgrA,
+      mgrB: mgrB,
+      w: wA,
+      l: wB,
+      t: item.t,
+      pct: winPct(wA, wB, item.t)
+    });
+  }
+  
+  return results;
+}
+
+function renderH2HTable(title, rows) {
+  let html = `<h2>${title}</h2>
+    <table class="tx-table" style="width:100%; text-align:center;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Manager A</th>
+          <th>Manager B</th>
+          <th>W</th>
+          <th>L</th>
+          <th>T</th>
+          <th>Win%</th>
+        </tr>
+      </thead>
+      <tbody>`;
+  rows.forEach((r, i) => {
+    html += `<tr>
+      <td>${i+1}</td>
+      <td class="trade-win" style="font-weight:700;">${r.mgrA}</td>
+      <td class="trade-lose" style="font-weight:700;">${r.mgrB}</td>
+      <td>${r.w}</td>
+      <td>${r.l}</td>
+      <td>${r.t}</td>
+      <td style="font-weight:bold; color:var(--gold);">${fmt(r.pct, 3)}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  return html;
+}
+
+function showLifetimeH2H(c) {
+  c.classList.remove('grid-view');
+  let h2hData = processH2H();
+  
+  // Rank by biggest win percentage
+  h2hData.sort((a, b) => b.pct - a.pct); 
+  let top20 = h2hData.slice(0, 20);
+  
+  c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px">${renderH2HTable('Top 20 Lifetime Head-to-Head Matchups', top20)}</div>`;
+}
+
+function showManagerH2H(c) {
+  c.classList.remove('grid-view');
+  const h2hData = processH2H();
+  
+  // Gather all unique managers involved in H2H matches
+  const allMgrs = [...new Set([...h2hData.map(d=>d.mgrA), ...h2hData.map(d=>d.mgrB)])].sort();
+  const opts = allMgrs.map(m => `<option value="${m}">${m}</option>`).join("");
+  
+  c.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="h2hMgr">${opts}</select>
+      <button class="show-btn" onclick="renderManagerH2H()">SHOW MATCHUPS</button>
+    </div>
+    <div id="managerH2HArea"></div>`;
+}
+
+function renderManagerH2H() {
+  const m = document.getElementById("h2hMgr").value;
+  const div = document.getElementById("managerH2HArea");
+  
+  let h2hData = processH2H();
+  let filtered = h2hData.filter(d => d.mgrA === m || d.mgrB === m);
+  
+  // Rank by biggest win percentage
+  filtered.sort((a, b) => b.pct - a.pct);
+  
+  if (filtered.length === 0) {
+    div.innerHTML = `<p class="no-data">No head-to-head data found for ${m}.</p>`;
+    return;
+  }
+  
+  div.innerHTML = `<div style="max-width:900px">${renderH2HTable(`${m} — Head-to-Head Records`, filtered)}</div>`;
 }
 
 /* ══════════════════════════════════════════
@@ -1274,6 +1416,8 @@ function showExportData(c) {
         <a href="all_seasons_transactions.csv" download="all_seasons_transactions_${today}.csv" class="export-link">📊 TRANSACTIONS CSV</a>
         <a href="trade_ranks.json" download="trade_ranks_${today}.json" class="export-link">📄 TRADE RANKS JSON</a>
         <a href="trade_ranks.csv" download="trade_ranks_${today}.csv" class="export-link">📊 TRADE RANKS CSV</a>
+        <a href="weekly_head_to_head_record.json" download="weekly_head_to_head_record_${today}.json" class="export-link">📄 HEAD TO HEAD JSON</a>
+        <a href="weekly_head_to_head_record.csv" download="weekly_head_to_head_record_${today}.csv" class="export-link">📊 HEAD TO HEAD CSV</a>
       </div>
     </div>`;
   document.querySelectorAll(".export-link").forEach(link => {

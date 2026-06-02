@@ -154,46 +154,41 @@ def get_all_leagues(session):
     return leagues
 
 
-def get_week_days(matchup_meta):
-    try:
-        start = datetime.strptime(matchup_meta["week_start"], "%Y-%m-%d").date()
-        end = datetime.strptime(matchup_meta["week_end"], "%Y-%m-%d").date()
-        return (end - start).days + 1
-    except Exception:
-        return 7
-
-
 def extract_team(team_obj):
     result = {
         "team_key": "",
         "team_name": "",
         "manager": "",
-        "wins": 0,
-        "losses": 0,
-        "ties": 0,
+        "wins": "0",
+        "losses": "0",
+        "ties": "0",
     }
 
     if isinstance(team_obj, list):
         for item in team_obj:
-            if not isinstance(item, dict):
-                continue
+            # 1. Yahoo places team identity metadata in a nested list
+            if isinstance(item, list):
+                for subitem in item:
+                    if isinstance(subitem, dict):
+                        if "team_key" in subitem:
+                            result["team_key"] = subitem["team_key"]
 
-            if "team_key" in item:
-                result["team_key"] = item["team_key"]
+                        if "name" in subitem:
+                            result["team_name"] = subitem["name"]
 
-            if "name" in item:
-                result["team_name"] = item["name"]
+                        if "managers" in subitem:
+                            for mgr_wrap in subitem["managers"]:
+                                mgr = mgr_wrap.get("manager", {})
+                                if "nickname" in mgr:
+                                    result["manager"] = mgr["nickname"]
 
-            if "managers" in item:
-                for mgr_wrap in item["managers"]:
-                    mgr = mgr_wrap.get("manager", {})
-                    result["manager"] = mgr.get("nickname", "")
-
-            if "team_standings" in item:
-                totals = item["team_standings"].get("outcome_totals", {})
-                result["wins"] = totals.get("wins", 0)
-                result["losses"] = totals.get("losses", 0)
-                result["ties"] = totals.get("ties", 0)
+            # 2. Standings records live inside standalone dictionaries
+            elif isinstance(item, dict):
+                if "team_standings" in item:
+                    totals = item["team_standings"].get("outcome_totals", {})
+                    result["wins"] = str(totals.get("wins", 0))
+                    result["losses"] = str(totals.get("losses", 0))
+                    result["ties"] = str(totals.get("ties", 0))
 
     return result
 
@@ -215,8 +210,6 @@ def parse_matchups(data, season, league_name, league_key, week):
 
         matchup_meta = matchup[0] if isinstance(matchup, list) else matchup
 
-        week_days = get_week_days(matchup_meta)
-
         teams_block = matchup_meta.get("teams", {})
 
         team_a = extract_team(
@@ -230,7 +223,6 @@ def parse_matchups(data, season, league_name, league_key, week):
         results.append({
             "season": season,
             "week": week,
-            "week_days": week_days,
             "league_key": league_key,
             "league_name": league_name,
 
@@ -250,7 +242,6 @@ def write_csv(rows):
     fields = [
         "season",
         "week",
-        "week_days",
         "league_key",
         "league_name",
         "team_a_name",

@@ -338,6 +338,15 @@
       </div></div>
     </div>
 
+    <!-- Head to Head -->
+    <div class="nav-item has-sub">
+      <a>HEAD TO HEAD</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('h2hLifetime'); closeMobileItem(this)">Lifetime</a>
+        <a onclick="setPage('h2hManager'); closeMobileItem(this)">Manager</a>
+      </div></div>
+    </div>
+
     <!-- Rankings -->
     <div class="nav-item has-sub">
       <a>RANKINGS</a>
@@ -386,15 +395,6 @@
         <a onclick="setPage('lifetimeTeamTx'); closeMobileItem(this)">Manager</a>
         <a onclick="setPage('lifetimePlayerTx'); closeMobileItem(this)">Player</a>
         <a onclick="setPage('personalTx'); closeMobileItem(this)">Individual</a>
-      </div></div>
-    </div>
-
-    <!-- Head to Head -->
-    <div class="nav-item has-sub">
-      <a>HEAD TO HEAD</a>
-      <div class="sub-menu"><div class="sub-menu-inner">
-        <a onclick="setPage('h2hLifetime'); closeMobileItem(this)">Lifetime</a>
-        <a onclick="setPage('h2hManager'); closeMobileItem(this)">Manager</a>
       </div></div>
     </div>
 
@@ -1303,7 +1303,7 @@ function computeH2HMatchups(filterManager) {
   // Build rows: winner = higher win%, loser = other
   let rows = Object.values(map).map(m => {
     const total = m.firstWins + m.secondWins + m.ties;
-    if (total === 0) return null;
+    if (total < 100) return null;
     let winnerMgr, loserMgr, wins, losses;
     if (m.firstWins >= m.secondWins) {
       winnerMgr = m.managerA; loserMgr = m.managerB;

@@ -1303,7 +1303,7 @@ function computeH2HMatchups(filterManager) {
   // Build rows: winner = higher win%, loser = other
   let rows = Object.values(map).map(m => {
     const total = m.firstWins + m.secondWins + m.ties;
-    if (total < 100) return null;
+    if (total < 200 || total > 1000) return null;
     let winnerMgr, loserMgr, wins, losses;
     if (m.firstWins >= m.secondWins) {
       winnerMgr = m.managerA; loserMgr = m.managerB;
@@ -1363,14 +1363,12 @@ function showH2HLifetime(c) {
 
 function showH2HManager(c) {
   c.classList.remove('grid-view');
-  // Get all unique real managers from h2h data
   const mgrs = new Set();
   h2hRawData.forEach(r => {
     if (r.team_a_manager && !r.team_a_manager.includes('hidden')) mgrs.add(r.team_a_manager);
     if (r.team_b_manager && !r.team_b_manager.includes('hidden')) mgrs.add(r.team_b_manager);
   });
   const sortedMgrs = Array.from(mgrs).sort();
-  const defaultMgr = sortedMgrs[0] || '';
 
   function render(mgr) {
     const rows = computeH2HMatchups(mgr);
@@ -1381,14 +1379,15 @@ function showH2HManager(c) {
     <h2>Head to Head — Manager</h2>
     <div style="margin-bottom:12px">
       <select id="h2hMgrSelect">
+        <option value="">— Select a Manager —</option>
         ${sortedMgrs.map(m => `<option value="${m}">${m}</option>`).join('')}
       </select>
     </div>
-    <div id="h2hMgrTable">${render(defaultMgr)}</div>
+    <div id="h2hMgrTable"></div>
   </div>`;
 
   document.getElementById('h2hMgrSelect').addEventListener('change', function() {
-    document.getElementById('h2hMgrTable').innerHTML = render(this.value);
+    document.getElementById('h2hMgrTable').innerHTML = this.value ? render(this.value) : '';
   });
 }
 

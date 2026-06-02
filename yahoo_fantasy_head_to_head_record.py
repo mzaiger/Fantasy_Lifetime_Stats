@@ -75,7 +75,7 @@ def get_session():
         auth_url, _ = session.authorization_url(AUTHORIZATION_URL)
         webbrowser.open(auth_url)
 
-        print(f"Open:\n{auth_url}\n")
+        print(f"Open:\n{auth_url}\n", flush=True)
         redirect = input("Paste redirect URL or code: ").strip()
 
         if redirect.startswith("http"):
@@ -83,12 +83,14 @@ def get_session():
                 TOKEN_URL,
                 authorization_response=redirect,
                 client_secret=CLIENT_SECRET,
+                timeout=10
             )
         else:
             token = session.fetch_token(
                 TOKEN_URL,
                 code=redirect,
                 client_secret=CLIENT_SECRET,
+                timeout=10
             )
 
         _save_token(token)
@@ -97,16 +99,21 @@ def get_session():
 
 
 def api_get(session, url):
-    r = session.get(url, params={"format": "json"})
+    try:
+        r = session.get(url, params={"format": "json"}, timeout=10)
+    except Exception as e:
+        print(f"\nERROR: Request timed out or failed: {e}", flush=True)
+        return {}
 
     if r.status_code != 200:
-        print(f"ERROR {r.status_code}: {r.text[:300]}")
+        print(f"\nERROR {r.status_code}: {r.text[:300]}", flush=True)
         return {}
 
     return r.json()
 
 
 def get_all_leagues(session):
+    print("Fetching all historical MLB leagues...", flush=True)
     url = f"{BASE_URL}/users;use_login=1/games;game_codes=mlb/leagues"
     data = api_get(session, url)
 
@@ -143,6 +150,7 @@ def get_all_leagues(session):
             })
 
     leagues.sort(key=lambda x: x["season"])
+    print(f"Found {len(leagues)} leagues to process.\n", flush=True)
     return leagues
 
 
@@ -269,7 +277,7 @@ def main():
     leagues = get_all_leagues(session)
 
     for league in leagues:
-        print(f'Processing {league["season"]}: {league["league_name"]}')
+        print(f'Processing {league["season"]}: {league["league_name"]}', flush=True)
 
         scoreboard_url = (
             f'{BASE_URL}/league/{league["league_key"]}'
@@ -284,6 +292,7 @@ def main():
         end_week = int(league_meta.get("current_week", league_meta.get("end_week", 1)))
 
         for week in range(start_week, end_week + 1):
+            print(f'  -> Fetching Week {week}/{end_week}... ', end='', flush=True)
 
             url = (
                 f'{BASE_URL}/league/{league["league_key"]}'
@@ -302,6 +311,9 @@ def main():
             )
 
             all_rows.extend(rows)
+            print("Done", flush=True)
+
+        print(f'Finished {league["season"]} league.\n', flush=True)
 
     OUTPUT_JSON.write_text(
         json.dumps(all_rows, indent=2, ensure_ascii=False),
@@ -310,7 +322,7 @@ def main():
 
     write_csv(all_rows)
 
-    print(f"Saved {len(all_rows)} matchups.")
+    print(f"Saved {len(all_rows)} matchups total.", flush=True)
 
 
 if __name__ == "__main__":

@@ -283,22 +283,18 @@ def parse_matchups(data, season, league_name, league_key, week):
         team_a_info = extract_team_data(team_a_obj)
         team_b_info = extract_team_data(team_b_obj)
 
-        # In category leagues each team's outcome_totals carries the number of
-        # tied stat categories for that matchup week. The two sides should agree;
-        # prefer team_a but fall back to team_b if team_a came back as points-only.
-        if team_a_info["is_category"]:
-            ties_count = team_a_info["ties"]
-        elif team_b_info["is_category"]:
-            ties_count = team_b_info["ties"]
-        else:
-            ties_count = 0
-
+        # NOTE: The Yahoo scoreboard API never returns outcome_totals (W-L-T)
+        # at the matchup level. For category leagues, team_points.total holds
+        # the number of categories won that week. Ties are inferred in
+        # backfill_ties() after all weeks are collected, using the formula:
+        #   ties = league_total_categories - team_a_cats - team_b_cats
+        # The "ties" field is left as 0 here and filled in by backfill_ties().
         results.append({
             "season": season,
             "week": week,
             "league_key": league_key,
             "league_name": league_name,
-            "ties": ties_count,
+            "ties": 0,  # filled in by backfill_ties() after collection
 
             "team_a_name": team_a_info["name"],
             "team_a_manager": team_a_info["manager"],
@@ -310,6 +306,50 @@ def parse_matchups(data, season, league_name, league_key, week):
         })
 
     return results
+
+
+def backfill_ties(all_rows):
+    """
+    Infer tied categories for every matchup in a category league.
+
+    The Yahoo scoreboard endpoint returns the number of stat categories each
+    team WON that week via team_points.total (e.g. 8 and 5 in a 14-cat league).
+    Any categories that neither team won are ties:
+        ties = total_cats - team_a_cats - team_b_cats
+
+    Strategy:
+      1. For each league, find the highest (team_a + team_b) sum ever seen
+         across all its matchups — that maximum is the total category count.
+      2. Skip leagues where the max sum is 0 (points leagues store decimal
+         totals as strings, or the season had no data, e.g. COVID 2020).
+      3. For each matchup whose record values are both non-negative integers,
+         compute and set ties = max_cats - a - b  (floor at 0).
+    """
+    from collections import defaultdict
+
+    # Pass 1: determine total categories per league
+    league_max_cats = defaultdict(int)
+    for row in all_rows:
+        try:
+            a = int(row["team_a_record"])
+            b = int(row["team_b_record"])
+            league_max_cats[row["league_key"]] = max(
+                league_max_cats[row["league_key"]], a + b
+            )
+        except (ValueError, TypeError):
+            pass  # points league — decimal string, skip
+
+    # Pass 2: write ties
+    for row in all_rows:
+        max_cats = league_max_cats.get(row["league_key"], 0)
+        if max_cats == 0:
+            continue  # points league or no data
+        try:
+            a = int(row["team_a_record"])
+            b = int(row["team_b_record"])
+            row["ties"] = max(0, max_cats - a - b)
+        except (ValueError, TypeError):
+            pass
 
 
 def write_csv(rows):
@@ -384,6 +424,9 @@ def main():
             print("Done", flush=True)
 
         print(f'Finished {league["season"]} league.\n', flush=True)
+
+    print("Backfilling tied categories...", flush=True)
+    backfill_ties(all_rows)
 
     OUTPUT_JSON.write_text(
         json.dumps(all_rows, indent=2, ensure_ascii=False),

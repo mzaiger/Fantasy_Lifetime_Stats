@@ -130,45 +130,74 @@ def find_key_recursive(data, target_key):
 
 def extract_team_data(team_obj):
     """
-    Explicitly extracts team metadata and targeted matchup outcome categories 
-    (wins, losses, ties) from Yahoo's team structure.
+    Deep-crawls the team object structure to gather identity metadata 
+    and target precise category matchup totals or fallback values.
     """
     info = {
         "name": "",
         "manager": "",
-        "wins": "0",
-        "losses": "0",
-        "ties": "0"
+        "wins": None,
+        "losses": None,
+        "ties": None,
+        "points": None
     }
     
-    if isinstance(team_obj, list):
-        for item in team_obj:
-            # 1. Target the identity nested list block
-            if isinstance(item, list):
-                for subitem in item:
-                    if isinstance(subitem, dict):
-                        if "name" in subitem:
-                            info["name"] = subitem["name"]
-                        if "managers" in subitem:
-                            for m in subitem["managers"]:
-                                mgr = m.get("manager", {})
-                                if "nickname" in mgr:
-                                    info["manager"] = mgr["nickname"]
+    def walk(data):
+        if isinstance(data, dict):
+            # Extract basic identifiers
+            if "name" in data:
+                info["name"] = data["name"]
+            if "nickname" in data:
+                info["manager"] = data["nickname"]
             
-            # 2. Target the matchup category outcome blocks directly
-            elif isinstance(item, dict):
-                if "team_outcome" in item:
-                    totals = item["team_outcome"].get("outcome_totals", {})
-                    info["wins"] = str(totals.get("wins", 0))
-                    info["losses"] = str(totals.get("losses", 0))
-                    info["ties"] = str(totals.get("ties", 0))
-                elif "outcome_totals" in item:
-                    totals = item["outcome_totals"]
-                    info["wins"] = str(totals.get("wins", 0))
-                    info["losses"] = str(totals.get("losses", 0))
-                    info["ties"] = str(totals.get("ties", 0))
+            # Locate category outcome totals directly
+            if "outcome_totals" in data:
+                totals = data["outcome_totals"]
+                if isinstance(totals, dict):
+                    info["wins"] = totals.get("wins")
+                    info["losses"] = totals.get("losses")
+                    info["ties"] = totals.get("ties")
+            
+            # Locate team outcome wrappers containing totals
+            if "team_outcome" in data:
+                to = data["team_outcome"]
+                if isinstance(to, dict) and "outcome_totals" in to:
+                    totals = to["outcome_totals"]
+                    if isinstance(totals, dict):
+                        info["wins"] = totals.get("wins")
+                        info["losses"] = totals.get("losses")
+                        info["ties"] = totals.get("ties")
+
+            # Isolate team points specifically to prevent hitting total-stubs from game logs
+            if "team_points" in data:
+                tp = data["team_points"]
+                if isinstance(tp, dict) and "total" in tp:
+                    info["points"] = tp["total"]
                     
-    return info
+            for v in data.values():
+                walk(v)
+        elif isinstance(data, list):
+            for item in data:
+                walk(item)
+                
+    walk(team_obj)
+    
+    # Format the record dynamically based on the discovered category values
+    if info["wins"] is not None and info["losses"] is not None:
+        w = str(info["wins"])
+        l = str(info["losses"])
+        t = str(info["ties"] if info["ties"] is not None else "0")
+        record_str = f"{w}-{l}-{t}"
+    elif info["points"] is not None:
+        record_str = str(info["points"])
+    else:
+        record_str = "0-0-0"
+        
+    return {
+        "name": info["name"],
+        "manager": info["manager"],
+        "record": record_str
+    }
 
 
 def get_all_leagues(session):
@@ -245,11 +274,11 @@ def parse_matchups(data, season, league_name, league_key, week):
 
             "team_a_name": team_a_info["name"],
             "team_a_manager": team_a_info["manager"],
-            "team_a_record": f"{team_a_info['wins']}-{team_a_info['losses']}-{team_a_info['ties']}",
+            "team_a_record": team_a_info["record"],
 
             "team_b_name": team_b_info["name"],
             "team_b_manager": team_b_info["manager"],
-            "team_b_record": f"{team_b_info['wins']}-{team_b_info['losses']}-{team_b_info['ties']}",
+            "team_b_record": team_b_info["record"],
         })
 
     return results

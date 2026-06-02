@@ -154,9 +154,9 @@ def extract_team_data(team_obj):
             if "outcome_totals" in data:
                 totals = data["outcome_totals"]
                 if isinstance(totals, dict):
-                    info["wins"] = totals.get("wins")
-                    info["losses"] = totals.get("losses")
-                    info["ties"] = totals.get("ties")
+                    if "wins" in totals: info["wins"] = int(totals["wins"])
+                    if "losses" in totals: info["losses"] = int(totals["losses"])
+                    if "ties" in totals: info["ties"] = int(totals["ties"])
             
             # Locate team outcome wrappers containing totals
             if "team_outcome" in data:
@@ -164,9 +164,9 @@ def extract_team_data(team_obj):
                 if isinstance(to, dict) and "outcome_totals" in to:
                     totals = to["outcome_totals"]
                     if isinstance(totals, dict):
-                        info["wins"] = totals.get("wins")
-                        info["losses"] = totals.get("losses")
-                        info["ties"] = totals.get("ties")
+                        if "wins" in totals: info["wins"] = int(totals["wins"])
+                        if "losses" in totals: info["losses"] = int(totals["losses"])
+                        if "ties" in totals: info["ties"] = int(totals["ties"])
 
             # Isolate team points specifically to prevent hitting total-stubs from game logs
             if "team_points" in data:
@@ -182,21 +182,28 @@ def extract_team_data(team_obj):
                 
     walk(team_obj)
     
-    # Format the record dynamically based on the discovered category values
+    is_category = False
     if info["wins"] is not None and info["losses"] is not None:
-        w = str(info["wins"])
-        l = str(info["losses"])
-        t = str(info["ties"] if info["ties"] is not None else "0")
+        is_category = True
+        w = info["wins"]
+        l = info["losses"]
+        t = info["ties"] if info["ties"] is not None else 0
         record_str = f"{w}-{l}-{t}"
     elif info["points"] is not None:
         record_str = str(info["points"])
+        w, l, t = 0, 0, 0
     else:
         record_str = "0-0-0"
+        w, l, t = 0, 0, 0
         
     return {
         "name": info["name"],
         "manager": info["manager"],
-        "record": record_str
+        "record": record_str,
+        "is_category": is_category,
+        "wins": w,
+        "losses": l,
+        "ties": t
     }
 
 
@@ -266,11 +273,15 @@ def parse_matchups(data, season, league_name, league_key, week):
         team_a_info = extract_team_data(team_a_obj)
         team_b_info = extract_team_data(team_b_obj)
 
+        # Grab the explicit tie total for the matchup
+        ties_count = team_a_info["ties"] if team_a_info["is_category"] else 0
+
         results.append({
             "season": season,
             "week": week,
             "league_key": league_key,
             "league_name": league_name,
+            "ties": ties_count,
 
             "team_a_name": team_a_info["name"],
             "team_a_manager": team_a_info["manager"],
@@ -290,6 +301,7 @@ def write_csv(rows):
         "week",
         "league_key",
         "league_name",
+        "ties",
         "team_a_name",
         "team_a_manager",
         "team_a_record",

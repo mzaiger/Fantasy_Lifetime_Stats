@@ -27957,6 +27957,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,620,1780388372,add,Kazuma Okamoto,"1B,3B",add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,617,1780330306,drop,Kyle Teel,C,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,614,1780302500,add/drop,Eury Pérez,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,614,1780302500,drop,Lucas Giolito,SP,drop,0
@@ -28173,6 +28174,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"1B,2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,626,1780430796,drop,Brad Keller,RP,drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,613,1780302500,add/drop,Jack Dreyer,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,613,1780302500,drop,Ian Seymour,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,581,1779783632,add,Ian Seymour,"SP,RP",add,0
@@ -28414,6 +28416,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,618,1780388372,add/drop,Ryan O'Hearn,"1B,OF",add,3
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,618,1780388372,drop,Blaze Jordan,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,610,1780215625,add,Keider Montero,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,605,1780129192,add/drop,Joshua Baez,OF,add,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,605,1780129192,drop,Paul Goldschmidt,1B,drop,0
@@ -28455,6 +28459,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,619,1780388372,add/drop,Shane Drohan,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,619,1780388372,drop,Carmen Mlodzinski,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,580,1779783632,add,Seth Lugo,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,574,1779697611,add/drop,Justin Steele,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,574,1779697611,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
@@ -28520,6 +28526,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,622,1780388372,add/drop,Wilber Dotel,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,622,1780388372,drop,Daniel Palencia,RP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,621,1780388372,add/drop,Jeremy Peña,SS,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,621,1780388372,drop,Brayan Rocchio,"2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,607,1780129192,add/drop,Blaze Alexander,"2B,3B,SS,OF",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,607,1780129192,drop,Brett Baty,"1B,2B,3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,600,1780042741,add/drop,Colin Holderman,RP,add,0

@@ -56,16 +56,16 @@ def _load_token() -> dict | None:
 
 
 def get_session():
-session = OAuth2Session(
-    client_id=CLIENT_ID,
-    redirect_uri=REDIRECT_URI,
-    auto_refresh_url=TOKEN_URL,
-    auto_refresh_kwargs={
-        "client_id": CLIENT_ID,
-        "client_secret": CLIENT_SECRET
-    },
-    token_updater=_save_token,
-)
+    session = OAuth2Session(
+        client_id=CLIENT_ID,
+        redirect_uri=REDIRECT_URI,
+        auto_refresh_url=TOKEN_URL,
+        auto_refresh_kwargs={
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET
+        },
+        token_updater=_save_token,
+    )
 
     cached = _load_token()
 

@@ -14,7 +14,6 @@ import json
 import os
 import time
 import webbrowser
-from datetime import datetime
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
 
@@ -130,32 +129,45 @@ def find_key_recursive(data, target_key):
 
 
 def extract_team_data(team_obj):
-    """Recursively crawls the team object to gather metadata and weekly scores."""
+    """
+    Explicitly extracts team metadata and targeted matchup outcome categories 
+    (wins, losses, ties) from Yahoo's team structure.
+    """
     info = {
         "name": "",
         "manager": "",
-        "points": "",
-        "outcome": ""
+        "wins": "0",
+        "losses": "0",
+        "ties": "0"
     }
     
-    def walk(data):
-        if isinstance(data, dict):
-            if "name" in data:
-                info["name"] = data["name"]
-            if "nickname" in data:
-                info["manager"] = data["nickname"]
-            if "total" in data:
-                info["points"] = str(data["total"])
-            if "outcome" in data:
-                info["outcome"] = str(data["outcome"])
+    if isinstance(team_obj, list):
+        for item in team_obj:
+            # 1. Target the identity nested list block
+            if isinstance(item, list):
+                for subitem in item:
+                    if isinstance(subitem, dict):
+                        if "name" in subitem:
+                            info["name"] = subitem["name"]
+                        if "managers" in subitem:
+                            for m in subitem["managers"]:
+                                mgr = m.get("manager", {})
+                                if "nickname" in mgr:
+                                    info["manager"] = mgr["nickname"]
             
-            for v in data.values():
-                walk(v)
-        elif isinstance(data, list):
-            for item in data:
-                walk(item)
-                
-    walk(team_obj)
+            # 2. Target the matchup category outcome blocks directly
+            elif isinstance(item, dict):
+                if "team_outcome" in item:
+                    totals = item["team_outcome"].get("outcome_totals", {})
+                    info["wins"] = str(totals.get("wins", 0))
+                    info["losses"] = str(totals.get("losses", 0))
+                    info["ties"] = str(totals.get("ties", 0))
+                elif "outcome_totals" in item:
+                    totals = item["outcome_totals"]
+                    info["wins"] = str(totals.get("wins", 0))
+                    info["losses"] = str(totals.get("losses", 0))
+                    info["ties"] = str(totals.get("ties", 0))
+                    
     return info
 
 
@@ -225,19 +237,6 @@ def parse_matchups(data, season, league_name, league_key, week):
         team_a_info = extract_team_data(team_a_obj)
         team_b_info = extract_team_data(team_b_obj)
 
-        # Construct highly readable weekly matchup record lines based on league types
-        rec_a = team_a_info["points"]
-        if team_a_info["outcome"]:
-            rec_a = f'{rec_a} ({team_a_info["outcome"].capitalize()})' if rec_a else team_a_info["outcome"].capitalize()
-        if not rec_a: 
-            rec_a = "0"
-
-        rec_b = team_b_info["points"]
-        if team_b_info["outcome"]:
-            rec_b = f'{rec_b} ({team_b_info["outcome"].capitalize()})' if rec_b else team_b_info["outcome"].capitalize()
-        if not rec_b: 
-            rec_b = "0"
-
         results.append({
             "season": season,
             "week": week,
@@ -246,11 +245,11 @@ def parse_matchups(data, season, league_name, league_key, week):
 
             "team_a_name": team_a_info["name"],
             "team_a_manager": team_a_info["manager"],
-            "team_a_record": rec_a,
+            "team_a_record": f"{team_a_info['wins']}-{team_a_info['losses']}-{team_a_info['ties']}",
 
             "team_b_name": team_b_info["name"],
             "team_b_manager": team_b_info["manager"],
-            "team_b_record": rec_b,
+            "team_b_record": f"{team_b_info['wins']}-{team_b_info['losses']}-{team_b_info['ties']}",
         })
 
     return results

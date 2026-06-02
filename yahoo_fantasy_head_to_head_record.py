@@ -219,25 +219,6 @@ def parse_matchups(data, season, league_name, league_key, week):
             teams_block.get("1", {}).get("team", [])
         )
 
-        team_a_categories = []
-        team_b_categories = []
-
-        stat_winners = matchup_meta.get("stat_winners", {})
-
-        for s in stat_winners.get("stats", []):
-            stat = s.get("stat", {})
-
-            stat_name = stat.get("display_name") or stat.get("name")
-            winner_team_key = stat.get("winner_team_key")
-
-            if not stat_name:
-                continue
-
-            if winner_team_key == team_a["team_key"]:
-                team_a_categories.append(stat_name)
-            elif winner_team_key == team_b["team_key"]:
-                team_b_categories.append(stat_name)
-
         results.append({
             "season": season,
             "week": week,
@@ -252,16 +233,6 @@ def parse_matchups(data, season, league_name, league_key, week):
             "team_b_name": team_b["team_name"],
             "team_b_manager": team_b["manager"],
             "team_b_record": f'{team_b["wins"]}-{team_b["losses"]}-{team_b["ties"]}',
-
-            "team_a_categories_won": team_a_categories,
-            "team_b_categories_won": team_b_categories,
-
-            "team_a_category_wins": len(team_a_categories),
-            "team_b_category_wins": len(team_b_categories),
-            "category_ties": max(
-                0,
-                15 - len(team_a_categories) - len(team_b_categories)
-            )
         })
 
     return results
@@ -280,11 +251,6 @@ def write_csv(rows):
         "team_b_name",
         "team_b_manager",
         "team_b_record",
-        "team_a_category_wins",
-        "team_b_category_wins",
-        "category_ties",
-        "team_a_categories_won",
-        "team_b_categories_won",
     ]
 
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
@@ -292,9 +258,6 @@ def write_csv(rows):
         writer.writeheader()
 
         for row in rows:
-            row = row.copy()
-            row["team_a_categories_won"] = ", ".join(row["team_a_categories_won"])
-            row["team_b_categories_won"] = ", ".join(row["team_b_categories_won"])
             writer.writerow(row)
 
 

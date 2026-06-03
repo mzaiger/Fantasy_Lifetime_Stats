@@ -1,40 +1,40 @@
 season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,manager_b_record
 2005,1,113.l.199100,Heritage League,0,Scott,6,--hidden--,4
-2005,1,113.l.199100,Heritage League,0,The Wizard,6,--hidden--,4
+2005,1,113.l.199100,Heritage League,0,The Wizard,6,-- hidden --,4
 2005,1,113.l.199100,Heritage League,0,-- hidden --,7,M Z,3
 2005,1,113.l.199100,Heritage League,0,Dan,3,Nikolai Khabibulin,7
 2005,1,113.l.199100,Heritage League,1,Kevo,2,Chris Gaul,7
 2005,2,113.l.199100,Heritage League,1,Scott,4,The Wizard,5
 2005,2,113.l.199100,Heritage League,1,--hidden--,5,Chris Gaul,4
-2005,2,113.l.199100,Heritage League,0,-- hidden --,5,--hidden--,5
+2005,2,113.l.199100,Heritage League,0,-- hidden --,5,-- hidden --,5
 2005,2,113.l.199100,Heritage League,1,Dan,3,M Z,6
 2005,2,113.l.199100,Heritage League,1,Kevo,6,Nikolai Khabibulin,3
 2005,3,113.l.199100,Heritage League,1,Scott,2,-- hidden --,7
 2005,3,113.l.199100,Heritage League,1,--hidden--,2,The Wizard,7
-2005,3,113.l.199100,Heritage League,0,Dan,6,--hidden--,4
+2005,3,113.l.199100,Heritage League,0,Dan,6,-- hidden --,4
 2005,3,113.l.199100,Heritage League,0,Kevo,5,M Z,5
 2005,3,113.l.199100,Heritage League,1,Nikolai Khabibulin,5,Chris Gaul,4
 2005,4,113.l.199100,Heritage League,1,Scott,5,Dan,4
 2005,4,113.l.199100,Heritage League,1,--hidden--,4,-- hidden --,5
 2005,4,113.l.199100,Heritage League,1,The Wizard,4,Chris Gaul,5
-2005,4,113.l.199100,Heritage League,0,Kevo,9,--hidden--,1
+2005,4,113.l.199100,Heritage League,0,Kevo,9,-- hidden --,1
 2005,4,113.l.199100,Heritage League,1,Nikolai Khabibulin,1,M Z,8
 2005,5,113.l.199100,Heritage League,0,Scott,6,Kevo,4
 2005,5,113.l.199100,Heritage League,0,--hidden--,2,Dan,8
 2005,5,113.l.199100,Heritage League,1,The Wizard,4,-- hidden --,5
-2005,5,113.l.199100,Heritage League,0,Nikolai Khabibulin,9,--hidden--,1
+2005,5,113.l.199100,Heritage League,0,Nikolai Khabibulin,9,-- hidden --,1
 2005,5,113.l.199100,Heritage League,0,M Z,2,Chris Gaul,8
 2005,6,113.l.199100,Heritage League,1,Scott,6,Nikolai Khabibulin,3
 2005,6,113.l.199100,Heritage League,1,--hidden--,4,Kevo,5
 2005,6,113.l.199100,Heritage League,2,The Wizard,6,Dan,2
 2005,6,113.l.199100,Heritage League,1,-- hidden --,5,Chris Gaul,4
-2005,6,113.l.199100,Heritage League,2,M Z,5,--hidden--,3
+2005,6,113.l.199100,Heritage League,2,M Z,5,-- hidden --,3
 2005,7,113.l.199100,Heritage League,0,Scott,5,M Z,5
 2005,7,113.l.199100,Heritage League,1,--hidden--,6,Nikolai Khabibulin,3
 2005,7,113.l.199100,Heritage League,2,The Wizard,8,Kevo,0
 2005,7,113.l.199100,Heritage League,2,-- hidden --,4,Dan,4
-2005,7,113.l.199100,Heritage League,1,--hidden--,2,Chris Gaul,7
-2005,8,113.l.199100,Heritage League,0,Scott,7,--hidden--,3
+2005,7,113.l.199100,Heritage League,1,-- hidden --,2,Chris Gaul,7
+2005,8,113.l.199100,Heritage League,0,Scott,7,-- hidden --,3
 2005,8,113.l.199100,Heritage League,0,--hidden--,6,M Z,4
 2005,8,113.l.199100,Heritage League,1,The Wizard,7,Nikolai Khabibulin,2
 2005,8,113.l.199100,Heritage League,1,-- hidden --,1,Kevo,8
@@ -44,41 +44,41 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2005,9,113.l.199100,Heritage League,0,-- hidden --,2,Nikolai Khabibulin,8
 2005,9,113.l.199100,Heritage League,1,Dan,3,Kevo,6
 2005,10,113.l.199100,Heritage League,1,Scott,5,--hidden--,4
-2005,10,113.l.199100,Heritage League,0,The Wizard,9,--hidden--,1
+2005,10,113.l.199100,Heritage League,0,The Wizard,9,-- hidden --,1
 2005,10,113.l.199100,Heritage League,0,-- hidden --,7,M Z,3
 2005,10,113.l.199100,Heritage League,3,Dan,1,Nikolai Khabibulin,6
 2005,10,113.l.199100,Heritage League,2,Kevo,2,Chris Gaul,6
 2005,11,113.l.199100,Heritage League,1,Scott,3,The Wizard,6
 2005,11,113.l.199100,Heritage League,1,--hidden--,5,Chris Gaul,4
-2005,11,113.l.199100,Heritage League,2,-- hidden --,5,--hidden--,3
+2005,11,113.l.199100,Heritage League,2,-- hidden --,5,-- hidden --,3
 2005,11,113.l.199100,Heritage League,1,Dan,8,M Z,1
 2005,11,113.l.199100,Heritage League,1,Kevo,4,Nikolai Khabibulin,5
 2005,12,113.l.199100,Heritage League,1,Scott,5,-- hidden --,4
 2005,12,113.l.199100,Heritage League,0,--hidden--,3,The Wizard,7
-2005,12,113.l.199100,Heritage League,1,Dan,5,--hidden--,4
+2005,12,113.l.199100,Heritage League,1,Dan,5,-- hidden --,4
 2005,12,113.l.199100,Heritage League,0,Kevo,3,M Z,7
 2005,12,113.l.199100,Heritage League,0,Nikolai Khabibulin,5,Chris Gaul,5
 2005,13,113.l.199100,Heritage League,0,Scott,6,Dan,4
 2005,13,113.l.199100,Heritage League,1,--hidden--,6,-- hidden --,3
 2005,13,113.l.199100,Heritage League,1,The Wizard,5,Chris Gaul,4
-2005,13,113.l.199100,Heritage League,0,Kevo,7,--hidden--,3
+2005,13,113.l.199100,Heritage League,0,Kevo,7,-- hidden --,3
 2005,13,113.l.199100,Heritage League,0,Nikolai Khabibulin,3,M Z,7
 2005,14,113.l.199100,Heritage League,0,Scott,3,Kevo,7
 2005,14,113.l.199100,Heritage League,0,--hidden--,7,Dan,3
 2005,14,113.l.199100,Heritage League,0,The Wizard,7,-- hidden --,3
-2005,14,113.l.199100,Heritage League,1,Nikolai Khabibulin,9,--hidden--,0
+2005,14,113.l.199100,Heritage League,1,Nikolai Khabibulin,9,-- hidden --,0
 2005,14,113.l.199100,Heritage League,0,M Z,4,Chris Gaul,6
 2005,15,113.l.199100,Heritage League,0,Scott,0,Nikolai Khabibulin,10
 2005,15,113.l.199100,Heritage League,1,--hidden--,4,Kevo,5
 2005,15,113.l.199100,Heritage League,0,The Wizard,2,Dan,8
 2005,15,113.l.199100,Heritage League,1,-- hidden --,2,Chris Gaul,7
-2005,15,113.l.199100,Heritage League,0,M Z,6,--hidden--,4
+2005,15,113.l.199100,Heritage League,0,M Z,6,-- hidden --,4
 2005,16,113.l.199100,Heritage League,0,Scott,6,M Z,4
 2005,16,113.l.199100,Heritage League,0,--hidden--,7,Nikolai Khabibulin,3
 2005,16,113.l.199100,Heritage League,1,The Wizard,4,Kevo,5
 2005,16,113.l.199100,Heritage League,2,-- hidden --,5,Dan,3
-2005,16,113.l.199100,Heritage League,1,--hidden--,5,Chris Gaul,4
-2005,17,113.l.199100,Heritage League,0,Scott,7,--hidden--,3
+2005,16,113.l.199100,Heritage League,1,-- hidden --,5,Chris Gaul,4
+2005,17,113.l.199100,Heritage League,0,Scott,7,-- hidden --,3
 2005,17,113.l.199100,Heritage League,0,--hidden--,7,M Z,3
 2005,17,113.l.199100,Heritage League,0,The Wizard,7,Nikolai Khabibulin,3
 2005,17,113.l.199100,Heritage League,0,-- hidden --,3,Kevo,7
@@ -88,24 +88,24 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2005,18,113.l.199100,Heritage League,0,-- hidden --,3,Nikolai Khabibulin,7
 2005,18,113.l.199100,Heritage League,0,Dan,5,Kevo,5
 2005,19,113.l.199100,Heritage League,0,Scott,1,--hidden--,9
-2005,19,113.l.199100,Heritage League,0,The Wizard,10,--hidden--,0
+2005,19,113.l.199100,Heritage League,0,The Wizard,10,-- hidden --,0
 2005,19,113.l.199100,Heritage League,1,-- hidden --,3,M Z,6
 2005,19,113.l.199100,Heritage League,0,Dan,3,Nikolai Khabibulin,7
 2005,19,113.l.199100,Heritage League,2,Kevo,2,Chris Gaul,6
 2005,20,113.l.199100,Heritage League,0,Scott,6,The Wizard,4
 2005,20,113.l.199100,Heritage League,0,--hidden--,7,Chris Gaul,3
-2005,20,113.l.199100,Heritage League,1,-- hidden --,8,--hidden--,1
+2005,20,113.l.199100,Heritage League,1,-- hidden --,8,-- hidden --,1
 2005,20,113.l.199100,Heritage League,1,Dan,6,M Z,3
 2005,20,113.l.199100,Heritage League,1,Kevo,3,Nikolai Khabibulin,6
 2005,21,113.l.199100,Heritage League,0,Scott,5,-- hidden --,5
 2005,21,113.l.199100,Heritage League,1,--hidden--,3,The Wizard,6
-2005,21,113.l.199100,Heritage League,1,Dan,5,--hidden--,4
+2005,21,113.l.199100,Heritage League,1,Dan,5,-- hidden --,4
 2005,21,113.l.199100,Heritage League,1,Kevo,4,M Z,5
 2005,21,113.l.199100,Heritage League,0,Nikolai Khabibulin,2,Chris Gaul,8
 2005,22,113.l.199100,Heritage League,1,Scott,5,Dan,4
 2005,22,113.l.199100,Heritage League,1,--hidden--,7,-- hidden --,2
 2005,22,113.l.199100,Heritage League,1,The Wizard,2,Chris Gaul,7
-2005,22,113.l.199100,Heritage League,1,Kevo,8,--hidden--,1
+2005,22,113.l.199100,Heritage League,1,Kevo,8,-- hidden --,1
 2005,22,113.l.199100,Heritage League,0,Nikolai Khabibulin,7,M Z,3
 2005,23,113.l.199100,Heritage League,0,Scott,4,--hidden--,6
 2005,23,113.l.199100,Heritage League,2,Kevo,3,Nikolai Khabibulin,5
@@ -113,59 +113,59 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2005,24,113.l.199100,Heritage League,0,--hidden--,4,Chris Gaul,6
 2005,24,113.l.199100,Heritage League,0,The Wizard,5,Nikolai Khabibulin,5
 2005,24,113.l.199100,Heritage League,1,-- hidden --,7,M Z,2
-2005,24,113.l.199100,Heritage League,0,Dan,7,--hidden--,3
+2005,24,113.l.199100,Heritage League,0,Dan,7,-- hidden --,3
 2005,25,113.l.199100,Heritage League,1,--hidden--,7,The Wizard,2
 2005,25,113.l.199100,Heritage League,1,-- hidden --,8,Dan,1
 2005,25,113.l.199100,Heritage League,0,Nikolai Khabibulin,7,Chris Gaul,3
-2005,25,113.l.199100,Heritage League,0,M Z,10,--hidden--,0
+2005,25,113.l.199100,Heritage League,0,M Z,10,-- hidden --,0
 2005,1,113.l.232958,Pimps & Hos,2,Kevo,1,--hidden--,9
-2005,1,113.l.232958,Pimps & Hos,0,--hidden--,5,Nikolai Khabibulin,7
-2005,1,113.l.232958,Pimps & Hos,1,The Wizard,4,--hidden--,7
-2005,1,113.l.232958,Pimps & Hos,1,Chris Gaul,5,--hidden--,6
+2005,1,113.l.232958,Pimps & Hos,0,-- hidden --,5,Nikolai Khabibulin,7
+2005,1,113.l.232958,Pimps & Hos,1,The Wizard,4,-- hidden --,7
+2005,1,113.l.232958,Pimps & Hos,1,Chris Gaul,5,-- hidden --,6
 2005,1,113.l.232958,Pimps & Hos,0,-- hidden --,7,Weazy,5
 2005,1,113.l.232958,Pimps & Hos,0,Brian,11,M Z,1
-2005,2,113.l.232958,Pimps & Hos,0,Kevo,6,--hidden--,6
+2005,2,113.l.232958,Pimps & Hos,0,Kevo,6,-- hidden --,6
 2005,2,113.l.232958,Pimps & Hos,2,--hidden--,7,M Z,3
 2005,2,113.l.232958,Pimps & Hos,1,The Wizard,3,Nikolai Khabibulin,8
-2005,2,113.l.232958,Pimps & Hos,1,Chris Gaul,5,--hidden--,6
-2005,2,113.l.232958,Pimps & Hos,1,-- hidden --,7,--hidden--,4
+2005,2,113.l.232958,Pimps & Hos,1,Chris Gaul,5,-- hidden --,6
+2005,2,113.l.232958,Pimps & Hos,1,-- hidden --,7,-- hidden --,4
 2005,2,113.l.232958,Pimps & Hos,1,Brian,2,Weazy,9
 2005,3,113.l.232958,Pimps & Hos,2,Kevo,4,The Wizard,6
 2005,3,113.l.232958,Pimps & Hos,1,Chris Gaul,3,Nikolai Khabibulin,8
-2005,3,113.l.232958,Pimps & Hos,2,-- hidden --,5,--hidden--,5
-2005,3,113.l.232958,Pimps & Hos,1,Brian,0,--hidden--,11
+2005,3,113.l.232958,Pimps & Hos,2,-- hidden --,5,-- hidden --,5
+2005,3,113.l.232958,Pimps & Hos,1,Brian,0,-- hidden --,11
 2005,3,113.l.232958,Pimps & Hos,1,Weazy,5,M Z,6
 2005,4,113.l.232958,Pimps & Hos,0,Kevo,5,Chris Gaul,7
 2005,4,113.l.232958,Pimps & Hos,0,--hidden--,8,The Wizard,4
-2005,4,113.l.232958,Pimps & Hos,0,--hidden--,11,M Z,1
+2005,4,113.l.232958,Pimps & Hos,0,-- hidden --,11,M Z,1
 2005,4,113.l.232958,Pimps & Hos,0,-- hidden --,2,Nikolai Khabibulin,10
-2005,4,113.l.232958,Pimps & Hos,1,Brian,9,--hidden--,2
-2005,4,113.l.232958,Pimps & Hos,0,Weazy,10,--hidden--,2
+2005,4,113.l.232958,Pimps & Hos,1,Brian,9,-- hidden --,2
+2005,4,113.l.232958,Pimps & Hos,0,Weazy,10,-- hidden --,2
 2005,5,113.l.232958,Pimps & Hos,1,Kevo,9,-- hidden --,2
 2005,5,113.l.232958,Pimps & Hos,0,--hidden--,11,Chris Gaul,1
-2005,5,113.l.232958,Pimps & Hos,1,--hidden--,8,The Wizard,3
+2005,5,113.l.232958,Pimps & Hos,1,-- hidden --,8,The Wizard,3
 2005,5,113.l.232958,Pimps & Hos,0,Brian,4,Nikolai Khabibulin,8
-2005,5,113.l.232958,Pimps & Hos,0,Weazy,12,--hidden--,0
-2005,5,113.l.232958,Pimps & Hos,0,--hidden--,7,M Z,5
+2005,5,113.l.232958,Pimps & Hos,0,Weazy,12,-- hidden --,0
+2005,5,113.l.232958,Pimps & Hos,0,-- hidden --,7,M Z,5
 2005,6,113.l.232958,Pimps & Hos,0,Kevo,4,Brian,8
 2005,6,113.l.232958,Pimps & Hos,0,--hidden--,11,-- hidden --,1
-2005,6,113.l.232958,Pimps & Hos,1,--hidden--,7,Chris Gaul,4
+2005,6,113.l.232958,Pimps & Hos,1,-- hidden --,7,Chris Gaul,4
 2005,6,113.l.232958,Pimps & Hos,2,The Wizard,3,M Z,7
 2005,6,113.l.232958,Pimps & Hos,1,Weazy,2,Nikolai Khabibulin,9
 2005,7,113.l.232958,Pimps & Hos,0,Kevo,9,Weazy,3
 2005,7,113.l.232958,Pimps & Hos,1,--hidden--,5,Brian,6
-2005,7,113.l.232958,Pimps & Hos,0,--hidden--,5,-- hidden --,7
+2005,7,113.l.232958,Pimps & Hos,0,-- hidden --,5,-- hidden --,7
 2005,7,113.l.232958,Pimps & Hos,0,The Wizard,10,Chris Gaul,2
-2005,7,113.l.232958,Pimps & Hos,1,--hidden--,6,Nikolai Khabibulin,5
-2005,7,113.l.232958,Pimps & Hos,1,--hidden--,10,M Z,1
-2005,8,113.l.232958,Pimps & Hos,0,Kevo,10,--hidden--,2
+2005,7,113.l.232958,Pimps & Hos,1,-- hidden --,6,Nikolai Khabibulin,5
+2005,7,113.l.232958,Pimps & Hos,1,-- hidden --,10,M Z,1
+2005,8,113.l.232958,Pimps & Hos,0,Kevo,10,-- hidden --,2
 2005,8,113.l.232958,Pimps & Hos,3,--hidden--,6,Weazy,3
-2005,8,113.l.232958,Pimps & Hos,2,--hidden--,6,Brian,4
+2005,8,113.l.232958,Pimps & Hos,2,-- hidden --,6,Brian,4
 2005,8,113.l.232958,Pimps & Hos,0,The Wizard,9,-- hidden --,3
 2005,8,113.l.232958,Pimps & Hos,1,Chris Gaul,9,M Z,2
-2005,8,113.l.232958,Pimps & Hos,0,--hidden--,4,Nikolai Khabibulin,8
-2005,9,113.l.232958,Pimps & Hos,0,Kevo,10,--hidden--,2
-2005,9,113.l.232958,Pimps & Hos,1,--hidden--,9,Weazy,2
+2005,8,113.l.232958,Pimps & Hos,0,-- hidden --,4,Nikolai Khabibulin,8
+2005,9,113.l.232958,Pimps & Hos,0,Kevo,10,-- hidden --,2
+2005,9,113.l.232958,Pimps & Hos,1,-- hidden --,9,Weazy,2
 2005,9,113.l.232958,Pimps & Hos,0,The Wizard,6,Brian,6
 2005,9,113.l.232958,Pimps & Hos,0,Chris Gaul,10,-- hidden --,2
 2005,9,113.l.232958,Pimps & Hos,0,Nikolai Khabibulin,7,M Z,5
@@ -175,57 +175,57 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2005,10,113.l.232958,Pimps & Hos,0,-- hidden --,6,M Z,6
 2005,11,113.l.232958,Pimps & Hos,2,Kevo,7,M Z,3
 2005,11,113.l.232958,Pimps & Hos,0,--hidden--,6,Nikolai Khabibulin,6
-2005,11,113.l.232958,Pimps & Hos,1,The Wizard,9,--hidden--,2
+2005,11,113.l.232958,Pimps & Hos,1,The Wizard,9,-- hidden --,2
 2005,11,113.l.232958,Pimps & Hos,2,Chris Gaul,5,Weazy,5
 2005,11,113.l.232958,Pimps & Hos,1,-- hidden --,6,Brian,5
 2005,12,113.l.232958,Pimps & Hos,0,Kevo,9,--hidden--,3
-2005,12,113.l.232958,Pimps & Hos,1,--hidden--,3,Nikolai Khabibulin,8
-2005,12,113.l.232958,Pimps & Hos,2,The Wizard,6,--hidden--,4
-2005,12,113.l.232958,Pimps & Hos,0,Chris Gaul,9,--hidden--,3
+2005,12,113.l.232958,Pimps & Hos,1,-- hidden --,3,Nikolai Khabibulin,8
+2005,12,113.l.232958,Pimps & Hos,2,The Wizard,6,-- hidden --,4
+2005,12,113.l.232958,Pimps & Hos,0,Chris Gaul,9,-- hidden --,3
 2005,12,113.l.232958,Pimps & Hos,1,-- hidden --,1,Weazy,10
 2005,12,113.l.232958,Pimps & Hos,0,Brian,11,M Z,1
-2005,13,113.l.232958,Pimps & Hos,0,Kevo,8,--hidden--,4
+2005,13,113.l.232958,Pimps & Hos,0,Kevo,8,-- hidden --,4
 2005,13,113.l.232958,Pimps & Hos,2,--hidden--,9,M Z,1
 2005,13,113.l.232958,Pimps & Hos,0,The Wizard,9,Nikolai Khabibulin,3
-2005,13,113.l.232958,Pimps & Hos,0,Chris Gaul,6,--hidden--,6
-2005,13,113.l.232958,Pimps & Hos,1,-- hidden --,3,--hidden--,8
+2005,13,113.l.232958,Pimps & Hos,0,Chris Gaul,6,-- hidden --,6
+2005,13,113.l.232958,Pimps & Hos,1,-- hidden --,3,-- hidden --,8
 2005,13,113.l.232958,Pimps & Hos,0,Brian,5,Weazy,7
 2005,14,113.l.232958,Pimps & Hos,2,Kevo,2,The Wizard,8
 2005,14,113.l.232958,Pimps & Hos,0,Chris Gaul,3,Nikolai Khabibulin,9
-2005,14,113.l.232958,Pimps & Hos,0,-- hidden --,6,--hidden--,6
-2005,14,113.l.232958,Pimps & Hos,0,Brian,5,--hidden--,7
+2005,14,113.l.232958,Pimps & Hos,0,-- hidden --,6,-- hidden --,6
+2005,14,113.l.232958,Pimps & Hos,0,Brian,5,-- hidden --,7
 2005,14,113.l.232958,Pimps & Hos,1,Weazy,11,M Z,0
 2005,15,113.l.232958,Pimps & Hos,1,Kevo,2,Chris Gaul,9
 2005,15,113.l.232958,Pimps & Hos,0,--hidden--,7,The Wizard,5
-2005,15,113.l.232958,Pimps & Hos,1,--hidden--,3,M Z,8
+2005,15,113.l.232958,Pimps & Hos,1,-- hidden --,3,M Z,8
 2005,15,113.l.232958,Pimps & Hos,0,-- hidden --,7,Nikolai Khabibulin,5
-2005,15,113.l.232958,Pimps & Hos,2,Brian,7,--hidden--,3
-2005,15,113.l.232958,Pimps & Hos,0,Weazy,7,--hidden--,5
+2005,15,113.l.232958,Pimps & Hos,2,Brian,7,-- hidden --,3
+2005,15,113.l.232958,Pimps & Hos,0,Weazy,7,-- hidden --,5
 2005,16,113.l.232958,Pimps & Hos,1,Kevo,9,-- hidden --,2
 2005,16,113.l.232958,Pimps & Hos,2,--hidden--,10,Chris Gaul,0
-2005,16,113.l.232958,Pimps & Hos,0,--hidden--,8,The Wizard,4
+2005,16,113.l.232958,Pimps & Hos,0,-- hidden --,8,The Wizard,4
 2005,16,113.l.232958,Pimps & Hos,1,Brian,6,Nikolai Khabibulin,5
-2005,16,113.l.232958,Pimps & Hos,1,Weazy,8,--hidden--,3
-2005,16,113.l.232958,Pimps & Hos,1,--hidden--,4,M Z,7
+2005,16,113.l.232958,Pimps & Hos,1,Weazy,8,-- hidden --,3
+2005,16,113.l.232958,Pimps & Hos,1,-- hidden --,4,M Z,7
 2005,17,113.l.232958,Pimps & Hos,0,Kevo,5,Brian,7
 2005,17,113.l.232958,Pimps & Hos,1,--hidden--,6,-- hidden --,5
-2005,17,113.l.232958,Pimps & Hos,0,--hidden--,3,Chris Gaul,9
+2005,17,113.l.232958,Pimps & Hos,0,-- hidden --,3,Chris Gaul,9
 2005,17,113.l.232958,Pimps & Hos,0,The Wizard,12,M Z,0
 2005,17,113.l.232958,Pimps & Hos,1,Weazy,9,Nikolai Khabibulin,2
 2005,18,113.l.232958,Pimps & Hos,0,Kevo,5,Weazy,7
 2005,18,113.l.232958,Pimps & Hos,0,--hidden--,11,Brian,1
-2005,18,113.l.232958,Pimps & Hos,0,--hidden--,10,-- hidden --,2
+2005,18,113.l.232958,Pimps & Hos,0,-- hidden --,10,-- hidden --,2
 2005,18,113.l.232958,Pimps & Hos,2,The Wizard,10,Chris Gaul,0
-2005,18,113.l.232958,Pimps & Hos,1,--hidden--,3,Nikolai Khabibulin,8
-2005,18,113.l.232958,Pimps & Hos,2,--hidden--,10,M Z,0
-2005,19,113.l.232958,Pimps & Hos,0,Kevo,7,--hidden--,5
+2005,18,113.l.232958,Pimps & Hos,1,-- hidden --,3,Nikolai Khabibulin,8
+2005,18,113.l.232958,Pimps & Hos,2,-- hidden --,10,M Z,0
+2005,19,113.l.232958,Pimps & Hos,0,Kevo,7,-- hidden --,5
 2005,19,113.l.232958,Pimps & Hos,1,--hidden--,4,Weazy,7
-2005,19,113.l.232958,Pimps & Hos,2,--hidden--,2,Brian,8
+2005,19,113.l.232958,Pimps & Hos,2,-- hidden --,2,Brian,8
 2005,19,113.l.232958,Pimps & Hos,1,The Wizard,9,-- hidden --,2
 2005,19,113.l.232958,Pimps & Hos,0,Chris Gaul,5,M Z,7
-2005,19,113.l.232958,Pimps & Hos,1,--hidden--,2,Nikolai Khabibulin,9
-2005,20,113.l.232958,Pimps & Hos,2,Kevo,7,--hidden--,3
-2005,20,113.l.232958,Pimps & Hos,0,--hidden--,7,Weazy,5
+2005,19,113.l.232958,Pimps & Hos,1,-- hidden --,2,Nikolai Khabibulin,9
+2005,20,113.l.232958,Pimps & Hos,2,Kevo,7,-- hidden --,3
+2005,20,113.l.232958,Pimps & Hos,0,-- hidden --,7,Weazy,5
 2005,20,113.l.232958,Pimps & Hos,0,The Wizard,3,Brian,9
 2005,20,113.l.232958,Pimps & Hos,0,Chris Gaul,8,-- hidden --,4
 2005,20,113.l.232958,Pimps & Hos,0,Nikolai Khabibulin,9,M Z,3
@@ -235,181 +235,181 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2005,21,113.l.232958,Pimps & Hos,2,-- hidden --,3,M Z,7
 2005,22,113.l.232958,Pimps & Hos,0,Kevo,11,M Z,1
 2005,22,113.l.232958,Pimps & Hos,3,--hidden--,2,Nikolai Khabibulin,7
-2005,22,113.l.232958,Pimps & Hos,1,The Wizard,3,--hidden--,8
+2005,22,113.l.232958,Pimps & Hos,1,The Wizard,3,-- hidden --,8
 2005,22,113.l.232958,Pimps & Hos,0,Chris Gaul,11,Weazy,1
 2005,22,113.l.232958,Pimps & Hos,1,-- hidden --,5,Brian,6
-2005,23,113.l.232958,Pimps & Hos,0,Kevo,9,--hidden--,3
+2005,23,113.l.232958,Pimps & Hos,0,Kevo,9,-- hidden --,3
 2005,23,113.l.232958,Pimps & Hos,1,The Wizard,7,Weazy,4
-2005,23,113.l.232958,Pimps & Hos,1,-- hidden --,9,--hidden--,2
-2005,23,113.l.232958,Pimps & Hos,1,--hidden--,10,M Z,1
+2005,23,113.l.232958,Pimps & Hos,1,-- hidden --,9,-- hidden --,2
+2005,23,113.l.232958,Pimps & Hos,1,-- hidden --,10,M Z,1
 2005,24,113.l.232958,Pimps & Hos,0,Kevo,7,Nikolai Khabibulin,5
 2005,24,113.l.232958,Pimps & Hos,1,--hidden--,11,The Wizard,0
-2005,24,113.l.232958,Pimps & Hos,0,--hidden--,5,Weazy,7
-2005,24,113.l.232958,Pimps & Hos,0,Chris Gaul,5,--hidden--,7
+2005,24,113.l.232958,Pimps & Hos,0,-- hidden --,5,Weazy,7
+2005,24,113.l.232958,Pimps & Hos,0,Chris Gaul,5,-- hidden --,7
 2005,24,113.l.232958,Pimps & Hos,1,-- hidden --,3,Brian,8
-2005,24,113.l.232958,Pimps & Hos,1,--hidden--,7,M Z,4
+2005,24,113.l.232958,Pimps & Hos,1,-- hidden --,7,M Z,4
 2005,25,113.l.232958,Pimps & Hos,0,Kevo,4,--hidden--,8
 2005,25,113.l.232958,Pimps & Hos,0,The Wizard,3,Nikolai Khabibulin,9
 2005,25,113.l.232958,Pimps & Hos,0,Chris Gaul,8,-- hidden --,4
-2005,25,113.l.232958,Pimps & Hos,2,Brian,6,--hidden--,4
+2005,25,113.l.232958,Pimps & Hos,2,Brian,6,-- hidden --,4
 2006,1,147.l.322066,Nulnet Sucks Ass,1,The Wizard,7,Weazy,2
 2006,1,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,3,Nikolai Khabibulin,7
 2006,1,147.l.322066,Nulnet Sucks Ass,0,chris,10,-- hidden --,0
 2006,1,147.l.322066,Nulnet Sucks Ass,0,DiZzY,7,Dan,3
 2006,1,147.l.322066,Nulnet Sucks Ass,0,Kevo,0,-- hidden --,10
 2006,2,147.l.322066,Nulnet Sucks Ass,0,The Wizard,9,Chris Gaul,1
-2006,2,147.l.322066,Nulnet Sucks Ass,0,Weazy,10,M Z,0
+2006,2,147.l.322066,Nulnet Sucks Ass,0,Weazy,10,-- hidden --,0
 2006,2,147.l.322066,Nulnet Sucks Ass,0,chris,5,Nikolai Khabibulin,5
 2006,2,147.l.322066,Nulnet Sucks Ass,1,DiZzY,4,-- hidden --,5
 2006,2,147.l.322066,Nulnet Sucks Ass,0,Kevo,3,Dan,7
-2006,2,147.l.322066,Nulnet Sucks Ass,1,-- hidden --,2,-- hidden --,7
+2006,2,147.l.322066,Nulnet Sucks Ass,1,M Z,2,-- hidden --,7
 2006,3,147.l.322066,Nulnet Sucks Ass,2,The Wizard,4,chris,4
 2006,3,147.l.322066,Nulnet Sucks Ass,1,Weazy,4,Chris Gaul,5
 2006,3,147.l.322066,Nulnet Sucks Ass,0,DiZzY,3,Nikolai Khabibulin,7
 2006,3,147.l.322066,Nulnet Sucks Ass,0,Kevo,6,-- hidden --,4
-2006,3,147.l.322066,Nulnet Sucks Ass,3,-- hidden --,1,Dan,6
-2006,3,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,5,M Z,5
+2006,3,147.l.322066,Nulnet Sucks Ass,3,M Z,1,Dan,6
+2006,3,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,5,-- hidden --,5
 2006,4,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,DiZzY,3
 2006,4,147.l.322066,Nulnet Sucks Ass,0,Weazy,7,chris,3
-2006,4,147.l.322066,Nulnet Sucks Ass,1,Chris Gaul,4,M Z,5
+2006,4,147.l.322066,Nulnet Sucks Ass,1,Chris Gaul,4,-- hidden --,5
 2006,4,147.l.322066,Nulnet Sucks Ass,2,Kevo,0,Nikolai Khabibulin,8
 2006,4,147.l.322066,Nulnet Sucks Ass,1,-- hidden --,5,Dan,4
 2006,5,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,Kevo,3
 2006,5,147.l.322066,Nulnet Sucks Ass,0,Weazy,7,DiZzY,3
 2006,5,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,4,chris,6
-2006,5,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,2,Nikolai Khabibulin,8
+2006,5,147.l.322066,Nulnet Sucks Ass,0,M Z,2,Nikolai Khabibulin,8
 2006,5,147.l.322066,Nulnet Sucks Ass,2,-- hidden --,6,-- hidden --,2
-2006,5,147.l.322066,Nulnet Sucks Ass,0,Dan,7,M Z,3
-2006,6,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,-- hidden --,3
+2006,5,147.l.322066,Nulnet Sucks Ass,0,Dan,7,-- hidden --,3
+2006,6,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,M Z,3
 2006,6,147.l.322066,Nulnet Sucks Ass,1,Weazy,5,Kevo,4
 2006,6,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,6,DiZzY,4
-2006,6,147.l.322066,Nulnet Sucks Ass,2,chris,6,M Z,2
+2006,6,147.l.322066,Nulnet Sucks Ass,2,chris,6,-- hidden --,2
 2006,6,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,4,Nikolai Khabibulin,6
 2006,6,147.l.322066,Nulnet Sucks Ass,2,Dan,5,-- hidden --,3
 2006,7,147.l.322066,Nulnet Sucks Ass,1,The Wizard,4,-- hidden --,5
-2006,7,147.l.322066,Nulnet Sucks Ass,0,Weazy,6,-- hidden --,4
+2006,7,147.l.322066,Nulnet Sucks Ass,0,Weazy,6,M Z,4
 2006,7,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,6,Kevo,4
 2006,7,147.l.322066,Nulnet Sucks Ass,0,chris,3,DiZzY,7
 2006,7,147.l.322066,Nulnet Sucks Ass,1,Dan,4,Nikolai Khabibulin,5
 2006,8,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,Dan,3
 2006,8,147.l.322066,Nulnet Sucks Ass,0,Weazy,1,-- hidden --,9
-2006,8,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,7,-- hidden --,3
+2006,8,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,7,M Z,3
 2006,8,147.l.322066,Nulnet Sucks Ass,1,chris,5,Kevo,4
-2006,8,147.l.322066,Nulnet Sucks Ass,1,DiZzY,7,M Z,2
+2006,8,147.l.322066,Nulnet Sucks Ass,1,DiZzY,7,-- hidden --,2
 2006,8,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,1,Nikolai Khabibulin,9
 2006,9,147.l.322066,Nulnet Sucks Ass,0,The Wizard,3,-- hidden --,7
 2006,9,147.l.322066,Nulnet Sucks Ass,0,Weazy,4,Dan,6
 2006,9,147.l.322066,Nulnet Sucks Ass,1,Chris Gaul,6,-- hidden --,3
-2006,9,147.l.322066,Nulnet Sucks Ass,0,chris,6,-- hidden --,4
+2006,9,147.l.322066,Nulnet Sucks Ass,0,chris,6,M Z,4
 2006,9,147.l.322066,Nulnet Sucks Ass,1,DiZzY,6,Kevo,3
-2006,9,147.l.322066,Nulnet Sucks Ass,2,Nikolai Khabibulin,4,M Z,4
+2006,9,147.l.322066,Nulnet Sucks Ass,2,Nikolai Khabibulin,4,-- hidden --,4
 2006,10,147.l.322066,Nulnet Sucks Ass,1,The Wizard,2,Nikolai Khabibulin,7
 2006,10,147.l.322066,Nulnet Sucks Ass,2,Weazy,2,-- hidden --,6
 2006,10,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,4,Dan,6
 2006,10,147.l.322066,Nulnet Sucks Ass,0,chris,2,-- hidden --,8
-2006,10,147.l.322066,Nulnet Sucks Ass,1,DiZzY,6,-- hidden --,3
-2006,10,147.l.322066,Nulnet Sucks Ass,0,Kevo,6,M Z,4
-2006,11,147.l.322066,Nulnet Sucks Ass,0,The Wizard,9,M Z,1
+2006,10,147.l.322066,Nulnet Sucks Ass,1,DiZzY,6,M Z,3
+2006,10,147.l.322066,Nulnet Sucks Ass,0,Kevo,6,-- hidden --,4
+2006,11,147.l.322066,Nulnet Sucks Ass,0,The Wizard,9,-- hidden --,1
 2006,11,147.l.322066,Nulnet Sucks Ass,0,Weazy,7,Nikolai Khabibulin,3
 2006,11,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,4,-- hidden --,6
 2006,11,147.l.322066,Nulnet Sucks Ass,0,chris,2,Dan,8
 2006,11,147.l.322066,Nulnet Sucks Ass,1,DiZzY,3,-- hidden --,6
-2006,11,147.l.322066,Nulnet Sucks Ass,2,Kevo,2,-- hidden --,6
+2006,11,147.l.322066,Nulnet Sucks Ass,2,Kevo,2,M Z,6
 2006,12,147.l.322066,Nulnet Sucks Ass,1,The Wizard,4,Weazy,5
 2006,12,147.l.322066,Nulnet Sucks Ass,1,Chris Gaul,2,Nikolai Khabibulin,7
 2006,12,147.l.322066,Nulnet Sucks Ass,0,chris,5,-- hidden --,5
 2006,12,147.l.322066,Nulnet Sucks Ass,2,DiZzY,6,Dan,2
 2006,12,147.l.322066,Nulnet Sucks Ass,1,Kevo,3,-- hidden --,6
 2006,13,147.l.322066,Nulnet Sucks Ass,0,The Wizard,5,Chris Gaul,5
-2006,13,147.l.322066,Nulnet Sucks Ass,0,Weazy,5,M Z,5
+2006,13,147.l.322066,Nulnet Sucks Ass,0,Weazy,5,-- hidden --,5
 2006,13,147.l.322066,Nulnet Sucks Ass,0,chris,7,Nikolai Khabibulin,3
 2006,13,147.l.322066,Nulnet Sucks Ass,0,DiZzY,2,-- hidden --,8
 2006,13,147.l.322066,Nulnet Sucks Ass,1,Kevo,3,Dan,6
-2006,13,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,5,-- hidden --,5
+2006,13,147.l.322066,Nulnet Sucks Ass,0,M Z,5,-- hidden --,5
 2006,14,147.l.322066,Nulnet Sucks Ass,1,The Wizard,5,chris,4
 2006,14,147.l.322066,Nulnet Sucks Ass,2,Weazy,4,Chris Gaul,4
 2006,14,147.l.322066,Nulnet Sucks Ass,0,DiZzY,6,Nikolai Khabibulin,4
 2006,14,147.l.322066,Nulnet Sucks Ass,0,Kevo,1,-- hidden --,9
-2006,14,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,5,Dan,5
-2006,14,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,7,M Z,3
+2006,14,147.l.322066,Nulnet Sucks Ass,0,M Z,5,Dan,5
+2006,14,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,7,-- hidden --,3
 2006,15,147.l.322066,Nulnet Sucks Ass,1,The Wizard,5,DiZzY,4
 2006,15,147.l.322066,Nulnet Sucks Ass,0,Weazy,6,chris,4
-2006,15,147.l.322066,Nulnet Sucks Ass,2,Chris Gaul,5,M Z,3
+2006,15,147.l.322066,Nulnet Sucks Ass,2,Chris Gaul,5,-- hidden --,3
 2006,15,147.l.322066,Nulnet Sucks Ass,1,Kevo,3,Nikolai Khabibulin,6
 2006,15,147.l.322066,Nulnet Sucks Ass,1,-- hidden --,5,Dan,4
 2006,16,147.l.322066,Nulnet Sucks Ass,0,The Wizard,8,Kevo,2
 2006,16,147.l.322066,Nulnet Sucks Ass,0,Weazy,8,DiZzY,2
 2006,16,147.l.322066,Nulnet Sucks Ass,2,Chris Gaul,3,chris,5
-2006,16,147.l.322066,Nulnet Sucks Ass,2,-- hidden --,4,Nikolai Khabibulin,4
+2006,16,147.l.322066,Nulnet Sucks Ass,2,M Z,4,Nikolai Khabibulin,4
 2006,16,147.l.322066,Nulnet Sucks Ass,1,-- hidden --,1,-- hidden --,8
-2006,16,147.l.322066,Nulnet Sucks Ass,0,Dan,7,M Z,3
-2006,17,147.l.322066,Nulnet Sucks Ass,0,The Wizard,3,-- hidden --,7
+2006,16,147.l.322066,Nulnet Sucks Ass,0,Dan,7,-- hidden --,3
+2006,17,147.l.322066,Nulnet Sucks Ass,0,The Wizard,3,M Z,7
 2006,17,147.l.322066,Nulnet Sucks Ass,1,Weazy,5,Kevo,4
 2006,17,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,5,DiZzY,5
-2006,17,147.l.322066,Nulnet Sucks Ass,0,chris,7,M Z,3
+2006,17,147.l.322066,Nulnet Sucks Ass,0,chris,7,-- hidden --,3
 2006,17,147.l.322066,Nulnet Sucks Ass,1,-- hidden --,4,Nikolai Khabibulin,5
 2006,17,147.l.322066,Nulnet Sucks Ass,0,Dan,6,-- hidden --,4
 2006,18,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,-- hidden --,3
-2006,18,147.l.322066,Nulnet Sucks Ass,0,Weazy,6,-- hidden --,4
+2006,18,147.l.322066,Nulnet Sucks Ass,0,Weazy,6,M Z,4
 2006,18,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,9,Kevo,1
 2006,18,147.l.322066,Nulnet Sucks Ass,0,chris,7,DiZzY,3
 2006,18,147.l.322066,Nulnet Sucks Ass,1,Dan,5,Nikolai Khabibulin,4
 2006,19,147.l.322066,Nulnet Sucks Ass,0,The Wizard,8,Dan,2
 2006,19,147.l.322066,Nulnet Sucks Ass,0,Weazy,4,-- hidden --,6
-2006,19,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,9,-- hidden --,1
+2006,19,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,9,M Z,1
 2006,19,147.l.322066,Nulnet Sucks Ass,0,chris,7,Kevo,3
-2006,19,147.l.322066,Nulnet Sucks Ass,0,DiZzY,6,M Z,4
+2006,19,147.l.322066,Nulnet Sucks Ass,0,DiZzY,6,-- hidden --,4
 2006,19,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,4,Nikolai Khabibulin,6
 2006,20,147.l.322066,Nulnet Sucks Ass,0,The Wizard,8,-- hidden --,2
 2006,20,147.l.322066,Nulnet Sucks Ass,1,Weazy,6,Dan,3
 2006,20,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,8,-- hidden --,2
-2006,20,147.l.322066,Nulnet Sucks Ass,1,chris,6,-- hidden --,3
+2006,20,147.l.322066,Nulnet Sucks Ass,1,chris,6,M Z,3
 2006,20,147.l.322066,Nulnet Sucks Ass,1,DiZzY,2,Kevo,7
-2006,20,147.l.322066,Nulnet Sucks Ass,1,Nikolai Khabibulin,5,M Z,4
+2006,20,147.l.322066,Nulnet Sucks Ass,1,Nikolai Khabibulin,5,-- hidden --,4
 2006,21,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,Nikolai Khabibulin,3
 2006,21,147.l.322066,Nulnet Sucks Ass,0,Weazy,3,-- hidden --,7
 2006,21,147.l.322066,Nulnet Sucks Ass,1,Chris Gaul,5,Dan,4
 2006,21,147.l.322066,Nulnet Sucks Ass,1,chris,1,-- hidden --,8
-2006,21,147.l.322066,Nulnet Sucks Ass,1,DiZzY,5,-- hidden --,4
-2006,21,147.l.322066,Nulnet Sucks Ass,0,Kevo,7,M Z,3
-2006,22,147.l.322066,Nulnet Sucks Ass,1,The Wizard,7,M Z,2
+2006,21,147.l.322066,Nulnet Sucks Ass,1,DiZzY,5,M Z,4
+2006,21,147.l.322066,Nulnet Sucks Ass,0,Kevo,7,-- hidden --,3
+2006,22,147.l.322066,Nulnet Sucks Ass,1,The Wizard,7,-- hidden --,2
 2006,22,147.l.322066,Nulnet Sucks Ass,1,Weazy,5,Nikolai Khabibulin,4
 2006,22,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,8,-- hidden --,2
 2006,22,147.l.322066,Nulnet Sucks Ass,0,chris,6,Dan,4
 2006,22,147.l.322066,Nulnet Sucks Ass,1,DiZzY,5,-- hidden --,4
-2006,22,147.l.322066,Nulnet Sucks Ass,1,Kevo,7,-- hidden --,2
+2006,22,147.l.322066,Nulnet Sucks Ass,1,Kevo,7,M Z,2
 2006,23,147.l.322066,Nulnet Sucks Ass,1,Weazy,4,Chris Gaul,5
 2006,23,147.l.322066,Nulnet Sucks Ass,0,chris,3,-- hidden --,7
-2006,23,147.l.322066,Nulnet Sucks Ass,0,Kevo,7,-- hidden --,3
+2006,23,147.l.322066,Nulnet Sucks Ass,0,Kevo,7,M Z,3
 2006,24,147.l.322066,Nulnet Sucks Ass,0,The Wizard,3,Chris Gaul,7
 2006,24,147.l.322066,Nulnet Sucks Ass,0,Weazy,3,chris,7
-2006,24,147.l.322066,Nulnet Sucks Ass,0,DiZzY,6,M Z,4
+2006,24,147.l.322066,Nulnet Sucks Ass,0,DiZzY,6,-- hidden --,4
 2006,24,147.l.322066,Nulnet Sucks Ass,1,Kevo,5,Dan,4
 2006,24,147.l.322066,Nulnet Sucks Ass,0,-- hidden --,1,Nikolai Khabibulin,9
 2006,25,147.l.322066,Nulnet Sucks Ass,0,The Wizard,7,-- hidden --,3
 2006,25,147.l.322066,Nulnet Sucks Ass,0,Chris Gaul,6,Nikolai Khabibulin,4
 2006,25,147.l.322066,Nulnet Sucks Ass,1,DiZzY,7,Kevo,2
-2006,25,147.l.322066,Nulnet Sucks Ass,2,Dan,7,M Z,1
+2006,25,147.l.322066,Nulnet Sucks Ass,2,Dan,7,-- hidden --,1
 2007,1,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,10,Kevo,3
 2007,1,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,10,--hidden--,4
-2007,1,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,7,--hidden--,6
+2007,1,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,7,-- hidden --,6
 2007,1,171.l.159408,100 year Cubbie Anniversary!,4,DiZzY,4,Dan,6
-2007,1,171.l.159408,100 year Cubbie Anniversary!,0,M Z,10,--hidden--,4
+2007,1,171.l.159408,100 year Cubbie Anniversary!,0,M Z,10,-- hidden --,4
 2007,2,171.l.159408,100 year Cubbie Anniversary!,2,The Wizard,7,-- hidden --,5
-2007,2,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,10,--hidden--,3
+2007,2,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,10,-- hidden --,3
 2007,2,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,8,--hidden--,5
-2007,2,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,4,--hidden--,10
+2007,2,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,4,-- hidden --,10
 2007,2,171.l.159408,100 year Cubbie Anniversary!,0,M Z,4,Dan,10
 2007,3,171.l.159408,100 year Cubbie Anniversary!,3,The Wizard,5,Weazy,6
 2007,3,171.l.159408,100 year Cubbie Anniversary!,2,Kevo,7,-- hidden --,5
 2007,3,171.l.159408,100 year Cubbie Anniversary!,1,DiZzY,4,--hidden--,9
-2007,3,171.l.159408,100 year Cubbie Anniversary!,1,M Z,9,--hidden--,4
-2007,3,171.l.159408,100 year Cubbie Anniversary!,1,Dan,11,--hidden--,2
+2007,3,171.l.159408,100 year Cubbie Anniversary!,1,M Z,9,-- hidden --,4
+2007,3,171.l.159408,100 year Cubbie Anniversary!,1,Dan,11,-- hidden --,2
 2007,4,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,10,DiZzY,4
 2007,4,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,5,Weazy,9
-2007,4,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,8,--hidden--,6
+2007,4,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,8,-- hidden --,6
 2007,4,171.l.159408,100 year Cubbie Anniversary!,0,M Z,2,--hidden--,12
-2007,4,171.l.159408,100 year Cubbie Anniversary!,0,Dan,7,--hidden--,7
+2007,4,171.l.159408,100 year Cubbie Anniversary!,0,Dan,7,-- hidden --,7
 2007,5,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,9,M Z,5
 2007,5,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,13,DiZzY,1
 2007,5,171.l.159408,100 year Cubbie Anniversary!,3,-- hidden --,6,Weazy,5
@@ -417,41 +417,41 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2007,6,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,11,Dan,3
 2007,6,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,7,M Z,6
 2007,6,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,9,DiZzY,5
-2007,6,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,13,--hidden--,1
-2007,7,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,7,--hidden--,6
+2007,6,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,13,-- hidden --,1
+2007,7,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,7,-- hidden --,6
 2007,7,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,7,Dan,7
 2007,7,171.l.159408,100 year Cubbie Anniversary!,1,-- hidden --,8,M Z,5
 2007,7,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,8,DiZzY,6
 2007,8,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,12,--hidden--,2
-2007,8,171.l.159408,100 year Cubbie Anniversary!,4,Kevo,2,--hidden--,8
+2007,8,171.l.159408,100 year Cubbie Anniversary!,4,Kevo,2,-- hidden --,8
 2007,8,171.l.159408,100 year Cubbie Anniversary!,1,-- hidden --,7,Dan,6
 2007,8,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,8,M Z,6
-2007,8,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,7,--hidden--,7
-2007,9,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,12,--hidden--,2
+2007,8,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,7,-- hidden --,7
+2007,9,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,12,-- hidden --,2
 2007,9,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,12,--hidden--,2
-2007,9,171.l.159408,100 year Cubbie Anniversary!,1,-- hidden --,8,--hidden--,5
+2007,9,171.l.159408,100 year Cubbie Anniversary!,1,-- hidden --,8,-- hidden --,5
 2007,9,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,7,Dan,6
 2007,9,171.l.159408,100 year Cubbie Anniversary!,2,DiZzY,2,M Z,10
 2007,10,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,10,Kevo,4
 2007,10,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,4,--hidden--,10
-2007,10,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,5,--hidden--,8
+2007,10,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,5,-- hidden --,8
 2007,10,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,8,Dan,6
-2007,10,171.l.159408,100 year Cubbie Anniversary!,1,M Z,7,--hidden--,6
+2007,10,171.l.159408,100 year Cubbie Anniversary!,1,M Z,7,-- hidden --,6
 2007,11,171.l.159408,100 year Cubbie Anniversary!,2,The Wizard,12,-- hidden --,0
-2007,11,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,11,--hidden--,3
+2007,11,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,11,-- hidden --,3
 2007,11,171.l.159408,100 year Cubbie Anniversary!,3,Weazy,3,--hidden--,8
-2007,11,171.l.159408,100 year Cubbie Anniversary!,1,DiZzY,4,--hidden--,9
+2007,11,171.l.159408,100 year Cubbie Anniversary!,1,DiZzY,4,-- hidden --,9
 2007,11,171.l.159408,100 year Cubbie Anniversary!,0,M Z,7,Dan,7
 2007,12,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,5,Weazy,8
 2007,12,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,7,-- hidden --,7
 2007,12,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,4,--hidden--,10
-2007,12,171.l.159408,100 year Cubbie Anniversary!,0,M Z,8,--hidden--,6
-2007,12,171.l.159408,100 year Cubbie Anniversary!,1,Dan,7,--hidden--,6
+2007,12,171.l.159408,100 year Cubbie Anniversary!,0,M Z,8,-- hidden --,6
+2007,12,171.l.159408,100 year Cubbie Anniversary!,1,Dan,7,-- hidden --,6
 2007,13,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,13,DiZzY,1
 2007,13,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,2,Weazy,11
-2007,13,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,8,--hidden--,6
+2007,13,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,8,-- hidden --,6
 2007,13,171.l.159408,100 year Cubbie Anniversary!,0,M Z,11,--hidden--,3
-2007,13,171.l.159408,100 year Cubbie Anniversary!,0,Dan,2,--hidden--,12
+2007,13,171.l.159408,100 year Cubbie Anniversary!,0,Dan,2,-- hidden --,12
 2007,14,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,10,M Z,3
 2007,14,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,6,DiZzY,8
 2007,14,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,7,Weazy,7
@@ -459,51 +459,51 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2007,15,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,13,Dan,1
 2007,15,171.l.159408,100 year Cubbie Anniversary!,2,Kevo,10,M Z,2
 2007,15,171.l.159408,100 year Cubbie Anniversary!,2,-- hidden --,5,DiZzY,7
-2007,15,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,9,--hidden--,5
-2007,16,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,10,--hidden--,4
+2007,15,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,9,-- hidden --,5
+2007,16,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,10,-- hidden --,4
 2007,16,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,8,Dan,5
 2007,16,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,9,M Z,5
 2007,16,171.l.159408,100 year Cubbie Anniversary!,0,Weazy,13,DiZzY,1
 2007,17,171.l.159408,100 year Cubbie Anniversary!,3,The Wizard,5,--hidden--,6
-2007,17,171.l.159408,100 year Cubbie Anniversary!,2,Kevo,8,--hidden--,4
+2007,17,171.l.159408,100 year Cubbie Anniversary!,2,Kevo,8,-- hidden --,4
 2007,17,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,5,Dan,9
 2007,17,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,6,M Z,7
-2007,17,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,10,--hidden--,4
-2007,18,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,11,--hidden--,2
+2007,17,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,10,-- hidden --,4
+2007,18,171.l.159408,100 year Cubbie Anniversary!,1,The Wizard,11,-- hidden --,2
 2007,18,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,11,--hidden--,2
-2007,18,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,5,--hidden--,9
+2007,18,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,5,-- hidden --,9
 2007,18,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,3,Dan,10
 2007,18,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,2,M Z,12
 2007,19,171.l.159408,100 year Cubbie Anniversary!,3,The Wizard,5,Kevo,6
 2007,19,171.l.159408,100 year Cubbie Anniversary!,2,-- hidden --,3,--hidden--,9
-2007,19,171.l.159408,100 year Cubbie Anniversary!,2,Weazy,7,--hidden--,5
+2007,19,171.l.159408,100 year Cubbie Anniversary!,2,Weazy,7,-- hidden --,5
 2007,19,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,2,Dan,12
-2007,19,171.l.159408,100 year Cubbie Anniversary!,2,M Z,8,--hidden--,4
+2007,19,171.l.159408,100 year Cubbie Anniversary!,2,M Z,8,-- hidden --,4
 2007,20,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,6,-- hidden --,8
-2007,20,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,10,--hidden--,3
+2007,20,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,10,-- hidden --,3
 2007,20,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,4,--hidden--,9
-2007,20,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,2,--hidden--,12
+2007,20,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,2,-- hidden --,12
 2007,20,171.l.159408,100 year Cubbie Anniversary!,0,M Z,9,Dan,5
 2007,21,171.l.159408,100 year Cubbie Anniversary!,2,The Wizard,5,Weazy,7
 2007,21,171.l.159408,100 year Cubbie Anniversary!,3,Kevo,7,-- hidden --,4
 2007,21,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,1,--hidden--,13
-2007,21,171.l.159408,100 year Cubbie Anniversary!,1,M Z,4,--hidden--,9
-2007,21,171.l.159408,100 year Cubbie Anniversary!,0,Dan,10,--hidden--,4
+2007,21,171.l.159408,100 year Cubbie Anniversary!,1,M Z,4,-- hidden --,9
+2007,21,171.l.159408,100 year Cubbie Anniversary!,0,Dan,10,-- hidden --,4
 2007,22,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,13,DiZzY,1
 2007,22,171.l.159408,100 year Cubbie Anniversary!,2,Kevo,4,Weazy,8
-2007,22,171.l.159408,100 year Cubbie Anniversary!,1,-- hidden --,8,--hidden--,5
+2007,22,171.l.159408,100 year Cubbie Anniversary!,1,-- hidden --,8,-- hidden --,5
 2007,22,171.l.159408,100 year Cubbie Anniversary!,0,M Z,9,--hidden--,5
-2007,22,171.l.159408,100 year Cubbie Anniversary!,0,Dan,9,--hidden--,5
+2007,22,171.l.159408,100 year Cubbie Anniversary!,0,Dan,9,-- hidden --,5
 2007,23,171.l.159408,100 year Cubbie Anniversary!,1,Kevo,8,Dan,5
 2007,23,171.l.159408,100 year Cubbie Anniversary!,2,Weazy,4,--hidden--,8
 2007,24,171.l.159408,100 year Cubbie Anniversary!,2,The Wizard,8,Kevo,4
 2007,24,171.l.159408,100 year Cubbie Anniversary!,0,-- hidden --,11,DiZzY,3
 2007,24,171.l.159408,100 year Cubbie Anniversary!,1,Weazy,4,Dan,9
-2007,24,171.l.159408,100 year Cubbie Anniversary!,0,M Z,10,--hidden--,4
+2007,24,171.l.159408,100 year Cubbie Anniversary!,0,M Z,10,-- hidden --,4
 2007,25,171.l.159408,100 year Cubbie Anniversary!,0,The Wizard,8,--hidden--,6
-2007,25,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,8,--hidden--,6
+2007,25,171.l.159408,100 year Cubbie Anniversary!,0,Kevo,8,-- hidden --,6
 2007,25,171.l.159408,100 year Cubbie Anniversary!,3,-- hidden --,4,M Z,7
-2007,25,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,11,--hidden--,3
+2007,25,171.l.159408,100 year Cubbie Anniversary!,0,DiZzY,11,-- hidden --,3
 2008,1,195.l.242126,Bartman is my hero,0,The Wizard,6,M Z,8
 2008,1,195.l.242126,Bartman is my hero,1,Nikolai Khabibulin,6,-- hidden --,7
 2008,1,195.l.242126,Bartman is my hero,0,--hidden--,7,Dan,7
@@ -1133,14 +1133,14 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2012,25,268.l.108096,You wanna take his face off?,0,Baby..I&#39;m gonna butter your bread,5,Jambalaya,6
 2012,25,268.l.108096,You wanna take his face off?,0,Nikolai Khabibulin,2,MojoHusker,9
 2012,1,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,6,DiZzY,5
-2012,1,268.l.27921,Kershaw = The Left Arm of God,4,Nikolai Khabibulin,7,--hidden--,1
+2012,1,268.l.27921,Kershaw = The Left Arm of God,4,Nikolai Khabibulin,7,-- hidden --,1
 2012,1,268.l.27921,Kershaw = The Left Arm of God,1,Dan,10,Brett,1
 2012,1,268.l.27921,Kershaw = The Left Arm of God,3,--hidden--,4,MELISSA,5
 2012,1,268.l.27921,Kershaw = The Left Arm of God,4,Kevo,5,NOBS,3
 2012,1,268.l.27921,Kershaw = The Left Arm of God,2,M Z,10,Paulie,0
 2012,2,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,9,Nikolai Khabibulin,2
 2012,2,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,5,Paulie,6
-2012,2,268.l.27921,Kershaw = The Left Arm of God,2,Dan,7,--hidden--,3
+2012,2,268.l.27921,Kershaw = The Left Arm of God,2,Dan,7,-- hidden --,3
 2012,2,268.l.27921,Kershaw = The Left Arm of God,1,--hidden--,8,Brett,3
 2012,2,268.l.27921,Kershaw = The Left Arm of God,1,Kevo,4,MELISSA,7
 2012,2,268.l.27921,Kershaw = The Left Arm of God,1,M Z,7,NOBS,4
@@ -1152,60 +1152,60 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2012,4,268.l.27921,Kershaw = The Left Arm of God,0,The Wizard,9,--hidden--,3
 2012,4,268.l.27921,Kershaw = The Left Arm of God,0,DiZzY,8,Dan,4
 2012,4,268.l.27921,Kershaw = The Left Arm of God,2,Nikolai Khabibulin,9,Paulie,1
-2012,4,268.l.27921,Kershaw = The Left Arm of God,2,Kevo,6,--hidden--,4
+2012,4,268.l.27921,Kershaw = The Left Arm of God,2,Kevo,6,-- hidden --,4
 2012,4,268.l.27921,Kershaw = The Left Arm of God,3,M Z,3,Brett,6
 2012,4,268.l.27921,Kershaw = The Left Arm of God,3,NOBS,4,MELISSA,5
 2012,5,268.l.27921,Kershaw = The Left Arm of God,3,The Wizard,6,Kevo,3
 2012,5,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,5,--hidden--,6
 2012,5,268.l.27921,Kershaw = The Left Arm of God,2,Nikolai Khabibulin,6,Dan,4
-2012,5,268.l.27921,Kershaw = The Left Arm of God,1,M Z,8,--hidden--,3
+2012,5,268.l.27921,Kershaw = The Left Arm of God,1,M Z,8,-- hidden --,3
 2012,5,268.l.27921,Kershaw = The Left Arm of God,2,NOBS,7,Brett,3
 2012,5,268.l.27921,Kershaw = The Left Arm of God,0,MELISSA,7,Paulie,5
 2012,6,268.l.27921,Kershaw = The Left Arm of God,2,The Wizard,4,M Z,6
 2012,6,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,6,Kevo,4
 2012,6,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,4,--hidden--,7
 2012,6,268.l.27921,Kershaw = The Left Arm of God,1,Dan,8,Paulie,3
-2012,6,268.l.27921,Kershaw = The Left Arm of God,2,NOBS,5,--hidden--,5
+2012,6,268.l.27921,Kershaw = The Left Arm of God,2,NOBS,5,-- hidden --,5
 2012,6,268.l.27921,Kershaw = The Left Arm of God,1,MELISSA,8,Brett,3
 2012,7,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,4,NOBS,7
 2012,7,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,6,M Z,4
 2012,7,268.l.27921,Kershaw = The Left Arm of God,3,Nikolai Khabibulin,7,Kevo,2
 2012,7,268.l.27921,Kershaw = The Left Arm of God,0,Dan,8,--hidden--,4
-2012,7,268.l.27921,Kershaw = The Left Arm of God,0,MELISSA,9,--hidden--,3
+2012,7,268.l.27921,Kershaw = The Left Arm of God,0,MELISSA,9,-- hidden --,3
 2012,7,268.l.27921,Kershaw = The Left Arm of God,2,Brett,6,Paulie,4
 2012,8,268.l.27921,Kershaw = The Left Arm of God,2,The Wizard,6,MELISSA,4
 2012,8,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,1,NOBS,9
 2012,8,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,4,M Z,8
 2012,8,268.l.27921,Kershaw = The Left Arm of God,3,Dan,1,Kevo,8
 2012,8,268.l.27921,Kershaw = The Left Arm of God,2,--hidden--,2,Paulie,8
-2012,8,268.l.27921,Kershaw = The Left Arm of God,1,Brett,6,--hidden--,5
+2012,8,268.l.27921,Kershaw = The Left Arm of God,1,Brett,6,-- hidden --,5
 2012,9,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,4,Brett,7
 2012,9,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,4,MELISSA,6
 2012,9,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,8,NOBS,4
 2012,9,268.l.27921,Kershaw = The Left Arm of God,3,Dan,8,M Z,1
 2012,9,268.l.27921,Kershaw = The Left Arm of God,3,--hidden--,6,Kevo,3
-2012,9,268.l.27921,Kershaw = The Left Arm of God,3,--hidden--,3,Paulie,6
-2012,10,268.l.27921,Kershaw = The Left Arm of God,2,The Wizard,6,--hidden--,4
+2012,9,268.l.27921,Kershaw = The Left Arm of God,3,-- hidden --,3,Paulie,6
+2012,10,268.l.27921,Kershaw = The Left Arm of God,2,The Wizard,6,-- hidden --,4
 2012,10,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,5,Brett,5
 2012,10,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,5,MELISSA,6
 2012,10,268.l.27921,Kershaw = The Left Arm of God,2,Dan,6,NOBS,4
 2012,10,268.l.27921,Kershaw = The Left Arm of God,2,--hidden--,3,M Z,7
 2012,10,268.l.27921,Kershaw = The Left Arm of God,0,Kevo,1,Paulie,11
 2012,11,268.l.27921,Kershaw = The Left Arm of God,2,The Wizard,5,Paulie,5
-2012,11,268.l.27921,Kershaw = The Left Arm of God,0,DiZzY,5,--hidden--,7
+2012,11,268.l.27921,Kershaw = The Left Arm of God,0,DiZzY,5,-- hidden --,7
 2012,11,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,2,Brett,9
 2012,11,268.l.27921,Kershaw = The Left Arm of God,1,Dan,4,MELISSA,7
 2012,11,268.l.27921,Kershaw = The Left Arm of God,0,--hidden--,10,NOBS,2
 2012,11,268.l.27921,Kershaw = The Left Arm of God,0,Kevo,7,M Z,5
 2012,12,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,6,DiZzY,5
-2012,12,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,5,--hidden--,6
+2012,12,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,5,-- hidden --,6
 2012,12,268.l.27921,Kershaw = The Left Arm of God,1,Dan,6,Brett,5
 2012,12,268.l.27921,Kershaw = The Left Arm of God,0,--hidden--,6,MELISSA,6
 2012,12,268.l.27921,Kershaw = The Left Arm of God,1,Kevo,4,NOBS,7
 2012,12,268.l.27921,Kershaw = The Left Arm of God,1,M Z,7,Paulie,4
 2012,13,268.l.27921,Kershaw = The Left Arm of God,0,The Wizard,9,Nikolai Khabibulin,3
 2012,13,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,4,Paulie,6
-2012,13,268.l.27921,Kershaw = The Left Arm of God,1,Dan,9,--hidden--,2
+2012,13,268.l.27921,Kershaw = The Left Arm of God,1,Dan,9,-- hidden --,2
 2012,13,268.l.27921,Kershaw = The Left Arm of God,2,--hidden--,3,Brett,7
 2012,13,268.l.27921,Kershaw = The Left Arm of God,1,Kevo,7,MELISSA,4
 2012,13,268.l.27921,Kershaw = The Left Arm of God,1,M Z,6,NOBS,5
@@ -1217,47 +1217,47 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2012,15,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,7,--hidden--,4
 2012,15,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,8,Dan,2
 2012,15,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,8,Paulie,3
-2012,15,268.l.27921,Kershaw = The Left Arm of God,0,Kevo,10,--hidden--,2
+2012,15,268.l.27921,Kershaw = The Left Arm of God,0,Kevo,10,-- hidden --,2
 2012,15,268.l.27921,Kershaw = The Left Arm of God,0,M Z,4,Brett,8
 2012,15,268.l.27921,Kershaw = The Left Arm of God,0,NOBS,6,MELISSA,6
 2012,16,268.l.27921,Kershaw = The Left Arm of God,0,The Wizard,3,Kevo,9
 2012,16,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,5,--hidden--,5
 2012,16,268.l.27921,Kershaw = The Left Arm of God,2,Nikolai Khabibulin,6,Dan,4
-2012,16,268.l.27921,Kershaw = The Left Arm of God,2,M Z,3,--hidden--,7
+2012,16,268.l.27921,Kershaw = The Left Arm of God,2,M Z,3,-- hidden --,7
 2012,16,268.l.27921,Kershaw = The Left Arm of God,1,NOBS,4,Brett,7
 2012,16,268.l.27921,Kershaw = The Left Arm of God,2,MELISSA,2,Paulie,8
 2012,17,268.l.27921,Kershaw = The Left Arm of God,2,The Wizard,7,M Z,3
 2012,17,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,7,Kevo,4
 2012,17,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,3,--hidden--,8
 2012,17,268.l.27921,Kershaw = The Left Arm of God,0,Dan,6,Paulie,6
-2012,17,268.l.27921,Kershaw = The Left Arm of God,1,NOBS,9,--hidden--,2
+2012,17,268.l.27921,Kershaw = The Left Arm of God,1,NOBS,9,-- hidden --,2
 2012,17,268.l.27921,Kershaw = The Left Arm of God,0,MELISSA,9,Brett,3
 2012,18,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,5,NOBS,6
 2012,18,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,2,M Z,8
 2012,18,268.l.27921,Kershaw = The Left Arm of God,1,Nikolai Khabibulin,9,Kevo,2
 2012,18,268.l.27921,Kershaw = The Left Arm of God,0,Dan,7,--hidden--,5
-2012,18,268.l.27921,Kershaw = The Left Arm of God,3,MELISSA,8,--hidden--,1
+2012,18,268.l.27921,Kershaw = The Left Arm of God,3,MELISSA,8,-- hidden --,1
 2012,18,268.l.27921,Kershaw = The Left Arm of God,1,Brett,7,Paulie,4
 2012,19,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,6,MELISSA,5
 2012,19,268.l.27921,Kershaw = The Left Arm of God,0,DiZzY,4,NOBS,8
 2012,19,268.l.27921,Kershaw = The Left Arm of God,3,Nikolai Khabibulin,8,M Z,1
 2012,19,268.l.27921,Kershaw = The Left Arm of God,2,Dan,5,Kevo,5
 2012,19,268.l.27921,Kershaw = The Left Arm of God,1,--hidden--,9,Paulie,2
-2012,19,268.l.27921,Kershaw = The Left Arm of God,2,Brett,3,--hidden--,7
+2012,19,268.l.27921,Kershaw = The Left Arm of God,2,Brett,3,-- hidden --,7
 2012,20,268.l.27921,Kershaw = The Left Arm of God,3,The Wizard,7,Brett,2
 2012,20,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,4,MELISSA,6
 2012,20,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,10,NOBS,2
 2012,20,268.l.27921,Kershaw = The Left Arm of God,0,Dan,7,M Z,5
 2012,20,268.l.27921,Kershaw = The Left Arm of God,1,--hidden--,9,Kevo,2
-2012,20,268.l.27921,Kershaw = The Left Arm of God,2,--hidden--,4,Paulie,6
-2012,21,268.l.27921,Kershaw = The Left Arm of God,3,The Wizard,9,--hidden--,0
+2012,20,268.l.27921,Kershaw = The Left Arm of God,2,-- hidden --,4,Paulie,6
+2012,21,268.l.27921,Kershaw = The Left Arm of God,3,The Wizard,9,-- hidden --,0
 2012,21,268.l.27921,Kershaw = The Left Arm of God,3,DiZzY,6,Brett,3
 2012,21,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,8,MELISSA,4
 2012,21,268.l.27921,Kershaw = The Left Arm of God,1,Dan,4,NOBS,7
 2012,21,268.l.27921,Kershaw = The Left Arm of God,0,--hidden--,9,M Z,3
 2012,21,268.l.27921,Kershaw = The Left Arm of God,0,Kevo,7,Paulie,5
 2012,22,268.l.27921,Kershaw = The Left Arm of God,0,The Wizard,5,Paulie,7
-2012,22,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,6,--hidden--,5
+2012,22,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,6,-- hidden --,5
 2012,22,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,9,Brett,3
 2012,22,268.l.27921,Kershaw = The Left Arm of God,2,Dan,6,MELISSA,4
 2012,22,268.l.27921,Kershaw = The Left Arm of God,0,--hidden--,6,NOBS,6
@@ -1265,17 +1265,17 @@ season,week,league_key,league_name,ties,manager_a,manager_a_record,manager_b,man
 2012,23,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,6,Kevo,5
 2012,23,268.l.27921,Kershaw = The Left Arm of God,3,Dan,6,--hidden--,3
 2012,23,268.l.27921,Kershaw = The Left Arm of God,1,NOBS,4,MELISSA,7
-2012,23,268.l.27921,Kershaw = The Left Arm of God,2,--hidden--,7,Paulie,3
+2012,23,268.l.27921,Kershaw = The Left Arm of God,2,-- hidden --,7,Paulie,3
 2012,24,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,4,MELISSA,7
 2012,24,268.l.27921,Kershaw = The Left Arm of God,2,DiZzY,7,M Z,3
 2012,24,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,9,Dan,3
 2012,24,268.l.27921,Kershaw = The Left Arm of God,2,--hidden--,9,NOBS,1
 2012,24,268.l.27921,Kershaw = The Left Arm of God,1,Kevo,7,Paulie,4
-2012,24,268.l.27921,Kershaw = The Left Arm of God,2,Brett,8,--hidden--,2
+2012,24,268.l.27921,Kershaw = The Left Arm of God,2,Brett,8,-- hidden --,2
 2012,25,268.l.27921,Kershaw = The Left Arm of God,1,The Wizard,7,Dan,4
 2012,25,268.l.27921,Kershaw = The Left Arm of God,1,DiZzY,6,Brett,5
 2012,25,268.l.27921,Kershaw = The Left Arm of God,0,Nikolai Khabibulin,9,MELISSA,3
-2012,25,268.l.27921,Kershaw = The Left Arm of God,1,M Z,9,--hidden--,2
+2012,25,268.l.27921,Kershaw = The Left Arm of God,1,M Z,9,-- hidden --,2
 2013,1,308.l.8419,Dodgers a steal at 2 Billion!,0,The Wizard,8,Craig,4
 2013,1,308.l.8419,Dodgers a steal at 2 Billion!,3,M Z,5,NOBS,4
 2013,1,308.l.8419,Dodgers a steal at 2 Billion!,1,DiZzY,5,Kevo,6

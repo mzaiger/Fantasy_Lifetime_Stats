@@ -183,17 +183,19 @@ def extract_team_data(team_obj):
 
     found_name     = find_in_meta(meta_block, "name")
     found_nickname = find_in_meta(meta_block, "nickname")
+    # is_owned_by_current_login marks the authenticated user's real/primary team.
+    # When a manager has multiple team entries (Yahoo data quirk), this flag
+    # identifies which one is canonical. We store it so deduplicate_matchups
+    # can prefer the primary team row when the same manager appears twice in a week.
+    is_primary     = bool(find_in_meta(meta_block, "is_owned_by_current_login"))
+
     if found_name:
         info["name"] = found_name
     if found_nickname:
         info["manager"] = found_nickname
     else:
-        # nickname absent = Yahoo privacy setting; treat as hidden
         info["manager"] = "-- hidden --"
-
-    # DEBUG: uncomment to trace manager extraction per team
-    import os
-    print(f"    [debug] name={info['name']!r} manager={info['manager']!r} meta_keys={[list(i.keys()) if isinstance(i,dict) else type(i).__name__ for i in (meta_block if isinstance(meta_block,list) else [meta_block])]}", flush=True)
+    info["is_primary"] = is_primary
 
     # ── Step 2: stats walk — never touches name or nickname ─────────────────
     def _apply_outcome_totals(totals):
@@ -243,6 +245,7 @@ def extract_team_data(team_obj):
     return {
         "name": info["name"],
         "manager": info["manager"],
+        "is_primary": info.get("is_primary", False),
         "record": record_str,
         "is_category": is_category,
         "wins": w,
@@ -338,40 +341,54 @@ def parse_matchups(data, season, league_name, league_key, week):
 
             "manager_a": team_a_info["manager"],
             "manager_a_record": team_a_info["record"],
+            "manager_a_primary": team_a_info.get("is_primary", False),
 
             "manager_b": team_b_info["manager"],
             "manager_b_record": team_b_info["record"],
+            "manager_b_primary": team_b_info.get("is_primary", False),
         })
 
     return results
 
 
-def deduplicate_matchups(all_rows):
+def mask_duplicate_managers(all_rows):
     """
-    Remove duplicate matchups caused by a manager having multiple team entries
-    in the same league (e.g. Yahoo registered MZ with 3 teams in 2006).
-    Yahoo schedules each team slot independently, so the same manager pair can
-    appear multiple times across the season — once per team-slot pairing.
+    When Yahoo registers a manager with multiple team entries in the same league,
+    every team gets that manager's nickname. Only one team is their real entry
+    (flagged by is_owned_by_current_login = manager_a_primary / manager_b_primary).
+    The extra team slots are effectively hidden/ghost teams — replace their
+    manager name with '-- hidden --' so they don't inflate H2H records.
 
-    Strategy: for each (league_key, week, frozenset(manager_a, manager_b)),
-    keep only the first occurrence. This preserves every real matchup week
-    while removing the inflated repeats from multi-team manager slots.
+    Strategy: for each (league_key, manager_name), find the primary team row.
+    Any other rows in that league where that manager name appears on a non-primary
+    team get their manager name replaced with '-- hidden --'.
     """
-    seen = set()
-    deduped = []
+    from collections import defaultdict
+
+    # Collect all (league, manager) combos and whether any row has the primary flag
+    league_manager_has_primary = defaultdict(bool)
     for row in all_rows:
-        key = (
-            row["league_key"],
-            row["week"],
-            frozenset([row["manager_a"], row["manager_b"]])
-        )
-        if key not in seen:
-            seen.add(key)
-            deduped.append(row)
-    removed = len(all_rows) - len(deduped)
-    if removed:
-        print(f"  Removed {removed} duplicate matchup rows from multi-team managers.", flush=True)
-    return deduped
+        if row.get("manager_a_primary"):
+            league_manager_has_primary[(row["league_key"], row["manager_a"])] = True
+        if row.get("manager_b_primary"):
+            league_manager_has_primary[(row["league_key"], row["manager_b"])] = True
+
+    # For each (league, manager) that HAS a primary, mask all non-primary appearances
+    masked = 0
+    for row in all_rows:
+        lk = row["league_key"]
+        ma, mb = row["manager_a"], row["manager_b"]
+
+        if league_manager_has_primary.get((lk, ma)) and not row.get("manager_a_primary"):
+            row["manager_a"] = "-- hidden --"
+            masked += 1
+
+        if league_manager_has_primary.get((lk, mb)) and not row.get("manager_b_primary"):
+            row["manager_b"] = "-- hidden --"
+            masked += 1
+
+    if masked:
+        print(f"  Masked {masked} non-primary duplicate manager entries as '-- hidden --'.", flush=True)
 
 
 def backfill_ties(all_rows):
@@ -429,6 +446,7 @@ def write_csv(rows):
         "manager_a_record",
         "manager_b",
         "manager_b_record",
+        # manager_a_primary / manager_b_primary are internal dedup flags; omitted from CSV
     ]
 
     with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
@@ -436,7 +454,7 @@ def write_csv(rows):
         writer.writeheader()
 
         for row in rows:
-            writer.writerow(row)
+            writer.writerow({k: v for k, v in row.items() if k in fields})
 
 
 def main():
@@ -489,8 +507,8 @@ def main():
 
         print(f'Finished {league["season"]} league.\n', flush=True)
 
-    print("Deduplicating multi-team manager matchups...", flush=True)
-    all_rows = deduplicate_matchups(all_rows)
+    print("Masking non-primary duplicate manager entries...", flush=True)
+    mask_duplicate_managers(all_rows)
 
     print("Backfilling tied categories...", flush=True)
     backfill_ties(all_rows)

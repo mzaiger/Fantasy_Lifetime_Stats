@@ -344,6 +344,7 @@
       <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('h2hLifetime'); closeMobileItem(this)">Lifetime</a>
         <a onclick="setPage('h2hManager'); closeMobileItem(this)">Manager</a>
+        <a onclick="setPage('h2hSeason'); closeMobileItem(this)">Season</a>
       </div></div>
     </div>
 
@@ -627,6 +628,7 @@ function setPage(page) {
   if (page === "exportData")         showExportData(c);
   if (page === "h2hLifetime")        showH2HLifetime(c);
   if (page === "h2hManager")         showH2HManager(c);
+  if (page === "h2hSeason")          showH2HSeason(c);
 }
 
 /* ══════════════════════════════════════════
@@ -1390,6 +1392,87 @@ function showH2HManager(c) {
   document.getElementById('h2hMgrSelect').addEventListener('change', function() {
     document.getElementById('h2hMgrTable').innerHTML = this.value ? render(this.value) : '';
   });
+}
+
+/* ── HEAD TO HEAD — SEASON ── */
+function computeH2HMatchupsBySeason(season, filterManager) {
+  const map = {};
+  h2hRawData.filter(row => String(row.season) === String(season)).forEach(row => {
+    const mA = row.manager_a;
+    const mB = row.manager_b;
+    if (!mA || !mB) return;
+    const winsA = parseFloat(row.manager_a_record) || 0;
+    const winsB = parseFloat(row.manager_b_record) || 0;
+    const ties  = parseFloat(row.ties) || 0;
+
+    const [first, second] = mA <= mB ? [mA, mB] : [mB, mA];
+    const key = first + "|||" + second;
+
+    if (!map[key]) map[key] = { managerA: first, managerB: second, firstWins: 0, secondWins: 0, ties: 0 };
+
+    if (mA === first) {
+      map[key].firstWins  += winsA;
+      map[key].secondWins += winsB;
+    } else {
+      map[key].firstWins  += winsB;
+      map[key].secondWins += winsA;
+    }
+    map[key].ties += ties;
+  });
+
+  let rows = Object.values(map).map(m => {
+    const total = m.firstWins + m.secondWins + m.ties;
+    if (total === 0) return null;
+    let winnerMgr, loserMgr, wins, losses;
+    if (m.firstWins >= m.secondWins) {
+      winnerMgr = m.managerA; loserMgr = m.managerB;
+      wins = m.firstWins; losses = m.secondWins;
+    } else {
+      winnerMgr = m.managerB; loserMgr = m.managerA;
+      wins = m.secondWins; losses = m.firstWins;
+    }
+    const winPct = total > 0 ? ((wins + m.ties * 0.5) / total * 100) : 0;
+    return { winnerMgr, loserMgr, wins, losses, ties: m.ties, total, winPct };
+  }).filter(Boolean);
+
+  if (filterManager) {
+    rows = rows.filter(r => r.winnerMgr === filterManager || r.loserMgr === filterManager);
+  }
+
+  rows.sort((a, b) => b.winPct - a.winPct);
+  return rows;
+}
+
+function showH2HSeason(c) {
+  c.classList.remove('grid-view');
+  const years = [...new Set(h2hRawData.map(r => r.season).filter(Boolean))].sort();
+  const yearOpts = years.map(y => `<option value="${y}">${y}</option>`).join('');
+
+  const mgrs = new Set();
+  h2hRawData.forEach(r => {
+    if (r.manager_a && !r.manager_a.includes('hidden')) mgrs.add(r.manager_a);
+    if (r.manager_b && !r.manager_b.includes('hidden')) mgrs.add(r.manager_b);
+  });
+  const mgrOpts = '<option value="">— All Managers —</option>' +
+    Array.from(mgrs).sort().map(m => `<option value="${m}">${m}</option>`).join('');
+
+  c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px">
+    <h2>Head to Head — Season</h2>
+    <div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+      <select id="h2hSeasonYear">${yearOpts}</select>
+      <select id="h2hSeasonMgr">${mgrOpts}</select>
+      <button class="show-btn" onclick="renderH2HSeason()">SHOW</button>
+    </div>
+    <div id="h2hSeasonTable"></div>
+  </div>`;
+}
+
+function renderH2HSeason() {
+  const year = document.getElementById('h2hSeasonYear').value;
+  const mgr  = document.getElementById('h2hSeasonMgr').value;
+  const rows = computeH2HMatchupsBySeason(year, mgr || null);
+  document.getElementById('h2hSeasonTable').innerHTML =
+    rows.length ? renderH2HTable(rows, null) : `<p class="no-data">No head-to-head data found for ${year}.</p>`;
 }
 
 /* ── EXPORT DATA ── */

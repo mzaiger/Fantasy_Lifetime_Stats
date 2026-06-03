@@ -1313,7 +1313,7 @@ function computeH2HMatchups(filterManager, applyThreshold) {
       winnerMgr = m.managerB; loserMgr = m.managerA;
       wins = m.secondWins; losses = m.firstWins;
     }
-    const winPct = total > 0 ? (wins / total * 100) : 0;
+    const winPct = total > 0 ? ((wins + m.ties * 0.5) / total * 100) : 0;
     return { winnerMgr, loserMgr, wins, losses, ties: m.ties, total, winPct };
   }).filter(Boolean);
 

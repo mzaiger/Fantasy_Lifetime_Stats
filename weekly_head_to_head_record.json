@@ -36513,11 +36513,11 @@
     "week": 11,
     "league_key": "469.l.23321",
     "league_name": "Walking On The Fightin' Side",
-    "ties": 1,
+    "ties": 2,
     "manager_a": "NOBS",
     "manager_a_record": "8",
     "manager_b": "Kevo",
-    "manager_b_record": "5"
+    "manager_b_record": "4"
   },
   {
     "season": "2026",
@@ -36548,8 +36548,19 @@
     "league_name": "Walking On The Fightin' Side",
     "ties": 4,
     "manager_a": "The Wizard",
-    "manager_a_record": "7",
+    "manager_a_record": "5",
     "manager_b": "Paulie",
+    "manager_b_record": "5"
+  },
+  {
+    "season": "2026",
+    "week": 11,
+    "league_key": "469.l.23321",
+    "league_name": "Walking On The Fightin' Side",
+    "ties": 4,
+    "manager_a": "DiZzY",
+    "manager_a_record": "7",
+    "manager_b": "Douglas",
     "manager_b_record": "3"
   },
   {
@@ -36557,20 +36568,9 @@
     "week": 11,
     "league_key": "469.l.23321",
     "league_name": "Walking On The Fightin' Side",
-    "ties": 5,
-    "manager_a": "DiZzY",
-    "manager_a_record": "5",
-    "manager_b": "Douglas",
-    "manager_b_record": "4"
-  },
-  {
-    "season": "2026",
-    "week": 11,
-    "league_key": "469.l.23321",
-    "league_name": "Walking On The Fightin' Side",
-    "ties": 3,
+    "ties": 2,
     "manager_a": "Dan",
-    "manager_a_record": "2",
+    "manager_a_record": "3",
     "manager_b": "Theodore",
     "manager_b_record": "9"
   }

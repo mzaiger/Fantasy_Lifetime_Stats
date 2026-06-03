@@ -152,20 +152,21 @@ def extract_team_data(team_obj):
         "points": None
     }
 
-    # ── Step 1: identity from metadata block only ──────────────────────────
-    # Yahoo's team list structure:
-    #   team_obj[0] = a LIST of metadata dicts, e.g.:
-    #     [{team_key:...}, {name:"GooseRules"}, ..., {managers:{...nickname...}}]
-    #   team_obj[1+] = stats dicts (team_points, team_outcome, etc.)
+    # ── Step 1: identity — scoped to team_obj[0] only ───────────────────────
+    # Yahoo's scoreboard response embeds ALL teams' data in a shared structure.
+    # A full recursive walk bleeds sibling team nicknames into the wrong team
+    # (e.g. MZ's nickname from YoMamma contaminates Dirty Sanchez and Steins Boys).
     #
-    # We search only team_obj[0] for name and nickname. A targeted recursive
-    # search is used for nickname because Yahoo's manager nesting varies across
-    # seasons (dict vs list, different depths). Scoping to team_obj[0] alone
-    # ensures we never pick up the opponent's nickname from the stats block.
+    # team_obj[0] is the metadata list for THIS team only:
+    #   [{team_key}, {name}, {url}, ..., {managers: {0: {manager: {nickname}}}}]
+    # team_obj[1+] is stats — never contains this team's identity fields cleanly.
+    #
+    # We search only team_obj[0] for name and nickname. If nickname is absent
+    # (hidden manager), we leave it as "" and the caller will show "--hidden--".
     meta_block = team_obj[0] if isinstance(team_obj, list) and len(team_obj) > 0 else {}
 
     def find_in_meta(node, target_key):
-        """Recursively find the first value for target_key within node."""
+        """Recursively search only the metadata block for target_key."""
         if isinstance(node, dict):
             if target_key in node:
                 return node[target_key]
@@ -180,12 +181,20 @@ def extract_team_data(team_obj):
                     return result
         return None
 
-    found_name = find_in_meta(meta_block, "name")
+    found_name     = find_in_meta(meta_block, "name")
     found_nickname = find_in_meta(meta_block, "nickname")
     if found_name:
         info["name"] = found_name
     if found_nickname:
         info["manager"] = found_nickname
+    else:
+        # nickname absent = Yahoo privacy setting; treat as hidden
+        info["manager"] = "-- hidden --"
+
+    # DEBUG: uncomment to trace manager extraction per team
+    # import os
+    # if os.getenv("H2H_DEBUG"):
+    #     print(f"    [debug] name={info['name']!r} manager={info['manager']!r} meta_keys={[list(i.keys()) if isinstance(i,dict) else type(i).__name__ for i in (meta_block if isinstance(meta_block,list) else [meta_block])]}", flush=True)
 
     # ── Step 2: stats walk — never touches name or nickname ─────────────────
     def _apply_outcome_totals(totals):
@@ -338,6 +347,34 @@ def parse_matchups(data, season, league_name, league_key, week):
     return results
 
 
+def deduplicate_matchups(all_rows):
+    """
+    Remove duplicate matchups caused by a manager having multiple team entries
+    in the same league (e.g. Yahoo registered MZ with 3 teams in 2006).
+    Yahoo schedules each team slot independently, so the same manager pair can
+    appear multiple times across the season — once per team-slot pairing.
+
+    Strategy: for each (league_key, week, frozenset(manager_a, manager_b)),
+    keep only the first occurrence. This preserves every real matchup week
+    while removing the inflated repeats from multi-team manager slots.
+    """
+    seen = set()
+    deduped = []
+    for row in all_rows:
+        key = (
+            row["league_key"],
+            row["week"],
+            frozenset([row["manager_a"], row["manager_b"]])
+        )
+        if key not in seen:
+            seen.add(key)
+            deduped.append(row)
+    removed = len(all_rows) - len(deduped)
+    if removed:
+        print(f"  Removed {removed} duplicate matchup rows from multi-team managers.", flush=True)
+    return deduped
+
+
 def backfill_ties(all_rows):
     """
     Infer tied categories for every matchup in a category league.
@@ -452,6 +489,9 @@ def main():
             print("Done", flush=True)
 
         print(f'Finished {league["season"]} league.\n', flush=True)
+
+    print("Deduplicating multi-team manager matchups...", flush=True)
+    all_rows = deduplicate_matchups(all_rows)
 
     print("Backfilling tied categories...", flush=True)
     backfill_ties(all_rows)

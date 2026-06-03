@@ -192,9 +192,9 @@ def extract_team_data(team_obj):
         info["manager"] = "-- hidden --"
 
     # DEBUG: uncomment to trace manager extraction per team
-    # import os
-    # if os.getenv("H2H_DEBUG"):
-    #     print(f"    [debug] name={info['name']!r} manager={info['manager']!r} meta_keys={[list(i.keys()) if isinstance(i,dict) else type(i).__name__ for i in (meta_block if isinstance(meta_block,list) else [meta_block])]}", flush=True)
+     import os
+     if os.getenv("H2H_DEBUG"):
+         print(f"    [debug] name={info['name']!r} manager={info['manager']!r} meta_keys={[list(i.keys()) if isinstance(i,dict) else type(i).__name__ for i in (meta_block if isinstance(meta_block,list) else [meta_block])]}", flush=True)
 
     # ── Step 2: stats walk — never touches name or nickname ─────────────────
     def _apply_outcome_totals(totals):

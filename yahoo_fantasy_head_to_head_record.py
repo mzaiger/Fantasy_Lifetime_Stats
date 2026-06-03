@@ -183,6 +183,7 @@ def extract_team_data(team_obj):
 
     found_name     = find_in_meta(meta_block, "name")
     found_nickname = find_in_meta(meta_block, "nickname")
+    found_team_key = find_in_meta(meta_block, "team_key")
     # is_owned_by_current_login marks the authenticated user's real/primary team.
     # When a manager has multiple team entries (Yahoo data quirk), this flag
     # identifies which one is canonical. We store it so deduplicate_matchups
@@ -196,6 +197,7 @@ def extract_team_data(team_obj):
     else:
         info["manager"] = "-- hidden --"
     info["is_primary"] = is_primary
+    info["team_key"] = found_team_key or ""
 
     # ── Step 2: stats walk — never touches name or nickname ─────────────────
     def _apply_outcome_totals(totals):
@@ -246,6 +248,7 @@ def extract_team_data(team_obj):
         "name": info["name"],
         "manager": info["manager"],
         "is_primary": info.get("is_primary", False),
+        "team_key": info.get("team_key", ""),
         "record": record_str,
         "is_category": is_category,
         "wins": w,
@@ -342,10 +345,12 @@ def parse_matchups(data, season, league_name, league_key, week):
             "manager_a": team_a_info["manager"],
             "manager_a_record": team_a_info["record"],
             "manager_a_primary": team_a_info.get("is_primary", False),
+            "manager_a_team_key": team_a_info.get("team_key", ""),
 
             "manager_b": team_b_info["manager"],
             "manager_b_record": team_b_info["record"],
             "manager_b_primary": team_b_info.get("is_primary", False),
+            "manager_b_team_key": team_b_info.get("team_key", ""),
         })
 
     return results
@@ -354,41 +359,63 @@ def parse_matchups(data, season, league_name, league_key, week):
 def mask_duplicate_managers(all_rows):
     """
     When Yahoo registers a manager with multiple team entries in the same league,
-    every team gets that manager's nickname. Only one team is their real entry
-    (flagged by is_owned_by_current_login = manager_a_primary / manager_b_primary).
-    The extra team slots are effectively hidden/ghost teams — replace their
-    manager name with '-- hidden --' so they don't inflate H2H records.
+    every team gets that manager's nickname, inflating H2H matchup counts.
 
-    Strategy: for each (league_key, manager_name), find the primary team row.
-    Any other rows in that league where that manager name appears on a non-primary
-    team get their manager name replaced with '-- hidden --'.
+    We identify the canonical team for each manager per league using team_key:
+    the lowest numeric team_key = first registered = real team. All other team
+    entries for that manager in that league get their manager name replaced with
+    '-- hidden --'.
     """
     from collections import defaultdict
 
-    # Collect all (league, manager) combos and whether any row has the primary flag
-    league_manager_has_primary = defaultdict(bool)
-    for row in all_rows:
-        if row.get("manager_a_primary"):
-            league_manager_has_primary[(row["league_key"], row["manager_a"])] = True
-        if row.get("manager_b_primary"):
-            league_manager_has_primary[(row["league_key"], row["manager_b"])] = True
+    def team_key_sort(tk):
+        # team_key format: "147.l.322066.t.3" — sort by the trailing team number
+        try:
+            return int(tk.rsplit(".", 1)[-1])
+        except (ValueError, AttributeError):
+            return 999999
 
-    # For each (league, manager) that HAS a primary, mask all non-primary appearances
+    # Pass 1: for each (league, manager), find their canonical (lowest) team_key
+    league_mgr_keys = defaultdict(set)
+    for row in all_rows:
+        lk = row["league_key"]
+        if row["manager_a"] and row["manager_a"] != "-- hidden --":
+            tk = row.get("manager_a_team_key", "")
+            if tk:
+                league_mgr_keys[(lk, row["manager_a"])].add(tk)
+        if row["manager_b"] and row["manager_b"] != "-- hidden --":
+            tk = row.get("manager_b_team_key", "")
+            if tk:
+                league_mgr_keys[(lk, row["manager_b"])].add(tk)
+
+    # Canonical team_key = lowest numeric team number per (league, manager)
+    canonical_team_key = {
+        k: min(tks, key=team_key_sort)
+        for k, tks in league_mgr_keys.items()
+        if len(tks) > 1  # only matters for managers with multiple teams
+    }
+
+    if not canonical_team_key:
+        return  # no duplicates found
+
+    # Pass 2: mask non-canonical appearances
     masked = 0
     for row in all_rows:
         lk = row["league_key"]
         ma, mb = row["manager_a"], row["manager_b"]
 
-        if league_manager_has_primary.get((lk, ma)) and not row.get("manager_a_primary"):
+        canon_a = canonical_team_key.get((lk, ma))
+        if canon_a and row.get("manager_a_team_key") != canon_a:
             row["manager_a"] = "-- hidden --"
             masked += 1
 
-        if league_manager_has_primary.get((lk, mb)) and not row.get("manager_b_primary"):
+        canon_b = canonical_team_key.get((lk, mb))
+        if canon_b and row.get("manager_b_team_key") != canon_b:
             row["manager_b"] = "-- hidden --"
             masked += 1
 
     if masked:
-        print(f"  Masked {masked} non-primary duplicate manager entries as '-- hidden --'.", flush=True)
+        print(f"  Masked {masked} non-canonical duplicate manager entries as '-- hidden --'.", flush=True)
 
 
 def backfill_ties(all_rows):

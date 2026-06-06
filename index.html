@@ -291,6 +291,7 @@
   body.light-mode .wk-cat-last { color: #c0392b; }
   body.light-mode .wk-cat-rank-2 { color: #555; }
   body.light-mode .wk-cat-rank-3 { color: #7a4010; }
+  body.light-mode .wk-cat-table td { color: var(--lm-text); }
 
   .trade-win { color: #7ecfa0 !important; }
   .trade-lose { color: #e07070 !important; }
@@ -371,8 +372,8 @@
         <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
         <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
         <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
-        <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly Category Rankings</a>
-        <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season Category Rankings</a>
+        <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season All Categories</a>
+        <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly All Categories</a>
       </div></div>
     </div>
 
@@ -1520,7 +1521,7 @@ function showWeeklyCategories(c) {
 
   c.innerHTML = `
     <div class="section-vertical-stack">
-      <h2>Weekly Category Rankings</h2>
+      <h2>Weekly All Categories</h2>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px;">
         <select id="wkCatSeason" onchange="wkCatPopulateWeeks()">${seasonOpts}</select>
         <select id="wkCatWeek"></select>
@@ -1681,7 +1682,7 @@ function showSeasonCategories(c) {
 
   c.innerHTML = `
     <div class="section-vertical-stack">
-      <h2>Season Category Rankings</h2>
+      <h2>Season All Categories</h2>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px;">
         <select id="sznCatSeason">${seasonOpts}</select>
         <button class="show-btn" onclick="renderSeasonCategories()">SHOW RANKINGS</button>

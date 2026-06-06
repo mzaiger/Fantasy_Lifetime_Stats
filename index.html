@@ -289,6 +289,8 @@
   .wk-cat-last    { color: rgba(200,100,100,0.75); }
   .wk-cat-scroll  { overflow-x: auto; width: 100%; }
   body.light-mode .wk-cat-last { color: #c0392b; }
+  body.light-mode .wk-cat-rank-2 { color: #555; }
+  body.light-mode .wk-cat-rank-3 { color: #7a4010; }
 
   .trade-win { color: #7ecfa0 !important; }
   .trade-lose { color: #e07070 !important; }
@@ -370,6 +372,7 @@
         <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
         <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
         <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly Category Rankings</a>
+        <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season Category Rankings</a>
       </div></div>
     </div>
 
@@ -642,6 +645,7 @@ function setPage(page) {
   if (page === "h2hManager")         showH2HManager(c);
   if (page === "h2hSeason")          showH2HSeason(c);
   if (page === "weeklyCategories")   showWeeklyCategories(c);
+  if (page === "seasonCategories")   showSeasonCategories(c);
 }
 
 /* ══════════════════════════════════════════
@@ -1511,7 +1515,7 @@ function showWeeklyCategories(c) {
   });
 
   const seasonOpts = slEntries.map(e =>
-    `<option value="${e.season}_${e.leagueId}">${e.season} (${e.leagueId})</option>`
+    `<option value="${e.season}_${e.leagueId}">${e.season}</option>`
   ).join("");
 
   c.innerHTML = `
@@ -1656,7 +1660,127 @@ function renderWeeklyCategories() {
   div.innerHTML = html;
 }
 
-function showExportData(c) {
+/* ── SEASON CATEGORY RANKINGS ── */
+function showSeasonCategories(c) {
+  c.classList.remove("grid-view");
+
+  // Build season list from rawData, extracting league ID from team_key
+  const seasonMap = {};
+  rawData.forEach(r => {
+    const tk = r.team_key || "";
+    const parts = tk.split(".");
+    const leagueId = parts.length >= 4 ? parts[2] : null;
+    const key = String(r.season);
+    if (!seasonMap[key]) seasonMap[key] = { season: key, leagueId };
+  });
+
+  const seasonOpts = Object.keys(seasonMap)
+    .sort((a, b) => b - a)
+    .map(s => `<option value="${s}">${s}</option>`)
+    .join("");
+
+  c.innerHTML = `
+    <div class="section-vertical-stack">
+      <h2>Season Category Rankings</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px;">
+        <select id="sznCatSeason">${seasonOpts}</select>
+        <button class="show-btn" onclick="renderSeasonCategories()">SHOW RANKINGS</button>
+      </div>
+      <div id="sznCatTable"></div>
+    </div>`;
+}
+
+function renderSeasonCategories() {
+  const season = document.getElementById("sznCatSeason").value;
+  const div = document.getElementById("sznCatTable");
+
+  const rows = rawData.filter(r => String(r.season) === String(season));
+
+  if (rows.length === 0) {
+    div.innerHTML = `<p class="no-data">No data found for ${season}.</p>`;
+    return;
+  }
+
+  // Determine which categories have data this season
+  const cats = avgFields.filter(stat => rows.some(r => isValid(r[stat])));
+
+  // Build per-team data and rank each category
+  const teamData = rows.map(r => ({ row: r, stats: {} }));
+
+  cats.forEach(stat => {
+    const decPrec = ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0;
+    const isLower = eraFields.includes(stat);
+
+    const withVals = teamData
+      .filter(t => isValid(t.row[stat]))
+      .map(t => ({ t, val: parseFloat(t.row[stat]) }));
+
+    withVals.sort((a, b) => isLower ? a.val - b.val : b.val - a.val);
+
+    let rank = 1;
+    withVals.forEach((item, i) => {
+      if (i > 0 && item.val !== withVals[i-1].val) rank = i + 1;
+      item.t.stats[stat] = { val: item.val.toFixed(decPrec), rank };
+    });
+
+    teamData.filter(t => !isValid(t.row[stat])).forEach(t => {
+      t.stats[stat] = { val: "—", rank: null };
+    });
+  });
+
+  // Sort by sum of ranks (lower = better overall season)
+  teamData.forEach(t => {
+    t.rankSum = cats.reduce((sum, stat) => {
+      const r = t.stats[stat] && t.stats[stat].rank !== null ? t.stats[stat].rank : rows.length;
+      return sum + r;
+    }, 0);
+  });
+  teamData.sort((a, b) => a.rankSum - b.rankSum);
+
+  const n = teamData.length;
+
+  let html = `
+    <div style="margin-bottom:8px;font-size:0.78rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;">
+      ${season} Season — sorted by best overall rank score
+    </div>
+    <div class="wk-cat-scroll">
+    <table class="wk-cat-table">
+      <thead><tr>
+        <th>#</th>
+        <th style="text-align:left;min-width:120px;">Manager</th>
+        ${cats.map(s => `<th>${s}</th>`).join("")}
+      </tr></thead>
+      <tbody>`;
+
+  teamData.forEach((t, i) => {
+    const mgr = t.row.manager_nickname || "—";
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td style="text-align:left;font-weight:500;color:#e8dfc8;">${mgr}</td>`;
+
+    cats.forEach(stat => {
+      const s = t.stats[stat];
+      const rank = s ? s.rank : null;
+      const val = s ? s.val : "—";
+
+      let cls = "";
+      if (rank === 1)       cls = "wk-cat-rank-1";
+      else if (rank === 2)  cls = "wk-cat-rank-2";
+      else if (rank === 3)  cls = "wk-cat-rank-3";
+      else if (rank === n)  cls = "wk-cat-last";
+
+      const rankBadge = rank !== null ? `<span style="font-size:0.65rem;opacity:0.6;margin-right:2px;">#${rank}</span>` : "";
+      html += `<td class="${cls}">${rankBadge}${val}</td>`;
+    });
+
+    html += `</tr>`;
+  });
+
+  html += `</tbody></table></div>`;
+  div.innerHTML = html;
+}
+
+
   c.classList.remove("grid-view");
   const today = new Date().toISOString().split('T')[0];
   c.innerHTML = `

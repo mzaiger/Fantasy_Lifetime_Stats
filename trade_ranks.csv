@@ -554,7 +554,7 @@ season,league_key,trade_id,timestamp,from_manager,to_manager,player_name,player_
 2026,469.l.23321,660,1780766306,NOBS,Paulie,Colson Montgomery,"3B,SS",469.p.12413,116,164,90
 2026,469.l.23321,660,1780766306,Paulie,NOBS,Gunnar Henderson,SS,469.p.11731,129,15,99
 2026,469.l.23321,660,1780766306,Paulie,NOBS,Parker Messick,SP,469.p.60042,58,83,91
-2026,469.l.23321,625,1780427795,NOBS,Douglas,JJ Bleday,OF,469.p.11782,223,488,59
+2026,469.l.23321,625,1780427795,NOBS,Douglas,JJ Bleday,OF,469.p.11782,223,492,59
 2026,469.l.23321,625,1780427795,Douglas,NOBS,Payton Tolle,"SP,RP",469.p.64394,80,264,67
 2026,469.l.23321,535,1779124700,The Wizard,NOBS,Ivan Herrera,C,469.p.11836,71,210,91
 2026,469.l.23321,535,1779124700,NOBS,The Wizard,Braxton Ashcraft,"SP,RP",469.p.11372,46,148,86
@@ -593,7 +593,7 @@ season,league_key,trade_id,timestamp,from_manager,to_manager,player_name,player_
 2026,469.l.23321,129,1774399577,Douglas,NOBS,Hunter Greene,SP,469.p.10862,2182,372,63
 2026,469.l.23321,129,1774399577,NOBS,Douglas,Daulton Varsho,OF,469.p.10843,417,169,32
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Mike Trout,OF,469.p.8861,16,73,96
-2026,469.l.23321,14,1774287072,The Wizard,Paulie,Jordan Westburg,"2B,3B",469.p.12122,1834,1503,10
+2026,469.l.23321,14,1774287072,The Wizard,Paulie,Jordan Westburg,"2B,3B",469.p.12122,1834,1499,10
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Dennis Santana,RP,469.p.10901,660,271,46
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Seranthony Domínguez,RP,469.p.11011,105,163,54
 2026,469.l.23321,14,1774287072,The Wizard,Paulie,Parker Messick,SP,469.p.60042,58,83,91

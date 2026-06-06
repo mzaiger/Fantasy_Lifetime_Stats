@@ -6571,49 +6571,6 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2010,238.l.196954,238.l.196954.t.12,QUEEN BEE,MELISSA,20,1268725782,add,David DeJesus,OF,add,0
 2010,238.l.196954,238.l.196954.t.12,QUEEN BEE,MELISSA,15,1268725782,add,Cody Ross,OF,add,0
 2010,238.l.196954,238.l.196954.t.12,QUEEN BEE,MELISSA,10,1268725782,add,Jeff Niemann,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,365,1315690628,add/drop,Jeff Francoeur,OF,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,365,1315690628,drop,Gaby Sanchez,1B,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,346,1314329059,add/drop,Antonio Bastardo,RP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,346,1314329059,drop,Kyle Drabek,SP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,316,1311737495,add/drop,Jeremy Hellickson,"SP,RP",add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,316,1311737495,drop,Zack Britton,SP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,291,1309813236,add/drop,Erick Aybar,SS,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,291,1309813236,drop,Yunel Escobar,SS,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,229,1305307352,add/drop,Melky Cabrera,OF,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,229,1305307352,drop,Tyler Colvin,OF,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,228,1305307248,add/drop,Gaby Sanchez,1B,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,228,1305307248,drop,Aaron Hill,2B,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,227,1305307217,drop,J.P. Arencibia,C,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,196,1303936189,add,Sergio Santos,RP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,195,1303935823,add,Yunel Escobar,SS,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,152,1302888312,add/drop,Zack Britton,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,152,1302888312,drop,Phil Hughes,SP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,136,1302376646,add/drop,Willie Bloomquist,"3B,SS,OF",add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,136,1302376646,drop,Reid Brignac,"2B,SS",drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,118,1302057622,add/drop,Brad Bergesen,"SP,RP",add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,118,1302057622,drop,Brett Cecil,SP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,117,1302047790,add/drop,Jordan Walden,RP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,117,1302047790,drop,Fernando Rodney,RP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,110,1301880746,add/drop,Travis Wood,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,110,1301880746,drop,John Lackey,SP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,108,1301775014,add/drop,Kyle Drabek,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,108,1301775014,drop,Ian Kennedy,SP,drop,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,107,1301767834,add,J.P. Arencibia,C,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,106,1301767121,add,Brett Cecil,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,98,1301622460,add,John Lackey,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,97,1301622074,add,Tyler Colvin,OF,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,96,1301621293,add,Michael Pineda,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,95,1301621069,add,Jonny Venters,RP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,94,1301620938,add,Ian Kennedy,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,93,1301620827,add,Jordan Zimmermann,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,92,1301620747,add,James Shields,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,56,1301384813,add,Reid Brignac,"2B,SS",add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,51,1301384813,add,Fernando Rodney,RP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,45,1301384813,add,Phil Hughes,SP,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,39,1301384813,add,Adam Lind,"1B,OF",add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,31,1301384813,add,Aaron Hill,2B,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,22,1301384812,add,Casey McGehee,3B,add,0
-2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,13,1301384812,add,Mark Reynolds,"1B,3B",add,0
 2011,253.l.71205,253.l.71205.t.3,Lt Dans New Legs,Dan,333,1313189064,add/drop,Jesus Guzman,"1B,OF",add,0
 2011,253.l.71205,253.l.71205.t.3,Lt Dans New Legs,Dan,333,1313189064,drop,Adam Dunn,1B,drop,0
 2011,253.l.71205,253.l.71205.t.3,Lt Dans New Legs,Dan,312,1311299918,add/drop,Javier Vazquez,"SP,RP",add,0
@@ -28104,6 +28061,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,658,1780734181,add/drop,Oswald Peraza,"1B,2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,658,1780734181,drop,Isiah Kiner-Falefa,"2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,634,1780561308,add/drop,Shane Baz,SP,add,2
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,634,1780561308,drop,Anthony Nunez,RP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,632,1780561308,add/drop,Jake McCarthy,OF,add,3
@@ -28272,6 +28231,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,657,1780734181,add/drop,Noah Cameron,SP,add,1
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,657,1780734181,drop,Brandon Marsh,OF,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,637,1780561308,add/drop,Brandon Marsh,OF,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,637,1780561308,drop,Corbin Burnes,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,636,1780561308,add/drop,Bryce Eldridge,1B,add,0
@@ -28563,6 +28524,11 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,656,1780734181,add/drop,Michael Massey,"2B,OF",add,1
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,656,1780734181,drop,Gabriel Moreno,C,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,655,1780734181,add/drop,Joc Pederson,Util,add,1
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,655,1780734181,drop,Geraldo Perdomo,SS,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,654,1780734181,add,Jung Hoo Lee,OF,add,1
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,653,1780668333,drop,Trevor McDonald,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,622,1780388372,add/drop,Wilber Dotel,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,622,1780388372,drop,Daniel Palencia,RP,drop,0
@@ -28657,6 +28623,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,41,1774339163,add,Garrett Whitlock,RP,add,4
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,26,1774339163,add,Ernie Clement,"1B,2B,3B,SS",add,7
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,25,1774339163,add,Giancarlo Stanton,OF,add,7
+2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,659,1780747886,drop,Kyle Stowers,OF,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,645,1780647606,add,Vaughn Grissom,"1B,2B,3B",add,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,644,1780647606,add,Paul Goldschmidt,1B,add,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,643,1780647606,add/drop,Andrew Benintendi,OF,add,0

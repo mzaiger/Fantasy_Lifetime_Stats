@@ -279,15 +279,16 @@
   body.light-mode .team-tx-table td:nth-child(4) { color: #a02020; }
 
   /* ── Weekly Category Rankings ── */
-  .wk-cat-table { table-layout: fixed; }
-  .wk-cat-table th { white-space: nowrap; font-size: 0.75rem; padding: 6px 5px; }
+  .wk-cat-table { table-layout: fixed; min-width: 900px; }
+  .wk-cat-table th { white-space: nowrap; font-size: 0.75rem; padding: 6px 5px; min-width: 52px; }
+  .wk-cat-table th:nth-child(2) { min-width: 110px; text-align: left; }
   .wk-cat-table td { padding: 6px 5px; font-size: 0.8rem; white-space: nowrap; }
-  .wk-cat-table td:first-child { width: 28px; }
+  .wk-cat-table td:first-child { width: 28px; min-width: 28px; }
   .wk-cat-rank-1  { color: var(--gold); font-weight: 800; }
   .wk-cat-rank-2  { color: #c0c0c0; font-weight: 700; }
   .wk-cat-rank-3  { color: #cd7f32; font-weight: 700; }
   .wk-cat-last    { color: rgba(200,100,100,0.75); }
-  .wk-cat-scroll  { overflow-x: auto; width: 100%; }
+  .wk-cat-scroll  { overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; }
   body.light-mode .wk-cat-last { color: #c0392b; }
   body.light-mode .wk-cat-rank-2 { color: #c0c0c0; }
   body.light-mode .wk-cat-rank-3 { color: #cd7f32; }

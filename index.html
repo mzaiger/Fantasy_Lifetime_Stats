@@ -289,9 +289,14 @@
   .wk-cat-last    { color: rgba(200,100,100,0.75); }
   .wk-cat-scroll  { overflow-x: auto; width: 100%; }
   body.light-mode .wk-cat-last { color: #c0392b; }
-  body.light-mode .wk-cat-rank-2 { color: #555; }
-  body.light-mode .wk-cat-rank-3 { color: #7a4010; }
+  body.light-mode .wk-cat-rank-2 { color: #c0c0c0; }
+  body.light-mode .wk-cat-rank-3 { color: #cd7f32; }
   body.light-mode .wk-cat-table td { color: var(--lm-text); }
+  body.light-mode .wk-cat-table .wk-cat-rank-1 { color: var(--gold); }
+  body.light-mode .wk-cat-table .wk-cat-rank-2 { color: #c0c0c0; }
+  body.light-mode .wk-cat-table .wk-cat-rank-3 { color: #cd7f32; }
+  body.light-mode .wk-cat-table .wk-cat-last   { color: #c0392b; }
+  body.light-mode .wk-cat-mgr { color: var(--lm-text) !important; }
 
   .trade-win { color: #7ecfa0 !important; }
   .trade-lose { color: #e07070 !important; }
@@ -1635,7 +1640,7 @@ function renderWeeklyCategories() {
     const mgr = t.row.manager_nickname || "—";
     html += `<tr>
       <td>${i + 1}</td>
-      <td style="text-align:left;font-weight:500;color:#e8dfc8;">${mgr}</td>`;
+      <td class="wk-cat-mgr" style="text-align:left;font-weight:500;color:#e8dfc8;">${mgr}</td>`;
 
     cats.forEach(stat => {
       const s = t.stats[stat];
@@ -1757,7 +1762,7 @@ function renderSeasonCategories() {
     const mgr = t.row.manager_nickname || "—";
     html += `<tr>
       <td>${i + 1}</td>
-      <td style="text-align:left;font-weight:500;color:#e8dfc8;">${mgr}</td>`;
+      <td class="wk-cat-mgr" style="text-align:left;font-weight:500;color:#e8dfc8;">${mgr}</td>`;
 
     cats.forEach(stat => {
       const s = t.stats[stat];

@@ -1780,7 +1780,8 @@ function renderSeasonCategories() {
   div.innerHTML = html;
 }
 
-
+/* ── EXPORT DATA ── */
+function showExportData(c) {
   c.classList.remove("grid-view");
   const today = new Date().toISOString().split('T')[0];
   c.innerHTML = `

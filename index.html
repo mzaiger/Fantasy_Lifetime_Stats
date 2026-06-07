@@ -380,8 +380,8 @@
         <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
         <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
         <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
-        <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season All Categories</a>
-        <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly All Categories</a>
+        <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season Combined Categories</a>
+        <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly Combined Categories</a>
       </div></div>
     </div>
 
@@ -1529,7 +1529,7 @@ function showWeeklyCategories(c) {
 
   c.innerHTML = `
     <div class="section-vertical-stack">
-      <h2>Weekly All Categories</h2>
+      <h2>Weekly Combined Categories</h2>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px;">
         <select id="wkCatSeason" onchange="wkCatPopulateWeeks()">${seasonOpts}</select>
         <select id="wkCatWeek"></select>
@@ -1690,7 +1690,7 @@ function showSeasonCategories(c) {
 
   c.innerHTML = `
     <div class="section-vertical-stack">
-      <h2>Season All Categories</h2>
+      <h2>Season Combined Categories</h2>
       <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px;">
         <select id="sznCatSeason">${seasonOpts}</select>
         <button class="show-btn" onclick="renderSeasonCategories()">SHOW RANKINGS</button>

@@ -6571,6 +6571,49 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2010,238.l.196954,238.l.196954.t.12,QUEEN BEE,MELISSA,20,1268725782,add,David DeJesus,OF,add,0
 2010,238.l.196954,238.l.196954.t.12,QUEEN BEE,MELISSA,15,1268725782,add,Cody Ross,OF,add,0
 2010,238.l.196954,238.l.196954.t.12,QUEEN BEE,MELISSA,10,1268725782,add,Jeff Niemann,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,365,1315690628,add/drop,Jeff Francoeur,OF,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,365,1315690628,drop,Gaby Sanchez,1B,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,346,1314329059,add/drop,Antonio Bastardo,RP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,346,1314329059,drop,Kyle Drabek,SP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,316,1311737495,add/drop,Jeremy Hellickson,"SP,RP",add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,316,1311737495,drop,Zack Britton,SP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,291,1309813236,add/drop,Erick Aybar,SS,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,291,1309813236,drop,Yunel Escobar,SS,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,229,1305307352,add/drop,Melky Cabrera,OF,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,229,1305307352,drop,Tyler Colvin,OF,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,228,1305307248,add/drop,Gaby Sanchez,1B,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,228,1305307248,drop,Aaron Hill,2B,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,227,1305307217,drop,J.P. Arencibia,C,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,196,1303936189,add,Sergio Santos,RP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,195,1303935823,add,Yunel Escobar,SS,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,152,1302888312,add/drop,Zack Britton,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,152,1302888312,drop,Phil Hughes,SP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,136,1302376646,add/drop,Willie Bloomquist,"3B,SS,OF",add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,136,1302376646,drop,Reid Brignac,"2B,SS",drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,118,1302057622,add/drop,Brad Bergesen,"SP,RP",add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,118,1302057622,drop,Brett Cecil,SP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,117,1302047790,add/drop,Jordan Walden,RP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,117,1302047790,drop,Fernando Rodney,RP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,110,1301880746,add/drop,Travis Wood,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,110,1301880746,drop,John Lackey,SP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,108,1301775014,add/drop,Kyle Drabek,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,108,1301775014,drop,Ian Kennedy,SP,drop,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,107,1301767834,add,J.P. Arencibia,C,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,106,1301767121,add,Brett Cecil,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,98,1301622460,add,John Lackey,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,97,1301622074,add,Tyler Colvin,OF,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,96,1301621293,add,Michael Pineda,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,95,1301621069,add,Jonny Venters,RP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,94,1301620938,add,Ian Kennedy,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,93,1301620827,add,Jordan Zimmermann,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,92,1301620747,add,James Shields,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,56,1301384813,add,Reid Brignac,"2B,SS",add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,51,1301384813,add,Fernando Rodney,RP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,45,1301384813,add,Phil Hughes,SP,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,39,1301384813,add,Adam Lind,"1B,OF",add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,31,1301384813,add,Aaron Hill,2B,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,22,1301384812,add,Casey McGehee,3B,add,0
+2011,253.l.71205,253.l.71205.t.2,Sidd Finch 9.0,Paulie,13,1301384812,add,Mark Reynolds,"1B,3B",add,0
 2011,253.l.71205,253.l.71205.t.3,Lt Dans New Legs,Dan,333,1313189064,add/drop,Jesus Guzman,"1B,OF",add,0
 2011,253.l.71205,253.l.71205.t.3,Lt Dans New Legs,Dan,333,1313189064,drop,Adam Dunn,1B,drop,0
 2011,253.l.71205,253.l.71205.t.3,Lt Dans New Legs,Dan,312,1311299918,add/drop,Javier Vazquez,"SP,RP",add,0
@@ -28149,6 +28192,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"1B,2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,665,1780820520,add/drop,Sean Manaea,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,665,1780820520,drop,Mitch Garver,C,drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,626,1780430796,drop,Brad Keller,RP,drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,613,1780302500,add/drop,Jack Dreyer,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,613,1780302500,drop,Ian Seymour,"SP,RP",drop,0
@@ -28231,6 +28276,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,668,1780837638,drop,Robbie Ray,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,657,1780734181,add/drop,Noah Cameron,SP,add,1
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,657,1780734181,drop,Brandon Marsh,OF,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,637,1780561308,add/drop,Brandon Marsh,OF,add,0
@@ -28243,7 +28289,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,615,1780302500,drop,Ernie Clement,"1B,2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,612,1780302500,add/drop,Tatsuya Imai,SP,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,612,1780302500,drop,Caleb Kilian,RP,drop,0
-2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,604,1780129192,add/drop,Jacob Gonzalez,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,604,1780129192,add/drop,Jacob Gonzalez,"1B,2B,SS",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,604,1780129192,drop,Eury Pérez,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,598,1780042741,add/drop,David Sandlin,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,598,1780042741,drop,Kazuma Okamoto,"1B,3B",drop,0
@@ -28400,6 +28446,12 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,664,1780820520,add/drop,Joey Cantillo,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,664,1780820520,drop,Jeffrey Springs,SP,drop,0
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,663,1780820520,add/drop,Rhett Lowder,SP,add,1
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,663,1780820520,drop,Kyle Leahy,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,662,1780820520,add/drop,Connor Prielipp,SP,add,1
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,662,1780820520,drop,Brady Singer,SP,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,649,1780647606,add/drop,Kyle Leahy,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,649,1780647606,drop,Miguel Andujar,"3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,648,1780647606,add/drop,Brady Singer,SP,add,0
@@ -28524,6 +28576,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,666,1780820520,add/drop,Brandon Eisert,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,666,1780820520,drop,Martín Pérez,SP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,661,1780820520,add/drop,Zack Littell,SP,add,1
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,661,1780820520,drop,Anthony Kay,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,656,1780734181,add/drop,Michael Massey,"2B,OF",add,1
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,656,1780734181,drop,Gabriel Moreno,C,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,655,1780734181,add/drop,Joc Pederson,Util,add,1

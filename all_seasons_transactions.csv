@@ -28530,6 +28530,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,76,1774339163,add,Shane Smith,SP,add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,75,1774339163,add,Gabriel Moreno,C,add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,74,1774339163,add,Chase Dollander,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,710,1781252446,add,Kody Clemens,"1B,2B,OF",add,0
+2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,709,1781252446,add,Gabriel Moreno,C,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,562,1779395080,drop,Carlos Narváez,C,drop,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,545,1779209799,drop,Brayan Bello,SP,drop,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,469,1778158592,drop,Tyler O'Neill,OF,drop,0
@@ -28624,6 +28626,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Jensen Tire Inc,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,711,1781252446,add/drop,Didier Fuentes,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,711,1781252446,drop,Wilber Dotel,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,708,1781166646,add/drop,Grant Taylor,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,708,1781166646,drop,Brandon Eisert,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,696,1781079619,add/drop,Alec Bohm,"1B,3B",add,0

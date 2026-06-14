@@ -27957,6 +27957,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,724,1781441489,drop,Curtis Mead,"1B,2B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,691,1781079619,add,Cole Carrigg,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,688,1781038350,drop,Kyle Stowers,"1B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,681,1780993293,add/drop,Carlos Cortes,OF,add,0
@@ -28118,6 +28119,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,720,1781425322,add/drop,Javier Assad,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,720,1781425322,drop,Peter Lambert,SP,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,719,1781425322,add/drop,Elvis Alvarado,RP,add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,719,1781425322,drop,Chad Patrick,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,693,1781079619,add/drop,David Hamilton,"2B,3B,SS",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,693,1781079619,drop,Oswald Peraza,"1B,2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,682,1780993293,add/drop,Brandon Valenzuela,"C,1B",add,0
@@ -28267,6 +28272,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,138,1774425768,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,137,1774425768,add,Nolan Arenado,3B,add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,83,1774339163,add,Riley O'Brien,RP,add,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,717,1781425322,add/drop,Royce Lewis,"1B,3B",add,2
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,717,1781425322,drop,Kai-Wei Teng,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,627,1780474781,add,Ernie Clement,"1B,2B,3B,SS",add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,603,1780129192,add/drop,Kumar Rocker,SP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,603,1780129192,drop,Steven Matz,"SP,RP",drop,0
@@ -28304,6 +28311,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,721,1781425322,add/drop,Jordan Lawlar,"3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,721,1781425322,drop,Matt McLain,"2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,712,1781338767,add/drop,Dominic Canzone,OF,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,712,1781338767,drop,Tatsuya Imai,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,704,1781166646,add/drop,Ryan Weathers,SP,add,1
@@ -28485,6 +28494,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,716,1781425322,add,Noelvi Marte,"3B,OF",add,3
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,715,1781368706,drop,Taj Bradley,SP,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,664,1780820520,add/drop,Joey Cantillo,"SP,RP",add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,664,1780820520,drop,Jeffrey Springs,SP,drop,0
@@ -28535,6 +28545,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,76,1774339163,add,Shane Smith,SP,add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,75,1774339163,add,Gabriel Moreno,C,add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,74,1774339163,add,Chase Dollander,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,718,1781425322,add,Shane Drohan,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,710,1781252446,add,Kody Clemens,"1B,2B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,709,1781252446,add,Gabriel Moreno,C,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,562,1779395080,drop,Carlos Narváez,C,drop,0
@@ -28767,7 +28778,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,440,1777883153,add,Janson Junk,"SP,RP",add,3
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,438,1777812952,drop,Evan Carter,OF,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,437,1777812930,drop,Luke Raley,"1B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,409,1777411586,drop,Royce Lewis,3B,drop,0
+2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,409,1777411586,drop,Royce Lewis,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,338,1776673249,add,Luke Raley,"1B,OF",add,2
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,334,1776542290,drop,Ezequiel Tovar,SS,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,306,1776068714,add/drop,Travis Bazzana,2B,add,0

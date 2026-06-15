@@ -27957,6 +27957,12 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,728,1781512310,add/drop,Kyle Stowers,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,728,1781512310,drop,Colton Cowser,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,727,1781512310,add/drop,Yoendrys Gómez,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,727,1781512310,drop,Andrew Vaughn,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,726,1781512310,add/drop,Luis Lara,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,726,1781512310,drop,Carlos Cortes,OF,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,724,1781441489,drop,Curtis Mead,"1B,2B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,691,1781079619,add,Cole Carrigg,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,688,1781038350,drop,Kyle Stowers,"1B,OF",drop,0
@@ -28311,6 +28317,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,729,1781512310,add/drop,Logan O'Hoppe,C,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,729,1781512310,drop,Freddy Fermin,C,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,725,1781512310,add/drop,Dustin May,SP,add,1
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,725,1781512310,drop,Jacob Gonzalez,"1B,2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,721,1781425322,add/drop,Jordan Lawlar,"3B,OF",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,721,1781425322,drop,Matt McLain,"2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,712,1781338767,add/drop,Dominic Canzone,OF,add,0

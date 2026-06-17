@@ -357,6 +357,8 @@
       <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('lifetimeRecord'); closeMobileItem(this)">Lifetime</a>
         <a onclick="setPage('seasonRecord'); closeMobileItem(this)">Season</a>
+        <a onclick="setPage('winStreaks'); closeMobileItem(this)">Winning Streaks</a>
+        <a onclick="setPage('lossStreaks'); closeMobileItem(this)">Losing Streaks</a>
       </div></div>
     </div>
 
@@ -653,6 +655,8 @@ function setPage(page) {
   if (page === "h2hLifetime")        showH2HLifetime(c);
   if (page === "h2hManager")         showH2HManager(c);
   if (page === "h2hSeason")          showH2HSeason(c);
+  if (page === "winStreaks")         showWinStreaks(c);
+  if (page === "lossStreaks")        showLossStreaks(c);
   if (page === "weeklyCategories")   showWeeklyCategories(c);
   if (page === "seasonCategories")   showSeasonCategories(c);
 }
@@ -1788,6 +1792,111 @@ function renderSeasonCategories() {
   html += `</tbody></table></div>`;
   div.innerHTML = html;
 }
+
+/* ── STREAK HELPERS ── */
+function buildStreakData() {
+  const managerWeeks = {};
+
+  h2hRawData.forEach(r => {
+    const a = r.manager_a, b = r.manager_b;
+    if (isHiddenManager(a) || isHiddenManager(b)) return;
+    // Skip points leagues (decimal records)
+    if (String(r.manager_a_record).includes('.') || String(r.manager_b_record).includes('.')) return;
+    const ar = parseInt(r.manager_a_record), br = parseInt(r.manager_b_record);
+    if (isNaN(ar) || isNaN(br)) return;
+
+    const aRes = ar > br ? 'W' : ar < br ? 'L' : 'T';
+    const bRes = br > ar ? 'W' : br < ar ? 'L' : 'T';
+
+    [{ mgr: a, res: aRes }, { mgr: b, res: bRes }].forEach(({ mgr, res }) => {
+      if (!managerWeeks[mgr]) managerWeeks[mgr] = {};
+      const key = `${r.season}|${r.week}`;
+      if (!managerWeeks[mgr][key]) managerWeeks[mgr][key] = res; // deduplicate
+    });
+  });
+
+  // Convert to sorted arrays
+  const sorted = {};
+  Object.keys(managerWeeks).forEach(mgr => {
+    sorted[mgr] = Object.entries(managerWeeks[mgr])
+      .map(([k, res]) => { const [season, week] = k.split('|'); return { season, week: parseInt(week), res }; })
+      .sort((a, b) => a.season !== b.season ? a.season.localeCompare(b.season) : a.week - b.week);
+  });
+
+  return sorted;
+}
+
+function computeTopStreaks(type, n) {
+  const managerWeeks = buildStreakData();
+  const allStreaks = [];
+
+  Object.keys(managerWeeks).forEach(mgr => {
+    const weeks = managerWeeks[mgr];
+    let count = 0, startSeason = null, startWeek = null, prevSeason = null, prevWeek = null;
+
+    weeks.forEach(({ season, week, res }) => {
+      if (season !== prevSeason && count > 0) {
+        // season boundary — save streak
+        allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
+        count = 0; startSeason = null;
+      }
+      if (res === type) {
+        count++;
+        if (!startSeason) { startSeason = season; startWeek = week; }
+      } else {
+        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: week });
+        count = 0; startSeason = null;
+      }
+      prevSeason = season; prevWeek = week;
+    });
+    if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
+  });
+
+  return allStreaks.sort((a, b) => b.count - a.count).slice(0, n);
+}
+
+function renderStreakPage(c, type) {
+  c.classList.remove('grid-view');
+  const isWin = type === 'W';
+  const title = isWin ? 'All-Time Winning Streaks' : 'All-Time Losing Streaks';
+  const emoji = isWin ? '🔥' : '💀';
+  const accentColor = isWin ? 'var(--gold)' : 'var(--red-bright)';
+  const streaks = computeTopStreaks(type, 20);
+
+  let html = `<h2>${emoji} ${title}</h2>`;
+  html += `<p style="color:rgba(255,255,255,0.45);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;margin-bottom:12px;">
+    Consecutive weekly matchup ${isWin ? 'wins' : 'losses'} within a single season — top 20 all-time
+  </p>`;
+  html += `<table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th style="text-align:left;">Manager</th>
+        <th>Streak</th>
+        <th>Season</th>
+        <th>Weeks</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  streaks.forEach((s, i) => {
+    const rankStyle = i === 0 ? `color:var(--gold);font-weight:700;` : i === 1 ? `color:#aaa;font-weight:700;` : i === 2 ? `color:#cd7f32;font-weight:700;` : '';
+    const streakStyle = `color:${accentColor};font-weight:700;font-size:1rem;`;
+    html += `<tr>
+      <td style="${rankStyle}">${i + 1}</td>
+      <td style="text-align:left;font-weight:500;color:#e8dfc8;">${s.mgr}</td>
+      <td style="${streakStyle}">${s.count}</td>
+      <td style="color:var(--gold);">${s.startSeason}</td>
+      <td>Wk ${s.startWeek} – Wk ${s.endWeek}</td>
+    </tr>`;
+  });
+
+  html += `</tbody></table>`;
+  c.innerHTML = `<div class="section-vertical-stack">${html}</div>`;
+}
+
+function showWinStreaks(c)  { renderStreakPage(c, 'W'); }
+function showLossStreaks(c) { renderStreakPage(c, 'L'); }
 
 /* ── EXPORT DATA ── */
 function showExportData(c) {

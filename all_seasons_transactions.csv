@@ -27957,175 +27957,178 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,730,1781598039,add,Eury Pérez,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,728,1781512310,add/drop,Kyle Stowers,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,728,1781512310,drop,Colton Cowser,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,727,1781512310,add/drop,Yoendrys Gómez,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,727,1781512310,drop,Andrew Vaughn,1B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,726,1781512310,add/drop,Luis Lara,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,726,1781512310,drop,Carlos Cortes,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,724,1781441489,drop,Curtis Mead,"1B,2B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,691,1781079619,add,Cole Carrigg,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,688,1781038350,drop,Kyle Stowers,"1B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,681,1780993293,add/drop,Carlos Cortes,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,681,1780993293,drop,Giancarlo Stanton,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,680,1780993293,add/drop,Zack Gelof,"2B,3B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,680,1780993293,drop,Kirby Yates,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,674,1780907669,add/drop,Andrew Vaughn,1B,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,674,1780907669,drop,Austin Riley,3B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,673,1780907669,add/drop,Reid Detmers,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,673,1780907669,drop,Ryan Weathers,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,672,1780907669,add/drop,Kyle Stowers,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,672,1780907669,drop,George Soriano,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,671,1780907669,add/drop,Colton Cowser,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,671,1780907669,drop,Yoendrys Gómez,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,647,1780647606,add/drop,Yoendrys Gómez,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,647,1780647606,drop,Eric Lauer,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,646,1780647606,add,Giancarlo Stanton,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,641,1780570628,drop,Eury Pérez,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,635,1780561308,add/drop,Jasson Domínguez,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,635,1780561308,drop,Nathaniel Lowe,1B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,629,1780474781,add/drop,George Soriano,RP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,629,1780474781,drop,Bryan King,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,628,1780474781,add/drop,Gage Jump,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,628,1780474781,drop,Lucas Erceg,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,620,1780388372,add,Kazuma Okamoto,"1B,3B",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,617,1780330306,drop,Kyle Teel,C,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,614,1780302500,add/drop,Eury Pérez,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,614,1780302500,drop,Lucas Giolito,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,609,1780215625,add/drop,Curtis Mead,"1B,2B,3B",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,609,1780215625,drop,Mark Vientos,"1B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,606,1780129192,add/drop,Carson Benge,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,606,1780129192,drop,Nasim Nuñez,"2B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,587,1779869996,add/drop,Eric Lauer,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,587,1779869996,drop,Joey Cantillo,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,583,1779783632,add/drop,Joey Cantillo,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,583,1779783632,drop,Zack Gelof,"2B,3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,582,1779783632,add/drop,Bryan King,RP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,582,1779783632,drop,Esmerlyn Valdez,"1B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,577,1779697611,add/drop,Nathaniel Lowe,1B,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,577,1779697611,drop,Kazuma Okamoto,"1B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,576,1779697611,add/drop,Kirby Yates,RP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,576,1779697611,drop,Grant Taylor,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,565,1779438977,add/drop,Esmerlyn Valdez,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,565,1779438977,drop,Spencer Jones,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,561,1779351532,add,Grant Taylor,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,553,1779289154,drop,Charlie Condon,"1B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,551,1779268618,add/drop,Braden Montgomery,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,551,1779268618,drop,Bryan King,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,543,1779178663,add/drop,Zack Gelof,"2B,3B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,543,1779178663,drop,Christian Scott,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,542,1779178663,add/drop,Mark Vientos,"1B,3B",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,542,1779178663,drop,Keibert Ruiz,C,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,533,1779092859,add/drop,Walbert Ureña,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,533,1779092859,drop,Joey Cantillo,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,532,1779092859,add/drop,Keibert Ruiz,C,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,532,1779092859,drop,Dalton Rushing,C,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,525,1779005936,add/drop,Roki Sasaki,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,525,1779005936,drop,Endy Rodríguez,"C,1B",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,513,1778833100,add/drop,Dalton Rushing,C,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,513,1778833100,drop,Jesus Rodriguez,C,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,512,1778833100,add/drop,Endy Rodríguez,"C,1B",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,512,1778833100,drop,Chase Dollander,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,507,1778746896,add/drop,Lucas Giolito,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,507,1778746896,drop,Noah Schultz,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,504,1778660339,add/drop,JJ Bleday,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,504,1778660339,drop,Zack Gelof,"2B,3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,488,1778487847,add/drop,Zack Gelof,"2B,3B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,488,1778487847,drop,Mark Vientos,"1B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,487,1778487847,add,Christian Scott,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,470,1778228291,add/drop,Spencer Jones,OF,add,38
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,470,1778228291,drop,Jasson Domínguez,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,466,1778141982,add/drop,Chase Dollander,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,466,1778141982,drop,Kirby Yates,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,459,1778022584,drop,Trevor McDonald,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,456,1777969090,add/drop,Trevor McDonald,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,456,1777969090,drop,Lucas Giolito,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,455,1777969090,add/drop,Mark Vientos,"1B,3B",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,455,1777969090,drop,Carlos Cortes,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,445,1777883153,add/drop,Bryan King,RP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,445,1777883153,drop,Chad Patrick,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,444,1777883153,add/drop,Sam Antonacci,"2B,3B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,444,1777883153,drop,Trey Gibson,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,443,1777883153,add/drop,Jesus Rodriguez,C,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,443,1777883153,drop,Agustín Ramírez,C,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,436,1777796264,add/drop,Chad Patrick,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,436,1777796264,drop,Xander Bogaerts,SS,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,435,1777796264,add/drop,Trey Gibson,SP,add,3
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,435,1777796264,drop,Cole Young,2B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,421,1777537042,add,Cole Young,2B,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,420,1777537042,add,Nasim Nuñez,"2B,SS",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,417,1777480926,drop,Caleb Thielbar,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,415,1777450747,add/drop,Kyle Teel,C,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,415,1777450747,drop,Hyeseong Kim,"2B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,400,1777278126,add/drop,Hyeseong Kim,"2B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,400,1777278126,drop,Jake Cronenworth,"1B,2B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,395,1777278125,add/drop,Jasson Domínguez,OF,add,1
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,395,1777278125,drop,Chase DeLauter,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,383,1777191522,add/drop,Kazuma Okamoto,"1B,3B",add,2
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,383,1777191522,drop,Gavin Sheets,"1B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,378,1777105069,add/drop,Jake Cronenworth,"1B,2B,SS",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,378,1777105069,drop,Luke Keaschall,2B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,377,1777105069,add,Carlos Cortes,OF,add,2
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,367,1776932239,add/drop,Lucas Giolito,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,367,1776932239,drop,Jakob Junis,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,366,1776932239,add/drop,Charlie Condon,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,366,1776932239,drop,Spencer Jones,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,349,1776759374,add/drop,Xander Bogaerts,SS,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,349,1776759374,drop,Dominic Smith,1B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,348,1776759374,add/drop,Gavin Sheets,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,348,1776759374,drop,Andrew Painter,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,335,1776586789,add/drop,Caleb Thielbar,RP,add,2
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,335,1776586789,drop,Gus Varland,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,329,1776413823,add,Gus Varland,RP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,325,1776327562,add/drop,Dominic Smith,1B,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,325,1776327562,drop,TJ Rumfield,1B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,324,1776327562,add/drop,Kirby Yates,RP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,324,1776327562,drop,Owen Caissie,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,299,1776068714,add/drop,Noah Schultz,SP,add,3
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,299,1776068714,drop,Ryan Walker,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,297,1776068714,add/drop,Tanner Scott,RP,add,4
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,297,1776068714,drop,Charlie Condon,"1B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,295,1775981945,add/drop,Owen Caissie,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,295,1775981945,drop,Adolis García,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,269,1775722697,add/drop,Joey Cantillo,"SP,RP",add,4
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,269,1775722697,drop,Hyeseong Kim,"2B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,265,1775636306,add/drop,Jakob Junis,RP,add,3
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,265,1775636306,drop,Cole Sands,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,264,1775594367,drop,Cody Ponce,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,257,1775549875,add/drop,Hyeseong Kim,"2B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,257,1775549875,drop,Owen Caissie,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,253,1775549875,add/drop,Cole Sands,"SP,RP",add,3
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,253,1775549875,drop,Max Scherzer,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,245,1775463628,add/drop,Bryan Baker,RP,add,4
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,245,1775463628,drop,Jakob Marsee,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,241,1775290599,add/drop,Charlie Condon,"1B,OF",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,241,1775290599,drop,Carson Benge,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,230,1775117919,add/drop,Mitch Keller,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,230,1775117919,drop,Rhys Hoskins,1B,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,226,1775117919,add/drop,Adolis García,OF,add,3
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,226,1775117919,drop,Tyler Alexander,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,218,1775031609,add,TJ Rumfield,1B,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,217,1775031609,add/drop,Owen Caissie,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,217,1775031609,drop,Jordan Beck,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,206,1774945000,add/drop,Max Scherzer,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,206,1774945000,drop,Didier Fuentes,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,205,1774945000,add/drop,Tyler Alexander,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,205,1774945000,drop,Jacob Wilson,SS,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,183,1774685798,add/drop,Rhys Hoskins,1B,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,183,1774685798,drop,Brenton Doyle,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,153,1774512763,add,Andrew Painter,SP,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,141,1774425768,add/drop,Spencer Jones,OF,add,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,141,1774425768,drop,Jacob Lopez,SP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,133,1774425768,add,Chase DeLauter,OF,add,2
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,37,1774339163,add/drop,Didier Fuentes,"SP,RP",add,5
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,37,1774339163,drop,Cam Smith,OF,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,36,1774339163,add/drop,Jacob Lopez,SP,add,5
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,36,1774339163,drop,Spencer Steer,"1B,2B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,24,1774339163,add/drop,Ryan Weathers,SP,add,8
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
-2026,469.l.23321,469.l.23321.t.1,I’ll Show You Hubris,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,740,1781684566,add,Tony Santillan,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,730,1781598039,add,Eury Pérez,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,728,1781512310,add/drop,Kyle Stowers,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,728,1781512310,drop,Colton Cowser,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,727,1781512310,add/drop,Yoendrys Gómez,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,727,1781512310,drop,Andrew Vaughn,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,726,1781512310,add/drop,Luis Lara,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,726,1781512310,drop,Carlos Cortes,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,724,1781441489,drop,Curtis Mead,"1B,2B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,691,1781079619,add,Cole Carrigg,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,688,1781038350,drop,Kyle Stowers,"1B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,681,1780993293,add/drop,Carlos Cortes,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,681,1780993293,drop,Giancarlo Stanton,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,680,1780993293,add/drop,Zack Gelof,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,680,1780993293,drop,Kirby Yates,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,674,1780907669,add/drop,Andrew Vaughn,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,674,1780907669,drop,Austin Riley,3B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,673,1780907669,add/drop,Reid Detmers,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,673,1780907669,drop,Ryan Weathers,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,672,1780907669,add/drop,Kyle Stowers,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,672,1780907669,drop,George Soriano,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,671,1780907669,add/drop,Colton Cowser,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,671,1780907669,drop,Yoendrys Gómez,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,647,1780647606,add/drop,Yoendrys Gómez,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,647,1780647606,drop,Eric Lauer,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,646,1780647606,add,Giancarlo Stanton,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,641,1780570628,drop,Eury Pérez,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,635,1780561308,add/drop,Jasson Domínguez,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,635,1780561308,drop,Nathaniel Lowe,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,629,1780474781,add/drop,George Soriano,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,629,1780474781,drop,Bryan King,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,628,1780474781,add/drop,Gage Jump,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,628,1780474781,drop,Lucas Erceg,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,620,1780388372,add,Kazuma Okamoto,"1B,3B",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,617,1780330306,drop,Kyle Teel,C,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,614,1780302500,add/drop,Eury Pérez,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,614,1780302500,drop,Lucas Giolito,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,609,1780215625,add/drop,Curtis Mead,"1B,2B,3B",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,609,1780215625,drop,Mark Vientos,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,606,1780129192,add/drop,Carson Benge,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,606,1780129192,drop,Nasim Nuñez,"2B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,587,1779869996,add/drop,Eric Lauer,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,587,1779869996,drop,Joey Cantillo,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,583,1779783632,add/drop,Joey Cantillo,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,583,1779783632,drop,Zack Gelof,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,582,1779783632,add/drop,Bryan King,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,582,1779783632,drop,Esmerlyn Valdez,"1B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,577,1779697611,add/drop,Nathaniel Lowe,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,577,1779697611,drop,Kazuma Okamoto,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,576,1779697611,add/drop,Kirby Yates,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,576,1779697611,drop,Grant Taylor,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,565,1779438977,add/drop,Esmerlyn Valdez,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,565,1779438977,drop,Spencer Jones,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,561,1779351532,add,Grant Taylor,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,553,1779289154,drop,Charlie Condon,"1B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,551,1779268618,add/drop,Braden Montgomery,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,551,1779268618,drop,Bryan King,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,543,1779178663,add/drop,Zack Gelof,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,543,1779178663,drop,Christian Scott,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,542,1779178663,add/drop,Mark Vientos,"1B,3B",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,542,1779178663,drop,Keibert Ruiz,C,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,533,1779092859,add/drop,Walbert Ureña,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,533,1779092859,drop,Joey Cantillo,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,532,1779092859,add/drop,Keibert Ruiz,C,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,532,1779092859,drop,Dalton Rushing,C,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,525,1779005936,add/drop,Roki Sasaki,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,525,1779005936,drop,Endy Rodríguez,"C,1B",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,513,1778833100,add/drop,Dalton Rushing,C,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,513,1778833100,drop,Jesus Rodriguez,C,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,512,1778833100,add/drop,Endy Rodríguez,"C,1B",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,512,1778833100,drop,Chase Dollander,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,507,1778746896,add/drop,Lucas Giolito,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,507,1778746896,drop,Noah Schultz,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,504,1778660339,add/drop,JJ Bleday,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,504,1778660339,drop,Zack Gelof,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,488,1778487847,add/drop,Zack Gelof,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,488,1778487847,drop,Mark Vientos,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,487,1778487847,add,Christian Scott,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,470,1778228291,add/drop,Spencer Jones,OF,add,38
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,470,1778228291,drop,Jasson Domínguez,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,466,1778141982,add/drop,Chase Dollander,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,466,1778141982,drop,Kirby Yates,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,459,1778022584,drop,Trevor McDonald,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,456,1777969090,add/drop,Trevor McDonald,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,456,1777969090,drop,Lucas Giolito,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,455,1777969090,add/drop,Mark Vientos,"1B,3B",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,455,1777969090,drop,Carlos Cortes,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,445,1777883153,add/drop,Bryan King,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,445,1777883153,drop,Chad Patrick,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,444,1777883153,add/drop,Sam Antonacci,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,444,1777883153,drop,Trey Gibson,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,443,1777883153,add/drop,Jesus Rodriguez,C,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,443,1777883153,drop,Agustín Ramírez,C,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,436,1777796264,add/drop,Chad Patrick,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,436,1777796264,drop,Xander Bogaerts,SS,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,435,1777796264,add/drop,Trey Gibson,SP,add,3
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,435,1777796264,drop,Cole Young,2B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,421,1777537042,add,Cole Young,2B,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,420,1777537042,add,Nasim Nuñez,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,417,1777480926,drop,Caleb Thielbar,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,415,1777450747,add/drop,Kyle Teel,C,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,415,1777450747,drop,Hyeseong Kim,"2B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,400,1777278126,add/drop,Hyeseong Kim,"2B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,400,1777278126,drop,Jake Cronenworth,"1B,2B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,395,1777278125,add/drop,Jasson Domínguez,OF,add,1
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,395,1777278125,drop,Chase DeLauter,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,383,1777191522,add/drop,Kazuma Okamoto,"1B,3B",add,2
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,383,1777191522,drop,Gavin Sheets,"1B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,378,1777105069,add/drop,Jake Cronenworth,"1B,2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,378,1777105069,drop,Luke Keaschall,2B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,377,1777105069,add,Carlos Cortes,OF,add,2
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,367,1776932239,add/drop,Lucas Giolito,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,367,1776932239,drop,Jakob Junis,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,366,1776932239,add/drop,Charlie Condon,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,366,1776932239,drop,Spencer Jones,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,349,1776759374,add/drop,Xander Bogaerts,SS,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,349,1776759374,drop,Dominic Smith,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,348,1776759374,add/drop,Gavin Sheets,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,348,1776759374,drop,Andrew Painter,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,335,1776586789,add/drop,Caleb Thielbar,RP,add,2
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,335,1776586789,drop,Gus Varland,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,329,1776413823,add,Gus Varland,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,325,1776327562,add/drop,Dominic Smith,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,325,1776327562,drop,TJ Rumfield,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,324,1776327562,add/drop,Kirby Yates,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,324,1776327562,drop,Owen Caissie,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,299,1776068714,add/drop,Noah Schultz,SP,add,3
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,299,1776068714,drop,Ryan Walker,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,297,1776068714,add/drop,Tanner Scott,RP,add,4
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,297,1776068714,drop,Charlie Condon,"1B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,295,1775981945,add/drop,Owen Caissie,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,295,1775981945,drop,Adolis García,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,269,1775722697,add/drop,Joey Cantillo,"SP,RP",add,4
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,269,1775722697,drop,Hyeseong Kim,"2B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,265,1775636306,add/drop,Jakob Junis,RP,add,3
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,265,1775636306,drop,Cole Sands,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,264,1775594367,drop,Cody Ponce,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,257,1775549875,add/drop,Hyeseong Kim,"2B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,257,1775549875,drop,Owen Caissie,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,253,1775549875,add/drop,Cole Sands,"SP,RP",add,3
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,253,1775549875,drop,Max Scherzer,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,245,1775463628,add/drop,Bryan Baker,RP,add,4
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,245,1775463628,drop,Jakob Marsee,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,241,1775290599,add/drop,Charlie Condon,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,241,1775290599,drop,Carson Benge,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,230,1775117919,add/drop,Mitch Keller,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,230,1775117919,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,226,1775117919,add/drop,Adolis García,OF,add,3
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,226,1775117919,drop,Tyler Alexander,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,218,1775031609,add,TJ Rumfield,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,217,1775031609,add/drop,Owen Caissie,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,217,1775031609,drop,Jordan Beck,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,206,1774945000,add/drop,Max Scherzer,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,206,1774945000,drop,Didier Fuentes,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,205,1774945000,add/drop,Tyler Alexander,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,205,1774945000,drop,Jacob Wilson,SS,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,183,1774685798,add/drop,Rhys Hoskins,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,183,1774685798,drop,Brenton Doyle,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,153,1774512763,add,Andrew Painter,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,141,1774425768,add/drop,Spencer Jones,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,141,1774425768,drop,Jacob Lopez,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,133,1774425768,add,Chase DeLauter,OF,add,2
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,37,1774339163,add/drop,Didier Fuentes,"SP,RP",add,5
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,37,1774339163,drop,Cam Smith,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,36,1774339163,add/drop,Jacob Lopez,SP,add,5
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,36,1774339163,drop,Spencer Steer,"1B,2B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,24,1774339163,add/drop,Ryan Weathers,SP,add,8
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,741,1781684566,add/drop,Ezequiel Tovar,SS,add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,741,1781684566,drop,David Hamilton,"2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,732,1781598039,add/drop,Troy Johnston,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,732,1781598039,drop,Nolan Arenado,3B,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,731,1781598039,add/drop,Tyler Callihan,"2B,OF",add,0
@@ -28323,6 +28326,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,742,1781684566,add/drop,Ryne Nelson,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,742,1781684566,drop,Christian Scott,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,729,1781512310,add/drop,Logan O'Hoppe,C,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,729,1781512310,drop,Freddy Fermin,C,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,725,1781512310,add/drop,Dustin May,SP,add,1
@@ -28493,6 +28498,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,57,1774339163,add,Clayton Beeter,RP,add,3
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,43,1774339163,add,Paul Sewald,RP,add,4
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,33,1774339163,add,Mike Burrows,"SP,RP",add,5
+2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,739,1781648138,drop,Trevor Rogers,SP,drop,0
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,585,1779869996,add/drop,Richard Lovelady,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,585,1779869996,drop,Enyel De Los Santos,RP,drop,0
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,578,1779783632,add/drop,TJ Rumfield,1B,add,0
@@ -28570,6 +28576,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,743,1781684566,add/drop,George Lombard Jr.,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,743,1781684566,drop,Austin Riley,3B,drop,0
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,734,1781598039,add/drop,Austin Riley,3B,add,0
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,734,1781598039,drop,Grayson Rodriguez,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,733,1781598039,add,Kodai Senga,SP,add,0

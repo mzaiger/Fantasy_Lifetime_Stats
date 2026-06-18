@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,744,1781770904,add/drop,Jacob Webb,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,744,1781770904,drop,Tony Santillan,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,740,1781684566,add,Tony Santillan,RP,add,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,730,1781598039,add,Eury Pérez,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,728,1781512310,add/drop,Kyle Stowers,"1B,OF",add,0
@@ -28127,6 +28129,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,745,1781770904,add/drop,Endy Rodríguez,"C,1B",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,745,1781770904,drop,Brandon Valenzuela,"C,1B",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,741,1781684566,add/drop,Ezequiel Tovar,SS,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,741,1781684566,drop,David Hamilton,"2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,732,1781598039,add/drop,Troy Johnston,"1B,OF",add,0
@@ -28326,6 +28330,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,747,1781770904,add/drop,Peter Lambert,SP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,747,1781770904,drop,Daniel Palencia,RP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,746,1781770904,add/drop,Mick Abel,SP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,746,1781770904,drop,Ryan Ward,"1B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,742,1781684566,add/drop,Ryne Nelson,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,742,1781684566,drop,Christian Scott,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,729,1781512310,add/drop,Logan O'Hoppe,C,add,0
@@ -28669,6 +28677,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,749,1781770904,add/drop,Sean Manaea,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,749,1781770904,drop,Zack Littell,SP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,748,1781770904,add/drop,Martín Pérez,SP,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,748,1781770904,drop,Edward Cabrera,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,738,1781623402,drop,Dalton Rushing,C,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,736,1781598039,add/drop,Samad Taylor,"2B,OF",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,736,1781598039,drop,Alec Bohm,"1B,3B",drop,0

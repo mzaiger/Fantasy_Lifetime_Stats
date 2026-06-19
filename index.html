@@ -727,7 +727,7 @@ function renderSummaryManager() {
       const val = sumFields.includes(stat) ? vals.reduce((a,b) => a+b, 0) : vals.reduce((a,b) => a+b, 0) / vals.length;
       return { name: m, value: val };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? a.value - b.value : b.value - a.value);
     arr.slice(0, 10).forEach((r, i) => {
       if (r.name === mgr) {
         lines.push(`Rankings->Lifetime (Totals)->${stat} ${mgr} is ${ordinal(i+1)}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
@@ -743,7 +743,7 @@ function renderSummaryManager() {
       const val = vals.reduce((a,b) => a+b, 0) / vals.length;
       return { name: m, value: val };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? a.value - b.value : b.value - a.value);
     arr.slice(0, 10).forEach((r, i) => {
       if (r.name === mgr) {
         lines.push(`Rankings->Lifetime (Averages)->${stat} ${mgr} is ${ordinal(i+1)}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
@@ -757,7 +757,7 @@ function renderSummaryManager() {
       if (!isValid(r[stat])) return null;
       return { mgr: r.manager_nickname, season: r.season, value: parseFloat(r[stat]) };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? a.value - b.value : b.value - a.value);
     arr.slice(0, 10).forEach((r, i) => {
       if (r.mgr === mgr) {
         lines.push(`Rankings->Season->${stat} ${mgr} is ${ordinal(i+1)} in ${r.season}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
@@ -773,7 +773,7 @@ function renderSummaryManager() {
         if (!isValid(r[stat])) return null;
         return { mgr: r.manager_nickname, season: r.season, week: r.week, value: parseFloat(r[stat]) };
       }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? a.value - b.value : b.value - a.value);
     arr.slice(0, 10).forEach((r, i) => {
       if (r.mgr === mgr) {
         lines.push(`Rankings->Weekly->${stat} ${mgr} is ${ordinal(i+1)} in ${r.season} W${r.week}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
@@ -850,7 +850,7 @@ function renderSummarySeason() {
       if (!isValid(r[stat])) return null;
       return { mgr: r.manager_nickname, season: r.season, value: parseFloat(r[stat]) };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? a.value - b.value : b.value - a.value);
     arr.slice(0, 10).forEach((r, i) => {
       if (String(r.season) === String(szn)) {
         lines.push(`Rankings->Season->${stat} ${r.mgr} is ${ordinal(i+1)} in ${szn}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
@@ -866,7 +866,7 @@ function renderSummarySeason() {
         if (!isValid(r[stat])) return null;
         return { mgr: r.manager_nickname, season: r.season, week: r.week, value: parseFloat(r[stat]) };
       }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? a.value - b.value : b.value - a.value);
     arr.slice(0, 10).forEach((r, i) => {
       if (String(r.season) === String(szn)) {
         lines.push(`Rankings->Weekly->${stat} ${r.mgr} is ${ordinal(i+1)} in ${szn} W${r.week}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
@@ -914,7 +914,7 @@ function showLifetime(c) {
       const val = sumFields.includes(stat) ? vals.reduce((a,b) => a+b, 0) : vals.reduce((a,b) => a+b, 0) / vals.length;
       return { name: mgr, value: fmt(val, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     c.innerHTML += rankTable(stat, arr.slice(0, 10));
   });
 }
@@ -928,7 +928,7 @@ function showLifetimeAvg(c) {
       const val = vals.reduce((a,b) => a+b, 0) / vals.length;
       return { name: mgr, value: fmt(val, ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     c.innerHTML += rankTable(stat, arr.slice(0, 10));
   });
 }
@@ -940,7 +940,7 @@ function showSeasonRankings(c) {
       if (!isValid(r[stat])) return null;
       return { name: `${r.manager_nickname} (${r.season} ${r.league_name || ""})`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     c.innerHTML += rankTable(stat, arr.slice(0, 10));
   });
 }
@@ -966,7 +966,7 @@ function showWeeklyRankings(c) {
         if (!isValid(r[stat])) return null;
         return { name: `${r.manager_nickname} (${r.season} W${r.week} ${r.league_name || ""})`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
       }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     c.innerHTML += rankTable(stat, arr.slice(0, 10));
   });
 }
@@ -1006,7 +1006,7 @@ function renderIndividualWeekly() {
         if (!isValid(r[stat])) return null;
         return { name: `${r.season} W${r.week}`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
       }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     html += rankTable(stat, arr.slice(0, 10));
   });
   div.innerHTML = html;
@@ -1139,7 +1139,7 @@ function renderIndividualSeason() {
       if (!isValid(r[stat])) return null;
       return { name: `${r.season}`, value: parseFloat(r[stat]).toFixed(["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0) };
     }).filter(Boolean);
-    arr.sort((a,b) => eraFields.includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
+    arr.sort((a,b) => ["ERA","WHIP"].includes(stat) ? parseFloat(a.value)-parseFloat(b.value) : parseFloat(b.value)-parseFloat(a.value));
     html += rankTable(stat, arr.slice(0, 10));
   });
   div.innerHTML = html;

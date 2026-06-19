@@ -2217,7 +2217,14 @@ function showSummaryManager(c) {
   <h2>Summary — Manager</h2>
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <select id="summaryMgrSelect">${opts}</select>
-  <select id="summaryMgrMode"><option value="highlights" selected>Highlights</option><option value="everything">Everything</option></select>
+  
+    <label class="toggle-switch">
+      <input type="checkbox" id="summaryMgrMode">
+      <span class="toggle-slider"></span>
+      <span class="toggle-left">Highlights</span>
+      <span class="toggle-right">Everything</span>
+    </label>
+    
   </div><div id="summaryMgrOutput"></div></div>`;
   renderSummaryManager();
   document.getElementById('summaryMgrSelect').onchange=renderSummaryManager;
@@ -2225,7 +2232,7 @@ function showSummaryManager(c) {
 }
 function renderSummaryManager() {
   const mgr=document.getElementById('summaryMgrSelect').value;
-  const mode=document.getElementById('summaryMgrMode').value;
+  const mode=document.getElementById('summaryMgrMode').checked ? 'everything' : 'highlights';
   const div=document.getElementById('summaryMgrOutput');
   let lines=buildManagerSentences(mgr);
   lines=summaryFilter(lines,mode,'manager');
@@ -2241,7 +2248,14 @@ function showSummarySeason(c) {
   <h2>Summary — Season</h2>
   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
   <select id="summarySeasonSelect">${opts}</select>
-  <select id="summarySeasonMode"><option value="highlights" selected>Highlights</option><option value="everything">Everything</option></select>
+  
+    <label class="toggle-switch">
+      <input type="checkbox" id="summarySeasonMode">
+      <span class="toggle-slider"></span>
+      <span class="toggle-left">Highlights</span>
+      <span class="toggle-right">Everything</span>
+    </label>
+    
   </div><div id="summarySeasonOutput"></div></div>`;
   document.getElementById('summarySeasonSelect').value=years[0];
   renderSummarySeason();
@@ -2250,7 +2264,7 @@ function showSummarySeason(c) {
 }
 function renderSummarySeason() {
  const year=document.getElementById('summarySeasonSelect').value;
- const mode=document.getElementById('summarySeasonMode').value;
+ const mode=document.getElementById('summarySeasonMode').checked ? 'everything' : 'highlights';
  const div=document.getElementById('summarySeasonOutput');
  let lines=buildSeasonSentences(year);
  lines=summaryFilter(lines,mode,'season');
@@ -2261,22 +2275,23 @@ function renderSummarySeason() {
 function summaryFilter(lines, mode, type) {
   if (mode === 'everything') return lines;
   const seasonKeep = [
-    'Records → Winning Streaks',
-    'Records → Losing Streaks',
-    'Rankings → Season',
-    'Rankings → Weekly',
-    'Trades →',
-    'FAAB →'
+    'Records → Winning Streaks →',
+    'Records → Losing Streaks →',
+    'Rankings → Season →',
+    'Rankings → Weekly →',
+    'Trades → Lifetime →',
+    'FAAB → Lifetime →'
   ];
   const managerKeep = [
-    'Head to Head → Lifetime',
-    'Records → Winning Streaks',
-    'Records → Losing Streaks',
-    'Rankings → Lifetime',
-    'Rankings → Season',
-    'Rankings → Weekly',
-    'Trades →',
-    'FAAB →'
+    'Head to Head → Lifetime →',
+    'Records → Winning Streaks →',
+    'Records → Losing Streaks →',
+    'Rankings → Lifetime (Totals) →',
+    'Rankings → Lifetime (Averages) →',
+    'Rankings → Season →',
+    'Rankings → Weekly →',
+    'Trades → Lifetime →',
+    'FAAB → Lifetime →'
   ];
   const keep = type === 'manager' ? managerKeep : seasonKeep;
   return lines.filter(l => keep.some(k => l.includes(k)));

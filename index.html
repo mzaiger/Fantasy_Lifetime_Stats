@@ -342,7 +342,6 @@
   </div>
   <div class="nav-links" id="navLinks">
 
-    <!-- Medals -->
     <div class="nav-item has-sub">
       <a>MEDALS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -351,7 +350,6 @@
       </div></div>
     </div>
 
-    <!-- Records -->
     <div class="nav-item has-sub">
       <a>RECORDS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -361,8 +359,15 @@
         <a onclick="setPage('lossStreaks'); closeMobileItem(this)">Losing Streaks</a>
       </div></div>
     </div>
+    
+    <div class="nav-item has-sub">
+      <a>SUMMARY</a>
+      <div class="sub-menu"><div class="sub-menu-inner">
+        <a onclick="setPage('summarySeason'); closeMobileItem(this)">Season</a>
+        <a onclick="setPage('summaryManager'); closeMobileItem(this)">Manager</a>
+      </div></div>
+    </div>
 
-    <!-- Head to Head -->
     <div class="nav-item has-sub">
       <a>HEAD TO HEAD</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -372,7 +377,6 @@
       </div></div>
     </div>
 
-    <!-- Rankings -->
     <div class="nav-item has-sub">
       <a>RANKINGS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -380,14 +384,13 @@
         <a onclick="setPage('lifetimeAvg'); closeMobileItem(this)">Lifetime (Averages)</a>
         <a onclick="setPage('seasonRankings'); closeMobileItem(this)">Season</a>
         <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
-        <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
-        <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
+        <a onclick="setPage('individualSeason'); closeMobileItem(this)">Manager Season</a>
+        <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Manager Weekly</a>
         <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season Combined Categories</a>
         <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly Combined Categories</a>
       </div></div>
     </div>
 
-    <!-- Stats -->
     <div class="nav-item has-sub">
       <a>STATS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
@@ -396,36 +399,32 @@
       </div></div>
     </div>
 
-    <!-- Trades -->
     <div class="nav-item has-sub">
       <a>TRADES</a>
       <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('worstTrades'); closeMobileItem(this)">Lifetime</a>
         <a onclick="setPage('yearlyWorstTrades'); closeMobileItem(this)">Season</a>
-        <a onclick="setPage('personalWorstTrades'); closeMobileItem(this)">Individual</a>
+        <a onclick="setPage('personalWorstTrades'); closeMobileItem(this)">Manager</a>
       </div></div>
     </div>
 
-    <!-- FAAB -->
     <div class="nav-item has-sub">
       <a>FAAB</a>
       <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('lifetimeFaab'); closeMobileItem(this)">Lifetime</a>
-        <a onclick="setPage('personalFaab'); closeMobileItem(this)">Individual</a>
+        <a onclick="setPage('personalFaab'); closeMobileItem(this)">Manager</a>
       </div></div>
     </div>
 
-    <!-- Transactions -->
     <div class="nav-item has-sub">
       <a>TRANSACTIONS</a>
       <div class="sub-menu"><div class="sub-menu-inner">
         <a onclick="setPage('lifetimeTeamTx'); closeMobileItem(this)">Manager</a>
         <a onclick="setPage('lifetimePlayerTx'); closeMobileItem(this)">Player</a>
-        <a onclick="setPage('personalTx'); closeMobileItem(this)">Individual</a>
+        <a onclick="setPage('personalTx'); closeMobileItem(this)">Manager</a>
       </div></div>
     </div>
 
-    <!-- Export -->
     <div class="nav-item">
       <a onclick="setPage('exportData'); closeMenu()">EXPORT</a>
     </div>
@@ -510,6 +509,13 @@ function handleLongWeeksToggle(e) {
   const c = document.getElementById("content");
   if (currentPage === "weeklyRankings") showWeeklyRankings(c);
   if (currentPage === "individualWeekly") renderIndividualWeekly();
+}
+
+/* ── Helper Math / Ordinals ── */
+function ordinal(n) {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
 /* ── Fantasy League Data ── */
@@ -630,6 +636,11 @@ function setPage(page) {
 
   const c = document.getElementById("content");
   c.innerHTML = "";
+  
+  /* Routing */
+  if (page === "summarySeason")      showSummarySeason(c);
+  if (page === "summaryManager")     showSummaryManager(c);
+  
   if (page === "lifetime")           showLifetime(c);
   if (page === "lifetimeAvg")        showLifetimeAvg(c);
   if (page === "seasonRankings")     showSeasonRankings(c);
@@ -659,6 +670,235 @@ function setPage(page) {
   if (page === "lossStreaks")        showLossStreaks(c);
   if (page === "weeklyCategories")   showWeeklyCategories(c);
   if (page === "seasonCategories")   showSeasonCategories(c);
+}
+
+/* ══════════════════════════════════════════
+   NEW SUMMARY FEATURES
+══════════════════════════════════════════ */
+
+function showSummaryManager(c) {
+  c.classList.remove("grid-view");
+  const opts = Object.keys(managers).map(m => `<option value="${m}">${m}</option>`).join("");
+  c.innerHTML = `
+    <div class="section-vertical-stack">
+      <h2>Manager Summary Report</h2>
+      <div style="margin-bottom:20px;">
+        <select id="summaryMgr">${opts}</select>
+        <button class="show-btn" onclick="renderSummaryManager()">SHOW SUMMARY</button>
+      </div>
+      <div id="summaryManagerArea"></div>
+    </div>`;
+}
+
+function renderSummaryManager() {
+  const mgr = document.getElementById("summaryMgr").value;
+  const div = document.getElementById("summaryManagerArea");
+  let lines = [];
+
+  // Head to Head -> Lifetime (Top 20)
+  const h2hRows = computeH2HMatchups(null, true).slice(0, 20);
+  h2hRows.forEach((r, i) => {
+    if (r.winnerMgr === mgr || r.loserMgr === mgr) {
+      lines.push(`Head to Head->LifeTime ${mgr} is ${ordinal(i+1)}. (${r.wins}-${r.losses}-${r.ties})`);
+    }
+  });
+
+  // Records -> Winning Streaks (Top 20)
+  const wStreaks = computeTopStreaks('W', 20);
+  wStreaks.forEach((s, i) => {
+    if (s.mgr === mgr) {
+      lines.push(`Records->Winning Streaks ${mgr} is ${ordinal(i+1)}. (Streak: ${s.count})`);
+    }
+  });
+
+  // Records -> Losing Streaks (Top 20)
+  const lStreaks = computeTopStreaks('L', 20);
+  lStreaks.forEach((s, i) => {
+    if (s.mgr === mgr) {
+      lines.push(`Records->Losing Streaks ${mgr} is ${ordinal(i+1)}. (Streak: ${s.count})`);
+    }
+  });
+
+  // Rankings -> Lifetime (Totals) (Top 10)
+  avgFields.forEach(stat => {
+    const arr = Object.keys(managers).map(m => {
+      const vals = managers[m].seasons.map(s => parseFloat(s[stat])).filter(v => !isNaN(v));
+      if (vals.length === 0) return null;
+      const val = sumFields.includes(stat) ? vals.reduce((a,b) => a+b, 0) : vals.reduce((a,b) => a+b, 0) / vals.length;
+      return { name: m, value: val };
+    }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.slice(0, 10).forEach((r, i) => {
+      if (r.name === mgr) {
+        lines.push(`Rankings->Lifetime (Totals)->${stat} ${mgr} is ${ordinal(i+1)}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
+      }
+    });
+  });
+
+  // Rankings -> Lifetime (Averages) (Top 10)
+  avgFields.forEach(stat => {
+    const arr = Object.keys(managers).map(m => {
+      const vals = managers[m].seasons.map(s => parseFloat(s[stat])).filter(v => !isNaN(v));
+      if (vals.length === 0) return null;
+      const val = vals.reduce((a,b) => a+b, 0) / vals.length;
+      return { name: m, value: val };
+    }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.slice(0, 10).forEach((r, i) => {
+      if (r.name === mgr) {
+        lines.push(`Rankings->Lifetime (Averages)->${stat} ${mgr} is ${ordinal(i+1)}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
+      }
+    });
+  });
+
+  // Rankings -> Season (Top 10)
+  avgFields.forEach(stat => {
+    const arr = rawData.map(r => {
+      if (!isValid(r[stat])) return null;
+      return { mgr: r.manager_nickname, season: r.season, value: parseFloat(r[stat]) };
+    }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.slice(0, 10).forEach((r, i) => {
+      if (r.mgr === mgr) {
+        lines.push(`Rankings->Season->${stat} ${mgr} is ${ordinal(i+1)} in ${r.season}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
+      }
+    });
+  });
+
+  // Rankings -> Weekly (Top 10)
+  avgFields.forEach(stat => {
+    const arr = weeklyRawData
+      .filter(r => includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7))
+      .map(r => {
+        if (!isValid(r[stat])) return null;
+        return { mgr: r.manager_nickname, season: r.season, week: r.week, value: parseFloat(r[stat]) };
+      }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.slice(0, 10).forEach((r, i) => {
+      if (r.mgr === mgr) {
+        lines.push(`Rankings->Weekly->${stat} ${mgr} is ${ordinal(i+1)} in ${r.season} W${r.week}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
+      }
+    });
+  });
+
+  // Trades -> Lifetime (Top 50)
+  const tradesData = buildWorstTradesData(tradeRanksData).slice(0, 50);
+  tradesData.forEach((t, i) => {
+    if (t.toManager === mgr || t.fromManager === mgr) {
+      lines.push(`Trades->Lifetime ${mgr} is ${ordinal(i+1)}. (Diff: ${fmt(t.diff, 2)})`);
+    }
+  });
+
+  // FAAB -> Lifetime (Top 20)
+  const faabAdds = txRawData
+    .filter(d => d.player_action === 'add' && parseFloat(d.faab_bid || '0') > 0)
+    .map(d => ({ player: d.player_name, mgr: d.manager_nickname, season: d.season, faab: parseFloat(d.faab_bid) }))
+    .sort((a, b) => b.faab - a.faab)
+    .slice(0, 20);
+  faabAdds.forEach((r, i) => {
+    if (r.mgr === mgr) {
+      lines.push(`FAAB->Lifetime ${mgr} is ${ordinal(i+1)}. ($${r.faab} on ${r.player})`);
+    }
+  });
+
+  if (lines.length === 0) {
+    div.innerHTML = `<p class="no-data">No rankings found for ${mgr}.</p>`;
+  } else {
+    div.innerHTML = `<div style="background:var(--glass); font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; padding:20px; border-radius:6px; border:1px solid var(--border); line-height:1.6; max-width:800px; color: var(--cream);">` + lines.join("<br>") + `</div>`;
+  }
+}
+
+function showSummarySeason(c) {
+  c.classList.remove("grid-view");
+  const years = [...new Set(rawData.map(r => r.season).filter(Boolean))].sort((a,b) => b-a);
+  const opts = years.map(y => `<option value="${y}">${y}</option>`).join("");
+  c.innerHTML = `
+    <div class="section-vertical-stack">
+      <h2>Season Summary Report</h2>
+      <div style="margin-bottom:20px;">
+        <select id="summarySzn">${opts}</select>
+        <button class="show-btn" onclick="renderSummarySeason()">SHOW SUMMARY</button>
+      </div>
+      <div id="summarySeasonArea"></div>
+    </div>`;
+}
+
+function renderSummarySeason() {
+  const szn = document.getElementById("summarySzn").value;
+  const div = document.getElementById("summarySeasonArea");
+  let lines = [];
+
+  // Records -> Winning Streaks (Top 20)
+  const wStreaks = computeTopStreaks('W', 20);
+  wStreaks.forEach((s, i) => {
+    if (String(s.startSeason) === String(szn)) {
+      lines.push(`Records->Winning Streaks-> ${s.mgr} is ${ordinal(i+1)} in ${szn}. (Streak: ${s.count})`);
+    }
+  });
+
+  // Records -> Losing Streaks (Top 20)
+  const lStreaks = computeTopStreaks('L', 20);
+  lStreaks.forEach((s, i) => {
+    if (String(s.startSeason) === String(szn)) {
+      lines.push(`Records->Losing Streaks-> ${s.mgr} is ${ordinal(i+1)} in ${szn}. (Streak: ${s.count})`);
+    }
+  });
+
+  // Rankings -> Season (Top 10)
+  avgFields.forEach(stat => {
+    const arr = rawData.map(r => {
+      if (!isValid(r[stat])) return null;
+      return { mgr: r.manager_nickname, season: r.season, value: parseFloat(r[stat]) };
+    }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.slice(0, 10).forEach((r, i) => {
+      if (String(r.season) === String(szn)) {
+        lines.push(`Rankings->Season->${stat} ${r.mgr} is ${ordinal(i+1)} in ${szn}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
+      }
+    });
+  });
+
+  // Rankings -> Weekly (Top 10)
+  avgFields.forEach(stat => {
+    const arr = weeklyRawData
+      .filter(r => includeLongWeeks ? true : (isValid(r.week_days) && parseFloat(r.week_days) <= 7))
+      .map(r => {
+        if (!isValid(r[stat])) return null;
+        return { mgr: r.manager_nickname, season: r.season, week: r.week, value: parseFloat(r[stat]) };
+      }).filter(Boolean);
+    arr.sort((a,b) => eraFields.includes(stat) ? a.value - b.value : b.value - a.value);
+    arr.slice(0, 10).forEach((r, i) => {
+      if (String(r.season) === String(szn)) {
+        lines.push(`Rankings->Weekly->${stat} ${r.mgr} is ${ordinal(i+1)} in ${szn} W${r.week}. (${fmt(r.value, ["OBP","ERA","WHIP","K/9"].includes(stat)?3:0)})`);
+      }
+    });
+  });
+
+  // Trades -> Lifetime (Top 50)
+  const tradesData = buildWorstTradesData(tradeRanksData).slice(0, 50);
+  tradesData.forEach((t, i) => {
+    if (String(t.season) === String(szn)) {
+      lines.push(`Trades->Lifetime-> ${t.toManager} & ${t.fromManager} is ${ordinal(i+1)} in ${szn}. (Diff: ${fmt(t.diff, 2)})`);
+    }
+  });
+
+  // FAAB -> Lifetime (Top 20)
+  const faabAdds = txRawData
+    .filter(d => d.player_action === 'add' && parseFloat(d.faab_bid || '0') > 0)
+    .map(d => ({ player: d.player_name, mgr: d.manager_nickname, season: d.season, faab: parseFloat(d.faab_bid) }))
+    .sort((a, b) => b.faab - a.faab)
+    .slice(0, 20);
+  faabAdds.forEach((r, i) => {
+    if (String(r.season) === String(szn)) {
+      lines.push(`FAAB->Lifetime-> ${r.mgr} is ${ordinal(i+1)} in ${szn}. ($${r.faab} on ${r.player})`);
+    }
+  });
+
+  if (lines.length === 0) {
+    div.innerHTML = `<p class="no-data">No rankings found for ${szn}.</p>`;
+  } else {
+    div.innerHTML = `<div style="background:var(--glass); font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; padding:20px; border-radius:6px; border:1px solid var(--border); line-height:1.6; max-width:800px; color: var(--cream);">` + lines.join("<br>") + `</div>`;
+  }
 }
 
 /* ══════════════════════════════════════════
@@ -1213,13 +1453,11 @@ function renderWorstTradesTable(title, trades) {
     const toClass = toIsWinner ? 'trade-win' : 'trade-lose';
     const fromClass = toIsWinner ? 'trade-lose' : 'trade-win';
 
-    // Added font-weight: 600 to the labels to match the Players column
     const mgrCell = `<span class="${toClass}" style="font-size: 0.85rem; opacity: 0.9; font-weight: 600;">Approver:</span><br>
                      <span class="${toClass}" style="font-weight:700;">${t.toManager}</span><br><br>
                      <span class="${fromClass}" style="font-size: 0.85rem; opacity: 0.9; font-weight: 600;">Initiator:</span><br>
                      <span class="${fromClass}" style="font-weight:700;">${t.fromManager}</span>`;
     
-    // Added font-weight: 600 to the labels here as well for absolute consistency
     const toLines = `<span class="${toClass}" style="font-size: 0.85rem; opacity: 0.9; font-weight: 600;">Approver:</span><br>` +
       t.toPlayers.map(p => `<span class="${toClass}" style="font-weight:700;">${p}</span>`).join('<br>');
       
@@ -1306,7 +1544,6 @@ function renderYearlyWorstTrades() {
 
 /* ── HEAD TO HEAD ── */
 function computeH2HMatchups(filterManager, applyThreshold) {
-  // map: canonical key -> {managerA, managerB, wins, losses, ties}
   const map = {};
   h2hRawData.forEach(row => {
     const mA = row.manager_a;
@@ -1316,7 +1553,6 @@ function computeH2HMatchups(filterManager, applyThreshold) {
     const winsB = parseFloat(row.manager_b_record) || 0;
     const ties  = parseFloat(row.ties) || 0;
 
-    // canonical key: alphabetically sorted pair
     const [first, second] = mA <= mB ? [mA, mB] : [mB, mA];
     const key = first + "|||" + second;
 
@@ -1332,7 +1568,6 @@ function computeH2HMatchups(filterManager, applyThreshold) {
     map[key].ties += ties;
   });
 
-  // Build rows: winner = higher win%, loser = other
   let rows = Object.values(map).map(m => {
     const total = m.firstWins + m.secondWins + m.ties;
     if (applyThreshold && (total < 200 || total > 1000)) return null;
@@ -1349,12 +1584,10 @@ function computeH2HMatchups(filterManager, applyThreshold) {
     return { winnerMgr, loserMgr, wins, losses, ties: m.ties, total, winPct };
   }).filter(Boolean);
 
-  // Filter by manager if specified
   if (filterManager) {
     rows = rows.filter(r => r.winnerMgr === filterManager || r.loserMgr === filterManager);
   }
 
-  // Sort by win% descending
   rows.sort((a, b) => b.winPct - a.winPct);
   return rows;
 }
@@ -1509,9 +1742,7 @@ function renderH2HSeason() {
 function showWeeklyCategories(c) {
   c.classList.remove("grid-view");
 
-  // Build season → league_id map and available weeks per season+league
-  // weeklyRawData entries have team_key like "gameId.l.leagueId.t.teamId"
-  const seasonLeagueMap = {};  // "season_leagueId" → { season, leagueId, weeks: Set }
+  const seasonLeagueMap = {};
   weeklyRawData.forEach(r => {
     const tk = r.team_key || "";
     const parts = tk.split(".");
@@ -1521,7 +1752,6 @@ function showWeeklyCategories(c) {
     seasonLeagueMap[key].weeks.add(Number(r.week));
   });
 
-  // Sort by season desc then leagueId asc
   const slEntries = Object.values(seasonLeagueMap).sort((a, b) => {
     if (b.season !== a.season) return b.season - a.season;
     return a.leagueId.localeCompare(b.leagueId);
@@ -1569,7 +1799,6 @@ function renderWeeklyCategories() {
   const week = Number(document.getElementById("wkCatWeek").value);
   const div = document.getElementById("wkCatTable");
 
-  // Get all teams for this season + league + week
   const rows = weeklyRawData.filter(r => {
     const tk = r.team_key || "";
     const parts = tk.split(".");
@@ -1582,26 +1811,19 @@ function renderWeeklyCategories() {
     return;
   }
 
-  // Determine which categories are present (have at least some valid data)
   const cats = avgFields.filter(stat => rows.some(r => isValid(r[stat])));
-
-  // For each category, rank all teams (handle ties — same rank)
-  // Build per-team data: { manager, stats: {cat: {val, rank}} }
   const teamData = rows.map(r => ({ row: r, stats: {} }));
 
   cats.forEach(stat => {
     const decPrec = ["OBP","ERA","WHIP","K/9"].includes(stat) ? 3 : 0;
-    const isLower = eraFields.includes(stat); // lower is better
+    const isLower = eraFields.includes(stat);
 
-    // Parse values
     const withVals = teamData
       .filter(t => isValid(t.row[stat]))
       .map(t => ({ t, val: parseFloat(t.row[stat]) }));
 
-    // Sort: ascending for ERA/WHIP, descending otherwise
     withVals.sort((a, b) => isLower ? a.val - b.val : b.val - a.val);
 
-    // Assign ranks (ties share rank)
     let rank = 1;
     withVals.forEach((item, i) => {
       if (i > 0 && item.val !== withVals[i-1].val) rank = i + 1;
@@ -1611,14 +1833,11 @@ function renderWeeklyCategories() {
       };
     });
 
-    // Teams missing this stat get no rank
     teamData.filter(t => !isValid(t.row[stat])).forEach(t => {
       t.stats[stat] = { val: "—", rank: null };
     });
   });
 
-  // Sort rows by manager name for display (or keep natural order)
-  // Actually sort by total rank score (sum of ranks, lower = better overall week)
   teamData.forEach(t => {
     t.rankSum = cats.reduce((sum, stat) => {
       const r = t.stats[stat] && t.stats[stat].rank !== null ? t.stats[stat].rank : rows.length;
@@ -1629,7 +1848,6 @@ function renderWeeklyCategories() {
 
   const n = teamData.length;
 
-  // Build table — rows = teams, cols = categories
   let html = `
     <div style="margin-bottom:8px;font-size:0.78rem;color:rgba(255,255,255,0.45);letter-spacing:0.1em;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;">
       ${season} · League ${leagueId} · Week ${week} — sorted by best overall rank score
@@ -1660,8 +1878,6 @@ function renderWeeklyCategories() {
       else if (rank === 3) cls = "wk-cat-rank-3";
       else if (rank === n) cls = "wk-cat-last";
 
-      const label = val !== "—" ? `${mgr} (${val})` : "—";
-      // Show rank number + val in a compact format
       const rankBadge = rank !== null ? `<span style="font-size:0.65rem;opacity:0.6;margin-right:2px;">#${rank}</span>` : "";
       html += `<td class="${cls}">${rankBadge}${val}</td>`;
     });
@@ -1677,7 +1893,6 @@ function renderWeeklyCategories() {
 function showSeasonCategories(c) {
   c.classList.remove("grid-view");
 
-  // Build season list from rawData, extracting league ID from team_key
   const seasonMap = {};
   rawData.forEach(r => {
     const tk = r.team_key || "";
@@ -1714,10 +1929,7 @@ function renderSeasonCategories() {
     return;
   }
 
-  // Determine which categories have data this season
   const cats = avgFields.filter(stat => rows.some(r => isValid(r[stat])));
-
-  // Build per-team data and rank each category
   const teamData = rows.map(r => ({ row: r, stats: {} }));
 
   cats.forEach(stat => {
@@ -1741,7 +1953,6 @@ function renderSeasonCategories() {
     });
   });
 
-  // Sort by sum of ranks (lower = better overall season)
   teamData.forEach(t => {
     t.rankSum = cats.reduce((sum, stat) => {
       const r = t.stats[stat] && t.stats[stat].rank !== null ? t.stats[stat].rank : rows.length;
@@ -1800,7 +2011,6 @@ function buildStreakData() {
   h2hRawData.forEach(r => {
     const a = r.manager_a, b = r.manager_b;
     if (isHiddenManager(a) || isHiddenManager(b)) return;
-    // Skip points leagues (decimal records)
     if (String(r.manager_a_record).includes('.') || String(r.manager_b_record).includes('.')) return;
     const ar = parseInt(r.manager_a_record), br = parseInt(r.manager_b_record);
     if (isNaN(ar) || isNaN(br)) return;
@@ -1811,11 +2021,10 @@ function buildStreakData() {
     [{ mgr: a, res: aRes }, { mgr: b, res: bRes }].forEach(({ mgr, res }) => {
       if (!managerWeeks[mgr]) managerWeeks[mgr] = {};
       const key = `${r.season}|${r.week}`;
-      if (!managerWeeks[mgr][key]) managerWeeks[mgr][key] = res; // deduplicate
+      if (!managerWeeks[mgr][key]) managerWeeks[mgr][key] = res;
     });
   });
 
-  // Convert to sorted arrays
   const sorted = {};
   Object.keys(managerWeeks).forEach(mgr => {
     sorted[mgr] = Object.entries(managerWeeks[mgr])
@@ -1836,7 +2045,6 @@ function computeTopStreaks(type, n) {
 
     weeks.forEach(({ season, week, res }) => {
       if (season !== prevSeason && count > 0) {
-        // season boundary — save streak
         allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
         count = 0; startSeason = null;
       }

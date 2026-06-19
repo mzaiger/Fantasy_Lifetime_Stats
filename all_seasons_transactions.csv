@@ -28330,6 +28330,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,751,1781857172,add/drop,Nasim Nuñez,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,751,1781857172,drop,Ryne Nelson,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,747,1781770904,add/drop,Peter Lambert,SP,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,747,1781770904,drop,Daniel Palencia,RP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,746,1781770904,add/drop,Mick Abel,SP,add,0

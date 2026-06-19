@@ -278,6 +278,23 @@
   body.light-mode .team-tx-table td:nth-child(3) { color: #1a7a45; }
   body.light-mode .team-tx-table td:nth-child(4) { color: #a02020; }
 
+  /* ── Summary Scroll Box ── */
+  .summary-text-box {
+    background: var(--glass);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    line-height: 1.6;
+    color: var(--cream);
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+  }
+
   /* ── Weekly Category Rankings ── */
   .wk-cat-table { table-layout: fixed; min-width: 900px; }
   .wk-cat-table th { white-space: nowrap; font-size: 0.75rem; padding: 6px 5px; min-width: 52px; }
@@ -699,7 +716,7 @@ function renderSummaryManager() {
   const h2hRows = computeH2HMatchups(null, true).slice(0, 20);
   h2hRows.forEach((r, i) => {
     if (r.winnerMgr === mgr || r.loserMgr === mgr) {
-      lines.push(`Head to Head->LifeTime ${mgr} is ${ordinal(i+1)}. (${r.wins}-${r.losses}-${r.ties})`);
+      lines.push(`Head to Head->LifeTime ${r.winnerMgr} & ${r.loserMgr} is ${ordinal(i+1)}. (${r.wins}-${r.losses}-${r.ties})`);
     }
   });
 
@@ -785,7 +802,7 @@ function renderSummaryManager() {
   const tradesData = buildWorstTradesData(tradeRanksData).slice(0, 50);
   tradesData.forEach((t, i) => {
     if (t.toManager === mgr || t.fromManager === mgr) {
-      lines.push(`Trades->Lifetime ${mgr} is ${ordinal(i+1)}. (Diff: ${fmt(t.diff, 2)})`);
+      lines.push(`Trades->Lifetime ${t.toManager} & ${t.fromManager} is ${ordinal(i+1)}. (Diff: ${fmt(t.diff, 2)})`);
     }
   });
 
@@ -804,7 +821,7 @@ function renderSummaryManager() {
   if (lines.length === 0) {
     div.innerHTML = `<p class="no-data">No rankings found for ${mgr}.</p>`;
   } else {
-    div.innerHTML = `<div style="background:var(--glass); font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; padding:20px; border-radius:6px; border:1px solid var(--border); line-height:1.6; max-width:800px; color: var(--cream);">` + lines.join("<br>") + `</div>`;
+    div.innerHTML = `<div class="summary-text-box">` + lines.join("<br>") + `</div>`;
   }
 }
 
@@ -897,7 +914,7 @@ function renderSummarySeason() {
   if (lines.length === 0) {
     div.innerHTML = `<p class="no-data">No rankings found for ${szn}.</p>`;
   } else {
-    div.innerHTML = `<div style="background:var(--glass); font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; padding:20px; border-radius:6px; border:1px solid var(--border); line-height:1.6; max-width:800px; color: var(--cream);">` + lines.join("<br>") + `</div>`;
+    div.innerHTML = `<div class="summary-text-box">` + lines.join("<br>") + `</div>`;
   }
 }
 

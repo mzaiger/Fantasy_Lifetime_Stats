@@ -389,8 +389,8 @@
         <a onclick="setPage('lifetimeAvg'); closeMobileItem(this)">Lifetime (Averages)</a>
         <a onclick="setPage('seasonRankings'); closeMobileItem(this)">Season</a>
         <a onclick="setPage('weeklyRankings'); closeMobileItem(this)">Weekly</a>
-        <a onclick="setPage('individualSeason'); closeMobileItem(this)">Manager Season</a>
-        <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Manager Weekly</a>
+        <a onclick="setPage('individualSeason'); closeMobileItem(this)">Individual Season</a>
+        <a onclick="setPage('individualWeekly'); closeMobileItem(this)">Individual Weekly</a>
         <a onclick="setPage('seasonCategories'); closeMobileItem(this)">Season Combined Categories</a>
         <a onclick="setPage('weeklyCategories'); closeMobileItem(this)">Weekly Combined Categories</a>
       </div></div>
@@ -534,7 +534,7 @@ const avgFields     = ["R","HR","RBI","SB","TB","E","OBP","W","CG","SV","ERA","W
 const eraFields     = ["ERA","WHIP","E"];
 const sumFields     = ["R","HR","RBI","SB","TB","E","W","CG","SV","QS"];
 
-let currentPage = "summarySeason";
+let currentPage = "playoffMedals";
 
 Promise.all([
   fetch("all_seasons_stats.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
@@ -2213,88 +2213,77 @@ function showSummaryManager(c) {
   c.classList.remove('grid-view');
   const mgrs = Object.keys(managers).sort();
   const opts = mgrs.map(m => `<option value="${m}">${m}</option>`).join('');
-  c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px;">
-  <h2>Summary — Manager</h2>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
-  <select id="summaryMgrSelect">${opts}</select>
-  
-    <label class="toggle-switch">
-      <input type="checkbox" id="summaryMgrMode">
-      <span class="toggle-slider"></span>
-      <span class="toggle-left">Highlights</span>
-      <span class="toggle-right">Everything</span>
-    </label>
-    
-  </div><div id="summaryMgrOutput"></div></div>`;
-  renderSummaryManager();
-  document.getElementById('summaryMgrSelect').onchange=renderSummaryManager;
-  document.getElementById('summaryMgrMode').onchange=renderSummaryManager;
+  c.innerHTML = `
+    <div class="section-vertical-stack" style="max-width:900px;">
+      <h2>Summary — Manager</h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;margin-bottom:16px;">
+        All-time appearances across every table and ranking for a selected manager.
+      </p>
+      <div style="margin-bottom:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+        <select id="summaryMgrSelect">${opts}</select>
+        <button class="show-btn" onclick="renderSummaryManager()">SHOW SUMMARY</button>
+      </div>
+      <div id="summaryMgrOutput"></div>
+    </div>`;
 }
+
 function renderSummaryManager() {
-  const mgr=document.getElementById('summaryMgrSelect').value;
-  const mode=document.getElementById('summaryMgrMode').checked ? 'everything' : 'highlights';
-  const div=document.getElementById('summaryMgrOutput');
-  let lines=buildManagerSentences(mgr);
-  lines=summaryFilter(lines,mode,'manager');
-  div.innerHTML='<div style="display:flex;flex-direction:column;gap:6px;">'+lines.map(l=>`<div style="padding:9px 14px;background:var(--glass);border:1px solid var(--border);border-radius:6px;">${l}</div>`).join('')+'</div>';
+  const mgr = document.getElementById('summaryMgrSelect').value;
+  const div = document.getElementById('summaryMgrOutput');
+  const lines = buildManagerSentences(mgr);
+
+  if (!lines.length) {
+    div.innerHTML = `<p class="no-data">No summary data found for ${mgr}.</p>`;
+    return;
+  }
+
+  let html = `<div style="display:flex;flex-direction:column;gap:6px;">`;
+  lines.forEach(line => {
+    html += `<div style="padding:9px 14px;background:var(--glass);border:1px solid var(--border);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--cream);line-height:1.5;">${line}</div>`;
+  });
+  html += `</div><p style="margin-top:12px;color:rgba(255,255,255,0.35);font-size:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.08em;">
+    ${lines.length} appearance${lines.length !== 1 ? 's' : ''} found across all tables for ${mgr}.
+  </p>`;
+  div.innerHTML = html;
 }
 
 /* ── SUMMARY: SEASON PAGE ── */
 function showSummarySeason(c) {
   c.classList.remove('grid-view');
-  const years=[...new Set(rawData.map(r=>r.season).filter(Boolean))].sort((a,b)=>b-a);
-  const opts=years.map(y=>`<option value="${y}">${y}</option>`).join('');
-  c.innerHTML=`<div class="section-vertical-stack" style="max-width:900px;">
-  <h2>Summary — Season</h2>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;">
-  <select id="summarySeasonSelect">${opts}</select>
-  
-    <label class="toggle-switch">
-      <input type="checkbox" id="summarySeasonMode">
-      <span class="toggle-slider"></span>
-      <span class="toggle-left">Highlights</span>
-      <span class="toggle-right">Everything</span>
-    </label>
-    
-  </div><div id="summarySeasonOutput"></div></div>`;
-  document.getElementById('summarySeasonSelect').value=years[0];
-  renderSummarySeason();
-  document.getElementById('summarySeasonSelect').onchange=renderSummarySeason;
-  document.getElementById('summarySeasonMode').onchange=renderSummarySeason;
+  const years = [...new Set(rawData.map(r => r.season).filter(Boolean))].sort((a,b) => b-a);
+  const opts = years.map(y => `<option value="${y}">${y}</option>`).join('');
+  c.innerHTML = `
+    <div class="section-vertical-stack" style="max-width:900px;">
+      <h2>Summary — Season</h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;margin-bottom:16px;">
+        All rankings and results for every table in a selected season.
+      </p>
+      <div style="margin-bottom:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+        <select id="summarySeasonSelect">${opts}</select>
+        <button class="show-btn" onclick="renderSummarySeason()">SHOW SUMMARY</button>
+      </div>
+      <div id="summarySeasonOutput"></div>
+    </div>`;
 }
+
 function renderSummarySeason() {
- const year=document.getElementById('summarySeasonSelect').value;
- const mode=document.getElementById('summarySeasonMode').checked ? 'everything' : 'highlights';
- const div=document.getElementById('summarySeasonOutput');
- let lines=buildSeasonSentences(year);
- lines=summaryFilter(lines,mode,'season');
- div.innerHTML='<div style="display:flex;flex-direction:column;gap:6px;">'+lines.map(l=>`<div style="padding:9px 14px;background:var(--glass);border:1px solid var(--border);border-radius:6px;">${l}</div>`).join('')+'</div>';
-}
+  const year = document.getElementById('summarySeasonSelect').value;
+  const div = document.getElementById('summarySeasonOutput');
+  const lines = buildSeasonSentences(year);
 
+  if (!lines.length) {
+    div.innerHTML = `<p class="no-data">No summary data found for ${year}.</p>`;
+    return;
+  }
 
-function summaryFilter(lines, mode, type) {
-  if (mode === 'everything') return lines;
-  const seasonKeep = [
-    'Records → Winning Streaks →',
-    'Records → Losing Streaks →',
-    'Rankings → Season →',
-    'Rankings → Weekly →',
-    'Trades → Lifetime →',
-    'FAAB → Lifetime →'
-  ];
-  const managerKeep = [
-    'Head to Head → Lifetime →',
-    'Records → Winning Streaks →',
-    'Records → Losing Streaks →',
-    'Rankings → Lifetime (Totals) →',
-    'Rankings → Lifetime (Averages) →',
-    'Rankings → Season →',
-    'Rankings → Weekly →',
-    'Trades → Lifetime →',
-    'FAAB → Lifetime →'
-  ];
-  const keep = type === 'manager' ? managerKeep : seasonKeep;
-  return lines.filter(l => keep.some(k => l.includes(k)));
+  let html = `<div style="display:flex;flex-direction:column;gap:6px;">`;
+  lines.forEach(line => {
+    html += `<div style="padding:9px 14px;background:var(--glass);border:1px solid var(--border);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--cream);line-height:1.5;">${line}</div>`;
+  });
+  html += `</div><p style="margin-top:12px;color:rgba(255,255,255,0.35);font-size:0.75rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.08em;">
+    ${lines.length} entr${lines.length !== 1 ? 'ies' : 'y'} found across all tables for the ${year} season.
+  </p>`;
+  div.innerHTML = html;
 }
 
 /* ── EXPORT DATA ── */

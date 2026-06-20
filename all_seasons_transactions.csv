@@ -28129,6 +28129,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,753,1781943680,add/drop,Andrés Giménez,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,753,1781943680,drop,Ezequiel Tovar,SS,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,745,1781770904,add/drop,Endy Rodríguez,"C,1B",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,745,1781770904,drop,Brandon Valenzuela,"C,1B",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,741,1781684566,add/drop,Ezequiel Tovar,SS,add,0
@@ -28291,6 +28293,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,138,1774425768,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,137,1774425768,add,Nolan Arenado,3B,add,0
 2026,469.l.23321,469.l.23321.t.3,Errors Built My Hotrod,Nikolai Khabibulin,83,1774339163,add,Riley O'Brien,RP,add,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,752,1781928114,drop,Erik Sabrowski,RP,drop,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,717,1781425322,add/drop,Royce Lewis,"1B,3B",add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,717,1781425322,drop,Kai-Wei Teng,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,627,1780474781,add,Ernie Clement,"1B,2B,3B,SS",add,2
@@ -28679,6 +28682,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,754,1781943680,add/drop,Miles Mikolas,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,754,1781943680,drop,Sean Manaea,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,749,1781770904,add/drop,Sean Manaea,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,749,1781770904,drop,Zack Littell,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,748,1781770904,add/drop,Martín Pérez,SP,add,0

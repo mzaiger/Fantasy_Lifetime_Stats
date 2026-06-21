@@ -520,7 +520,7 @@ toggleSwitch.addEventListener('change', switchTheme);
 
 /* ── Global Filter State ── */
 let includeLongWeeks = false;
-let includeCurrentWeek = true;
+let includeCurrentWeek = false;
 
 function handleLongWeeksToggle(e) {
   includeLongWeeks = e.checked;
@@ -1104,8 +1104,8 @@ function renderSeasonRecord() {
     return;
   }
 
-  // Build delta map for current week if applicable
-  const cwDeltas = (isCurrentSeason && !includeCurrentWeek)
+  // rawData W/L/T does NOT include the current week — add it when the slider is on
+  const cwDeltas = (isCurrentSeason && includeCurrentWeek)
     ? computeCurrentWeekH2HDeltas(cwInfo.season, cwInfo.week)
     : {};
 
@@ -1115,14 +1115,14 @@ function renderSeasonRecord() {
     let t = isValid(r.ties) ? parseFloat(r.ties) : 0;
     const mgr = r.manager_nickname;
     if (cwDeltas[mgr]) {
-      w = Math.max(0, w - cwDeltas[mgr].w);
-      l = Math.max(0, l - cwDeltas[mgr].l);
-      t = Math.max(0, t - cwDeltas[mgr].t);
+      w += cwDeltas[mgr].w;
+      l += cwDeltas[mgr].l;
+      t += cwDeltas[mgr].t;
     }
     return { name: mgr, w, l, t, pct: winPct(w, l, t) };
   }).filter(r => r.w + r.l + r.t > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
 
-  const weekNote = (isCurrentSeason && !includeCurrentWeek) ? ` <span style="color:var(--gold);font-size:0.8em;margin-left:6px;">(excl. Wk ${cwInfo.week})</span>` : '';
+  const weekNote = (isCurrentSeason && includeCurrentWeek) ? ` <span style="color:var(--gold);font-size:0.8em;margin-left:6px;">(incl. Wk ${cwInfo.week})</span>` : '';
   let html = `<h2>${year} Season Record${weekNote}</h2>`;
   html += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
   rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${r.pct !== null ? fmt(r.pct, 3) : "—"}</td></tr>`; });

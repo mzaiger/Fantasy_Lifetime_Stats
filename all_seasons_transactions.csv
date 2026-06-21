@@ -27957,6 +27957,9 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,759,1782052085,drop,Braden Montgomery,OF,drop,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,755,1782030093,add/drop,Tommy Edman,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,755,1782030093,drop,Jacob Webb,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,744,1781770904,add/drop,Jacob Webb,RP,add,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,744,1781770904,drop,Tony Santillan,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,I’m The Best At The Hubris,NOBS,740,1781684566,add,Tony Santillan,RP,add,0
@@ -28333,6 +28336,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,757,1782030093,add/drop,Tatsuya Imai,SP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,757,1782030093,drop,Jordan Lawlar,"3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,751,1781857172,add/drop,Nasim Nuñez,"2B,SS",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,751,1781857172,drop,Ryne Nelson,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,747,1781770904,add/drop,Peter Lambert,SP,add,0
@@ -28682,6 +28687,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Downfall of the hubris,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,756,1782030093,add/drop,Zac Gallen,SP,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,756,1782030093,drop,Miles Mikolas,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,754,1781943680,add/drop,Miles Mikolas,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,754,1781943680,drop,Sean Manaea,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,749,1781770904,add/drop,Sean Manaea,"SP,RP",add,0

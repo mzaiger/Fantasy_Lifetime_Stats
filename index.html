@@ -520,6 +520,7 @@ toggleSwitch.addEventListener('change', switchTheme);
 
 /* ── Global Filter State ── */
 let includeLongWeeks = false;
+let includeCurrentWeek = true;
 
 function handleLongWeeksToggle(e) {
   includeLongWeeks = e.checked;
@@ -1046,34 +1047,83 @@ function showSeasonRecord(container) {
   container.classList.remove('grid-view');
   const years = [...new Set(rawData.map(r => r.season).filter(Boolean))].sort();
   const opts = years.map(y => `<option value="${y}">${y}</option>`).join("");
+  const cwInfo = getCurrentWeekInfo();
+  const cwSeason = cwInfo ? String(cwInfo.season) : null;
+  const cwWeek = cwInfo ? cwInfo.week : null;
+  const sliderHtml = cwInfo ? `
+    <div class="filter-pill-wrapper" style="margin-bottom:12px" id="currentWeekSliderWrap">
+      <span style="opacity:0.6;">Exclude</span>
+      <label class="theme-switch">
+        <input type="checkbox" id="currentWeekToggle" onchange="handleCurrentWeekToggle(this)" ${includeCurrentWeek ? 'checked' : ''}>
+        <div class="slider"></div>
+      </label>
+      <span style="opacity:0.6;">Include</span>
+      <span style="color:var(--gold);margin-left:2px;">current week (Wk ${cwWeek}).</span>
+    </div>` : '';
   container.innerHTML = `
     <div style="margin-bottom:20px">
-      <select id="recordYear">${opts}</select>
+      <select id="recordYear" onchange="updateCurrentWeekSliderVisibility('${cwSeason}')">${opts}</select>
       <button class="show-btn" onclick="renderSeasonRecord()">SHOW RECORDS</button>
     </div>
+    ${sliderHtml}
     <div id="seasonRecordArea"></div>`;
+  // Set initial dropdown to last year and update slider visibility
+  if (years.length) {
+    const sel = document.getElementById('recordYear');
+    sel.value = years[years.length - 1];
+    updateCurrentWeekSliderVisibility(cwSeason);
+  }
+}
+
+function updateCurrentWeekSliderVisibility(cwSeason) {
+  const wrap = document.getElementById('currentWeekSliderWrap');
+  if (!wrap) return;
+  const sel = document.getElementById('recordYear');
+  wrap.style.display = (sel && String(sel.value) === String(cwSeason)) ? '' : 'none';
+}
+
+function handleCurrentWeekToggle(e) {
+  includeCurrentWeek = e.checked;
+  // Sync H2H->Season toggle if it exists
+  const otherToggle = document.getElementById('h2hCurrentWeekToggle');
+  if (otherToggle) otherToggle.checked = includeCurrentWeek;
+  // Re-render if result already showing
+  if (document.getElementById('seasonRecordArea') && document.getElementById('seasonRecordArea').innerHTML.trim()) {
+    renderSeasonRecord();
+  }
 }
 
 function renderSeasonRecord() {
   const year = document.getElementById("recordYear").value;
   const div = document.getElementById("seasonRecordArea");
+  const cwInfo = getCurrentWeekInfo();
+  const isCurrentSeason = cwInfo && String(year) === String(cwInfo.season);
   const seasonRows = rawData.filter(r => String(r.season) === String(year));
   if (seasonRows.length === 0) {
     div.innerHTML = `<p class="no-data">No data found for ${year}.</p>`;
     return;
   }
-  const rows = seasonRows.map(r => ({
-    name: r.manager_nickname,
-    w: isValid(r.wins) ? parseFloat(r.wins) : 0,
-    l: isValid(r.losses) ? parseFloat(r.losses) : 0,
-    t: isValid(r.ties) ? parseFloat(r.ties) : 0,
-    pct: winPct(
-      isValid(r.wins) ? parseFloat(r.wins) : 0,
-      isValid(r.losses) ? parseFloat(r.losses) : 0,
-      isValid(r.ties) ? parseFloat(r.ties) : 0
-    )
-  })).filter(r => r.w + r.l + r.t > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
-  let html = `<h2>${year} Season Record</h2>`;
+
+  // Build delta map for current week if applicable
+  const cwDeltas = (isCurrentSeason && !includeCurrentWeek)
+    ? computeCurrentWeekH2HDeltas(cwInfo.season, cwInfo.week)
+    : {};
+
+  const rows = seasonRows.map(r => {
+    let w = isValid(r.wins) ? parseFloat(r.wins) : 0;
+    let l = isValid(r.losses) ? parseFloat(r.losses) : 0;
+    let t = isValid(r.ties) ? parseFloat(r.ties) : 0;
+    const mgr = r.manager_nickname;
+    if (cwDeltas[mgr]) {
+      w = Math.max(0, w - cwDeltas[mgr].w);
+      l = Math.max(0, l - cwDeltas[mgr].l);
+      t = Math.max(0, t - cwDeltas[mgr].t);
+    }
+    return { name: mgr, w, l, t, pct: winPct(w, l, t) };
+  }).filter(r => r.w + r.l + r.t > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
+
+  const weekNote = (isCurrentSeason && !includeCurrentWeek) ? ` <span style="color:var(--gold);font-size:0.8em;margin-left:6px;">(excl. Wk ${cwInfo.week})</span>` : '';
+  let html = `<h2>${year} Season Record${weekNote}</h2>`;
   html += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
   rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${r.pct !== null ? fmt(r.pct, 3) : "—"}</td></tr>`; });
   html += `</table>`;
@@ -1560,6 +1610,33 @@ function renderYearlyWorstTrades() {
 }
 
 /* ── HEAD TO HEAD ── */
+function getCurrentWeekInfo() {
+  // Returns { season, week } for the most recent week in h2hRawData, or null
+  if (!h2hRawData.length) return null;
+  const seasons = h2hRawData.map(r => String(r.season)).filter(Boolean);
+  const maxSeason = seasons.reduce((a, b) => (a >= b ? a : b), "");
+  const weeksInSeason = h2hRawData.filter(r => String(r.season) === maxSeason).map(r => Number(r.week));
+  const maxWeek = Math.max(...weeksInSeason);
+  return { season: maxSeason, week: maxWeek };
+}
+
+// Returns a map of manager -> { w, l, t } representing their H2H W/L/T for the current week
+function computeCurrentWeekH2HDeltas(season, week) {
+  const map = {};
+  h2hRawData.filter(r => String(r.season) === String(season) && Number(r.week) === week).forEach(row => {
+    const mA = row.manager_a, mB = row.manager_b;
+    if (!mA || !mB) return;
+    const wA = parseFloat(row.manager_a_record) || 0;
+    const wB = parseFloat(row.manager_b_record) || 0;
+    const t  = parseFloat(row.ties) || 0;
+    if (!map[mA]) map[mA] = { w: 0, l: 0, t: 0 };
+    if (!map[mB]) map[mB] = { w: 0, l: 0, t: 0 };
+    map[mA].w += wA; map[mA].l += wB; map[mA].t += t;
+    map[mB].w += wB; map[mB].l += wA; map[mB].t += t;
+  });
+  return map;
+}
+
 function computeH2HMatchups(filterManager, applyThreshold) {
   const map = {};
   h2hRawData.forEach(row => {
@@ -1675,9 +1752,9 @@ function showH2HManager(c) {
 }
 
 /* ── HEAD TO HEAD — SEASON ── */
-function computeH2HMatchupsBySeason(season, filterManager) {
+function computeH2HMatchupsBySeason(season, filterManager, excludeWeek) {
   const map = {};
-  h2hRawData.filter(row => String(row.season) === String(season)).forEach(row => {
+  h2hRawData.filter(row => String(row.season) === String(season) && (excludeWeek == null || Number(row.week) !== Number(excludeWeek))).forEach(row => {
     const mA = row.manager_a;
     const mB = row.manager_b;
     if (!mA || !mB) return;
@@ -1736,21 +1813,62 @@ function showH2HSeason(c) {
   const mgrOpts = '<option value="">— All Managers —</option>' +
     Array.from(mgrs).sort().map(m => `<option value="${m}">${m}</option>`).join('');
 
+  const cwInfo = getCurrentWeekInfo();
+  const cwSeason = cwInfo ? String(cwInfo.season) : null;
+  const cwWeek = cwInfo ? cwInfo.week : null;
+  const sliderHtml = cwInfo ? `
+    <div class="filter-pill-wrapper" id="h2hCurrentWeekSliderWrap">
+      <span style="opacity:0.6;">Exclude</span>
+      <label class="theme-switch">
+        <input type="checkbox" id="h2hCurrentWeekToggle" onchange="handleH2HCurrentWeekToggle(this)" ${includeCurrentWeek ? 'checked' : ''}>
+        <div class="slider"></div>
+      </label>
+      <span style="opacity:0.6;">Include</span>
+      <span style="color:var(--gold);margin-left:2px;">current week (Wk ${cwWeek}).</span>
+    </div>` : '';
+
   c.innerHTML = `<div class="section-vertical-stack" style="max-width:900px">
     <h2>Head to Head — Season</h2>
     <div style="margin-bottom:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-      <select id="h2hSeasonYear">${yearOpts}</select>
+      <select id="h2hSeasonYear" onchange="updateH2HCurrentWeekSliderVisibility('${cwSeason}')">${yearOpts}</select>
       <select id="h2hSeasonMgr">${mgrOpts}</select>
       <button class="show-btn" onclick="renderH2HSeason()">SHOW</button>
     </div>
+    ${sliderHtml}
     <div id="h2hSeasonTable"></div>
   </div>`;
+
+  // Set default to current season and update slider
+  if (cwSeason) {
+    const sel = document.getElementById('h2hSeasonYear');
+    if (sel) { sel.value = cwSeason; }
+  }
+  updateH2HCurrentWeekSliderVisibility(cwSeason);
+}
+
+function updateH2HCurrentWeekSliderVisibility(cwSeason) {
+  const wrap = document.getElementById('h2hCurrentWeekSliderWrap');
+  if (!wrap) return;
+  const sel = document.getElementById('h2hSeasonYear');
+  wrap.style.display = (sel && String(sel.value) === String(cwSeason)) ? '' : 'none';
+}
+
+function handleH2HCurrentWeekToggle(e) {
+  includeCurrentWeek = e.checked;
+  // Sync the Records->Season toggle if it exists
+  const otherToggle = document.getElementById('currentWeekToggle');
+  if (otherToggle) otherToggle.checked = includeCurrentWeek;
+  // Re-render if result is showing
+  const tbl = document.getElementById('h2hSeasonTable');
+  if (tbl && tbl.innerHTML.trim()) renderH2HSeason();
 }
 
 function renderH2HSeason() {
   const year = document.getElementById('h2hSeasonYear').value;
   const mgr  = document.getElementById('h2hSeasonMgr').value;
-  const rows = computeH2HMatchupsBySeason(year, mgr || null);
+  const cwInfo = getCurrentWeekInfo();
+  const isCurrentSeason = cwInfo && String(year) === String(cwInfo.season);
+  const rows = computeH2HMatchupsBySeason(year, mgr || null, isCurrentSeason && !includeCurrentWeek ? cwInfo.week : null);
   document.getElementById('h2hSeasonTable').innerHTML =
     rows.length ? renderH2HTable(rows, null) : `<p class="no-data">No head-to-head data found for ${year}.</p>`;
 }

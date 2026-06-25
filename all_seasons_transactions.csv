@@ -27957,6 +27957,9 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,779,1782375684,add/drop,Christian Scott,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,779,1782375684,drop,Tommy Edman,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,778,1782355795,drop,Cole Ragans,SP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,762,1782202765,add/drop,Corbin Burnes,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,762,1782202765,drop,Spencer Steer,"1B,2B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,759,1782052085,drop,Braden Montgomery,OF,drop,0
@@ -28347,6 +28350,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,780,1782375684,add/drop,Caleb Kilian,RP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,780,1782375684,drop,Noah Cameron,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,772,1782289180,add/drop,Joc Pederson,Util,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,772,1782289180,drop,Josh Bell,1B,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,770,1782289180,add/drop,Daulton Varsho,OF,add,1
@@ -28613,6 +28618,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,782,1782375684,add/drop,Spencer Steer,"1B,2B,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,782,1782375684,drop,George Lombard Jr.,"2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,775,1782308601,drop,Justin Steele,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,771,1782289180,add/drop,Brady Singer,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,771,1782289180,drop,Kodai Senga,SP,drop,0
@@ -28709,6 +28716,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,781,1782375684,add,Robert Gasser,SP,add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,777,1782328093,drop,Carlos Estévez,RP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,773,1782289180,add,Carson Kelly,C,add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,766,1782202765,add/drop,Trevor Rogers,SP,add,0

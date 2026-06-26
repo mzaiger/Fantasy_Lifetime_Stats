@@ -27957,6 +27957,9 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,787,1782462025,add,Justin Steele,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,786,1782462025,add/drop,Jorge Soler,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,786,1782462025,drop,Jo Adell,OF,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,779,1782375684,add/drop,Christian Scott,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,779,1782375684,drop,Tommy Edman,"2B,3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,778,1782355795,drop,Cole Ragans,SP,drop,0
@@ -28137,6 +28140,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,785,1782462025,add/drop,Peter Lambert,SP,add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,785,1782462025,drop,Javier Assad,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,776,1782319895,drop,Grant Holmes,SP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,767,1782202765,add/drop,Denzer Guzman,"3B,SS",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,767,1782202765,drop,Andrés Giménez,"2B,SS",drop,0
@@ -28350,6 +28355,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,784,1782462025,add/drop,Cooper Ingle,C,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,784,1782462025,drop,Caleb Kilian,RP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,780,1782375684,add/drop,Caleb Kilian,RP,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,780,1782375684,drop,Noah Cameron,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,772,1782289180,add/drop,Joc Pederson,Util,add,0

@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,789,1782635070,add/drop,Brandon Sproat,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,789,1782635070,drop,Jasson Domínguez,OF,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,787,1782462025,add,Justin Steele,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,786,1782462025,add/drop,Jorge Soler,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,786,1782462025,drop,Jo Adell,OF,drop,0
@@ -28627,6 +28629,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,790,1782650898,drop,Spencer Steer,"1B,2B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,782,1782375684,add/drop,Spencer Steer,"1B,2B,OF",add,0
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,782,1782375684,drop,George Lombard Jr.,"2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,775,1782308601,drop,Justin Steele,SP,drop,0

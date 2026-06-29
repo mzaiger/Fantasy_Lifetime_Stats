@@ -2185,22 +2185,24 @@ function computeTopStreaks(type, n) {
   const allStreaks = [];
 
   Object.entries(mgrLeagueWeeks).forEach(([key, weeks]) => {
-    const [mgr] = key.split('|');
-    let count = 0, startSeason = null, startWeek = null, prevWeek = null, leagueName = null;
+    const [mgr, season, leagueKey] = key.split('|');
+    // league display name is on every entry; grab from first week
+    const seriesLeague = weeks.length ? weeks[0].league : leagueKey;
+    let count = 0, startSeason = null, startWeek = null, prevWeek = null;
 
-    weeks.forEach(({ season, week, res, league }) => {
+    weeks.forEach(({ season, week, res }) => {
       if (res === type) {
         count++;
-        if (!startSeason) { startSeason = season; startWeek = week; leagueName = league; }
+        if (!startSeason) { startSeason = season; startWeek = week; }
       } else {
-        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: prevWeek, league: leagueName });
+        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: prevWeek, league: seriesLeague });
         count = 0; startSeason = null;
       }
       prevWeek = week;
     });
     if (count > 0) {
       const last = weeks[weeks.length - 1];
-      allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: last.season, endWeek: last.week, league: leagueName });
+      allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: last.season, endWeek: last.week, league: seriesLeague });
     }
   });
 

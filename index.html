@@ -322,6 +322,15 @@
   .trade-lose { color: #e07070 !important; }
   body.light-mode .trade-win { color: #1a7a45 !important; }
   body.light-mode .trade-lose { color: #a02020 !important; }
+
+  /* ── Streak page light mode ── */
+  .streak-subtitle { color: rgba(255,255,255,0.45); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Barlow Condensed', sans-serif; margin-bottom: 12px; }
+  body.light-mode .streak-subtitle { color: rgba(13,27,42,0.55); }
+  .streak-mgr { text-align: left; font-weight: 500; color: #e8dfc8; }
+  body.light-mode .streak-mgr { color: var(--lm-text) !important; }
+  .streak-rank-silver { color: #aaa; font-weight: 700; }
+  body.light-mode .streak-rank-silver { color: #666; }
+  body.light-mode .streak-weeks { color: var(--lm-text); }
 </style>
 </head>
 <body>
@@ -2207,7 +2216,7 @@ function renderStreakPage(c, type) {
   const streaks = computeTopStreaks(type, 20);
 
   let html = `<h2>${emoji} ${title}</h2>`;
-  html += `<p style="color:rgba(255,255,255,0.45);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;margin-bottom:12px;">
+  html += `<p class="streak-subtitle">
     Consecutive weekly matchup ${isWin ? 'wins' : 'losses'} within a single season — top 20 all-time
   </p>`;
   html += `<table>
@@ -2223,14 +2232,14 @@ function renderStreakPage(c, type) {
     <tbody>`;
 
   streaks.forEach((s, i) => {
-    const rankStyle = i === 0 ? `color:var(--gold);font-weight:700;` : i === 1 ? `color:#aaa;font-weight:700;` : i === 2 ? `color:#cd7f32;font-weight:700;` : '';
+    const rankClass = i === 0 ? `class="medal-gold"` : i === 1 ? `class="streak-rank-silver"` : i === 2 ? `class="medal-bronze"` : '';
     const streakStyle = `color:${accentColor};font-weight:700;font-size:1rem;`;
     html += `<tr>
-      <td style="${rankStyle}">${i + 1}</td>
-      <td style="text-align:left;font-weight:500;color:#e8dfc8;">${s.mgr}</td>
+      <td ${rankClass}>${i + 1}</td>
+      <td class="streak-mgr">${s.mgr}</td>
       <td style="${streakStyle}">${s.count}</td>
       <td style="color:var(--gold);">${s.startSeason}</td>
-      <td>Wk ${s.startWeek} – Wk ${s.endWeek}</td>
+      <td class="streak-weeks">Wk ${s.startWeek} – Wk ${s.endWeek}</td>
     </tr>`;
   });
 

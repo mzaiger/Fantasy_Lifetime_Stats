@@ -2217,7 +2217,7 @@ function renderStreakPage(c, type) {
 
   let html = `<h2>${emoji} ${title}</h2>`;
   html += `<p class="streak-subtitle">
-    Consecutive weekly matchup ${isWin ? 'wins' : 'losses'} within a single season &amp; league &mdash; top 20 all-time
+    Consecutive weekly matchup ${isWin ? 'wins' : 'losses'} within a single league &mdash; top 20 all-time
   </p>`;
   html += `<table>
     <thead>
@@ -2226,6 +2226,7 @@ function renderStreakPage(c, type) {
         <th style="text-align:left;">Manager</th>
         <th>Streak</th>
         <th>Season</th>
+        <th style="text-align:left;">League</th>
         <th>Weeks</th>
       </tr>
     </thead>
@@ -2239,6 +2240,7 @@ function renderStreakPage(c, type) {
       <td class="streak-mgr">${s.mgr}</td>
       <td style="${streakStyle}">${s.count}</td>
       <td style="color:var(--gold);">${s.startSeason}</td>
+      <td class="streak-weeks" style="text-align:left;font-size:0.82rem;opacity:0.8;">${s.league || '—'}</td>
       <td class="streak-weeks">Wk ${s.startWeek} \u2013 Wk ${s.endWeek}</td>
     </tr>`;
   });

@@ -2196,7 +2196,7 @@ function computeTopStreaks(type, n) {
         count++;
         if (!startSeason) { startSeason = season; startWeek = week; }
       } else {
-        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: week });
+        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
         count = 0; startSeason = null;
       }
       prevSeason = season; prevWeek = week;

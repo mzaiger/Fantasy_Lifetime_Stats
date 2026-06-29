@@ -2155,7 +2155,8 @@ function buildStreakData() {
 
   h2hRawData.forEach(r => {
     const a = r.manager_a, b = r.manager_b;
-    if (isHiddenManager(a) || isHiddenManager(b)) return;
+    if (isHiddenManager(a) && isHiddenManager(b)) return;
+    // If one manager is hidden, still record the result for the non-hidden manager
     if (String(r.manager_a_record).includes('.') || String(r.manager_b_record).includes('.')) return;
     const ar = parseInt(r.manager_a_record), br = parseInt(r.manager_b_record);
     if (isNaN(ar) || isNaN(br)) return;
@@ -2165,6 +2166,7 @@ function buildStreakData() {
     const league = r.league_key || r.league_name || 'default';
 
     [{ mgr: a, res: aRes }, { mgr: b, res: bRes }].forEach(({ mgr, res }) => {
+      if (isHiddenManager(mgr)) return;
       const key = `${mgr}|${r.season}|${league}`;
       if (!mgrLeagueWeeks[key]) mgrLeagueWeeks[key] = [];
       // avoid duplicate weeks within same league (shouldn't happen, but safe)

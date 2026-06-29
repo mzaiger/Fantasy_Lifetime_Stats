@@ -2239,7 +2239,7 @@ function renderStreakPage(c, type) {
       <td class="streak-mgr">${s.mgr}</td>
       <td style="${streakStyle}">${s.count}</td>
       <td style="color:var(--gold);">${s.startSeason}</td>
-      <td class="streak-weeks">Wk ${s.startWeek} – Wk ${s.endWeek}</td>
+      <td class="streak-weeks">Wk ${s.startWeek} – Wk ${s.startWeek + s.count - 1}</td>
     </tr>`;
   });
 

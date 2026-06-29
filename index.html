@@ -2185,24 +2185,22 @@ function computeTopStreaks(type, n) {
   const allStreaks = [];
 
   Object.entries(mgrLeagueWeeks).forEach(([key, weeks]) => {
-    const [mgr, season, leagueKey] = key.split('|');
-    // league display name is on every entry; grab from first week
-    const seriesLeague = weeks.length ? weeks[0].league : leagueKey;
-    let count = 0, startSeason = null, startWeek = null, prevWeek = null;
+    const [mgr] = key.split('|');
+    let count = 0, startSeason = null, startWeek = null, prevWeek = null, leagueName = null;
 
-    weeks.forEach(({ season, week, res }) => {
+    weeks.forEach(({ season, week, res, league }) => {
       if (res === type) {
         count++;
-        if (!startSeason) { startSeason = season; startWeek = week; }
+        if (!startSeason) { startSeason = season; startWeek = week; leagueName = league; }
       } else {
-        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: prevWeek, league: seriesLeague });
+        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: prevWeek, league: leagueName });
         count = 0; startSeason = null;
       }
       prevWeek = week;
     });
     if (count > 0) {
       const last = weeks[weeks.length - 1];
-      allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: last.season, endWeek: last.week, league: seriesLeague });
+      allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: last.season, endWeek: last.week, league: leagueName });
     }
   });
 
@@ -2229,7 +2227,6 @@ function renderStreakPage(c, type) {
         <th>Streak</th>
         <th>Season</th>
         <th>Weeks</th>
-        <th style="text-align:left;">League</th>
       </tr>
     </thead>
     <tbody>`;
@@ -2243,7 +2240,6 @@ function renderStreakPage(c, type) {
       <td style="${streakStyle}">${s.count}</td>
       <td style="color:var(--gold);">${s.startSeason}</td>
       <td class="streak-weeks">Wk ${s.startWeek} \u2013 Wk ${s.endWeek}</td>
-      <td style="color:var(--cream);opacity:0.7;font-size:0.78rem;">${s.league || ''}</td>
     </tr>`;
   });
 

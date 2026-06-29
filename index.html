@@ -2150,7 +2150,8 @@ function renderSeasonCategories() {
 
 /* ── STREAK HELPERS ── */
 function buildStreakData() {
-  const managerWeeks = {};
+  // Key: mgr|season|leagueKey → array of { week, res } sorted by week
+  const mgrLeagueWeeks = {};
 
   h2hRawData.forEach(r => {
     const a = r.manager_a, b = r.manager_b;
@@ -2161,47 +2162,46 @@ function buildStreakData() {
 
     const aRes = ar > br ? 'W' : ar < br ? 'L' : 'T';
     const bRes = br > ar ? 'W' : br < ar ? 'L' : 'T';
+    const league = r.league_key || r.league_name || 'default';
 
     [{ mgr: a, res: aRes }, { mgr: b, res: bRes }].forEach(({ mgr, res }) => {
-      if (!managerWeeks[mgr]) managerWeeks[mgr] = {};
-      const key = `${r.season}|${r.week}`;
-      if (!managerWeeks[mgr][key]) managerWeeks[mgr][key] = res;
+      const key = `${mgr}|${r.season}|${league}`;
+      if (!mgrLeagueWeeks[key]) mgrLeagueWeeks[key] = [];
+      // avoid duplicate weeks within same league (shouldn't happen, but safe)
+      if (!mgrLeagueWeeks[key].find(e => e.week === r.week)) {
+        mgrLeagueWeeks[key].push({ season: r.season, week: r.week, res, league: r.league_name || league });
+      }
     });
   });
 
-  const sorted = {};
-  Object.keys(managerWeeks).forEach(mgr => {
-    sorted[mgr] = Object.entries(managerWeeks[mgr])
-      .map(([k, res]) => { const [season, week] = k.split('|'); return { season, week: parseInt(week), res }; })
-      .sort((a, b) => a.season !== b.season ? a.season.localeCompare(b.season) : a.week - b.week);
-  });
+  // Sort each series by week
+  Object.values(mgrLeagueWeeks).forEach(arr => arr.sort((a, b) => a.week - b.week));
 
-  return sorted;
+  return mgrLeagueWeeks;
 }
 
 function computeTopStreaks(type, n) {
-  const managerWeeks = buildStreakData();
+  const mgrLeagueWeeks = buildStreakData();
   const allStreaks = [];
 
-  Object.keys(managerWeeks).forEach(mgr => {
-    const weeks = managerWeeks[mgr];
-    let count = 0, startSeason = null, startWeek = null, prevSeason = null, prevWeek = null;
+  Object.entries(mgrLeagueWeeks).forEach(([key, weeks]) => {
+    const [mgr] = key.split('|');
+    let count = 0, startSeason = null, startWeek = null, prevWeek = null, leagueName = null;
 
-    weeks.forEach(({ season, week, res }) => {
-      if (season !== prevSeason && count > 0) {
-        allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
-        count = 0; startSeason = null;
-      }
+    weeks.forEach(({ season, week, res, league }) => {
       if (res === type) {
         count++;
-        if (!startSeason) { startSeason = season; startWeek = week; }
+        if (!startSeason) { startSeason = season; startWeek = week; leagueName = league; }
       } else {
-        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
+        if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: season, endWeek: prevWeek, league: leagueName });
         count = 0; startSeason = null;
       }
-      prevSeason = season; prevWeek = week;
+      prevWeek = week;
     });
-    if (count > 0) allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: prevSeason, endWeek: prevWeek });
+    if (count > 0) {
+      const last = weeks[weeks.length - 1];
+      allStreaks.push({ mgr, count, startSeason, startWeek, endSeason: last.season, endWeek: last.week, league: leagueName });
+    }
   });
 
   return allStreaks.sort((a, b) => b.count - a.count).slice(0, n);
@@ -2217,7 +2217,7 @@ function renderStreakPage(c, type) {
 
   let html = `<h2>${emoji} ${title}</h2>`;
   html += `<p class="streak-subtitle">
-    Consecutive weekly matchup ${isWin ? 'wins' : 'losses'} within a single season — top 20 all-time
+    Consecutive weekly matchup ${isWin ? 'wins' : 'losses'} within a single season &amp; league &mdash; top 20 all-time
   </p>`;
   html += `<table>
     <thead>
@@ -2239,7 +2239,7 @@ function renderStreakPage(c, type) {
       <td class="streak-mgr">${s.mgr}</td>
       <td style="${streakStyle}">${s.count}</td>
       <td style="color:var(--gold);">${s.startSeason}</td>
-      <td class="streak-weeks">Wk ${s.startWeek} – Wk ${s.startWeek + s.count - 1}</td>
+      <td class="streak-weeks">Wk ${s.startWeek} \u2013 Wk ${s.endWeek}</td>
     </tr>`;
   });
 

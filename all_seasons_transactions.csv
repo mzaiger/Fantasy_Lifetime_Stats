@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,808,1782894101,add/drop,Bryce Eldridge,1B,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,808,1782894101,drop,Roki Sasaki,SP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,800,1782807684,add/drop,Heliot Ramos,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,800,1782807684,drop,Carson Benge,OF,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,795,1782722143,add/drop,Jake Bennett,SP,add,0
@@ -28325,6 +28327,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,138,1774425768,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,137,1774425768,add,Nolan Arenado,3B,add,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,83,1774339163,add,Riley O'Brien,RP,add,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,804,1782894101,add/drop,Shane McClanahan,SP,add,3
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,804,1782894101,drop,Kumar Rocker,SP,drop,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,752,1781928114,drop,Erik Sabrowski,RP,drop,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,717,1781425322,add/drop,Royce Lewis,"1B,3B",add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,717,1781425322,drop,Kai-Wei Teng,"SP,RP",drop,0
@@ -28365,6 +28369,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,806,1782894101,add/drop,Jack Perkins,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,806,1782894101,drop,Cooper Ingle,C,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,793,1782722143,add/drop,Alex Lange,RP,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,793,1782722143,drop,Bryce Eldridge,1B,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,792,1782722143,add/drop,Taj Bradley,SP,add,0
@@ -28744,6 +28750,11 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,807,1782894101,add/drop,Jacob Gonzalez,"1B,2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,807,1782894101,drop,Blaze Alexander,"2B,3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,805,1782894101,add/drop,Esmerlyn Valdez,"1B,OF",add,2
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,805,1782894101,drop,Robert Gasser,SP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,803,1782854234,drop,Carson Kelly,C,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,799,1782807684,add/drop,Kirby Yates,RP,add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,799,1782807684,drop,Didier Fuentes,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,798,1782807684,add/drop,Sean Burke,"SP,RP",add,1

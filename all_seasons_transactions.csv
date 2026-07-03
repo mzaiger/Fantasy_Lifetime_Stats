@@ -28329,6 +28329,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,138,1774425768,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,137,1774425768,add,Nolan Arenado,3B,add,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,83,1774339163,add,Riley O'Brien,RP,add,0
+2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,817,1783066857,add,Bryan King,RP,add,1
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,804,1782894101,add/drop,Shane McClanahan,SP,add,3
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,804,1782894101,drop,Kumar Rocker,SP,drop,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,752,1781928114,drop,Erik Sabrowski,RP,drop,0
@@ -28371,6 +28372,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,818,1783066857,add/drop,Dalton Rushing,C,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,818,1783066857,drop,Dustin May,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,813,1782980717,add/drop,Javier Sanoja,"2B,3B,SS,OF",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,813,1782980717,drop,Tatsuya Imai,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,806,1782894101,add/drop,Jack Perkins,"SP,RP",add,0
@@ -28655,106 +28658,108 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,814,1782980717,add,Tommy Edman,"2B,3B,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,790,1782650898,drop,Spencer Steer,"1B,2B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,782,1782375684,add/drop,Spencer Steer,"1B,2B,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,782,1782375684,drop,George Lombard Jr.,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,775,1782308601,drop,Justin Steele,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,771,1782289180,add/drop,Brady Singer,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,771,1782289180,drop,Kodai Senga,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,743,1781684566,add/drop,George Lombard Jr.,"2B,3B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,743,1781684566,drop,Austin Riley,3B,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,734,1781598039,add/drop,Austin Riley,3B,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,734,1781598039,drop,Grayson Rodriguez,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,733,1781598039,add,Kodai Senga,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,705,1781166646,add/drop,Jose Altuve,"2B,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,705,1781166646,drop,Mitch Keller,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,695,1781079619,add/drop,MacKenzie Gore,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,695,1781079619,drop,Jack Leiter,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,690,1781038524,drop,Matthew Liberatore,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,684,1780993293,add/drop,Walker Buehler,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,684,1780993293,drop,Alex Lange,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,678,1780993293,add/drop,Robbie Ray,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,678,1780993293,drop,Shane Drohan,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,675,1780907669,add/drop,Geraldo Perdomo,SS,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,675,1780907669,drop,Aaron Nola,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,670,1780907669,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,670,1780907669,drop,Kaelen Culpepper,SS,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,652,1780647606,add/drop,Alex Lange,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,652,1780647606,drop,Daulton Varsho,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,651,1780647606,add/drop,Jorge Polanco,"2B,3B",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,651,1780647606,drop,Edwin Arroyo,"2B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,650,1780647606,add/drop,Aaron Nola,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,650,1780647606,drop,Seth Lugo,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,638,1780561308,add/drop,Kaelen Culpepper,SS,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,638,1780561308,drop,Matt McLain,"2B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,619,1780388372,add/drop,Shane Drohan,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,619,1780388372,drop,Carmen Mlodzinski,"SP,RP",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,580,1779783632,add,Seth Lugo,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,574,1779697611,add/drop,Justin Steele,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,574,1779697611,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,526,1779025950,drop,Seth Lugo,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,522,1779005936,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,522,1779005936,drop,Gage Workman,"3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,509,1778833100,add/drop,Gage Workman,"3B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,509,1778833100,drop,Chase Meidroth,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,502,1778660339,add/drop,Chase Meidroth,"2B,3B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,502,1778660339,drop,Gage Workman,"3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,501,1778660339,add/drop,Edwin Arroyo,"2B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,501,1778660339,drop,Aaron Nola,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,485,1778487847,add/drop,Gage Workman,"3B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,485,1778487847,drop,Chase Meidroth,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,484,1778401065,add/drop,Chase Meidroth,"2B,3B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,484,1778401065,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,461,1778082980,drop,Brady Singer,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,453,1777969090,add/drop,Aaron Nola,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,453,1777969090,drop,Tomoyuki Sugano,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,452,1777956291,drop,Andrew Vaughn,1B,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,419,1777537042,add/drop,Tomoyuki Sugano,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,419,1777537042,drop,Walker Buehler,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,386,1777191522,add,Matt McLain,"2B,SS",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,385,1777191522,add/drop,Lucas Erceg,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,385,1777191522,drop,Kodai Senga,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,382,1777157988,drop,Jonathan India,"2B,3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,371,1777018657,add/drop,Spencer Arrighetti,SP,add,4
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,371,1777018657,drop,Lucas Erceg,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,364,1776932239,add/drop,Walker Buehler,SP,add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,364,1776932239,drop,Noah Cameron,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,357,1776845949,add/drop,Carmen Mlodzinski,"SP,RP",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,357,1776845949,drop,John Schreiber,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,345,1776759374,add,Justin Wrobleski,"SP,RP",add,4
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,341,1776673249,add/drop,Kodai Senga,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,341,1776673249,drop,Mark Vientos,"1B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,337,1776586789,add/drop,John Schreiber,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,337,1776586789,drop,Robert Garcia,RP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,276,1775722697,add/drop,Spencer Steer,"1B,2B,OF",add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,276,1775722697,drop,Justin Crawford,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,263,1775550114,drop,Jorge Polanco,"2B,3B",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,255,1775549875,add/drop,Jonathan India,"2B,3B,OF",add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,255,1775549875,drop,Luisangel Acuña,"2B,SS,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,239,1775290599,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,239,1775290599,drop,Alejandro Kirk,C,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,237,1775204206,add,Alejandro Kirk,C,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,220,1775031609,add/drop,Justin Crawford,OF,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,220,1775031609,drop,Jesús Made,"2B,3B,SS",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,219,1775031609,add/drop,Andrew Vaughn,1B,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,219,1775031609,drop,Jonathan India,"2B,3B,OF",drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,188,1774772233,add/drop,Lucas Erceg,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,188,1774772233,drop,Starling Marte,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,166,1774599374,add/drop,Jesús Made,"2B,3B,SS",add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,166,1774599374,drop,Cam Smith,OF,drop,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,149,1774512763,add,Cam Smith,OF,add,0
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,134,1774425768,add,Robert Garcia,RP,add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,73,1774339163,add,Leo De Vries,SS,add,1
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,63,1774339163,add,Cade Cavalli,SP,add,2
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,55,1774339163,add,Jonathan India,"2B,3B,OF",add,3
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,31,1774339163,add,Grayson Rodriguez,SP,add,5
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,27,1774339163,add,Will Warren,SP,add,6
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,22,1774339163,add,Seth Lugo,SP,add,8
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,21,1774339163,add,Michael Wacha,SP,add,8
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,19,1774339163,add,Brady Singer,SP,add,16
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
-2026,469.l.23321,469.l.23321.t.9,Knate is Damien,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,814,1782980717,add,Tommy Edman,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,790,1782650898,drop,Spencer Steer,"1B,2B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,782,1782375684,add/drop,Spencer Steer,"1B,2B,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,782,1782375684,drop,George Lombard Jr.,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,775,1782308601,drop,Justin Steele,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,771,1782289180,add/drop,Brady Singer,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,771,1782289180,drop,Kodai Senga,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,743,1781684566,add/drop,George Lombard Jr.,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,743,1781684566,drop,Austin Riley,3B,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,734,1781598039,add/drop,Austin Riley,3B,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,734,1781598039,drop,Grayson Rodriguez,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,733,1781598039,add,Kodai Senga,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,705,1781166646,add/drop,Jose Altuve,"2B,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,705,1781166646,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,695,1781079619,add/drop,MacKenzie Gore,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,695,1781079619,drop,Jack Leiter,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,690,1781038524,drop,Matthew Liberatore,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,684,1780993293,add/drop,Walker Buehler,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,684,1780993293,drop,Alex Lange,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,678,1780993293,add/drop,Robbie Ray,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,678,1780993293,drop,Shane Drohan,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,675,1780907669,add/drop,Geraldo Perdomo,SS,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,675,1780907669,drop,Aaron Nola,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,670,1780907669,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,670,1780907669,drop,Kaelen Culpepper,SS,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,652,1780647606,add/drop,Alex Lange,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,652,1780647606,drop,Daulton Varsho,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,651,1780647606,add/drop,Jorge Polanco,"2B,3B",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,651,1780647606,drop,Edwin Arroyo,"2B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,650,1780647606,add/drop,Aaron Nola,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,650,1780647606,drop,Seth Lugo,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,638,1780561308,add/drop,Kaelen Culpepper,SS,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,638,1780561308,drop,Matt McLain,"2B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,619,1780388372,add/drop,Shane Drohan,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,619,1780388372,drop,Carmen Mlodzinski,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,580,1779783632,add,Seth Lugo,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,574,1779697611,add/drop,Justin Steele,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,574,1779697611,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,526,1779025950,drop,Seth Lugo,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,522,1779005936,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,522,1779005936,drop,Gage Workman,"3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,509,1778833100,add/drop,Gage Workman,"3B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,509,1778833100,drop,Chase Meidroth,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,502,1778660339,add/drop,Chase Meidroth,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,502,1778660339,drop,Gage Workman,"3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,501,1778660339,add/drop,Edwin Arroyo,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,501,1778660339,drop,Aaron Nola,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,485,1778487847,add/drop,Gage Workman,"3B,SS,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,485,1778487847,drop,Chase Meidroth,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,484,1778401065,add/drop,Chase Meidroth,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,484,1778401065,drop,Mauricio Dubón,"2B,3B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,461,1778082980,drop,Brady Singer,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,453,1777969090,add/drop,Aaron Nola,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,453,1777969090,drop,Tomoyuki Sugano,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,452,1777956291,drop,Andrew Vaughn,1B,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,419,1777537042,add/drop,Tomoyuki Sugano,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,419,1777537042,drop,Walker Buehler,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,386,1777191522,add,Matt McLain,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,385,1777191522,add/drop,Lucas Erceg,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,385,1777191522,drop,Kodai Senga,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,382,1777157988,drop,Jonathan India,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,371,1777018657,add/drop,Spencer Arrighetti,SP,add,4
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,371,1777018657,drop,Lucas Erceg,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,364,1776932239,add/drop,Walker Buehler,SP,add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,364,1776932239,drop,Noah Cameron,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,357,1776845949,add/drop,Carmen Mlodzinski,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,357,1776845949,drop,John Schreiber,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,345,1776759374,add,Justin Wrobleski,"SP,RP",add,4
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,341,1776673249,add/drop,Kodai Senga,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,341,1776673249,drop,Mark Vientos,"1B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,337,1776586789,add/drop,John Schreiber,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,337,1776586789,drop,Robert Garcia,RP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,276,1775722697,add/drop,Spencer Steer,"1B,2B,OF",add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,276,1775722697,drop,Justin Crawford,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,263,1775550114,drop,Jorge Polanco,"2B,3B",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,255,1775549875,add/drop,Jonathan India,"2B,3B,OF",add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,255,1775549875,drop,Luisangel Acuña,"2B,SS,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,239,1775290599,add/drop,Mauricio Dubón,"2B,3B,SS,OF",add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,239,1775290599,drop,Alejandro Kirk,C,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,237,1775204206,add,Alejandro Kirk,C,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,220,1775031609,add/drop,Justin Crawford,OF,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,220,1775031609,drop,Jesús Made,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,219,1775031609,add/drop,Andrew Vaughn,1B,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,219,1775031609,drop,Jonathan India,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,188,1774772233,add/drop,Lucas Erceg,RP,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,188,1774772233,drop,Starling Marte,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,166,1774599374,add/drop,Jesús Made,"2B,3B,SS",add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,166,1774599374,drop,Cam Smith,OF,drop,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,149,1774512763,add,Cam Smith,OF,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,134,1774425768,add,Robert Garcia,RP,add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,73,1774339163,add,Leo De Vries,SS,add,1
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,63,1774339163,add,Cade Cavalli,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,55,1774339163,add,Jonathan India,"2B,3B,OF",add,3
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,31,1774339163,add,Grayson Rodriguez,SP,add,5
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,27,1774339163,add,Will Warren,SP,add,6
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,22,1774339163,add,Seth Lugo,SP,add,8
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,21,1774339163,add,Michael Wacha,SP,add,8
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,19,1774339163,add,Brady Singer,SP,add,16
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,816,1783066857,add/drop,Ian Seymour,"SP,RP",add,3
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,816,1783066857,drop,Andre Pallante,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,815,1782980717,add/drop,Kyle Leahy,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,815,1782980717,drop,Martín Pérez,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,807,1782894101,add/drop,Jacob Gonzalez,"1B,2B,SS",add,0

@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,824,1783153279,add/drop,Caleb Kilian,RP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,824,1783153279,drop,Reid Detmers,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,808,1782894101,add/drop,Bryce Eldridge,1B,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,808,1782894101,drop,Roki Sasaki,SP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,800,1782807684,add/drop,Heliot Ramos,OF,add,0
@@ -28271,6 +28273,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"1B,2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,820,1783153279,add,Cedric Mullins,OF,add,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,737,1781612517,drop,Masyn Winn,SS,drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,713,1781338767,add/drop,Blaze Jordan,"1B,3B",add,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,713,1781338767,drop,J.T. Realmuto,C,drop,0
@@ -28372,6 +28375,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,822,1783153279,add/drop,Charlie Condon,"1B,OF",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,822,1783153279,drop,A.J. Ewing,"2B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,821,1783153279,add/drop,Reynaldo López,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,821,1783153279,drop,Jack Perkins,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,818,1783066857,add/drop,Dalton Rushing,C,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,818,1783066857,drop,Dustin May,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,813,1782980717,add/drop,Javier Sanoja,"2B,3B,SS,OF",add,0
@@ -28658,6 +28665,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,823,1783153279,add/drop,Cole Young,2B,add,0
+2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,823,1783153279,drop,Brady Singer,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,814,1782980717,add,Tommy Edman,"2B,3B,OF",add,0
 2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,790,1782650898,drop,Spencer Steer,"1B,2B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,782,1782375684,add/drop,Spencer Steer,"1B,2B,OF",add,0
@@ -28758,6 +28767,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Cavalli was framed,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,825,1783153279,add/drop,Spencer Miles,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,825,1783153279,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,816,1783066857,add/drop,Ian Seymour,"SP,RP",add,3
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,816,1783066857,drop,Andre Pallante,SP,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,815,1782980717,add/drop,Kyle Leahy,"SP,RP",add,0

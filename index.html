@@ -383,8 +383,10 @@
         <a onclick="setPage('seasonRecord'); closeMobileItem(this)">Season</a>
         <a onclick="setPage('winStreaks'); closeMobileItem(this)">Winning Streaks</a>
         <a onclick="setPage('lossStreaks'); closeMobileItem(this)">Losing Streaks</a>
+        <a onclick="setPage('powerRankings'); closeMobileItem(this)">Power Rankings</a>
       </div></div>
     </div>
+
     
     <div class="nav-item has-sub">
       <a>SUMMARY</a>
@@ -695,6 +697,7 @@ function setPage(page) {
   if (page === "h2hSeason")          showH2HSeason(c);
   if (page === "winStreaks")         showWinStreaks(c);
   if (page === "lossStreaks")        showLossStreaks(c);
+  if (page === "powerRankings")      showPowerRankings(c);
   if (page === "weeklyCategories")   showWeeklyCategories(c);
   if (page === "seasonCategories")   showSeasonCategories(c);
 }
@@ -2253,6 +2256,157 @@ function renderStreakPage(c, type) {
 
 function showWinStreaks(c)  { renderStreakPage(c, 'W'); }
 function showLossStreaks(c) { renderStreakPage(c, 'L'); }
+
+/* ══════════════════════════════════════════
+   POWER RANKINGS
+   Score = 33% Season Record + 33% Last 4 Games + 33% Combined Category Rank
+══════════════════════════════════════════ */
+
+function showPowerRankings(container) {
+  container.classList.remove('grid-view');
+  const years = [...new Set(rawData.map(r => r.season).filter(Boolean))].sort();
+  const opts = years.map(y => `<option value="${y}">${y}</option>`).join("");
+  container.innerHTML = `
+    <div style="margin-bottom:20px">
+      <select id="powerYear">${opts}</select>
+      <button class="show-btn" onclick="renderPowerRankings()">SHOW POWER RANKINGS</button>
+    </div>
+    <div id="powerRankingsArea"></div>`;
+  if (years.length) {
+    document.getElementById('powerYear').value = years[years.length - 1];
+  }
+}
+
+/* Manager -> { w, l, t, pct } for the full season, from all_seasons_stats.json */
+function computeSeasonOverallRecords(season) {
+  const map = {};
+  rawData.filter(r => String(r.season) === String(season)).forEach(r => {
+    const w = isValid(r.wins) ? parseFloat(r.wins) : 0;
+    const l = isValid(r.losses) ? parseFloat(r.losses) : 0;
+    const t = isValid(r.ties) ? parseFloat(r.ties) : 0;
+    if (w + l + t === 0) return;
+    map[r.manager_nickname] = { w, l, t, pct: winPct(w, l, t) };
+  });
+  return map;
+}
+
+/* Manager -> { w, l, t, pct, games } for their most recent 4 weekly matchups in the season */
+function computeLast4Records(season) {
+  const byMgr = {};
+  h2hRawData.filter(r => String(r.season) === String(season)).forEach(row => {
+    const a = row.manager_a, b = row.manager_b;
+    if (!a || !b) return;
+    if (String(row.manager_a_record).includes('.') || String(row.manager_b_record).includes('.')) return;
+    const ar = parseInt(row.manager_a_record), br = parseInt(row.manager_b_record);
+    if (isNaN(ar) || isNaN(br)) return;
+    const aRes = ar > br ? 'W' : ar < br ? 'L' : 'T';
+    const bRes = br > ar ? 'W' : br < ar ? 'L' : 'T';
+    [{ mgr: a, res: aRes }, { mgr: b, res: bRes }].forEach(({ mgr, res }) => {
+      if (isHiddenManager(mgr)) return;
+      if (!byMgr[mgr]) byMgr[mgr] = [];
+      if (!byMgr[mgr].find(e => e.week === row.week)) byMgr[mgr].push({ week: row.week, res });
+    });
+  });
+
+  const result = {};
+  Object.entries(byMgr).forEach(([mgr, weeks]) => {
+    weeks.sort((x, y) => x.week - y.week);
+    const last4 = weeks.slice(-4);
+    let w = 0, l = 0, t = 0;
+    last4.forEach(e => { if (e.res === 'W') w++; else if (e.res === 'L') l++; else t++; });
+    result[mgr] = { w, l, t, pct: winPct(w, l, t), games: last4.length };
+  });
+  return result;
+}
+
+/* Manager -> { rank, n } using the same combined-category rank-sum logic as
+   Rankings -> Season Combined Categories (lower rankSum = better) */
+function computeSeasonCombinedRank(season) {
+  const rows = rawData.filter(r => String(r.season) === String(season));
+  const cats = avgFields.filter(stat => rows.some(r => isValid(r[stat])));
+  const teamData = rows.map(r => ({ row: r, stats: {} }));
+
+  cats.forEach(stat => {
+    const isLower = eraFields.includes(stat);
+    const withVals = teamData.filter(t => isValid(t.row[stat])).map(t => ({ t, val: parseFloat(t.row[stat]) }));
+    withVals.sort((a, b) => isLower ? a.val - b.val : b.val - a.val);
+    let rank = 1;
+    withVals.forEach((item, i) => {
+      if (i > 0 && item.val !== withVals[i-1].val) rank = i + 1;
+      item.t.stats[stat] = rank;
+    });
+    teamData.filter(t => !isValid(t.row[stat])).forEach(t => { t.stats[stat] = rows.length; });
+  });
+
+  teamData.forEach(t => {
+    t.rankSum = cats.reduce((sum, stat) => sum + (t.stats[stat] || rows.length), 0);
+  });
+  teamData.sort((a, b) => a.rankSum - b.rankSum);
+
+  const n = teamData.length;
+  const result = {};
+  let rank = 1;
+  teamData.forEach((t, i) => {
+    if (i > 0 && t.rankSum !== teamData[i-1].rankSum) rank = i + 1;
+    result[t.row.manager_nickname] = { rank, n, rankSum: t.rankSum };
+  });
+  return result;
+}
+
+function renderPowerRankings() {
+  const season = document.getElementById("powerYear").value;
+  const div = document.getElementById("powerRankingsArea");
+
+  const overall = computeSeasonOverallRecords(season);
+  const last4 = computeLast4Records(season);
+  const combined = computeSeasonCombinedRank(season);
+
+  const managerNames = Object.keys(overall);
+  if (!managerNames.length) {
+    div.innerHTML = `<p class="no-data">No data found for ${season}.</p>`;
+    return;
+  }
+
+  const rows = managerNames.map(mgr => {
+    const o = overall[mgr];
+    const l4 = last4[mgr];
+    const cmb = combined[mgr];
+
+    // Each component is normalized to a 0–1 scale before weighting equally.
+    const seasonScore = o.pct !== null ? o.pct : 0;
+    // If a manager has no recent weekly matchup data, fall back to their season pace.
+    const last4Score = (l4 && l4.pct !== null) ? l4.pct : seasonScore;
+    const combinedScore = cmb ? (cmb.n > 1 ? (cmb.n - cmb.rank) / (cmb.n - 1) : 1) : 0;
+
+    const power = (seasonScore / 3) + (last4Score / 3) + (combinedScore / 3);
+
+    return {
+      mgr,
+      seasonRecord: `${fmt(o.w)}-${fmt(o.l)}${o.t ? '-' + fmt(o.t) : ''}`,
+      last4Record: l4 ? `${l4.w}-${l4.l}${l4.t ? '-' + l4.t : ''}` : '—',
+      combinedRank: cmb ? `${cmb.rank} of ${cmb.n}` : '—',
+      power
+    };
+  }).sort((a, b) => b.power - a.power);
+
+  let html = `<h2>${season} Power Rankings</h2>`;
+  html += `<p style="color:var(--gold);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">
+    Score = 33% Season Record &bull; 33% Last 4 Games &bull; 33% Combined Category Rank
+  </p>`;
+  html += `<table><tr><th>#</th><th>Manager</th><th>Season Record</th><th>Last 4</th><th>Combined Rank</th><th>Power Score</th></tr>`;
+  rows.forEach((r, i) => {
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td>${r.mgr}</td>
+      <td>${r.seasonRecord}</td>
+      <td>${r.last4Record}</td>
+      <td>${r.combinedRank}</td>
+      <td>${fmt(r.power * 100, 1)}</td>
+    </tr>`;
+  });
+  html += `</table>`;
+  div.innerHTML = `<div class="section-vertical-stack">${html}</div>`;
+}
 
 /* ── EXPORT DATA ── */
 function showExportData(c) {

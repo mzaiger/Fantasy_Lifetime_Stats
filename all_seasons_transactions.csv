@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,844,1783435178,drop,Shane Bieber,SP,drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,837,1783412483,add,Tyler Wells,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,834,1783326572,add/drop,Clay Holmes,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,834,1783326572,drop,Brandon Sproat,SP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,827,1783254491,drop,Owen Caissie,OF,drop,0
@@ -28155,6 +28157,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,839,1783412483,add/drop,Josh Bell,1B,add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,839,1783412483,drop,Brooks Lee,"2B,3B,SS",drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,838,1783412483,add/drop,Jimmy Herget,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,838,1783412483,drop,Elvis Alvarado,RP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,812,1782980717,add/drop,Michael Busch,1B,add,3
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,812,1782980717,drop,Donovan Walton,"2B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,797,1782807684,add/drop,Brooks Lee,"2B,3B,SS",add,1
@@ -28380,6 +28386,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,836,1783412483,add/drop,Dominic Canzone,OF,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,836,1783412483,drop,Kyle Teel,C,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,835,1783412483,add/drop,Carson Benge,OF,add,1
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,835,1783412483,drop,Austin Riley,3B,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,832,1783326572,add/drop,Austin Riley,3B,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,832,1783326572,drop,Javier Sanoja,"2B,3B,SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,822,1783153279,add/drop,Charlie Condon,"1B,OF",add,0
@@ -28776,6 +28786,14 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,843,1783412483,add/drop,Andrew Morris,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,843,1783412483,drop,Dylan Lee,RP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,842,1783412483,add/drop,Ryan Zeferjahn,RP,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,842,1783412483,drop,Colin Holderman,RP,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,841,1783412483,add/drop,Heriberto Hernández,OF,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,841,1783412483,drop,Jung Hoo Lee,OF,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,840,1783412483,add/drop,Kyle Karros,3B,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,840,1783412483,drop,Willi Castro,"1B,2B,3B,SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,825,1783153279,add/drop,Spencer Miles,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,825,1783153279,drop,Grant Taylor,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,816,1783066857,add/drop,Ian Seymour,"SP,RP",add,3

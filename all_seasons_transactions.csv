@@ -27957,6 +27957,9 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,859,1783671626,add/drop,Brooks Lee,"2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,859,1783671626,drop,Zack Gelof,"2B,3B,OF",drop,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,858,1783671626,add,Garrett Whitlock,RP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,855,1783585495,add/drop,James Tibbs III,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,855,1783585495,drop,Tyler Wells,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,844,1783435178,drop,Shane Bieber,SP,drop,0
@@ -28159,6 +28162,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,863,1783710888,drop,Trevor Larnach,OF,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,861,1783671626,add/drop,Jonah Heim,C,add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,861,1783671626,drop,Victor Caratini,"C,1B",drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,860,1783671626,add,Tyler Tolbert,"SS,OF",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,850,1783498969,add/drop,Brandon Sproat,SP,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,850,1783498969,drop,Zebby Matthews,SP,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,839,1783412483,add/drop,Josh Bell,1B,add,0
@@ -28630,6 +28637,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,862,1783692612,drop,Connor Prielipp,SP,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,802,1782831986,drop,Michael Busch,1B,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,716,1781425322,add,Noelvi Marte,"3B,OF",add,3
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,715,1781368706,drop,Taj Bradley,SP,drop,0
@@ -28693,6 +28701,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,857,1783671626,add,Ryan Feltner,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,854,1783585495,add,Félix Bautista,RP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,849,1783498969,add,AJ Smith-Shawver,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,845,1783456949,drop,Cole Young,2B,drop,0

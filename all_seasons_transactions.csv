@@ -28398,6 +28398,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,865,1783758751,add/drop,Dustin May,SP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,865,1783758751,drop,Nasim Nuñez,"2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,853,1783585495,add/drop,A.J. Ewing,"2B,OF",add,1
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,853,1783585495,drop,Alex Lange,RP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,848,1783498969,add/drop,Curtis Mead,"1B,2B,3B",add,1
@@ -28690,6 +28692,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,76,1774339163,add,Shane Smith,SP,add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,75,1774339163,add,Gabriel Moreno,C,add,1
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,74,1774339163,add,Chase Dollander,"SP,RP",add,1
+2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,864,1783747531,drop,Adley Rutschman,C,drop,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,791,1782722143,add/drop,Jacob Webb,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,791,1782722143,drop,Gus Varland,RP,drop,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,718,1781425322,add,Shane Drohan,"SP,RP",add,0
@@ -28809,6 +28812,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,867,1783758751,add/drop,Luke Keaschall,"2B,OF",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,867,1783758751,drop,Spencer Miles,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,866,1783758751,add/drop,Jo Adell,OF,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,866,1783758751,drop,Jacob Gonzalez,"1B,2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,851,1783498969,add/drop,Javier Sanoja,"2B,3B,SS,OF",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,851,1783498969,drop,Samad Taylor,"2B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,843,1783412483,add/drop,Andrew Morris,"SP,RP",add,0

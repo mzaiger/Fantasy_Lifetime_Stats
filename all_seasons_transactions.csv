@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,874,1783844541,add/drop,Seth Lugo,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,874,1783844541,drop,Caleb Kilian,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,859,1783671626,add/drop,Brooks Lee,"2B,3B,SS",add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,859,1783671626,drop,Zack Gelof,"2B,3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,858,1783671626,add,Garrett Whitlock,RP,add,0
@@ -28293,6 +28295,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"1B,2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,873,1783844541,add/drop,Tyler Wells,"SP,RP",add,3
+2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,873,1783844541,drop,Luis Castillo,SP,drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,831,1783326572,add/drop,Grant Taylor,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,831,1783326572,drop,José A. Ferrer,RP,drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,820,1783153279,add,Cedric Mullins,OF,add,0
@@ -28639,6 +28643,11 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,872,1783844541,add,Michael Lorenzen (Pitcher),"SP,RP",add,3
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,871,1783844541,add,Germán Márquez,SP,add,3
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,870,1783844541,add,Robert Gasser,SP,add,5
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,869,1783825177,drop,Rhett Lowder,SP,drop,0
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,868,1783825109,drop,Luis Severino,SP,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,862,1783692612,drop,Connor Prielipp,SP,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,802,1782831986,drop,Michael Busch,1B,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,716,1781425322,add,Noelvi Marte,"3B,OF",add,3

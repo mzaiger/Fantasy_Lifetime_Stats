@@ -252232,7 +252232,7 @@
     "transaction_id": "866",
     "timestamp": "1537208840",
     "transaction_type": "drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "drop",
     "faab_bid": "0"
@@ -252428,7 +252428,7 @@
     "transaction_id": "603",
     "timestamp": "1531725523",
     "transaction_type": "add",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "add",
     "faab_bid": "2"
@@ -267450,7 +267450,7 @@
     "transaction_id": "458",
     "timestamp": "1561446725",
     "transaction_type": "drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "drop",
     "faab_bid": "0"
@@ -267464,7 +267464,7 @@
     "transaction_id": "452",
     "timestamp": "1561360326",
     "transaction_type": "add/drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "add",
     "faab_bid": "0"
@@ -275206,7 +275206,7 @@
     "transaction_id": "335",
     "timestamp": "1620803163",
     "transaction_type": "drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "drop",
     "faab_bid": "0"
@@ -275612,7 +275612,7 @@
     "transaction_id": "168",
     "timestamp": "1618387257",
     "transaction_type": "add/drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "add",
     "faab_bid": "2"
@@ -283676,7 +283676,7 @@
     "transaction_id": "1006",
     "timestamp": "1631085097",
     "transaction_type": "drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "drop",
     "faab_bid": "0"
@@ -284404,7 +284404,7 @@
     "transaction_id": "398",
     "timestamp": "1621497065",
     "transaction_type": "add",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "add",
     "faab_bid": "0"
@@ -293476,7 +293476,7 @@
     "transaction_id": "696",
     "timestamp": "1656400436",
     "transaction_type": "drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "drop",
     "faab_bid": "0"
@@ -293546,7 +293546,7 @@
     "transaction_id": "681",
     "timestamp": "1656314026",
     "transaction_type": "add/drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "add",
     "faab_bid": "1"
@@ -309394,7 +309394,7 @@
     "transaction_id": "610",
     "timestamp": "1655190823",
     "transaction_type": "drop",
-    "player_name": "Lou Trivino",
+    "player_name": "Lou Trivino III",
     "player_position": "RP",
     "player_action": "drop",
     "faab_bid": "0"
@@ -403604,6 +403604,20 @@
     "player_position": "2B,3B",
     "player_action": "add",
     "faab_bid": "17"
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "team_key": "469.l.23321.t.10",
+    "team_name": "The Evil Empire",
+    "manager_nickname": "Kevo",
+    "transaction_id": "880",
+    "timestamp": "1784056586",
+    "transaction_type": "drop",
+    "player_name": "Ian Seymour",
+    "player_position": "SP,RP",
+    "player_action": "drop",
+    "faab_bid": "0"
   },
   {
     "season": "2026",

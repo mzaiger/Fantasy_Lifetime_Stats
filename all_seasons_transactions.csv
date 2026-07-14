@@ -18015,7 +18015,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,890,1537893380,drop,Nate Jones,RP,drop,0
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,870,1537256224,add,Adalberto Mondesi,"2B,SS",add,0
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,867,1537208848,drop,Adam Ottavino,RP,drop,0
-2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,866,1537208840,drop,Lou Trivino,RP,drop,0
+2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,866,1537208840,drop,Lou Trivino III,RP,drop,0
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,865,1537149246,drop,Zack Godley,SP,drop,0
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,743,1534771611,drop,Nick Williams,OF,drop,0
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,726,1534407668,add/drop,Ryan Braun,"1B,OF",add,1
@@ -18029,7 +18029,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,696,1533631144,add,Matt Chapman,3B,add,1
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,619,1532252028,add/drop,Danny Duffy,SP,add,2
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,619,1532252028,drop,Matt Davidson,"1B,3B",drop,0
-2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,603,1531725523,add,Lou Trivino,RP,add,2
+2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,603,1531725523,add,Lou Trivino III,RP,add,2
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,589,1531467778,add,Stephen Piscotty,OF,add,1
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,575,1531245102,drop,Eric Hosmer,1B,drop,0
 2018,378.l.31584,378.l.31584.t.7,micah schnabel,Brett,551,1530808394,drop,Joe Kelly,RP,drop,0
@@ -19102,8 +19102,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,466,1561619528,add/drop,Sandy Alcantara,SP,add,0
 2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,466,1561619528,drop,Tyler Mahle,SP,drop,0
 2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,458,1561446725,add/drop,Tyler Skaggs,SP,add,0
-2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,458,1561446725,drop,Lou Trivino,RP,drop,0
-2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,452,1561360326,add/drop,Lou Trivino,RP,add,0
+2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,458,1561446725,drop,Lou Trivino III,RP,drop,0
+2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,452,1561360326,add/drop,Lou Trivino III,RP,add,0
 2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,452,1561360326,drop,Jean Segura,SS,drop,0
 2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,430,1561023296,add,Tyler Mahle,SP,add,0
 2019,388.l.22108,388.l.22108.t.6,Solerpowered,NOBS,424,1560931741,add,Yu Darvish,SP,add,0
@@ -19656,7 +19656,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,350,1620976308,drop,Frankie Montas,SP,drop,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,341,1620891171,add/drop,Logan Gilbert,SP,add,2
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,341,1620891171,drop,José Urquidy,SP,drop,0
-2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,335,1620803163,drop,Lou Trivino,RP,drop,0
+2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,335,1620803163,drop,Lou Trivino III,RP,drop,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,327,1620632754,add/drop,Dane Dunning,SP,add,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,327,1620632754,drop,Johnny Cueto,SP,drop,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,326,1620588335,drop,Daniel Lynch IV,SP,drop,0
@@ -19685,7 +19685,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,194,1618808967,drop,Mike Clevinger,SP,drop,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,185,1618558433,add,Carson Kelly,C,add,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,173,1618449909,drop,Joakim Soria,RP,drop,0
-2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,168,1618387257,add/drop,Lou Trivino,RP,add,2
+2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,168,1618387257,add/drop,Lou Trivino III,RP,add,2
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,168,1618387257,drop,Jesús Luzardo,"SP,RP",drop,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,163,1618299411,add,Bobby Witt Jr.,SS,add,0
 2021,404.l.120405,404.l.120405.t.1,THE GOAT,NOBS,153,1618248711,add/drop,Eduardo Escobar,"1B,2B,3B",add,0
@@ -20261,7 +20261,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,1009,1631171493,add/drop,Alejandro Kirk,C,add,3
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,1009,1631171493,drop,Daulton Varsho,"C,OF",drop,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,1006,1631085097,add/drop,Blake Treinen,RP,add,0
-2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,1006,1631085097,drop,Lou Trivino,RP,drop,0
+2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,1006,1631085097,drop,Lou Trivino III,RP,drop,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,1005,1631085097,add,A.J. Alexy,SP,add,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,998,1631003740,add/drop,Lane Thomas,OF,add,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,998,1631003740,drop,Miguel Cabrera,1B,drop,0
@@ -20313,7 +20313,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,428,1621868280,drop,Huascar Ynoa,SP,drop,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,415,1621671832,add,Dansby Swanson,SS,add,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,400,1621519401,drop,Josh Rojas,"2B,3B,SS,OF",drop,0
-2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,398,1621497065,add,Lou Trivino,RP,add,0
+2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,398,1621497065,add,Lou Trivino III,RP,add,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,386,1621412271,add/drop,Odúbel Herrera,"2B,OF",add,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,386,1621412271,drop,Harrison Bader,OF,drop,0
 2021,404.l.120405,404.l.120405.t.6,The Evil Empire,Kevo,376,1621323772,add,Josh Rojas,"2B,3B,SS,OF",add,0
@@ -20961,12 +20961,12 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,700,1656491458,add/drop,Hunter Strickland,RP,add,2
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,700,1656491458,drop,Alek Thomas,OF,drop,0
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,696,1656400436,add/drop,Max Meyer,SP,add,0
-2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,696,1656400436,drop,Lou Trivino,RP,drop,0
+2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,696,1656400436,drop,Lou Trivino III,RP,drop,0
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,695,1656400436,add/drop,Dean Kremer,SP,add,0
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,695,1656400436,drop,Brad Hand,RP,drop,0
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,694,1656400436,add/drop,Graham Ashcraft,SP,add,0
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,694,1656400436,drop,Brayan Bello,SP,drop,0
-2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,681,1656314026,add/drop,Lou Trivino,RP,add,1
+2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,681,1656314026,add/drop,Lou Trivino III,RP,add,1
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,681,1656314026,drop,Glenn Otto,SP,drop,0
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,680,1656314026,add/drop,Isaac Paredes,"1B,2B,3B",add,3
 2022,412.l.72928,412.l.72928.t.1,No Mud Belong To Villejoy,NOBS,680,1656314026,drop,Christopher Morel,"2B,3B,SS,OF",drop,0
@@ -22098,7 +22098,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,665,1656017784,drop,Reid Detmers,SP,drop,0
 2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,618,1655277212,add,Zach Davies,SP,add,0
 2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,610,1655190823,add/drop,Christian Bethancourt,"C,1B",add,0
-2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,610,1655190823,drop,Lou Trivino,RP,drop,0
+2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,610,1655190823,drop,Lou Trivino III,RP,drop,0
 2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,600,1655033470,add,Jiman Choi,1B,add,0
 2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,599,1655033470,add,Reid Detmers,SP,add,0
 2022,412.l.72928,412.l.72928.t.9,No Way Jose's,M Z,595,1654992091,drop,Andrew Kittredge,"SP,RP",drop,0
@@ -28828,6 +28828,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,880,1784056586,drop,Ian Seymour,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,867,1783758751,add/drop,Luke Keaschall,"2B,OF",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,867,1783758751,drop,Spencer Miles,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,866,1783758751,add/drop,Jo Adell,OF,add,0

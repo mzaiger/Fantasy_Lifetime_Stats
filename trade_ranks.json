@@ -6960,6 +6960,54 @@
   {
     "season": "2026",
     "league_key": "469.l.23321",
+    "trade_id": "882",
+    "timestamp": "1784133536",
+    "players": [
+      {
+        "from_manager": "NOBS",
+        "to_manager": "M Z",
+        "player_name": "Corbin Burnes",
+        "player_position": "SP",
+        "player_key": "469.p.10910",
+        "current_rank": "2248",
+        "preseason_rank": "521",
+        "roster_pct": 17
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "M Z",
+        "player_name": "Luis Lara",
+        "player_position": "OF",
+        "player_key": "469.p.60256",
+        "current_rank": "1198",
+        "preseason_rank": "1855",
+        "roster_pct": 9
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "M Z",
+        "player_name": "Justin Steele",
+        "player_position": "SP",
+        "player_key": "469.p.11202",
+        "current_rank": "2334",
+        "preseason_rank": "606",
+        "roster_pct": 5
+      },
+      {
+        "from_manager": "M Z",
+        "to_manager": "NOBS",
+        "player_name": "Edwin Díaz",
+        "player_position": "RP",
+        "player_key": "469.p.10214",
+        "current_rank": "611",
+        "preseason_rank": "360",
+        "roster_pct": 83
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
     "trade_id": "829",
     "timestamp": "1783273872",
     "players": [
@@ -7001,7 +7049,7 @@
         "player_key": "469.p.10148",
         "current_rank": "689",
         "preseason_rank": "208",
-        "roster_pct": 78
+        "roster_pct": 79
       }
     ]
   },
@@ -7046,8 +7094,8 @@
         "player_position": "SP",
         "player_key": "469.p.10867",
         "current_rank": "929",
-        "preseason_rank": "1449",
-        "roster_pct": 39
+        "preseason_rank": "1452",
+        "roster_pct": 38
       },
       {
         "from_manager": "Douglas",
@@ -7067,7 +7115,7 @@
         "player_key": "469.p.64533",
         "current_rank": "168",
         "preseason_rank": "242",
-        "roster_pct": 45
+        "roster_pct": 46
       }
     ]
   },
@@ -7093,7 +7141,7 @@
         "player_name": "A.J. Ewing",
         "player_position": "2B,OF",
         "player_key": "469.p.63129",
-        "current_rank": "520",
+        "current_rank": "519",
         "preseason_rank": "165",
         "roster_pct": 35
       }
@@ -7281,7 +7329,7 @@
         "player_name": "A.J. Ewing",
         "player_position": "2B,OF",
         "player_key": "469.p.63129",
-        "current_rank": "520",
+        "current_rank": "519",
         "preseason_rank": "165",
         "roster_pct": 35
       },
@@ -7331,7 +7379,7 @@
         "player_key": "469.p.60138",
         "current_rank": "226",
         "preseason_rank": "247",
-        "roster_pct": 59
+        "roster_pct": 60
       },
       {
         "from_manager": "The Wizard",
@@ -7339,7 +7387,7 @@
         "player_name": "Wyatt Langford",
         "player_position": "OF",
         "player_key": "469.p.62973",
-        "current_rank": "608",
+        "current_rank": "607",
         "preseason_rank": "99",
         "roster_pct": 91
       },
@@ -7389,7 +7437,7 @@
         "player_key": "469.p.10148",
         "current_rank": "689",
         "preseason_rank": "208",
-        "roster_pct": 78
+        "roster_pct": 79
       }
     ]
   },
@@ -7539,7 +7587,7 @@
         "player_key": "469.p.10565",
         "current_rank": "759",
         "preseason_rank": "230",
-        "roster_pct": 28
+        "roster_pct": 27
       },
       {
         "from_manager": "Douglas",
@@ -7547,7 +7595,7 @@
         "player_name": "Lucas Erceg",
         "player_position": "RP",
         "player_key": "469.p.10659",
-        "current_rank": "471",
+        "current_rank": "470",
         "preseason_rank": "364",
         "roster_pct": 17
       }
@@ -7575,7 +7623,7 @@
         "player_name": "Corey Seager",
         "player_position": "SS",
         "player_key": "469.p.9584",
-        "current_rank": "916",
+        "current_rank": "917",
         "preseason_rank": "78",
         "roster_pct": 81
       }
@@ -7593,7 +7641,7 @@
         "player_name": "George Springer",
         "player_position": "OF",
         "player_key": "469.p.9339",
-        "current_rank": "804",
+        "current_rank": "805",
         "preseason_rank": "181",
         "roster_pct": 70
       },
@@ -7631,9 +7679,9 @@
         "player_name": "Cole Ragans",
         "player_position": "SP",
         "player_key": "469.p.10610",
-        "current_rank": "645",
-        "preseason_rank": "605",
-        "roster_pct": 53
+        "current_rank": "644",
+        "preseason_rank": "607",
+        "roster_pct": 52
       },
       {
         "from_manager": "NOBS",
@@ -7659,7 +7707,7 @@
         "player_name": "Wyatt Langford",
         "player_position": "OF",
         "player_key": "469.p.62973",
-        "current_rank": "608",
+        "current_rank": "607",
         "preseason_rank": "99",
         "roster_pct": 91
       },
@@ -7669,7 +7717,7 @@
         "player_name": "Mark Vientos",
         "player_position": "1B,3B",
         "player_key": "469.p.10922",
-        "current_rank": "832",
+        "current_rank": "834",
         "preseason_rank": "223",
         "roster_pct": 4
       },
@@ -7736,7 +7784,7 @@
         "player_position": "2B,3B",
         "player_key": "469.p.12122",
         "current_rank": "1914",
-        "preseason_rank": "1626",
+        "preseason_rank": "1627",
         "roster_pct": 9
       },
       {

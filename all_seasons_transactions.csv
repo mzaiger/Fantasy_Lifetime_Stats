@@ -28302,6 +28302,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"1B,2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,881,1784105203,add/drop,Tommy Edman,"2B,3B,OF",add,0
+2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,881,1784105203,drop,Blaze Jordan,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,873,1783844541,add/drop,Tyler Wells,"SP,RP",add,3
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,873,1783844541,drop,Luis Castillo,SP,drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,831,1783326572,add/drop,Grant Taylor,"SP,RP",add,0
@@ -29038,6 +29040,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,30,1774339163,add,Gregory Soto,RP,add,5
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,29,1774339163,add,Ezequiel Tovar,SS,add,5
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,28,1774339163,add,Alec Burleson,"1B,OF",add,5
+2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,884,1784133537,drop,Matt Svanson,RP,drop,0
+2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,883,1784133536,drop,Pedro Ramirez,"2B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,572,1779610830,add/drop,Pedro Ramirez,"2B,3B",add,0
 2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,572,1779610830,drop,Trevor Story,SS,drop,0
 2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,548,1779268618,add/drop,Jesús Made,"2B,3B,SS",add,0

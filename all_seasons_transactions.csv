@@ -27957,6 +27957,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,886,1784191782,add,Cam Smith,OF,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,879,1783931517,add/drop,Noah Schultz,SP,add,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,879,1783931517,drop,Seth Lugo,SP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,874,1783844541,add/drop,Seth Lugo,SP,add,0
@@ -29040,6 +29041,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,30,1774339163,add,Gregory Soto,RP,add,5
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,29,1774339163,add,Ezequiel Tovar,SS,add,5
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,28,1774339163,add,Alec Burleson,"1B,OF",add,5
+2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,885,1784191782,add/drop,Kyle Finnegan,RP,add,0
+2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,885,1784191782,drop,Jakob Junis,RP,drop,0
 2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,884,1784133537,drop,Matt Svanson,RP,drop,0
 2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,883,1784133536,drop,Pedro Ramirez,"2B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.12,Zegster,M Z,572,1779610830,add/drop,Pedro Ramirez,"2B,3B",add,0

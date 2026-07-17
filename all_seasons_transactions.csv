@@ -28167,6 +28167,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,887,1784276348,add,Steven Okert,RP,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,add/drop,Zach Thornton,SP,add,1
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,drop,Tyler Tolbert,"SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,877,1783931517,add/drop,Mason Montgomery,"SP,RP",add,1
@@ -28831,6 +28832,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,888,1784276348,add/drop,Andruw Monasterio,"1B,2B,3B,SS",add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,888,1784276348,drop,Javier Sanoja,"2B,3B,SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,880,1784056586,drop,Ian Seymour,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,867,1783758751,add/drop,Luke Keaschall,"2B,OF",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,867,1783758751,drop,Spencer Miles,"SP,RP",drop,0

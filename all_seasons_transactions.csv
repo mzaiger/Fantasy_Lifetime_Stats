@@ -28171,6 +28171,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,24,1774339163,drop,Matt Strahm,RP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,add/drop,Jacob Wilson,SS,add,8
 2026,469.l.23321,469.l.23321.t.1,Jablonski Auto Body LLC,NOBS,23,1774339163,drop,Rhys Hoskins,1B,drop,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,896,1784449339,add/drop,Brayan Rocchio,"2B,SS",add,0
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,896,1784449339,drop,Jonah Heim,C,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,887,1784276348,add,Steven Okert,RP,add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,add/drop,Zach Thornton,SP,add,1
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,drop,Tyler Tolbert,"SS,OF",drop,0
@@ -28308,6 +28310,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,44,1774339163,add,Willi Castro,"1B,2B,3B,SS,OF",add,4
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,35,1774339163,add,Grant Holmes,SP,add,5
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,34,1774339163,add,Josh Smith,"1B,2B,3B,SS,OF",add,5
+2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,893,1784409246,drop,Henry Bolte,OF,drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,881,1784105203,add/drop,Tommy Edman,"2B,3B,OF",add,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,881,1784105203,drop,Blaze Jordan,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.3,Injection Site Reactionary,Nikolai Khabibulin,873,1783844541,add/drop,Tyler Wells,"SP,RP",add,3
@@ -28419,6 +28422,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,894,1784449339,add/drop,Joc Pederson,Util,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,894,1784449339,drop,Dustin May,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,865,1783758751,add/drop,Dustin May,SP,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,865,1783758751,drop,Nasim Nuñez,"2B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,853,1783585495,add/drop,A.J. Ewing,"2B,OF",add,1
@@ -28548,7 +28553,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,473,1778228291,add,Ryan Waldschmidt,OF,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,465,1778141982,add,JJ Bleday,OF,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,454,1777969090,add/drop,Carson Benge,OF,add,0
-2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,454,1777969090,drop,JR Ritchie,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,454,1777969090,drop,JR Ritchie,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,439,1777883153,add/drop,Logan Henderson,SP,add,4
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,439,1777883153,drop,Christian Scott,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,431,1777709915,add/drop,Christian Scott,SP,add,0
@@ -28565,7 +28570,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,399,1777278126,drop,Marcell Ozuna,Util,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,396,1777278126,add/drop,Nathan Church,OF,add,1
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,396,1777278126,drop,Cam Smith,OF,drop,0
-2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,372,1777018657,add/drop,JR Ritchie,SP,add,1
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,372,1777018657,add/drop,JR Ritchie,"SP,RP",add,1
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,372,1777018657,drop,Didier Fuentes,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,368,1776932239,add/drop,Miguel Vargas,"1B,3B",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,368,1776932239,drop,Kazuma Okamoto,"1B,3B",drop,0
@@ -28579,7 +28584,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,342,1776673249,add/drop,Payton Tolle,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,342,1776673249,drop,Sam Antonacci,"2B,3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,333,1776500274,add/drop,Hyeseong Kim,"2B,SS,OF",add,0
-2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,333,1776500274,drop,Kodai Senga,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,333,1776500274,drop,Kodai Senga,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,326,1776327562,add/drop,Didier Fuentes,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,326,1776327562,drop,Janson Junk,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,318,1776241101,add/drop,Sam Antonacci,"2B,3B,OF",add,0
@@ -28660,6 +28665,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,892,1784404654,drop,Brent Rooker,OF,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,872,1783844541,add,Michael Lorenzen (Pitcher),"SP,RP",add,3
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,871,1783844541,add,Germán Márquez,SP,add,3
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,870,1783844541,add,Robert Gasser,SP,add,5
@@ -28730,6 +28736,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,895,1784449339,add/drop,Shane Bieber,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,895,1784449339,drop,Ryan Feltner,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,857,1783671626,add,Ryan Feltner,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,854,1783585495,add,Félix Bautista,RP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,849,1783498969,add,AJ Smith-Shawver,SP,add,0
@@ -28744,12 +28752,12 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,782,1782375684,drop,George Lombard Jr.,"2B,3B,SS",drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,775,1782308601,drop,Justin Steele,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,771,1782289180,add/drop,Brady Singer,SP,add,0
-2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,771,1782289180,drop,Kodai Senga,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,771,1782289180,drop,Kodai Senga,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,743,1781684566,add/drop,George Lombard Jr.,"2B,3B,SS",add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,743,1781684566,drop,Austin Riley,3B,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,734,1781598039,add/drop,Austin Riley,3B,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,734,1781598039,drop,Grayson Rodriguez,SP,drop,0
-2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,733,1781598039,add,Kodai Senga,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,733,1781598039,add,Kodai Senga,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,705,1781166646,add/drop,Jose Altuve,"2B,OF",add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,705,1781166646,drop,Mitch Keller,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,695,1781079619,add/drop,MacKenzie Gore,SP,add,0
@@ -28797,7 +28805,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,419,1777537042,drop,Walker Buehler,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,386,1777191522,add,Matt McLain,"2B,SS",add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,385,1777191522,add/drop,Lucas Erceg,RP,add,0
-2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,385,1777191522,drop,Kodai Senga,SP,drop,0
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,385,1777191522,drop,Kodai Senga,"SP,RP",drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,382,1777157988,drop,Jonathan India,"2B,3B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,371,1777018657,add/drop,Spencer Arrighetti,SP,add,4
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,371,1777018657,drop,Lucas Erceg,RP,drop,0
@@ -28806,7 +28814,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,357,1776845949,add/drop,Carmen Mlodzinski,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,357,1776845949,drop,John Schreiber,RP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,345,1776759374,add,Justin Wrobleski,"SP,RP",add,4
-2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,341,1776673249,add/drop,Kodai Senga,SP,add,0
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,341,1776673249,add/drop,Kodai Senga,"SP,RP",add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,341,1776673249,drop,Mark Vientos,"1B,3B",drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,337,1776586789,add/drop,John Schreiber,RP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,337,1776586789,drop,Robert Garcia,RP,drop,0

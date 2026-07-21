@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,905,1784622222,add/drop,Harry Ford,C,add,0
+2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,905,1784622222,drop,Spencer Steer,"1B,2B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,899,1784535803,add/drop,Austin Riley,3B,add,0
 2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,899,1784535803,drop,Cam Smith,OF,drop,0
 2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,891,1784362798,add/drop,Spencer Steer,"1B,2B,OF",add,0
@@ -28180,7 +28182,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,896,1784449339,add/drop,Brayan Rocchio,"2B,SS",add,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,896,1784449339,drop,Jonah Heim,C,drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,887,1784276348,add,Steven Okert,RP,add,0
-2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,add/drop,Zach Thornton,SP,add,1
+2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,add/drop,Zac Thornton,SP,add,1
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,878,1783931517,drop,Tyler Tolbert,"SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,877,1783931517,add/drop,Mason Montgomery,"SP,RP",add,1
 2026,469.l.23321,469.l.23321.t.2,Sexual Chocolate,Joshua,877,1783931517,drop,Bryce Elder,SP,drop,0
@@ -28428,6 +28430,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,904,1784622222,add/drop,Luis Castillo,SP,add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,904,1784622222,drop,Dominic Canzone,OF,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,894,1784449339,add/drop,Joc Pederson,Util,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,894,1784449339,drop,Dustin May,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,865,1783758751,add/drop,Dustin May,SP,add,0
@@ -28671,6 +28675,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,176,1774685798,add,Francisco Alvarez,C,add,2
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,32,1774339163,add,Marcus Semien,2B,add,5
 2026,469.l.23321,469.l.23321.t.6,Just A Bit Outside,DiZzY,20,1774339163,add,Jeremy Peña,SS,add,9
+2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,903,1784622222,add,Ty France,1B,add,7
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,892,1784404654,drop,Brent Rooker,OF,drop,0
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,872,1783844541,add,Michael Lorenzen (Pitcher),"SP,RP",add,3
 2026,469.l.23321,469.l.23321.t.7,Need Homers Now!,Dan,871,1783844541,add,Germán Márquez,SP,add,3
@@ -28852,6 +28857,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,19,1774339163,add,Brady Singer,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,18,1774339163,add,Jack Leiter,SP,add,16
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,17,1774339163,add,Jorge Polanco,"2B,3B",add,17
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,907,1784622222,add/drop,Nolan Arenado,3B,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,907,1784622222,drop,Kyle Karros,3B,drop,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,906,1784622222,add/drop,Lane Thomas,OF,add,0
+2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,906,1784622222,drop,Jo Adell,OF,drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,888,1784276348,add/drop,Andruw Monasterio,"1B,2B,3B,SS",add,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,888,1784276348,drop,Javier Sanoja,"2B,3B,SS,OF",drop,0
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,880,1784056586,drop,Ian Seymour,"SP,RP",drop,0
@@ -29015,6 +29024,7 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,41,1774339163,add,Garrett Whitlock,RP,add,4
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,26,1774339163,add,Ernie Clement,"1B,2B,3B,SS",add,7
 2026,469.l.23321,469.l.23321.t.10,The Evil Empire,Kevo,25,1774339163,add,Giancarlo Stanton,OF,add,7
+2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,902,1784578563,drop,Adley Rutschman,C,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,898,1784535803,add,Adley Rutschman,C,add,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,830,1783273903,drop,Spencer Jones,OF,drop,0
 2026,469.l.23321,469.l.23321.t.11,Sidd Finch Version 24,Paulie,714,1781356497,drop,Hunter Dobbins,SP,drop,0

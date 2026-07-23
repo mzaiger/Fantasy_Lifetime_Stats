@@ -27957,6 +27957,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,7,1743070438,drop,Austin Hays,OF,drop,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,5,1742984575,add,Jesús Luzardo,SP,add,0
 2025,458.l.151388,458.l.151388.t.10,IRON HORSE,Kyle,4,1742984478,add,Austin Hays,OF,add,0
+2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,912,1784795044,add/drop,Roki Sasaki,SP,add,0
+2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,912,1784795044,drop,Noah Schultz,SP,drop,0
 2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,905,1784622222,add/drop,Harry Ford,C,add,0
 2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,905,1784622222,drop,Spencer Steer,"1B,2B,OF",drop,0
 2026,469.l.23321,469.l.23321.t.1,Now I Need Homers!,NOBS,899,1784535803,add/drop,Austin Riley,3B,add,0
@@ -28430,6 +28432,10 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,131,1774425768,add,Jeremiah Estrada,RP,add,2
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,13,1774232901,add,Brad Keller,RP,add,0
 2026,469.l.23321,469.l.23321.t.4,Oasis Breeze Tan and Spa,Brett,12,1774232883,drop,Mitch Keller,SP,drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,910,1784795044,add/drop,Jacob Gonzalez,"1B,2B,SS",add,1
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,910,1784795044,drop,Colin Rea,"SP,RP",drop,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,909,1784708525,add/drop,Colin Rea,"SP,RP",add,0
+2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,909,1784708525,drop,Luis Castillo,SP,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,904,1784622222,add/drop,Luis Castillo,SP,add,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,904,1784622222,drop,Dominic Canzone,OF,drop,0
 2026,469.l.23321,469.l.23321.t.5,Gooserules,The Wizard,894,1784449339,add/drop,Joc Pederson,Util,add,0
@@ -28747,6 +28753,8 @@ season,league_key,team_key,team_name,manager_nickname,transaction_id,timestamp,t
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,406,1777364202,add,Gus Varland,RP,add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,323,1776327562,add,Jake Bauers,"1B,OF",add,0
 2026,469.l.23321,469.l.23321.t.8,Cuban Missile Crisis,Theodore,130,1774425768,add,José Soriano,SP,add,2
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,911,1784795044,add,Jacob Wilson,SS,add,0
+2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,908,1784671655,drop,Walker Buehler,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,895,1784449339,add/drop,Shane Bieber,SP,add,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,895,1784449339,drop,Ryan Feltner,SP,drop,0
 2026,469.l.23321,469.l.23321.t.9,Losing hope,Douglas,857,1783671626,add,Ryan Feltner,SP,add,0

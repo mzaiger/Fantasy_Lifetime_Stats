@@ -1135,9 +1135,15 @@ function renderSeasonRecord() {
   }).filter(r => r.w + r.l + r.t > 0).sort((a, b) => (b.pct ?? -1) - (a.pct ?? -1));
 
   const weekNote = (isCurrentSeason && includeCurrentWeek) ? ` <span style="color:var(--gold);font-size:0.8em;margin-left:6px;">(incl. Wk ${cwInfo.week})</span>` : '';
+  const leader = rows[0];
+  const gbFor = (r) => {
+    if (!leader) return "—";
+    const gb = ((leader.w - r.w) + (r.l - leader.l)) / 2;
+    return gb === 0 ? "—" : fmt(gb, gb % 1 === 0 ? 0 : 1);
+  };
   let html = `<h2>${year} Season Record${weekNote}</h2>`;
-  html += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th></tr>`;
-  rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${r.pct !== null ? fmt(r.pct, 3) : "—"}</td></tr>`; });
+  html += `<table><tr><th>#</th><th>Manager</th><th>W</th><th>L</th><th>T</th><th>Win%</th><th>GB</th></tr>`;
+  rows.forEach((r, i) => { html += `<tr><td>${i+1}</td><td>${r.name}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t}</td><td>${r.pct !== null ? fmt(r.pct, 3) : "—"}</td><td>${gbFor(r)}</td></tr>`; });
   html += `</table>`;
   div.innerHTML = `<div class="section-vertical-stack">${html}</div>`;
 }

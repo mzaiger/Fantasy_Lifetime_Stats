@@ -342,7 +342,11 @@ def fetch_all_weeks() -> None:
 
         for week in range(start, last + 1):
             week_str     = str(week)
-            is_live_week = (season == current_year and week == last)
+            # Every week in the current season is refetched on every run, so
+            # late-arriving stat corrections (e.g. homers logged after the
+            # week rolled over) always get picked up. Past seasons still use
+            # the cache.
+            is_live_week = (season == current_year)
 
             # ------------------------------------------------------------------
             # Already stored weeks: reuse saved week_days, skip API calls

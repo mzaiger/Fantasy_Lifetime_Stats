@@ -31,6 +31,20 @@ pull the underlying history:
 Historical league traversal walks Yahoo's `renew` chain to reach every
 past season tied to the current league.
 
+## GitHub secrets required
+
+Five separate daily workflows each run one script (`update_team_season_stats.yml`,
+`update_team_weekly_stats.yml`, `update_trade_ranks.yml`,
+`update_head_to_head_record.yml`, `update_team_season_transactions.yml`).
+All five need the same three secrets, added under repo → Settings →
+Secrets and variables → Actions:
+
+| Secret | Used for |
+|---|---|
+| `YAHOO_CLIENT_ID` | Yahoo Fantasy API OAuth2 |
+| `YAHOO_CLIENT_SECRET` | Yahoo Fantasy API OAuth2 |
+| `YAHOO_TOKEN` | Cached Yahoo OAuth token (JSON), so each workflow can refresh without an interactive login |
+
 ## Setup
 
 Requires Yahoo Fantasy API OAuth2 credentials:

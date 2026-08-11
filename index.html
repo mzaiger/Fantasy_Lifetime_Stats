@@ -293,6 +293,7 @@
   body.light-mode .faab-personal td:nth-child(5) { color: #8a6d00; }
   body.light-mode .team-tx-table td:nth-child(3) { color: #1a7a45; }
   body.light-mode .team-tx-table td:nth-child(4) { color: #a02020; }
+  body.light-mode #staleBanner { color: var(--lm-text); }
 
   /* ── Summary Scroll Box ── */
   .summary-text-box {
@@ -616,10 +617,18 @@ function checkH2HStaleness(lastUpdated) {
   const banner = document.getElementById('staleBanner');
   if (!banner || !lastUpdated) return;
 
-  const updateDate = new Date(lastUpdated + 'T00:00:00Z');
+  // Parse "YYYY-M-D" or "YYYY-MM-DD" manually (zero-padding not guaranteed)
+  // instead of relying on the Date constructor, which returns Invalid Date
+  // for non-padded strings like "2026-7-26" and silently breaks the check.
+  const parts = String(lastUpdated).split('-').map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return;
+  const [y, m, d] = parts;
+  const updateDate = Date.UTC(y, m - 1, d);
+  if (isNaN(updateDate)) return;
+
   const now = new Date();
   const msPerDay = 24 * 60 * 60 * 1000;
-  const daysSince = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - updateDate.getTime()) / msPerDay);
+  const daysSince = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - updateDate) / msPerDay);
 
   if (daysSince > 2) {
     banner.textContent = `⚠️ API may be down — stats have not updated in ${daysSince} days (last update: ${lastUpdated}).`;

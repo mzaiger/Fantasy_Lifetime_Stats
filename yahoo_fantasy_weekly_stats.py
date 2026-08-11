@@ -15,6 +15,7 @@ import webbrowser
 from datetime import datetime
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
+from requests.exceptions import RequestException
 
 # ---------------------------------------------------------------------------
 # CONFIG
@@ -328,60 +329,93 @@ def fetch_all_weeks() -> None:
     else:
         all_data = {}
 
-    leagues = get_all_leagues(session)
+    # Everything that talks to the Yahoo API lives inside this try block.
+    # If the API is down/unreachable at any point BEFORE a league's data is
+    # fetched, we bail out here without writing anything further — whatever
+    # was already saved from earlier leagues in this run (or previous runs)
+    # stays untouched. The script still exits successfully so the scheduled
+    # run isn't marked as failed.
+    try:
+        leagues = get_all_leagues(session)
+    except (ValueError, RequestException, KeyError, IndexError, TypeError, AttributeError) as e:
+        print(f"\n⚠️  Yahoo API may be down or unreachable: {e}")
+        print(f"Leaving {OUTPUT_JSON} and {OUTPUT_CSV} unchanged.")
+        return
+    except Exception as e:
+        print(f"\n⚠️  Unexpected error while discovering leagues: {e}")
+        print(f"Leaving {OUTPUT_JSON} and {OUTPUT_CSV} unchanged.")
+        return
+
     total_weeks_fetched = 0
 
-    for league in leagues:
-        lkey, lname = league["league_key"], league["league_name"]
-        game_key    = league["game_key"]
-        info        = get_league_week_info(session, lkey)
-        season, start, last = info["season"], info["start_week"], info["current_week"]
+    # As before, everything that talks to the Yahoo API for individual weeks
+    # lives inside this try block. Progress already written to OUTPUT_JSON
+    # for earlier leagues in this run (or prior runs) is NOT rolled back —
+    # that data was fetched successfully — but if the API goes down partway
+    # through, we stop cleanly here instead of crashing the whole script.
+    try:
+        for league in leagues:
+            lkey, lname = league["league_key"], league["league_name"]
+            game_key    = league["game_key"]
+            info        = get_league_week_info(session, lkey)
+            season, start, last = info["season"], info["start_week"], info["current_week"]
 
-        print(f"\n>> Processing {season}: {lname}")
-        all_data.setdefault(season, {})
+            print(f"\n>> Processing {season}: {lname}")
+            all_data.setdefault(season, {})
 
-        for week in range(start, last + 1):
-            week_str     = str(week)
-            # Every week in the current season is refetched on every run, so
-            # late-arriving stat corrections (e.g. homers logged after the
-            # week rolled over) always get picked up. Past seasons still use
-            # the cache.
-            is_live_week = (season == current_year)
+            for week in range(start, last + 1):
+                week_str     = str(week)
+                # Every week in the current season is refetched on every run, so
+                # late-arriving stat corrections (e.g. homers logged after the
+                # week rolled over) always get picked up. Past seasons still use
+                # the cache.
+                is_live_week = (season == current_year)
 
-            # ------------------------------------------------------------------
-            # Already stored weeks: reuse saved week_days, skip API calls
-            # ------------------------------------------------------------------
-            if week_str in all_data[season] and not is_live_week:
-                # Back-fill the in-memory cache so later leagues in the same
-                # season don't need a scoreboard call for these weeks either.
-                rows = all_data[season][week_str]
-                if rows:
-                    saved_days = rows[0].get("week_days")
-                    if isinstance(saved_days, int):
-                        _week_days_cache.setdefault((game_key, week), saved_days)
-                continue
+                # ------------------------------------------------------------------
+                # Already stored weeks: reuse saved week_days, skip API calls
+                # ------------------------------------------------------------------
+                if week_str in all_data[season] and not is_live_week:
+                    # Back-fill the in-memory cache so later leagues in the same
+                    # season don't need a scoreboard call for these weeks either.
+                    rows = all_data[season][week_str]
+                    if rows:
+                        saved_days = rows[0].get("week_days")
+                        if isinstance(saved_days, int):
+                            _week_days_cache.setdefault((game_key, week), saved_days)
+                    continue
 
-            # ------------------------------------------------------------------
-            # New / live week: scoreboard → day count, then fetch stats
-            # ------------------------------------------------------------------
-            days_in_week = get_week_days_from_scoreboard(session, game_key, lkey, week)
+                # ------------------------------------------------------------------
+                # New / live week: scoreboard → day count, then fetch stats
+                # ------------------------------------------------------------------
+                days_in_week = get_week_days_from_scoreboard(session, game_key, lkey, week)
 
-            url  = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
-            data = api_get(session, url)
-            time.sleep(API_DELAY)
+                url  = f"{BASE_URL}/league/{lkey}/teams/stats;type=week;week={week}"
+                data = api_get(session, url)
+                time.sleep(API_DELAY)
 
-            teams = parse_teams_for_week(data, season, week, days_in_week)
-            if teams:
-                all_data[season][week_str] = teams
-                total_weeks_fetched += 1
-                print(
-                    f"   Week {week:>2} ({days_in_week} days): "
-                    f"Fetched {len(teams)} teams (True Weekly Stats)"
-                )
+                teams = parse_teams_for_week(data, season, week, days_in_week)
+                if teams:
+                    all_data[season][week_str] = teams
+                    total_weeks_fetched += 1
+                    print(
+                        f"   Week {week:>2} ({days_in_week} days): "
+                        f"Fetched {len(teams)} teams (True Weekly Stats)"
+                    )
 
-        # Save after every league to avoid data loss
-        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-            json.dump(all_data, f, indent=2, ensure_ascii=False)
+            # Save after every league to avoid data loss
+            with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+                json.dump(all_data, f, indent=2, ensure_ascii=False)
+
+    except (RequestException, KeyError, IndexError, TypeError, AttributeError) as e:
+        print(f"\n⚠️  Yahoo API may be down or unreachable: {e}")
+        print(f"Keeping whatever was already saved to {OUTPUT_JSON} for this run; stopping here.")
+        write_csv(all_data)
+        return
+    except Exception as e:
+        print(f"\n⚠️  Unexpected error while fetching weekly stats: {e}")
+        print(f"Keeping whatever was already saved to {OUTPUT_JSON} for this run; stopping here.")
+        write_csv(all_data)
+        return
 
     write_csv(all_data)
     print(f"\nDone. Fetched {total_weeks_fetched} new/updated weeks.")

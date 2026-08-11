@@ -14,8 +14,10 @@ import json
 import os
 import time
 import webbrowser
+from datetime import datetime, timezone
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
+from requests.exceptions import RequestException
 
 CLIENT_ID = os.getenv("YAHOO_CLIENT_ID")
 CLIENT_SECRET = os.getenv("YAHOO_CLIENT_SECRET")
@@ -262,13 +264,20 @@ def get_all_leagues(session):
     url = f"{BASE_URL}/users;use_login=1/games;game_codes=mlb/leagues"
     data = api_get(session, url)
 
-    games = (
-        data.get("fantasy_content", {})
-        .get("users", {})
-        .get("0", {})
-        .get("user", [{}])[1]
-        .get("games", {})
-    )
+    # When the API is down/unreachable, api_get() returns {}, so "user" falls
+    # back to [{}] — a single-element list. Indexing [1] on that raises
+    # IndexError, which used to crash the whole script. Guard it explicitly
+    # and raise a clear, catchable error instead.
+    try:
+        user_block = (
+            data.get("fantasy_content", {})
+            .get("users", {})
+            .get("0", {})
+            .get("user", [{}])
+        )
+        games = user_block[1].get("games", {})
+    except (IndexError, KeyError, TypeError, AttributeError):
+        raise RuntimeError("Unexpected/empty API response while fetching leagues (API may be down).")
 
     leagues = []
 
@@ -485,54 +494,70 @@ def write_csv(rows):
 
 
 def main():
-    session = get_session()
+    # Everything that talks to the Yahoo API lives inside this try block.
+    # If the API is down, unauthorized, or unreachable at any point, we bail
+    # out here WITHOUT touching OUTPUT_JSON/OUTPUT_CSV, so the existing files
+    # (and the last_updated date inside the JSON) are left exactly as they
+    # were. The script still exits successfully (no unhandled exception) so
+    # the scheduled GitHub Actions run doesn't get marked as failed.
+    try:
+        session = get_session()
 
-    all_rows = []
+        all_rows = []
 
-    leagues = get_all_leagues(session)
+        leagues = get_all_leagues(session)
 
-    for league in leagues:
-        print(f'Processing {league["season"]}: {league["league_name"]}', flush=True)
+        for league in leagues:
+            print(f'Processing {league["season"]}: {league["league_name"]}', flush=True)
 
-        scoreboard_url = (
-            f'{BASE_URL}/league/{league["league_key"]}'
-        )
-
-        meta = api_get(session, scoreboard_url)
-        time.sleep(API_DELAY)
-
-        league_meta = find_key_recursive(meta, "league")
-        if isinstance(league_meta, list):
-            league_meta = league_meta[0]
-        elif not league_meta:
-            league_meta = {}
-
-        start_week = int(league_meta.get("start_week", 1))
-        end_week = int(league_meta.get("current_week", league_meta.get("end_week", 1)))
-
-        for week in range(start_week, end_week + 1):
-            print(f'  -> Fetching Week {week}/{end_week}... ', end='', flush=True)
-
-            url = (
+            scoreboard_url = (
                 f'{BASE_URL}/league/{league["league_key"]}'
-                f'/scoreboard;week={week};out=matchups'
             )
 
-            data = api_get(session, url)
+            meta = api_get(session, scoreboard_url)
             time.sleep(API_DELAY)
 
-            rows = parse_matchups(
-                data=data,
-                season=league["season"],
-                league_name=league["league_name"],
-                league_key=league["league_key"],
-                week=week,
-            )
+            league_meta = find_key_recursive(meta, "league")
+            if isinstance(league_meta, list):
+                league_meta = league_meta[0]
+            elif not league_meta:
+                league_meta = {}
 
-            all_rows.extend(rows)
-            print("Done", flush=True)
+            start_week = int(league_meta.get("start_week", 1))
+            end_week = int(league_meta.get("current_week", league_meta.get("end_week", 1)))
 
-        print(f'Finished {league["season"]} league.\n', flush=True)
+            for week in range(start_week, end_week + 1):
+                print(f'  -> Fetching Week {week}/{end_week}... ', end='', flush=True)
+
+                url = (
+                    f'{BASE_URL}/league/{league["league_key"]}'
+                    f'/scoreboard;week={week};out=matchups'
+                )
+
+                data = api_get(session, url)
+                time.sleep(API_DELAY)
+
+                rows = parse_matchups(
+                    data=data,
+                    season=league["season"],
+                    league_name=league["league_name"],
+                    league_key=league["league_key"],
+                    week=week,
+                )
+
+                all_rows.extend(rows)
+                print("Done", flush=True)
+
+            print(f'Finished {league["season"]} league.\n', flush=True)
+
+    except (RuntimeError, RequestException, ValueError, KeyError, IndexError, TypeError, AttributeError) as e:
+        print(f"\n⚠️  Yahoo API may be down or unreachable: {e}", flush=True)
+        print(f"Leaving {OUTPUT_JSON} and {OUTPUT_CSV} unchanged so last_updated isn't touched.", flush=True)
+        return
+    except Exception as e:
+        print(f"\n⚠️  Unexpected error while updating head-to-head records: {e}", flush=True)
+        print(f"Leaving {OUTPUT_JSON} and {OUTPUT_CSV} unchanged so last_updated isn't touched.", flush=True)
+        return
 
     print("Masking non-primary duplicate manager entries...", flush=True)
     mask_duplicate_managers(all_rows)
@@ -540,14 +565,17 @@ def main():
     print("Backfilling tied categories...", flush=True)
     backfill_ties(all_rows)
 
+    last_updated = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    output = {"last_updated": last_updated, "matchups": all_rows}
+
     OUTPUT_JSON.write_text(
-        json.dumps(all_rows, indent=2, ensure_ascii=False),
+        json.dumps(output, indent=2, ensure_ascii=False),
         encoding="utf-8"
     )
 
     write_csv(all_rows)
 
-    print(f"Saved {len(all_rows)} matchups total.", flush=True)
+    print(f"Saved {len(all_rows)} matchups total (last_updated: {last_updated}).", flush=True)
 
 
 if __name__ == "__main__":

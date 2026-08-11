@@ -176,6 +176,22 @@
     .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   }
 
+  #staleBanner {
+    display: none;
+    position: relative; z-index: 10;
+    max-width: 900px; margin: 18px auto 0 auto;
+    background: rgba(192,57,43,0.18);
+    border: 1px solid var(--red-bright);
+    color: var(--cream);
+    border-radius: 6px;
+    padding: 10px 18px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 0.95rem;
+  }
+
   #wrapper { position: relative; z-index: 10; padding: 28px 24px; min-height: calc(100vh - 180px); }
   #content { display: grid; grid-template-columns: 1fr; gap: 20px; }
   @media (min-width: 1000px) { #content.grid-view { grid-template-columns: repeat(5, 1fr); } }
@@ -460,6 +476,8 @@
   </div>
 </nav>
 
+<div id="staleBanner"></div>
+
 <div id="wrapper">
   <div id="content"></div>
 </div>
@@ -580,11 +598,36 @@ Promise.all([
   }
   txRawData = Array.isArray(txData) ? txData : [];
   tradeRanksData = Array.isArray(tradesData) ? tradesData : [];
-  h2hRawData = Array.isArray(h2hData) ? h2hData : [];
-  
+
+  // weekly_head_to_head_record.json is now { last_updated, matchups: [...] }.
+  // Fall back to treating it as a bare array for backwards compatibility.
+  if (Array.isArray(h2hData)) {
+    h2hRawData = h2hData;
+  } else {
+    h2hRawData = (h2hData && Array.isArray(h2hData.matchups)) ? h2hData.matchups : [];
+    checkH2HStaleness(h2hData && h2hData.last_updated);
+  }
+
   processData();
   setPage("playoffMedals");
 });
+
+function checkH2HStaleness(lastUpdated) {
+  const banner = document.getElementById('staleBanner');
+  if (!banner || !lastUpdated) return;
+
+  const updateDate = new Date(lastUpdated + 'T00:00:00Z');
+  const now = new Date();
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const daysSince = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - updateDate.getTime()) / msPerDay);
+
+  if (daysSince > 2) {
+    banner.textContent = `⚠️ API may be down — head to head hasn't updated in ${daysSince} days (last update: ${lastUpdated}).`;
+    banner.style.display = 'block';
+  } else {
+    banner.style.display = 'none';
+  }
+}
 
 function processData() {
   rawData.forEach(row => {

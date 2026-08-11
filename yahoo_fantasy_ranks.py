@@ -18,6 +18,7 @@ import webbrowser
 from datetime import datetime
 from pathlib import Path
 from requests_oauthlib import OAuth2Session
+from requests.exceptions import RequestException
 
 # ---------------------------------------------------------------------------
 # CONFIG
@@ -246,44 +247,60 @@ def fetch_current_season() -> None:
         all_data = {}
         print("No existing JSON found — starting fresh.")
 
-    # ── Step 2: auto-discover the current season's league key ─────────────
-    league_key = get_current_league_key(session)
-    time.sleep(0.4)
+    # Everything that talks to the Yahoo API for the CURRENT season lives in
+    # this try block. If the API is down/unreachable/unauthorized, we bail
+    # out here WITHOUT writing anything — `all_data` (loaded above) is never
+    # saved, so the existing JSON/CSV files are left exactly as they were.
+    # The script still exits successfully so the scheduled run isn't marked
+    # as failed.
+    try:
+        # ── Step 2: auto-discover the current season's league key ─────────
+        league_key = get_current_league_key(session)
+        time.sleep(0.4)
 
-    # ── Step 3: fetch league metadata to confirm season year + name ───────
-    meta_url  = f"{BASE_URL}/league/{league_key}"
-    meta_data = api_get(session, meta_url)
+        # ── Step 3: fetch league metadata to confirm season year + name ───
+        meta_url  = f"{BASE_URL}/league/{league_key}"
+        meta_data = api_get(session, meta_url)
 
-    league_list = meta_data.get("fantasy_content", {}).get("league", [{}])
-    league_meta = league_list[0] if league_list else {}
+        league_list = meta_data.get("fantasy_content", {}).get("league", [{}])
+        league_meta = league_list[0] if league_list else {}
 
-    season      = league_meta.get("season", "unknown")
-    league_name = league_meta.get("name", league_key)
+        season      = league_meta.get("season", "unknown")
+        league_name = league_meta.get("name", league_key)
 
-    print(f"\n── Current Season: {season}  |  {league_name}  ({league_key}) ──")
+        print(f"\n── Current Season: {season}  |  {league_name}  ({league_key}) ──")
 
-    # ── Step 4: drop only the current season from the loaded data ─────────
-    if season in all_data:
-        print(f"Removing existing '{season}' entry from JSON (will be replaced with fresh data).")
-        del all_data[season]
+        # ── Step 4: drop only the current season from the loaded data ─────
+        if season in all_data:
+            print(f"Removing existing '{season}' entry from JSON (will be replaced with fresh data).")
+            del all_data[season]
 
-    # ── Step 5: fetch fresh stats + standings for the current season ──────
-    combined_url  = f"{BASE_URL}/league/{league_key}/teams;out=stats,standings"
-    combined_data = api_get(session, combined_url)
-    time.sleep(0.4)
+        # ── Step 5: fetch fresh stats + standings for the current season ──
+        combined_url  = f"{BASE_URL}/league/{league_key}/teams;out=stats,standings"
+        combined_data = api_get(session, combined_url)
+        time.sleep(0.4)
 
-    teams = parse_teams(combined_data, season)
+        teams = parse_teams(combined_data, season)
 
-    if teams:
-        all_data[season] = teams
-        print(f"\nFetched {len(teams)} teams for season {season}:")
-        for t in teams:
-            print(f"  + {t.get('team_name','?'):<32} ({t.get('manager_nickname','?'):<20})"
-                  f"  {t.get('wins','-')}W-{t.get('losses','-')}L"
-                  f"  seed={t.get('playoff_seed','-')}"
-                  f"  final={t.get('final_rank','-')}")
-    else:
-        print(f"  WARNING: No team data returned for season {season}. JSON not updated for this season.")
+        if teams:
+            all_data[season] = teams
+            print(f"\nFetched {len(teams)} teams for season {season}:")
+            for t in teams:
+                print(f"  + {t.get('team_name','?'):<32} ({t.get('manager_nickname','?'):<20})"
+                      f"  {t.get('wins','-')}W-{t.get('losses','-')}L"
+                      f"  seed={t.get('playoff_seed','-')}"
+                      f"  final={t.get('final_rank','-')}")
+        else:
+            print(f"  WARNING: No team data returned for season {season}. JSON not updated for this season.")
+
+    except (ValueError, RequestException, KeyError, IndexError, TypeError, AttributeError) as e:
+        print(f"\n⚠️  Yahoo API may be down or unreachable: {e}")
+        print(f"Leaving {json_file} and its CSV unchanged so existing data isn't touched.")
+        return
+    except Exception as e:
+        print(f"\n⚠️  Unexpected error while updating season stats: {e}")
+        print(f"Leaving {json_file} and its CSV unchanged so existing data isn't touched.")
+        return
 
     # ── Step 6: save merged JSON (all old seasons + refreshed current) ────
     with open(json_file, "w", encoding="utf-8") as f:

@@ -622,7 +622,7 @@ function checkH2HStaleness(lastUpdated) {
   const daysSince = Math.floor((Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - updateDate.getTime()) / msPerDay);
 
   if (daysSince > 2) {
-    banner.textContent = `⚠️ API may be down — head to head hasn't updated in ${daysSince} days (last update: ${lastUpdated}).`;
+    banner.textContent = `⚠️ API may be down — stats have not updated in ${daysSince} days (last update: ${lastUpdated}).`;
     banner.style.display = 'block';
   } else {
     banner.style.display = 'none';

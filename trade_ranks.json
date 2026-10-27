@@ -6,7 +6,7 @@
     "timestamp": "1115568399",
     "players": [
       {
-        "from_manager": "Chris Gaul",
+        "from_manager": "--hidden--",
         "to_manager": "Weazy",
         "player_name": "Odalis Perez",
         "player_position": "SP",
@@ -17,7 +17,7 @@
       },
       {
         "from_manager": "Weazy",
-        "to_manager": "Chris Gaul",
+        "to_manager": "--hidden--",
         "player_name": "Jeromy Burnitz",
         "player_position": "OF",
         "player_key": "113.p.5061",
@@ -73,7 +73,7 @@
     "players": [
       {
         "from_manager": "Dan",
-        "to_manager": "M Z",
+        "to_manager": "--hidden--",
         "player_name": "Roy Halladay",
         "player_position": "SP",
         "player_key": "147.p.6134",
@@ -82,7 +82,7 @@
         "roster_pct": "-"
       },
       {
-        "from_manager": "M Z",
+        "from_manager": "--hidden--",
         "to_manager": "Dan",
         "player_name": "Miguel Tejada",
         "player_position": "SS",
@@ -6960,6 +6960,302 @@
   {
     "season": "2026",
     "league_key": "469.l.23321",
+    "trade_id": "986",
+    "timestamp": "1785955167",
+    "players": [
+      {
+        "from_manager": "Nikolai Khabibulin",
+        "to_manager": "Theodore",
+        "player_name": "Andrés Muñoz",
+        "player_position": "RP",
+        "player_key": "469.p.11526",
+        "current_rank": "97",
+        "preseason_rank": "163",
+        "roster_pct": 82
+      },
+      {
+        "from_manager": "Nikolai Khabibulin",
+        "to_manager": "Theodore",
+        "player_name": "Dylan Cease",
+        "player_position": "SP",
+        "player_key": "469.p.10438",
+        "current_rank": "8",
+        "preseason_rank": "133",
+        "roster_pct": 85
+      },
+      {
+        "from_manager": "Theodore",
+        "to_manager": "Nikolai Khabibulin",
+        "player_name": "Jesús Luzardo",
+        "player_position": "SP",
+        "player_key": "469.p.10627",
+        "current_rank": "12",
+        "preseason_rank": "66",
+        "roster_pct": 89
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "trade_id": "964",
+    "timestamp": "1785694660",
+    "players": [
+      {
+        "from_manager": "NOBS",
+        "to_manager": "DiZzY",
+        "player_name": "Garrett Crochet",
+        "player_position": "SP",
+        "player_key": "469.p.12046",
+        "current_rank": "532",
+        "preseason_rank": "138",
+        "roster_pct": 74
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "DiZzY",
+        "player_name": "Kazuma Okamoto",
+        "player_position": "1B,3B",
+        "player_key": "469.p.66491",
+        "current_rank": "224",
+        "preseason_rank": "271",
+        "roster_pct": 87
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "DiZzY",
+        "player_name": "Jake Bennett",
+        "player_position": "SP",
+        "player_key": "469.p.60541",
+        "current_rank": "196",
+        "preseason_rank": "428",
+        "roster_pct": 35
+      },
+      {
+        "from_manager": "DiZzY",
+        "to_manager": "NOBS",
+        "player_name": "Yoshinobu Yamamoto",
+        "player_position": "SP",
+        "player_key": "469.p.63423",
+        "current_rank": "5",
+        "preseason_rank": "13",
+        "roster_pct": 96
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "trade_id": "963",
+    "timestamp": "1785690501",
+    "players": [
+      {
+        "from_manager": "Nikolai Khabibulin",
+        "to_manager": "NOBS",
+        "player_name": "Chris Sale",
+        "player_position": "SP",
+        "player_key": "469.p.8780",
+        "current_rank": "4",
+        "preseason_rank": "26",
+        "roster_pct": 96
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "Nikolai Khabibulin",
+        "player_name": "JJ Wetherholt",
+        "player_position": "2B,3B,SS",
+        "player_key": "469.p.64317",
+        "current_rank": "146",
+        "preseason_rank": "83",
+        "roster_pct": 83
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "Nikolai Khabibulin",
+        "player_name": "Sandy Alcantara",
+        "player_position": "SP",
+        "player_key": "469.p.10597",
+        "current_rank": "102",
+        "preseason_rank": "172",
+        "roster_pct": 89
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "trade_id": "961",
+    "timestamp": "1785690461",
+    "players": [
+      {
+        "from_manager": "NOBS",
+        "to_manager": "Douglas",
+        "player_name": "Bryce Eldridge",
+        "player_position": "1B",
+        "player_key": "469.p.62957",
+        "current_rank": "454",
+        "preseason_rank": "200",
+        "roster_pct": 23
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "Douglas",
+        "player_name": "Jacob deGrom",
+        "player_position": "SP",
+        "player_key": "469.p.9701",
+        "current_rank": "104",
+        "preseason_rank": "22",
+        "roster_pct": 95
+      },
+      {
+        "from_manager": "Douglas",
+        "to_manager": "NOBS",
+        "player_name": "Rafael Devers",
+        "player_position": "1B",
+        "player_key": "469.p.10235",
+        "current_rank": "36",
+        "preseason_rank": "115",
+        "roster_pct": 74
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "trade_id": "960",
+    "timestamp": "1785687388",
+    "players": [
+      {
+        "from_manager": "Douglas",
+        "to_manager": "The Wizard",
+        "player_name": "Justin Wrobleski",
+        "player_position": "SP,RP",
+        "player_key": "469.p.63581",
+        "current_rank": "152",
+        "preseason_rank": "317",
+        "roster_pct": 36
+      },
+      {
+        "from_manager": "The Wizard",
+        "to_manager": "Douglas",
+        "player_name": "Spencer Jones",
+        "player_position": "OF",
+        "player_key": "469.p.60294",
+        "current_rank": "1017",
+        "preseason_rank": "1519",
+        "roster_pct": 28
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "trade_id": "958",
+    "timestamp": "1785681329",
+    "players": [
+      {
+        "from_manager": "The Wizard",
+        "to_manager": "M Z",
+        "player_name": "Jake McCarthy",
+        "player_position": "OF",
+        "player_key": "469.p.11265",
+        "current_rank": "58",
+        "preseason_rank": "216",
+        "roster_pct": 84
+      },
+      {
+        "from_manager": "The Wizard",
+        "to_manager": "M Z",
+        "player_name": "Cristopher Sánchez",
+        "player_position": "SP",
+        "player_key": "469.p.11706",
+        "current_rank": "13",
+        "preseason_rank": "8",
+        "roster_pct": 99
+      },
+      {
+        "from_manager": "The Wizard",
+        "to_manager": "M Z",
+        "player_name": "Dustin May",
+        "player_position": "SP",
+        "player_key": "469.p.10898",
+        "current_rank": "194",
+        "preseason_rank": "252",
+        "roster_pct": 32
+      },
+      {
+        "from_manager": "M Z",
+        "to_manager": "The Wizard",
+        "player_name": "José Ramírez",
+        "player_position": "3B",
+        "player_key": "469.p.9507",
+        "current_rank": "378",
+        "preseason_rank": "101",
+        "roster_pct": 98
+      },
+      {
+        "from_manager": "M Z",
+        "to_manager": "The Wizard",
+        "player_name": "Jhoan Duran",
+        "player_position": "RP",
+        "player_key": "469.p.11495",
+        "current_rank": "59",
+        "preseason_rank": "95",
+        "roster_pct": 97
+      },
+      {
+        "from_manager": "M Z",
+        "to_manager": "The Wizard",
+        "player_name": "Kyle Bradish",
+        "player_position": "SP",
+        "player_key": "469.p.12345",
+        "current_rank": "826",
+        "preseason_rank": "73",
+        "roster_pct": 71
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
+    "trade_id": "952",
+    "timestamp": "1785598296",
+    "players": [
+      {
+        "from_manager": "Paulie",
+        "to_manager": "NOBS",
+        "player_name": "Paul Skenes",
+        "player_position": "SP",
+        "player_key": "469.p.62972",
+        "current_rank": "95",
+        "preseason_rank": "12",
+        "roster_pct": 96
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "Paulie",
+        "player_name": "Gunnar Henderson",
+        "player_position": "SS",
+        "player_key": "469.p.11731",
+        "current_rank": "329",
+        "preseason_rank": "45",
+        "roster_pct": 96
+      },
+      {
+        "from_manager": "NOBS",
+        "to_manager": "Paulie",
+        "player_name": "Eury Pérez",
+        "player_position": "SP",
+        "player_key": "469.p.12468",
+        "current_rank": "81",
+        "preseason_rank": "336",
+        "roster_pct": 77
+      }
+    ]
+  },
+  {
+    "season": "2026",
+    "league_key": "469.l.23321",
     "trade_id": "882",
     "timestamp": "1784133536",
     "players": [
@@ -6969,9 +7265,9 @@
         "player_name": "Corbin Burnes",
         "player_position": "SP",
         "player_key": "469.p.10910",
-        "current_rank": "2263",
-        "preseason_rank": "523",
-        "roster_pct": 16
+        "current_rank": "677",
+        "preseason_rank": "1243",
+        "roster_pct": 28
       },
       {
         "from_manager": "NOBS",
@@ -6979,9 +7275,9 @@
         "player_name": "Luis Lara",
         "player_position": "OF",
         "player_key": "469.p.60256",
-        "current_rank": "1156",
-        "preseason_rank": "1796",
-        "roster_pct": 4
+        "current_rank": "1144",
+        "preseason_rank": "1701",
+        "roster_pct": 2
       },
       {
         "from_manager": "NOBS",
@@ -6989,8 +7285,8 @@
         "player_name": "Justin Steele",
         "player_position": "SP",
         "player_key": "469.p.11202",
-        "current_rank": "2348",
-        "preseason_rank": "610",
+        "current_rank": "2427",
+        "preseason_rank": "709",
         "roster_pct": 5
       },
       {
@@ -6999,9 +7295,9 @@
         "player_name": "Edwin Díaz",
         "player_position": "RP",
         "player_key": "469.p.10214",
-        "current_rank": "462",
+        "current_rank": "630",
         "preseason_rank": "360",
-        "roster_pct": 84
+        "roster_pct": 65
       }
     ]
   },
@@ -7017,9 +7313,9 @@
         "player_name": "Max Muncy",
         "player_position": "3B",
         "player_key": "469.p.9606",
-        "current_rank": "160",
+        "current_rank": "171",
         "preseason_rank": "220",
-        "roster_pct": 86
+        "roster_pct": 81
       },
       {
         "from_manager": "The Wizard",
@@ -7027,9 +7323,9 @@
         "player_name": "Kade Anderson",
         "player_position": "SP",
         "player_key": "469.p.65729",
-        "current_rank": "1972",
-        "preseason_rank": "850",
-        "roster_pct": 16
+        "current_rank": "403",
+        "preseason_rank": "607",
+        "roster_pct": 51
       },
       {
         "from_manager": "Paulie",
@@ -7037,9 +7333,9 @@
         "player_name": "Max Fried",
         "player_position": "SP",
         "player_key": "469.p.9620",
-        "current_rank": "143",
+        "current_rank": "132",
         "preseason_rank": "131",
-        "roster_pct": 98
+        "roster_pct": 91
       },
       {
         "from_manager": "Paulie",
@@ -7047,9 +7343,9 @@
         "player_name": "Blake Snell",
         "player_position": "SP",
         "player_key": "469.p.10148",
-        "current_rank": "563",
+        "current_rank": "154",
         "preseason_rank": "208",
-        "roster_pct": 80
+        "roster_pct": 88
       }
     ]
   },
@@ -7065,9 +7361,9 @@
         "player_name": "Paul Skenes",
         "player_position": "SP",
         "player_key": "469.p.62972",
-        "current_rank": "47",
+        "current_rank": "95",
         "preseason_rank": "12",
-        "roster_pct": 99
+        "roster_pct": 96
       },
       {
         "from_manager": "Paulie",
@@ -7075,7 +7371,7 @@
         "player_name": "Junior Caminero",
         "player_position": "3B",
         "player_key": "469.p.60419",
-        "current_rank": "37",
+        "current_rank": "32",
         "preseason_rank": "17",
         "roster_pct": 99
       }
@@ -7093,9 +7389,9 @@
         "player_name": "Shane Bieber",
         "player_position": "SP",
         "player_key": "469.p.10867",
-        "current_rank": "635",
-        "preseason_rank": "623",
-        "roster_pct": 47
+        "current_rank": "592",
+        "preseason_rank": "597",
+        "roster_pct": 34
       },
       {
         "from_manager": "Douglas",
@@ -7103,9 +7399,9 @@
         "player_name": "Spencer Steer",
         "player_position": "1B,2B,OF",
         "player_key": "469.p.12688",
-        "current_rank": "216",
+        "current_rank": "955",
         "preseason_rank": "218",
-        "roster_pct": 34
+        "roster_pct": 13
       },
       {
         "from_manager": "NOBS",
@@ -7113,9 +7409,9 @@
         "player_name": "Sam Antonacci",
         "player_position": "2B,3B,OF",
         "player_key": "469.p.64533",
-        "current_rank": "191",
+        "current_rank": "189",
         "preseason_rank": "242",
-        "roster_pct": 46
+        "roster_pct": 30
       }
     ]
   },
@@ -7131,9 +7427,9 @@
         "player_name": "Nico Hoerner",
         "player_position": "2B,SS",
         "player_key": "469.p.11284",
-        "current_rank": "399",
+        "current_rank": "347",
         "preseason_rank": "118",
-        "roster_pct": 88
+        "roster_pct": 91
       },
       {
         "from_manager": "Paulie",
@@ -7141,9 +7437,9 @@
         "player_name": "A.J. Ewing",
         "player_position": "2B,OF",
         "player_key": "469.p.63129",
-        "current_rank": "837",
+        "current_rank": "713",
         "preseason_rank": "165",
-        "roster_pct": 29
+        "roster_pct": 30
       }
     ]
   },
@@ -7159,9 +7455,9 @@
         "player_name": "Gage Jump",
         "player_position": "SP",
         "player_key": "469.p.64374",
-        "current_rank": "584",
+        "current_rank": "881",
         "preseason_rank": "236",
-        "roster_pct": 19
+        "roster_pct": 11
       },
       {
         "from_manager": "NOBS",
@@ -7169,9 +7465,9 @@
         "player_name": "Payton Tolle",
         "player_position": "SP,RP",
         "player_key": "469.p.64394",
-        "current_rank": "129",
+        "current_rank": "69",
         "preseason_rank": "210",
-        "roster_pct": 68
+        "roster_pct": 74
       },
       {
         "from_manager": "Douglas",
@@ -7179,9 +7475,9 @@
         "player_name": "Freddie Freeman",
         "player_position": "1B",
         "player_key": "469.p.8658",
-        "current_rank": "33",
+        "current_rank": "87",
         "preseason_rank": "35",
-        "roster_pct": 99
+        "roster_pct": 97
       }
     ]
   },
@@ -7197,9 +7493,9 @@
         "player_name": "Freddie Freeman",
         "player_position": "1B",
         "player_key": "469.p.8658",
-        "current_rank": "33",
+        "current_rank": "87",
         "preseason_rank": "35",
-        "roster_pct": 99
+        "roster_pct": 97
       },
       {
         "from_manager": "Douglas",
@@ -7207,9 +7503,9 @@
         "player_name": "Brandon Lowe",
         "player_position": "2B",
         "player_key": "469.p.11125",
-        "current_rank": "75",
+        "current_rank": "50",
         "preseason_rank": "152",
-        "roster_pct": 91
+        "roster_pct": 92
       }
     ]
   },
@@ -7225,9 +7521,9 @@
         "player_name": "Christian Walker",
         "player_position": "1B",
         "player_key": "469.p.9846",
-        "current_rank": "82",
+        "current_rank": "128",
         "preseason_rank": "111",
-        "roster_pct": 84
+        "roster_pct": 74
       },
       {
         "from_manager": "NOBS",
@@ -7235,9 +7531,9 @@
         "player_name": "Colson Montgomery",
         "player_position": "3B,SS",
         "player_key": "469.p.12413",
-        "current_rank": "173",
+        "current_rank": "275",
         "preseason_rank": "130",
-        "roster_pct": 90
+        "roster_pct": 81
       },
       {
         "from_manager": "Paulie",
@@ -7245,9 +7541,9 @@
         "player_name": "Gunnar Henderson",
         "player_position": "SS",
         "player_key": "469.p.11731",
-        "current_rank": "260",
+        "current_rank": "329",
         "preseason_rank": "45",
-        "roster_pct": 99
+        "roster_pct": 96
       },
       {
         "from_manager": "Paulie",
@@ -7255,9 +7551,9 @@
         "player_name": "Parker Messick",
         "player_position": "SP",
         "player_key": "469.p.60042",
-        "current_rank": "64",
+        "current_rank": "41",
         "preseason_rank": "89",
-        "roster_pct": 92
+        "roster_pct": 91
       }
     ]
   },
@@ -7273,9 +7569,9 @@
         "player_name": "JJ Bleday",
         "player_position": "OF",
         "player_key": "469.p.11782",
-        "current_rank": "155",
+        "current_rank": "227",
         "preseason_rank": "294",
-        "roster_pct": 27
+        "roster_pct": 14
       },
       {
         "from_manager": "Douglas",
@@ -7283,9 +7579,9 @@
         "player_name": "Payton Tolle",
         "player_position": "SP,RP",
         "player_key": "469.p.64394",
-        "current_rank": "129",
+        "current_rank": "69",
         "preseason_rank": "210",
-        "roster_pct": 68
+        "roster_pct": 74
       }
     ]
   },
@@ -7301,9 +7597,9 @@
         "player_name": "Ivan Herrera",
         "player_position": "C",
         "player_key": "469.p.11836",
-        "current_rank": "56",
+        "current_rank": "63",
         "preseason_rank": "268",
-        "roster_pct": 90
+        "roster_pct": 89
       },
       {
         "from_manager": "NOBS",
@@ -7311,9 +7607,9 @@
         "player_name": "Braxton Ashcraft",
         "player_position": "SP,RP",
         "player_key": "469.p.11372",
-        "current_rank": "110",
+        "current_rank": "30",
         "preseason_rank": "93",
-        "roster_pct": 87
+        "roster_pct": 65
       }
     ]
   },
@@ -7329,9 +7625,9 @@
         "player_name": "A.J. Ewing",
         "player_position": "2B,OF",
         "player_key": "469.p.63129",
-        "current_rank": "837",
+        "current_rank": "713",
         "preseason_rank": "165",
-        "roster_pct": 29
+        "roster_pct": 30
       },
       {
         "from_manager": "The Wizard",
@@ -7339,7 +7635,7 @@
         "player_name": "Ryan Waldschmidt",
         "player_position": "OF",
         "player_key": "469.p.64479",
-        "current_rank": "1043",
+        "current_rank": "1104",
         "preseason_rank": "353",
         "roster_pct": 3
       },
@@ -7349,9 +7645,9 @@
         "player_name": "Freddie Freeman",
         "player_position": "1B",
         "player_key": "469.p.8658",
-        "current_rank": "33",
+        "current_rank": "87",
         "preseason_rank": "35",
-        "roster_pct": 99
+        "roster_pct": 97
       },
       {
         "from_manager": "Paulie",
@@ -7359,9 +7655,9 @@
         "player_name": "Kenley Jansen",
         "player_position": "RP",
         "player_key": "469.p.8758",
-        "current_rank": "200",
+        "current_rank": "124",
         "preseason_rank": "148",
-        "roster_pct": 69
+        "roster_pct": 74
       }
     ]
   },
@@ -7377,9 +7673,9 @@
         "player_name": "Chase DeLauter",
         "player_position": "OF",
         "player_key": "469.p.60138",
-        "current_rank": "182",
+        "current_rank": "133",
         "preseason_rank": "247",
-        "roster_pct": 64
+        "roster_pct": 59
       },
       {
         "from_manager": "The Wizard",
@@ -7387,9 +7683,9 @@
         "player_name": "Wyatt Langford",
         "player_position": "OF",
         "player_key": "469.p.62973",
-        "current_rank": "573",
+        "current_rank": "326",
         "preseason_rank": "99",
-        "roster_pct": 92
+        "roster_pct": 87
       },
       {
         "from_manager": "Paulie",
@@ -7397,9 +7693,9 @@
         "player_name": "Jose Altuve",
         "player_position": "2B,OF",
         "player_key": "469.p.8996",
-        "current_rank": "652",
+        "current_rank": "740",
         "preseason_rank": "188",
-        "roster_pct": 82
+        "roster_pct": 78
       }
     ]
   },
@@ -7415,9 +7711,9 @@
         "player_name": "Ronald Acuña Jr.",
         "player_position": "OF",
         "player_key": "469.p.10646",
-        "current_rank": "643",
+        "current_rank": "177",
         "preseason_rank": "53",
-        "roster_pct": 99
+        "roster_pct": 98
       },
       {
         "from_manager": "The Wizard",
@@ -7425,9 +7721,9 @@
         "player_name": "Max Fried",
         "player_position": "SP",
         "player_key": "469.p.9620",
-        "current_rank": "143",
+        "current_rank": "132",
         "preseason_rank": "131",
-        "roster_pct": 98
+        "roster_pct": 91
       },
       {
         "from_manager": "The Wizard",
@@ -7435,9 +7731,9 @@
         "player_name": "Blake Snell",
         "player_position": "SP",
         "player_key": "469.p.10148",
-        "current_rank": "563",
+        "current_rank": "154",
         "preseason_rank": "208",
-        "roster_pct": 80
+        "roster_pct": 88
       }
     ]
   },
@@ -7453,9 +7749,9 @@
         "player_name": "Kenley Jansen",
         "player_position": "RP",
         "player_key": "469.p.8758",
-        "current_rank": "200",
+        "current_rank": "124",
         "preseason_rank": "148",
-        "roster_pct": 69
+        "roster_pct": 74
       },
       {
         "from_manager": "The Wizard",
@@ -7463,9 +7759,9 @@
         "player_name": "Landen Roupp",
         "player_position": "SP",
         "player_key": "469.p.60650",
-        "current_rank": "184",
+        "current_rank": "356",
         "preseason_rank": "349",
-        "roster_pct": 48
+        "roster_pct": 28
       },
       {
         "from_manager": "Paulie",
@@ -7473,9 +7769,9 @@
         "player_name": "Logan Webb",
         "player_position": "SP",
         "player_key": "469.p.11235",
-        "current_rank": "91",
+        "current_rank": "121",
         "preseason_rank": "41",
-        "roster_pct": 97
+        "roster_pct": 80
       }
     ]
   },
@@ -7491,9 +7787,9 @@
         "player_name": "Nico Hoerner",
         "player_position": "2B,SS",
         "player_key": "469.p.11284",
-        "current_rank": "399",
+        "current_rank": "347",
         "preseason_rank": "118",
-        "roster_pct": 88
+        "roster_pct": 91
       },
       {
         "from_manager": "The Wizard",
@@ -7501,9 +7797,9 @@
         "player_name": "Brandon Lowe",
         "player_position": "2B",
         "player_key": "469.p.11125",
-        "current_rank": "75",
+        "current_rank": "50",
         "preseason_rank": "152",
-        "roster_pct": 91
+        "roster_pct": 92
       },
       {
         "from_manager": "The Wizard",
@@ -7511,9 +7807,9 @@
         "player_name": "Payton Tolle",
         "player_position": "SP,RP",
         "player_key": "469.p.64394",
-        "current_rank": "129",
+        "current_rank": "69",
         "preseason_rank": "210",
-        "roster_pct": 68
+        "roster_pct": 74
       }
     ]
   },
@@ -7529,9 +7825,9 @@
         "player_name": "MacKenzie Gore",
         "player_position": "SP",
         "player_key": "469.p.10940",
-        "current_rank": "587",
+        "current_rank": "775",
         "preseason_rank": "191",
-        "roster_pct": 77
+        "roster_pct": 73
       },
       {
         "from_manager": "The Wizard",
@@ -7539,9 +7835,9 @@
         "player_name": "Rafael Devers",
         "player_position": "1B",
         "player_key": "469.p.10235",
-        "current_rank": "98",
+        "current_rank": "36",
         "preseason_rank": "115",
-        "roster_pct": 96
+        "roster_pct": 74
       }
     ]
   },
@@ -7557,9 +7853,9 @@
         "player_name": "David Bednar",
         "player_position": "RP",
         "player_key": "469.p.11645",
-        "current_rank": "70",
+        "current_rank": "56",
         "preseason_rank": "75",
-        "roster_pct": 95
+        "roster_pct": 96
       },
       {
         "from_manager": "Kevo",
@@ -7567,9 +7863,9 @@
         "player_name": "Bryan Woo",
         "player_position": "SP",
         "player_key": "469.p.60584",
-        "current_rank": "183",
+        "current_rank": "106",
         "preseason_rank": "38",
-        "roster_pct": 98
+        "roster_pct": 93
       }
     ]
   },
@@ -7585,9 +7881,9 @@
         "player_name": "Mitch Keller",
         "player_position": "SP",
         "player_key": "469.p.10565",
-        "current_rank": "776",
+        "current_rank": "929",
         "preseason_rank": "230",
-        "roster_pct": 26
+        "roster_pct": 11
       },
       {
         "from_manager": "Douglas",
@@ -7595,9 +7891,9 @@
         "player_name": "Lucas Erceg",
         "player_position": "RP",
         "player_key": "469.p.10659",
-        "current_rank": "638",
+        "current_rank": "845",
         "preseason_rank": "364",
-        "roster_pct": 15
+        "roster_pct": 7
       }
     ]
   },
@@ -7613,9 +7909,9 @@
         "player_name": "Rafael Devers",
         "player_position": "1B",
         "player_key": "469.p.10235",
-        "current_rank": "98",
+        "current_rank": "36",
         "preseason_rank": "115",
-        "roster_pct": 96
+        "roster_pct": 74
       },
       {
         "from_manager": "The Wizard",
@@ -7623,9 +7919,9 @@
         "player_name": "Corey Seager",
         "player_position": "SS",
         "player_key": "469.p.9584",
-        "current_rank": "946",
+        "current_rank": "848",
         "preseason_rank": "78",
-        "roster_pct": 80
+        "roster_pct": 89
       }
     ]
   },
@@ -7641,9 +7937,9 @@
         "player_name": "George Springer",
         "player_position": "OF",
         "player_key": "469.p.9339",
-        "current_rank": "602",
+        "current_rank": "380",
         "preseason_rank": "181",
-        "roster_pct": 70
+        "roster_pct": 67
       },
       {
         "from_manager": "The Wizard",
@@ -7651,9 +7947,9 @@
         "player_name": "Clayton Beeter",
         "player_position": "RP",
         "player_key": "469.p.12014",
-        "current_rank": "223",
+        "current_rank": "261",
         "preseason_rank": "399",
-        "roster_pct": 12
+        "roster_pct": 6
       },
       {
         "from_manager": "Theodore",
@@ -7661,9 +7957,9 @@
         "player_name": "Max Muncy",
         "player_position": "3B",
         "player_key": "469.p.9606",
-        "current_rank": "160",
+        "current_rank": "171",
         "preseason_rank": "220",
-        "roster_pct": 86
+        "roster_pct": 81
       }
     ]
   },
@@ -7679,9 +7975,9 @@
         "player_name": "Cole Ragans",
         "player_position": "SP",
         "player_key": "469.p.10610",
-        "current_rank": "491",
-        "preseason_rank": "643",
-        "roster_pct": 49
+        "current_rank": "524",
+        "preseason_rank": "1166",
+        "roster_pct": 42
       },
       {
         "from_manager": "NOBS",
@@ -7689,9 +7985,9 @@
         "player_name": "Eugenio Suárez",
         "player_position": "3B",
         "player_key": "469.p.9724",
-        "current_rank": "836",
+        "current_rank": "396",
         "preseason_rank": "155",
-        "roster_pct": 70
+        "roster_pct": 60
       }
     ]
   },
@@ -7707,9 +8003,9 @@
         "player_name": "Wyatt Langford",
         "player_position": "OF",
         "player_key": "469.p.62973",
-        "current_rank": "573",
+        "current_rank": "326",
         "preseason_rank": "99",
-        "roster_pct": 92
+        "roster_pct": 87
       },
       {
         "from_manager": "The Wizard",
@@ -7717,9 +8013,9 @@
         "player_name": "Mark Vientos",
         "player_position": "1B,3B",
         "player_key": "469.p.10922",
-        "current_rank": "976",
+        "current_rank": "1123",
         "preseason_rank": "223",
-        "roster_pct": 4
+        "roster_pct": 3
       },
       {
         "from_manager": "The Wizard",
@@ -7727,9 +8023,9 @@
         "player_name": "Byron Buxton",
         "player_position": "OF",
         "player_key": "469.p.9590",
-        "current_rank": "39",
+        "current_rank": "265",
         "preseason_rank": "31",
-        "roster_pct": 97
+        "roster_pct": 69
       }
     ]
   },
@@ -7745,9 +8041,9 @@
         "player_name": "Hunter Greene",
         "player_position": "SP",
         "player_key": "469.p.10862",
-        "current_rank": "472",
+        "current_rank": "611",
         "preseason_rank": "393",
-        "roster_pct": 83
+        "roster_pct": 23
       },
       {
         "from_manager": "NOBS",
@@ -7755,9 +8051,9 @@
         "player_name": "Daulton Varsho",
         "player_position": "OF",
         "player_key": "469.p.10843",
-        "current_rank": "789",
+        "current_rank": "967",
         "preseason_rank": "161",
-        "roster_pct": 22
+        "roster_pct": 18
       }
     ]
   },
@@ -7773,9 +8069,9 @@
         "player_name": "Mike Trout",
         "player_position": "OF",
         "player_key": "469.p.8861",
-        "current_rank": "44",
+        "current_rank": "65",
         "preseason_rank": "166",
-        "roster_pct": 95
+        "roster_pct": 92
       },
       {
         "from_manager": "The Wizard",
@@ -7783,9 +8079,9 @@
         "player_name": "Jordan Westburg",
         "player_position": "2B,3B",
         "player_key": "469.p.12122",
-        "current_rank": "1932",
-        "preseason_rank": "1652",
-        "roster_pct": 9
+        "current_rank": "2050",
+        "preseason_rank": "1764",
+        "roster_pct": 8
       },
       {
         "from_manager": "The Wizard",
@@ -7793,9 +8089,9 @@
         "player_name": "Dennis Santana",
         "player_position": "RP",
         "player_key": "469.p.10901",
-        "current_rank": "829",
+        "current_rank": "886",
         "preseason_rank": "282",
-        "roster_pct": 35
+        "roster_pct": 30
       },
       {
         "from_manager": "The Wizard",
@@ -7803,9 +8099,9 @@
         "player_name": "Seranthony Domínguez",
         "player_position": "RP",
         "player_key": "469.p.11011",
-        "current_rank": "228",
+        "current_rank": "217",
         "preseason_rank": "146",
-        "roster_pct": 30
+        "roster_pct": 19
       },
       {
         "from_manager": "The Wizard",
@@ -7813,9 +8109,9 @@
         "player_name": "Parker Messick",
         "player_position": "SP",
         "player_key": "469.p.60042",
-        "current_rank": "64",
+        "current_rank": "41",
         "preseason_rank": "89",
-        "roster_pct": 92
+        "roster_pct": 91
       },
       {
         "from_manager": "Paulie",
@@ -7823,9 +8119,9 @@
         "player_name": "Byron Buxton",
         "player_position": "OF",
         "player_key": "469.p.9590",
-        "current_rank": "39",
+        "current_rank": "265",
         "preseason_rank": "31",
-        "roster_pct": 97
+        "roster_pct": 69
       },
       {
         "from_manager": "Paulie",
@@ -7833,9 +8129,9 @@
         "player_name": "Max Fried",
         "player_position": "SP",
         "player_key": "469.p.9620",
-        "current_rank": "143",
+        "current_rank": "132",
         "preseason_rank": "131",
-        "roster_pct": 98
+        "roster_pct": 91
       }
     ]
   }

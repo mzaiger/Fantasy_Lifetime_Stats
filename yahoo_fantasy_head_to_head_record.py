@@ -84,14 +84,14 @@ def get_session():
                 TOKEN_URL,
                 authorization_response=redirect,
                 client_secret=CLIENT_SECRET,
-                timeout=10
+                timeout=REQUEST_TIMEOUT
             )
         else:
             token = session.fetch_token(
                 TOKEN_URL,
                 code=redirect,
                 client_secret=CLIENT_SECRET,
-                timeout=10
+                timeout=REQUEST_TIMEOUT
             )
 
         _save_token(token)
@@ -99,18 +99,54 @@ def get_session():
     return session
 
 
+class YahooAPIError(RuntimeError):
+    """Raised when Yahoo can't be reached / keeps failing after all retries."""
+
+
+# (connect, read) timeouts. Yahoo's multi-game "leagues" call can take well
+# over 10s on a cold request, so the read timeout is generous.
+REQUEST_TIMEOUT = (10, 60)
+MAX_RETRIES = 5
+RETRY_STATUSES = {429, 500, 502, 503, 504}
+
+
 def api_get(session, url):
-    try:
-        r = session.get(url, params={"format": "json"}, timeout=10)
-    except Exception as e:
-        print(f"\nERROR: Request timed out or failed: {e}", flush=True)
-        return {}
+    """
+    GET with retries + exponential backoff for timeouts, connection errors,
+    429 and 5xx. If Yahoo still fails after MAX_RETRIES, raise YahooAPIError so
+    main() aborts WITHOUT writing output (previously a failed call returned {}
+    and a mid-run timeout silently dropped a week of data from the saved file).
+    """
+    last_err = None
 
-    if r.status_code != 200:
-        print(f"\nERROR {r.status_code}: {r.text[:300]}", flush=True)
-        return {}
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            r = session.get(url, params={"format": "json"}, timeout=REQUEST_TIMEOUT)
+        except RequestException as e:
+            last_err = e
+            print(f"\n  Attempt {attempt}/{MAX_RETRIES} failed: {e}", flush=True)
+        else:
+            if r.status_code == 200:
+                return r.json()
 
-    return r.json()
+            if r.status_code in RETRY_STATUSES:
+                last_err = f"HTTP {r.status_code}: {r.text[:200]}"
+                print(f"\n  Attempt {attempt}/{MAX_RETRIES} got {last_err}", flush=True)
+            elif r.status_code in (401, 403):
+                # Auth problem - retrying won't help and data would be incomplete.
+                raise YahooAPIError(f"Auth error {r.status_code}: {r.text[:200]}")
+            else:
+                # Other 4xx (e.g. a week that doesn't exist for an old league):
+                # same behavior as before - log and treat as empty.
+                print(f"\nERROR {r.status_code}: {r.text[:300]}", flush=True)
+                return {}
+
+        if attempt < MAX_RETRIES:
+            wait = min(60, 2 ** attempt * 2)  # 4, 8, 16, 32s
+            print(f"  Retrying in {wait}s...", flush=True)
+            time.sleep(wait)
+
+    raise YahooAPIError(f"Giving up after {MAX_RETRIES} attempts: {last_err}")
 
 
 def find_key_recursive(data, target_key):
@@ -550,7 +586,7 @@ def main():
 
             print(f'Finished {league["season"]} league.\n', flush=True)
 
-    except (RuntimeError, RequestException, ValueError, KeyError, IndexError, TypeError, AttributeError) as e:
+    except (YahooAPIError, RuntimeError, RequestException, ValueError, KeyError, IndexError, TypeError, AttributeError) as e:
         print(f"\n⚠️  Yahoo API may be down or unreachable: {e}", flush=True)
         print(f"Leaving {OUTPUT_JSON} and {OUTPUT_CSV} unchanged so last_updated isn't touched.", flush=True)
         return

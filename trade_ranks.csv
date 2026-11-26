@@ -205,9 +205,9 @@ season,league_key,trade_id,timestamp,from_manager,to_manager,player_name,player_
 2016,357.l.3402,360,1463865027,Weazy,The Wizard,David Price,SP,357.p.8175,-,40,98
 2016,357.l.3402,336,1463632058,NOBS,Paulie,Ryan Braun,OF,357.p.8034,-,45,97
 2016,357.l.3402,336,1463632058,NOBS,Paulie,Félix Hernández,SP,357.p.7487,-,61,96
-2016,357.l.3402,336,1463632058,Paulie,NOBS,Paul Goldschmidt,1B,357.p.8967,-,2,99
+2016,357.l.3402,336,1463632058,Paulie,NOBS,Paul Goldschmidt,1B,357.p.8967,-,2,-
 2016,357.l.3402,327,1463526194,The Wizard,M Z,Masahiro Tanaka,SP,357.p.9642,-,111,85
-2016,357.l.3402,327,1463526194,M Z,The Wizard,Brett Gardner,OF,357.p.8289,-,99,53
+2016,357.l.3402,327,1463526194,M Z,The Wizard,Brett Gardner,OF,357.p.8289,-,99,-
 2016,357.l.3402,265,1462367720,NOBS,Paulie,Brandon Crawford,SS,357.p.8945,-,170,72
 2016,357.l.3402,265,1462367720,Paulie,NOBS,Jake Lamb,3B,357.p.9781,-,326,68
 2016,357.l.3402,235,1461852748,Weazy,The Wizard,Brian Dozier,2B,357.p.9174,-,76,96
